@@ -1,0 +1,53 @@
+This is BibTeX, Version 0.99d (TeX Live 2024)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesismanuscript.aux
+The style file: plain.bst
+Database file #1: thesisbibliography.bib
+Warning--entry type for "sharma2023monolithic" isn't style-file defined
+--line 21 of file thesisbibliography.bib
+Warning--entry type for "wiki:interface_description_language" isn't style-file defined
+--line 93 of file thesisbibliography.bib
+Warning--entry type for "ibm_serverless" isn't style-file defined
+--line 109 of file thesisbibliography.bib
+You've used 8 entries,
+            2118 wiz_defined-function locations,
+            533 strings with 4900 characters,
+and the built_in function-call counts, 1706 in all, are:
+= -- 150
+> -- 56
+< -- 0
++ -- 24
+- -- 16
+* -- 62
+:= -- 299
+add.period$ -- 23
+call.type$ -- 8
+change.case$ -- 27
+chr.to.int$ -- 0
+cite$ -- 8
+duplicate$ -- 81
+empty$ -- 177
+format.name$ -- 16
+if$ -- 364
+int.to.chr$ -- 0
+int.to.str$ -- 8
+missing$ -- 10
+newline$ -- 42
+num.names$ -- 16
+pop$ -- 67
+preamble$ -- 1
+purify$ -- 24
+quote$ -- 0
+skip$ -- 52
+stack$ -- 0
+substring$ -- 40
+swap$ -- 8
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 22
+warning$ -- 0
+while$ -- 16
+width$ -- 9
+write$ -- 80
+(There were 3 warnings)

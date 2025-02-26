@@ -1,0 +1,42 @@
+\begin{thebibliography}{1}
+
+\bibitem{ibm_serverless}
+{IBM}.
+\newblock What is serverless computing?, 2024.
+\newblock Accessed: 2025-02-26.
+
+\bibitem{kleppmann2017designing}
+Martin Kleppmann.
+\newblock {\em Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems}.
+\newblock O'Reilly Media, 2017.
+
+\bibitem{labouardy2021pipeline}
+Mohamed Labouardy.
+\newblock {\em Pipeline as Code: Continuous Delivery with Jenkins, Kubernetes, and Terraform}.
+\newblock Manning Publications, 2021.
+
+\bibitem{newman2015building}
+Sam Newman.
+\newblock {\em Building Microservices: Designing Fine-Grained Systems}.
+\newblock O'Reilly Media, 2015.
+
+\bibitem{nygard2008release}
+Michael~T. Nygard.
+\newblock {\em Release It!: Design and Deploy Production-Ready Software}.
+\newblock Pragmatic Bookshelf, 2008.
+
+\bibitem{richardson2018microservices}
+Chris Richardson.
+\newblock {\em Microservices Patterns: With Examples in Java}.
+\newblock Manning Publications, 2018.
+
+\bibitem{sharma2023monolithic}
+Harish Sharma.
+\newblock Monolithic vs microservices architecture: Advantages, disadvantages, and differences, February 2023.
+
+\bibitem{wiki:interface_description_language}
+{Wikipedia contributors}.
+\newblock Interface description language, 2025.
+\newblock Accessed: 2025-02-26.
+
+\end{thebibliography}
