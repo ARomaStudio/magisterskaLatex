@@ -15,6 +15,6 @@
 \contentsline {subsection}{\numberline {3.2}Kryteria porównania i analizy metod współdzielenia kodu}{13}{}%
 \contentsline {section}{\numberline {4}Analiza metod współdzielenia kodu}{14}{}%
 \contentsline {subsection}{\numberline {4.1}Metody współdzielenia kodu z opisem}{14}{}%
-\contentsline {section}{\numberline {5}Appendices}{17}{}%
-\contentsline {subsection}{\numberline {5.1}Sample Code}{17}{}%
-\contentsline {subsection}{\numberline {5.2}Sample Data}{17}{}%
+\contentsline {section}{\numberline {5}Appendices}{18}{}%
+\contentsline {subsection}{\numberline {5.1}Sample Code}{18}{}%
+\contentsline {subsection}{\numberline {5.2}Sample Data}{18}{}%
