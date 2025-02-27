@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  26 FEB 2025 22:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  27 FEB 2025 23:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -769,7 +769,41 @@ Overfull \hbox (13.03096pt too wide) in paragraph at lines 165--166
 
 
 
-[16] (./thesismanuscript.lof)
+[16]
+Overfull \hbox (29.397pt too wide) in paragraph at lines 173--174
+[]\T1/cmr/m/n/12 Obiekty DTO (In-ter-face Def-i-ni-tion Lan-guages) mog¡ by¢ wspówdzilone
+ []
+
+
+
+[17]
+Overfull \hbox (3.33252pt too wide) in paragraph at lines 175--176
+\T1/cmr/m/n/12 za po-moc¡ bib-liotek ale jak za-prezen-towano w  [[]] mo»e to powodowa¢
+ []
+
+
+Overfull \hbox (0.21611pt too wide) in paragraph at lines 177--178
+\T1/cmr/m/n/12 któreyni wymini-aj¡ si¦ el-e-menity sys-temu. W przy-padku wspówdzie-
+ []
+
+
+Overfull \hbox (9.63004pt too wide) in paragraph at lines 177--178
+\T1/cmr/m/n/12 le-nia za po-moca bib-liotek, tracimy mo»li-wo±¢ poª¡cz-nia kilku mikroser-
+ []
+
+
+Overfull \hbox (6.85657pt too wide) in paragraph at lines 179--180
+\T1/cmr/m/n/12 ni»nie wyda-jno±-cie ze wzgl¦du na rozprosze-nie sza-sobów na komójniki-
+ []
+
+
+
+[18]
+Overfull \hbox (0.13469pt too wide) in paragraph at lines 181--182
+\T1/cmr/m/n/12 pode-js-cia do ob-sªygi bªedów w sys-temie co powoduje lep-sze lo-gowanie
+ []
+
+(./thesismanuscript.lof)
 \tf@lof=\write5
 \openout5 = `thesismanuscript.lof'.
 
@@ -779,27 +813,27 @@ Overfull \hbox (13.03096pt too wide) in paragraph at lines 165--166
 
  (./thesismanuscript.bbl
 
-[17])
+[19])
 
-[18] (./thesismanuscript.aux)
+[20] (./thesismanuscript.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15713 strings out of 475128
- 318367 string characters out of 5765300
- 790473 words of memory out of 5000000
- 38414 multiletter control sequences out of 15000+600000
+ 15714 strings out of 475128
+ 318392 string characters out of 5765300
+ 790477 words of memory out of 5000000
+ 38415 multiletter control sequences out of 15000+600000
  568810 words of font info for 55 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,11n,101p,1879b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>
-Output written on thesismanuscript.pdf (18 pages, 140045 bytes).
+Output written on thesismanuscript.pdf (20 pages, 147411 bytes).
 PDF statistics:
- 371 PDF objects out of 1000 (max. 8388607)
- 73 compressed objects within 1 object stream
+ 386 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,5 +1,11 @@
 \begin{thebibliography}{1}
 
+\bibitem{bhuyan2020microservices}
+Aditya~Pratap Bhuyan.
+\newblock {\em Microservices Design Patterns}.
+\newblock Packt Publishing, Birmingham, UK, 2020.
+\newblock Refer to page 255 for discussion on challenges of sharing models between microservices.
+
 \bibitem{ibm_serverless}
 {IBM}.
 \newblock What is serverless computing?, 2024.

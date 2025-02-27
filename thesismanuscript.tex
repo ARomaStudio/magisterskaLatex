@@ -166,6 +166,30 @@ REST API - Representational State Transfer Application Programming Interface jed
 
 Serverless - Nowoczesne podejście, które pozwala na uruchamianie kodu bez bezpośredniego zarządzania infrastrukturą i sprzętem. W przypadku tego podejścia chmura obliczeniowa zarządza przydzieleniem odpowiednich zasobów, zarządza skalowaniem i utrzymaniem serwera, dając możliwość programiście skupić się na napisaniu kodu. W kontekście współdzielenia kodu, serverless pozwala na stworzenie małych, niezależnych funkcji, które mogą być łatwo wykorzystane do współdzielenia kodu w systemach mikroserwisów. Takie podejście dobrze pasuje do współdzielenia małych, często powtarzających się kawałków kodu. Technologia serverless również pozwala usprawnić współpracę między zespołami, zmniejsza duplikację kodu i upraszcza konserwację. Funkcje współdzielone za pomocą serverless mogą być udostępniane za pomocą technologii REST, co wiąże się z wszystkimi zaletami i wadami tego podejścia, albo za pomocą SDK udostępnionego przez dostawcę chmury.
 
+\subsection{Analiza metod współdzielenia kodu dla różnych typów obiektów}
+
+Po przeprowadzeniu analizy źródeł literaturowych oraz własnego doświadczenia dokanełem analizę tego, jakie metody współdzielenia mogą zostać wykorzystane dla poszczególnych typów obiektyów.
+
+Obiekty DTO (Interface Definition Languages) mogą być wspówdzilone za pomocą IDL, generowanie obiektów na podstawie plików IDL pozwala na standaryzację kontraktów komunikacji między mikroserwisami. Również obieków DTO mogą być współdzielone za pomocą bibliotek, takie obiekty mogą albo bezpośrednio w bibliotekach albo pliki IDL na podstawie których później będą wygenerowane klasy DTO mogą być udostępniane za pomocą bibliotek. Takie podejście jest często wykorzystywane w procechach CI/CD. SDK też jest dobrze dopasowanym podejściem wykorzystywanym razem z obiektami DTO, udostępnienie obiektów DTO za pomocą SDK bez udostępnmienia bezpośrodnio logiki biznesowej jest dobrą praktyką w programowaniu. Wspówdzielenie obiektów DTO może zapełnić to, że zakada usługa będzie wykorzystywać spójne struktury danych ułatwiając komunikację zmniejszjąc tym samym ryzyko niesójności.
+
+Obiekty Model, wspówdzielenie takich obiektów zgodnie z wciesniejszą analizą nie jest zalecane, ze względu na to, że zalecanym jest wykozystywanie nie więcej niż jednej bazy dla każdego mikroserwisu. Ze wzlędu na to, nie można zleźć nalepszej opcji do wspówdzielenia takich obiktów. Teoretycznie obiekty Model mogą być współdzielone za pomocą bibliotek ale jak zaprezentowano w ~\cite{bhuyan2020microservices} może to powodować póżniej problemy z zaządzaniem kodem i środowiskami.
+
+Walidatory, jako obiekty zawirające w ograniczonej skali logię programu mogą byśwspówdzielone za pomocą biliotek, REST API oraz techmnologii Serverless. Współdzielenie walidatorów jest dobrą praktyką i jest zaleacane, poniważ pozwala na utrzymanie spójnych regół walidacji w systemi mikroserwisów co poprawia jakośc dancyh któreyni wyminiają się elemenity systemu. W przypadku wspówdzielenia za pomoca bibliotek, tracimy możliwość połącznia kilku mikroserwisów napisanyh w róznuch językach programowania w jeden system mikroserwósów co, natomiasr, możemy zrobic w rzybadku wspwodzielmnia za pomocą REST oraz serverless. Serverless jest najlepszą opją wspówdzielenia walidatorów, ze względu na to, że walidatory zawiraja zwykle niewilką ilość logiki która mieści się w jednej funkci ktrę idelnie nadają się do hostowania za pomoca serverless, równiż w tym przypadku nie tracimy mzliwości połacznia kilku mikroserwisów napisanych w różnych językach programowania w jeden system mikroserwisów.
+
+Serwisy, werwisą są gluwnym miejscem miejscem przechowywnia, serwisy mogą być wspówdzielone za pomoca bibliotek, SDK, REST oraz serverless. W przypadku wyboru podejścia do wspódzielenia mikroserwisów należy dokonać analizy i zastanowić się. Biblioteki kodu są najbardziej uniwezralnym podejściem w przypadu serwisów, pasują do wykorzystania w przypaktu współdzielenia małych metod zawirających mała oliśc kodu ja i tych większych. Podejście REST teżdobrze pasuje do wszystkich zormirów wszpówdzielonej logiki, ale natomiast w wysoko obciążonych systemach może powodować obniżnie wydajnoście ze względu na rozproszenie szasobów na komójnikiację sieciową. podejście serverless dorze się sprawdze w przypadku wspówdzieleinia mniejszych motod, zarząsdnie skomplikowana logiką za pomocą serwerles może skomplikowanym, jak w przypadku REST w wysoko obciążonych systemach podejsie raczej trzeba zminić na biliotekę lub sdk. 
+
+Wyjątki, do wspówdzielenia wyjątków możemy zastosować SDK oraz IDL w przypadku dyjątków nie zawirającyl logiki związaną z obsługą błędów. Stosowanie wspówdzielenia za pomocą SDK w systemie mikroserwisów wspomoaga stwożenie ustandaryzowanego podejscia do obsłygi błedów w systemie co powoduje lepsze logowanie i raportowanie błędów oraz szybsze ich naprawienie i zniejszenie ilosci porlpemów na przestrzeni czsu.  
+
+\subsection{Ocena i porówananie metod współdzielenia kodu}
+
+Na podstawie źródeł literaturowych, własnego doświadczenia oraz przygotowanych tstów wydajnościowych dokonałem analizy przedstawionych powyżej podejść do wspówdzieleina kodu w systemach mikroserwisów.
+
+\subsubsection{Definicja kryterium oceny pod kątem izolacji w przypadku IDL}
+
+Przedstawiam kryteria które wybrałem w rezultacie analizy źródeł internetowych oraz książek takich jak ~\cite{kleppmann2017designing} w których w znalezłem opis tego jak musi wyglądać architektura mikro serwisowa, wady i zalety różnych rozwiązań.
+
+
+
 \nocite{*}
 
 \listoffigures
