@@ -24,6 +24,6 @@
 \contentsline {subsubsection}{\numberline {4.3.5}Definicja kryterium oceny pod kątem wersjonowania}{26}{}%
 \contentsline {subsection}{\numberline {4.4}Ocena i porównanie metod współdzielenia kodu}{28}{}%
 \contentsline {subsubsection}{\numberline {4.4.1}Ocena Interface definition languages}{28}{}%
-\contentsline {section}{\numberline {5}Appendices}{30}{}%
-\contentsline {subsection}{\numberline {5.1}Sample Code}{30}{}%
-\contentsline {subsection}{\numberline {5.2}Sample Data}{30}{}%
+\contentsline {section}{\numberline {5}Appendices}{31}{}%
+\contentsline {subsection}{\numberline {5.1}Sample Code}{31}{}%
+\contentsline {subsection}{\numberline {5.2}Sample Data}{31}{}%

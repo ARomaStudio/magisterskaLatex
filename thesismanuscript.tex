@@ -3,6 +3,8 @@
 \usepackage{todonotes}
 \usepackage{fancyhdr}
 \usepackage{lipsum}
+\usepackage{tabularx}
+\usepackage{array} 
 \usepackage[T1]{fontenc}
 \usepackage[provide=*,english,polish]{babel}
 
@@ -359,10 +361,58 @@ Metody zarządzania plikami idl w systemach :
     \item SVN systemy takie jak, na przykład GIT - Rozwiaania posiada następujące korzyści: łatłe osiągniecie wstecznej kompatybilności, uałienie osiądgniecia jednego źrówdła prawdy w systemie mikroserwisów, łatwnie zapełnienienie tego że wsystrkiwe usługi korzystają z najnowszej wersie IDL. Do minusów rozwiazania możemy odnieść to, że system SVN może szybko stac wąskim gardłem w przypadku wykorzystania przez wilesepołów, wymaga zarządzania i utrzymania.
     \item Dystrybucja za pomocą bibliotek - Kompilowanie plików IDL do współdzielonych bibliotek, i publikacja w współdzielonym repozytorium pakietów, na przykład nexus. Do korzyście tego rozwiązani możemy oniść łatwą integrację c spocesami CI/CD, mozliwość orzystania z wersjonowanych artefaktów bez bezpośredniej interakcji z surowymi plikami IDL oraz to że różne języki programowania mogą wymagać różnych bibliotek, co zwiększa złożoność systemu.
     \item Podejście Monorepo - Przechowywanie wszystkich mikroserwisów i powiązane z nimi pliki IDL w jednym repozytorium, co zapewni, że wszystkie zespoły będą pracować na tej samej bazie kodu. Do korzysci tego rozwiazania możemy odnieść to, że pliki IDL w implementacja usług są zawsze zsynchronizowne oraz to, że takie podejście upraszcza rarządzanie zależnościami, poniważ cału kod przechowywany w jednym miejcu. Do wad podejscia mogę odnieść problemy ze skalowalnością zwiększenia ilości kodu oraz to, że często wymaga narzędzi do zarządzania dużymi bazami kodu.
-    \item Repozytoria z automatyczną synchronizacją - 
+    \item Repozytoria z automatyczną synchronizacją - Repozytoria z automatyczną synchronizacją to specyficnzy rodzaj repozytoriów, w których zmiany wprowadzone w głównym repozytorium są automatycznie propagowane do posoztałych sybrepozytoriów. Dzięki temu każdy uczestnik projektu ma dostęp do wszystkich wersji kodu. Do zalet tego podejścia możemy zaliczyć moźliwośc scentralizowanego wymuszania wersjonowania oraz łatwy dostęp do wszyskich wersji plików. Do minusów mozemy zapisać dość trudne utrzymianie oraz złożonosć w zarządzaniusynchronizacją i konfliktami w repozytorium.
+    \item IDL as a Service (IDLaS) - Przygotowania wcieśniej usługa, która obsługuje pliki IDL na żądanie. Ta usługa może wersjonować, weryfikować i dostarczać pliki IDL. Do korzyście tego podejśćia możemy odnieść dostęp nazoądanie do plikow IDL, możliwośći dynamiczneg o wersjonowania. Do minusów możemy doliczyć ro, że takie podejście wymaga zbudowania i urzymnia dodatkowej usługi w systemie oraz to, że komunikacja śieciowa może powodoiwac opóźnienia w dostarczeiu plików IDL.
 \end{enumerate}
 
-Ocena pod kątem izolacji - ocena pod kątem izolacji zależy od implementacji, dla każdej z powyżej opisanych implementacji dokonałem analizy 
+Ocena pod kątem izolacji - ocena pod kątem izolacji zależy od implementacji, dla każdej z powyżej opisanych implementacji dokonałem analizy.
+
+Ze wsględu na to, że mamy wiele kryteriów oceny i wiele mozliwych dodejść do współdzielenia plików IDL, postanowiełem stworzyć tabelę porównawczą, która pomoże w czytelnym preentowaniu wyników analizy i porównania.
+
+Dane do porównania zostały zebrane z żródeł literaturowych ~\cite{newman2015building} ,  ~\cite{kleppmann2017designing}
+
+\begin{table}[htbp]
+    \centering
+    \caption{Comparison of Code Sharing Approaches in Microservices}
+    \label{tab:comparison}
+    \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
+    \hline
+    \textbf{Kryteria} & \textbf{SVN/Git Systemy} & \textbf{Biblioteki} & \textbf{Podejssćie Monorepo} & \textbf{Repo z Auto-Synchro.} & \textbf{IDL as a Service (IDLaS)} \\
+    \hline
+    \textbf{Conflict Rate} &
+    Wysoki: Merge konflikty są powszechne w przypadku wykorzystanie przez kilkoma zespowani jednocześnie. Rozwiazanie takich konflików może być zasochłonne &
+    Umiarkowany: Konflikty są mniej powszechne, ale wciaż moga wystapić. &
+    Niski: Zespoły pracują na tej samej bazie kodu, dlatego konflikty zdarają sie rzadko, mogą wystqapic w trzyaku pracy na tej samej usłudze. &
+    Umiarkowany: Konflikty mogą wystąpić, dlatego w przypadku gdy synchonizacja między usługami nie jest dobrze zarządzana. &
+    Niski: Konflikty zdarzają się rzadko, dlatego, że IDL są dostarczne na rżadanie a wersjowaniee jest wymuszane. \\
+    \hline
+    \textbf{Version Drift Occurrence} &
+    Umiarkowana: Może wystąpić jescli zespoły programistów nie aktualizują się do nowszej wersji regularnie. &
+    Niski: Warygodność jest minimalna, poniewaz bibioteki sąa wersjonowane i dystrybuowane za pomocą odpowiednich narzędzi. &
+    Niski: Bazy kody w tym przypaku baza kodu jest synchronizowana co minimalizyje problemy z wersjonowaniem. &
+    Umiarkowany: Problemy moga wystąpić, jeśli synchronizacja nie jest dobrze utrzymana. &
+    Bardzo Niski: Dynamiczna zarządzanie wersjami po stronie usługi zmniejsza Warygodność problemów z wersjonowaniem. \\
+    \hline
+    \textbf{Build Failure Rate} &
+    Wysoki: Błędy w trakcie kompilacji pogą wystąpić w przypadku niekompatybilnych usług. &
+    Umiarkowana: Awarie zrdarzają się rzadko, mozliwe są z przydaku nieprawidłowych wersji zawartych w bibliotece. &
+    Umiarkowana: Błędy w trakcie kompilacji zadarzają się rzadko, ze względu na szynchronizację kodu. &
+    Umiarkowana: Błędy w trakcie kompilacji zadarzają się rzadko, mozliwe w przypadku dysynchronizacji repozytorium. &
+    Niska: Minimale ryzyko błędów w trakcie kompilacji ze wszledu na wymuszaną synchronizację. \\
+    \hline
+    \textbf{Deployment Rollback Frequency} &
+    Wysoka: Zęste zminay w plikach IDL mogą spowodować częste wycofanie zmian w trakcie wdrożenia. &
+    Umiarkowana: Wycofania zmian w trakcie wdrożenia mogą wystąpić, jeśli wystąpią problemy z kompatybilnością wsteczną. &
+    Umiarkowana: Wycofania zmian w trakcie wdrożenia są rzadsze ze względu na synchronizację, ale problemy mogą wystapić. &
+    Niska: Wycofania zmian w trakcie wdrożenia są rzadkie, automatyczna synchronizacja minimalizuje potrzebę wycofywania zmian. &
+    Niska: Wycofania zmian w trakcie wdrożenia są rzadkie Zarządzanie IDL na żądanie zmniejsza częstotliwość wycofywania. \\
+    \hline
+    \end{tabularx}
+\end{table}
+
+\newpage
+
+Ocena pod kątem bezpieczeństwa: 
 
 \nocite{*}
 
