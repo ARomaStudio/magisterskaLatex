@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  1 MAR 2025 00:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  1 MAR 2025 15:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -840,6 +840,10 @@ Overfull \hbox (6.26857pt too wide) in paragraph at lines 246--247
 
 
 [21]
+
+LaTeX Warning: Citation `bloch2018effective' on page 22 undefined on input line 258.
+
+
 Overfull \hbox (9.51566pt too wide) in paragraph at lines 263--264
 []\T1/cmr/m/n/12 "Versioning APIs and li-braries care-fully en-sures that changes
  []
@@ -866,41 +870,77 @@ Overfull \hbox (21.76813pt too wide) in paragraph at lines 292--293
 
 
 [24]
-Overfull \hbox (6.10475pt too wide) in paragraph at lines 310--311
+<images/image-security.png, id=90, 419.31656pt x 398.23781pt>
+File: images/image-security.png Graphic file (type png)
+<use images/image-security.png>
+Package pdftex.def Info: images/image-security.png  used on input line 305.
+(pdftex.def)             Requested size: 347.12354pt x 329.67441pt.
+
+
+[25 <./images/image-security.png>]
+Overfull \hbox (6.10475pt too wide) in paragraph at lines 317--318
 []\T1/cmr/m/n/12 W rozdziale 1 au-torzy defini-uj¡ po-j¦-cie skalowal-no±ci jako 4 gªówne
  []
 
-(./thesismanuscript.lof)
-\tf@lof=\write5
-\openout5 = `thesismanuscript.lof'.
 
- (./thesismanuscript.lot)
-\tf@lot=\write6
-\openout6 = `thesismanuscript.lot'.
+LaTeX Warning: Citation `bloch2018effective' on page 26 undefined on input line 334.
 
- (./thesismanuscript.bbl
 
-[25])
 
-[26] (./thesismanuscript.aux)
+[26]
+
+LaTeX Warning: Citation `bloch2018effective' on page 27 undefined on input line 338.
+
+
+Overfull \hbox (10.3113pt too wide) in paragraph at lines 342--343
+[]\T1/cmr/m/n/12 "Effective ver-sion man-age-ment is cru-cial for track-ing changes
+ []
+
+
+Overfull \hbox (12.4553pt too wide) in paragraph at lines 344--345
+\T1/cmr/m/n/12 j¡c wysco-fa¢ zminy. Poprawia spów-prac¦ mi¦dzy ze-spoªami wykazu-
+ []
+
+
+
+[27]
+Overfull \hbox (3.29907pt too wide) in paragraph at lines 360--361
+\T1/cmr/m/n/12 mo-zli-wo±¢ orzys-ta-nia z wer-sjonowanych arte-fak-tów bez bezpo±red-
+ []
+
+
+
+[28] (./thesismanuscript.lot)
+\tf@lot=\write5
+\openout5 = `thesismanuscript.lot'.
+
+ (./thesismanuscript.lof)
+\tf@lof=\write6
+\openout6 = `thesismanuscript.lof'.
+
+ (./thesismanuscript.bbl)
+
+[29]
+
+[30] (./thesismanuscript.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15719 strings out of 475128
- 318502 string characters out of 5765300
- 790500 words of memory out of 5000000
- 38420 multiletter control sequences out of 15000+600000
- 568810 words of font info for 55 fonts, out of 8000000 for 9000
+ 15730 strings out of 475128
+ 318763 string characters out of 5765300
+ 791530 words of memory out of 5000000
+ 38430 multiletter control sequences out of 15000+600000
+ 569586 words of font info for 56 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,11n,101p,1879b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
- <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>
-Output written on thesismanuscript.pdf (26 pages, 165102 bytes).
+ <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>
+Output written on thesismanuscript.pdf (30 pages, 262111 bytes).
 PDF statistics:
- 418 PDF objects out of 1000 (max. 8388607)
- 91 compressed objects within 1 object stream
+ 451 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 18 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

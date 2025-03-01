@@ -211,7 +211,7 @@ Serwisy, werwisą są gluwnym miejscem miejscem przechowywnia, serwisy mogą by�
 
 Wyjątki, do wspówdzielenia wyjątków możemy zastosować SDK oraz IDL w przypadku dyjątków nie zawirającyl logiki związaną z obsługą błędów. Stosowanie wspówdzielenia za pomocą SDK w systemie mikroserwisów wspomoaga stwożenie ustandaryzowanego podejscia do obsłygi błedów w systemie co powoduje lepsze logowanie i raportowanie błędów oraz szybsze ich naprawienie i zniejszenie ilosci porlpemów na przestrzeni czsu.
 
-\subsection{Ocena i porówananie metod współdzielenia kodu}
+\subsection{Definicja kryterium oceny i porównania metod współdzielenia kodu}
 
 Na podstawie źródeł literaturowych, własnego doświadczenia oraz przygotowanych tstów wydajnościowych dokonałem analizy przedstawionych powyżej podejść do wspówdzieleina kodu w systemach mikroserwisów.
 
@@ -299,6 +299,13 @@ W przypadku izolacji na podstawie analzy żródeł literaturowych oraz własnego
     \end{quote}
 \end{enumerate}
 
+~\ref{fig1}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/image-security.png}
+    \caption{Essential Network and Computer Security Requirements.} \label{fig1}
+\end{figure}
+
 \subsubsection{Definicja kryterium oceny pod kątem skalowalności}
 
 Czym jest skalowalność 
@@ -319,12 +326,49 @@ Unikanie wąskich gardeł wydajności - ocena tego,czy wybrane podejście powodu
 
 \subsubsection{Definicja kryterium oceny pod kątem wersjonowania}
 
+Za pomocą żrudeł literaturowych oraz własnego doświadczenia zdefiniowałem kryteria oceny pod kątem wersjonowania jako: 
 
+\begin{enumerate}
+    \item Kompatybilność wsteczna - Zapewnienie, że starsze wersje systemu lub komponentów nadal będą działały poprawnie, mimo wprowadzania nowych wersji. Kompaty bilność wsteczna pomaga zapełnić funkconowanie istniejących sytemów mikroserwisów w trakcie wproadzenie zmnian i rozwoju systemu, pozwala pszejść z kosztownych i bardzoi skomplikowanych upgradów systemu w całości za raz a podzielić prace na mniejsze, łatwiejsze do zarządzania kawałki.
+    \begin{quote}
+        "APIs, like diamonds, are forever. Once you publish an API, you are more or less stuck with it, so it is critically important to design it well. When evolving an API, preserving backward compatibility is crucial to avoid breaking existing clients." ~\cite[p. 75]{bloch2018effective}
+    \end{quote}
+    \item Łatwość migracji - Prostota przescia między wersjami, umożliwienie łatwego przechodzenia między różnymi wersjami plików lub interfejsów, aby dostosować się do zmian bez wprowadzania zakłóceń w pracy systemu. Możliwość zmniejszenia przestojów aplikacji w trakie prac serwisowych i możliwość płynnego przejścia na nową wersję. Proste migracje przyspieszają proces rozwiju aplikacji i zmniejszają ilośc błędów.
+    \begin{quote}
+        "When evolving an API, it is essential to provide a smooth migration path for clients. Deprecating old functionality rather than removing it immediately allows developers to transition gradually without breaking their systems." ~\cite[p. 78]{bloch2018effective}
+    \end{quote}
+    \item Zarządzanie historią wersji - Możliwość przechowywania i uzyskiwania dostępu do poprzednich wersji plików. Historia wersji pozwala programistom szybko i łatło przywrucić popradnią wersj w przypadku powstania błędu w nowej wersji. Pozwala na zmniejszenie uraty danych i niespówjnoscie w trakcie rozwoju aplikacji. Posiadanie historii versji zapewnia to, że projekty pozostaja łatwe w utrzymaniu i skalowalne.
+    \begin{quote}
+        "Effective version management is crucial for tracking changes over time, allowing teams to understand what was modified, when, and by whom. A well-maintained version history ensures accountability and facilitates rollback if necessary." ~\cite[p. 150]{rubin2012essential}
+    \end{quote}
+    \item Śledzenie zmian - Zdolność systemu do rejestrowania i monitorowania wszystkich zmian. Możliwość śledzenia zmian zapełnia to, że każda zmiana w systemie będzie zapisana wsięraąc tym programistów w zrozwiązywianiu problemów i bagów albo pazwalając wyscofać zminy. Poprawia spówpracę między zespołami wykazujac kto kiedy i dlaczego wprowadzał zminay co ziękasza również opdowiedzialność. W brażach regulowanych prawem taka audutowalność systemu może vyć wymagana przez prawo. 
+    \begin{quote}
+        "Tracking changes in source code is essential for understanding the evolution of a system. Without a proper change history, debugging, auditing, and maintaining software become significantly more difficult." ~\cite[p. 150]{rubin2012essential}
+    \end{quote}
+\end{enumerate}
+
+\subsection{Ocena i porównanie metod współdzielenia kodu}
+
+\subsubsection{Ocena Interface definition languages}
+
+Ocena pod kątem komunikacji – zapewnia potrzebny poziom komunikacji, obiekty są generowane na podstawie definition language na etapie uruchamiania aplikacji, dalej w trakcie wykonania logiki programu takie obiekty mogą być użyte przez program bez żadnych obciążeń wydajnościowych. Obiekty wygenerowane z plików IDL mogą być wykorzystane dla komunikacji asynchronicznej takich jak brokery wiadomości jak również dla wysłania bezpośrednich zapytań między serwisami.
+
+Metody zarządzania plikami idl w systemach : 
+
+\begin{enumerate}
+    \item SVN systemy takie jak, na przykład GIT - Rozwiaania posiada następujące korzyści: łatłe osiągniecie wstecznej kompatybilności, uałienie osiądgniecia jednego źrówdła prawdy w systemie mikroserwisów, łatwnie zapełnienienie tego że wsystrkiwe usługi korzystają z najnowszej wersie IDL. Do minusów rozwiazania możemy odnieść to, że system SVN może szybko stac wąskim gardłem w przypadku wykorzystania przez wilesepołów, wymaga zarządzania i utrzymania.
+    \item Dystrybucja za pomocą bibliotek - Kompilowanie plików IDL do współdzielonych bibliotek, i publikacja w współdzielonym repozytorium pakietów, na przykład nexus. Do korzyście tego rozwiązani możemy oniść łatwą integrację c spocesami CI/CD, mozliwość orzystania z wersjonowanych artefaktów bez bezpośredniej interakcji z surowymi plikami IDL oraz to że różne języki programowania mogą wymagać różnych bibliotek, co zwiększa złożoność systemu.
+    \item Podejście Monorepo - Przechowywanie wszystkich mikroserwisów i powiązane z nimi pliki IDL w jednym repozytorium, co zapewni, że wszystkie zespoły będą pracować na tej samej bazie kodu. Do korzysci tego rozwiazania możemy odnieść to, że pliki IDL w implementacja usług są zawsze zsynchronizowne oraz to, że takie podejście upraszcza rarządzanie zależnościami, poniważ cału kod przechowywany w jednym miejcu. Do wad podejscia mogę odnieść problemy ze skalowalnością zwiększenia ilości kodu oraz to, że często wymaga narzędzi do zarządzania dużymi bazami kodu.
+    \item Repozytoria z automatyczną synchronizacją - 
+\end{enumerate}
+
+Ocena pod kątem izolacji - ocena pod kątem izolacji zależy od implementacji, dla każdej z powyżej opisanych implementacji dokonałem analizy 
 
 \nocite{*}
 
-\listoffigures
 \listoftables
+
+\listoffigures
 
 \bibliographystyle{plain}
 \bibliography{thesisbibliography}

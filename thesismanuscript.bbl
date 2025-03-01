@@ -1,6 +1,6 @@
 \begin{thebibliography}{10}
 
-\bibitem{bloch2018effective}
+\bibitem{Essential}
 Joshua Bloch.
 \newblock {\em Effective Java}.
 \newblock Addison-Wesley Professional, 2018.
@@ -53,6 +53,12 @@ Michael~T. Nygard.
 Chris Richardson.
 \newblock {\em Microservices Patterns: With examples in Java}.
 \newblock Manning Publications, 2018.
+
+\bibitem{rubin2012essential}
+Kenneth~S. Rubin.
+\newblock {\em Essential Scrum: A Practical Guide to the Most Popular Agile Process}.
+\newblock Addison-Wesley, 2012.
+\newblock See p. 150.
 
 \bibitem{sharma2023monolithic}
 Raj Sharma.
