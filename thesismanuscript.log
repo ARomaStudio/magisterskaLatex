@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  27 FEB 2025 23:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  1 MAR 2025 00:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -447,20 +447,20 @@ Package babel Info: Importing font and identification data for english
 ) (./thesismanuscript.aux)
 \openout1 = `thesismanuscript.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
-LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 13.
+LaTeX Font Info:    ... okay on input line 13.
  (c:/tools/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count332
@@ -507,7 +507,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 <images/Logo_EN_1.png, id=4, 1204.5pt x 630.355pt>
 File: images/Logo_EN_1.png Graphic file (type png)
 <use images/Logo_EN_1.png>
-Package pdftex.def Info: images/Logo_EN_1.png  used on input line 13.
+Package pdftex.def Info: images/Logo_EN_1.png  used on input line 26.
 (pdftex.def)             Requested size: 347.12354pt x 181.66328pt.
 
 
@@ -524,27 +524,37 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 
 ]
-Overfull \hbox (5.38531pt too wide) in paragraph at lines 25--25
-\T1/cmr/m/n/12 chitek-tóry mikroser-wisowej w os-tat-nich lat-ach zminiª ±wiat
+Overfull \hbox (1.25877pt too wide) in paragraph at lines 50--51
+\T1/cmr/m/n/12 ±wiat in-for-matyki. Ar-chitek-tura mikroser-wisowa ma wiele
  []
 
 
-Overfull \hbox (3.52542pt too wide) in paragraph at lines 25--25
-\T1/cmr/m/n/12 bada« dost¦pne metody wspówdzie-le-nia kodu, zd-ofin-iowa¢
+Overfull \hbox (27.6233pt too wide) in paragraph at lines 50--51
+\T1/cmr/m/n/12 zarz¡dzanie ko-dem. W mo-jej pracy mag-is-ter-skiej przeprowadz-
  []
 
 
-Overfull \hbox (5.6464pt too wide) in paragraph at lines 25--25
-\T1/cmr/m/n/12 wonoczesne pode-j±-cie do wsówdzie-le-nia kodu które poª¡czy
+Overfull \hbox (15.23993pt too wide) in paragraph at lines 50--51
+\T1/cmr/m/n/12 porów-na¢ za po-moc¡ ¹ródeª lit-er-atur-owych oraz przeprowad-
  []
 
 
-Overfull \hbox (17.32822pt too wide) in paragraph at lines 25--25
-\T1/cmr/m/n/12 za-lety ist-niej¡-cych rozwi¡za« i za-peªni wyda-jno±¢ na-jbardziej
+Overfull \hbox (12.04211pt too wide) in paragraph at lines 50--51
+\T1/cmr/m/n/12 zonych bada« dost¦pne metody wspóªdzie-le-nia kodu, zdefin-
  []
 
 
-Overfull \hbox (15.44884pt too wide) in paragraph at lines 25--25
+Overfull \hbox (3.46017pt too wide) in paragraph at lines 50--51
+\T1/cmr/m/n/12 wªasne nowoczesne pode-j±-cie do wspóªdzie-le-nia kodu które
+ []
+
+
+Overfull \hbox (5.2221pt too wide) in paragraph at lines 50--51
+\T1/cmr/m/n/12 cymi za po-moc¡ przy-go-towanych testów wyda-jno±-ciowych. 
+ []
+
+
+Overfull \hbox (15.44884pt too wide) in paragraph at lines 51--52
 \T1/cmr/bx/n/12 Keywords:\T1/cmr/m/n/12 Architektura mikrousªug \TS1/cmr/m/n/12 · \T1/cmr/m/n/12 Wspóªdzie-le-nie kodu
  []
 
@@ -566,95 +576,85 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 [4
 
 ]
+Overfull \hbox (15.89539pt too wide) in paragraph at lines 68--69
+\T1/cmr/m/n/12 gramowanie które poª¡czy gªówne za-lety trady-cyjnych metod wspóªdzie-
+ []
+
+
 
 [5]
-Overfull \hbox (1.7946pt too wide) in paragraph at lines 43--44
-\T1/cmr/m/n/12 Wpaca jesu us-truk-tu-ry-zowana w kilka rozdzi-aªów, które wprowadzaj¡
+Overfull \hbox (0.46016pt too wide) in paragraph at lines 78--79
+\T1/cmr/m/n/12 sowa anal-iza ist-niej¡-cych metod wspóªdzie-le-nia kodu w sys-temach
  []
 
 
-Overfull \hbox (12.3052pt too wide) in paragraph at lines 45--46
-\T1/cmr/m/n/12 mono-li-towej pow-stawa ar-chitek-tura mikroser-wisowa, anal-izuje przy-
- []
-
-
-Overfull \hbox (0.55814pt too wide) in paragraph at lines 46--47
-\T1/cmr/m/n/12 porównuj¦ ar-chitek-tur¦ mikroser-wisow¡ z mono-li-tow¡, przed-staw-
- []
-
-
-Overfull \hbox (12.99043pt too wide) in paragraph at lines 49--50
-\T1/cmr/m/n/12 pracy ap-likacji która wpo-maga nowoczesne rozwi¡znie do wspóªdzie-
+Overfull \hbox (23.49757pt too wide) in paragraph at lines 79--80
+\T1/cmr/m/n/12 pracy ap-likacji która wspo-maga nowoczesne rozwi¡zanie do wspóªdzie-
  []
 
 
 
 [6]
-Overfull \hbox (13.90486pt too wide) in paragraph at lines 60--61
-\T1/cmr/m/n/12 ar-chitek-tura mikro ser-wisowa umo»li-wia bardziej efek-ty-wne zarz¡dzanie
+Overfull \hbox (11.29437pt too wide) in paragraph at lines 90--91
+\T1/cmr/m/n/12 ar-chitek-tura mikroser-wisowa umo»li-wia bardziej efek-ty-wne zarz¡dzanie
  []
 
 
-Overfull \hbox (0.5914pt too wide) in paragraph at lines 66--72
+Overfull \hbox (0.5914pt too wide) in paragraph at lines 96--102
 \T1/cmr/m/n/12 s¡ mod-uªowe, co umo»li-wia ªatwiejszy rozwój, kon-serwacj¦ i skalowal-
  []
 
 
-Overfull \hbox (9.2996pt too wide) in paragraph at lines 66--72
+Overfull \hbox (9.2996pt too wide) in paragraph at lines 96--102
 \T1/cmr/m/n/12 Solid-no±¢ - Mikrousªugi zwi¦k-szaj¡ ogóln¡ solid-no±¢ sys-temu, poniewa»
  []
 
 
-Overfull \hbox (12.37117pt too wide) in paragraph at lines 66--72
+Overfull \hbox (12.37117pt too wide) in paragraph at lines 96--102
 \T1/cmr/m/n/12 gramisty-czne mog¡ pra-cowa¢ nad ró»nymi mikrousªugami jed-nocze±nie,
  []
 
 
-Overfull \hbox (7.05223pt too wide) in paragraph at lines 66--72
+Overfull \hbox (7.05223pt too wide) in paragraph at lines 96--102
 \T1/cmr/m/n/12 tech-nologii, co pozwala na wyko-rzys-tanie na-jskuteczniejszych narz¦dzi
  []
 
 
 
 [7]
-Overfull \hbox (30.44872pt too wide) in paragraph at lines 77--82
+Overfull \hbox (30.44872pt too wide) in paragraph at lines 107--112
 \T1/cmr/m/n/12 tka wdro»e-nia - Caªa ap-likacja jest wdra»ana jako po-je-dyncza, niepodzielna
  []
 
 
-Overfull \hbox (3.0236pt too wide) in paragraph at lines 77--82
+Overfull \hbox (3.0236pt too wide) in paragraph at lines 107--112
 \T1/cmr/m/n/12 jed-nos-tka. Wszelkie uak-tu-al-nienia, ulep-szenia lub mody-fikacje wyma-
  []
 
 
-Overfull \hbox (1.24416pt too wide) in paragraph at lines 77--82
+Overfull \hbox (1.24416pt too wide) in paragraph at lines 107--112
 \T1/cmr/m/n/12 sek-wen-cyjny post¦p wykony-wa-nia od jed-nego kom-po-nentu do nast¦p-
  []
 
 
-Overfull \hbox (15.98904pt too wide) in paragraph at lines 84--85
-\T1/cmr/m/n/12 Nato-mi-ast takie pode-j±-cie do-daje skom-p-likowano±-cie pro-jek-tom poprzez
+Overfull \hbox (10.76808pt too wide) in paragraph at lines 115--116
+\T1/cmr/m/n/12 Nato-mi-ast takie pode-j±-cie do-daje skom-p-likowano±ci pro-jek-tom poprzez
  []
 
 
 
 [8]
-Overfull \hbox (3.1563pt too wide) in paragraph at lines 90--95
+Overfull \hbox (3.1563pt too wide) in paragraph at lines 121--126
 \T1/cmr/m/n/12 urowa-nia i zarz¡dza-nia ko-mu-nikacj¡ mi¦dzy usªugami. Šatwe wdro»e-
  []
 
 
-Overfull \hbox (3.39778pt too wide) in paragraph at lines 90--95
+Overfull \hbox (3.39778pt too wide) in paragraph at lines 121--126
 \T1/cmr/m/n/12 kom-po-nen-tów, testy jed-nos-tkowe i in-te-gra-cyjne mo»na przeprowadza¢
  []
 
 
-Overfull \hbox (4.27858pt too wide) in paragraph at lines 96--102
-[]\T1/cmr/m/n/12 Zalety ar-chitek-tury moikroser-wisowej: Skalowal-no±¢ - Mikrousªugi
- []
-
-
-Overfull \hbox (23.6574pt too wide) in paragraph at lines 96--102
+Overfull \hbox (23.6574pt too wide) in paragraph at lines 127--133
 \T1/cmr/m/n/12 Šatwe de-bu-gowanie - Lokali-zowanie i rozwi¡zy-wanie bª¦dów w poszczegól-
  []
 
@@ -663,144 +663,211 @@ Overfull \hbox (23.6574pt too wide) in paragraph at lines 96--102
 [9]
 
 [10]
-Overfull \hbox (4.05043pt too wide) in paragraph at lines 109--110
+Overfull \hbox (4.05043pt too wide) in paragraph at lines 140--141
 \T1/cmr/m/n/12 Celem niniejszej pracy mag-is-ter-skiej jest zgª¦-bi-e-nie tem-atu wspóªdzie-
  []
 
 
-Overfull \hbox (7.5085pt too wide) in paragraph at lines 119--120
+Overfull \hbox (7.5085pt too wide) in paragraph at lines 150--151
 \T1/cmr/m/n/12 temie mikroser-wisów mo»na za-pewni¢ in-te-gral-no±¢ danych w caªym
  []
 
 
 
 [11]
-Overfull \hbox (3.13667pt too wide) in paragraph at lines 123--124
+Overfull \hbox (3.13667pt too wide) in paragraph at lines 154--155
 \T1/cmr/m/n/12 le-nie kodu mo»e spowodowa¢ nad-mierne pow-i¡za-nia mi¦dzy mikroser-
  []
 
 
-Overfull \hbox (3.25414pt too wide) in paragraph at lines 123--124
+Overfull \hbox (3.25414pt too wide) in paragraph at lines 154--155
 \T1/cmr/m/n/12 zni-weczy¢ za-lety in-fras-truk-tury mikroser-wisowej. Równie» nad-mierne
  []
 
 
-Overfull \hbox (10.087pt too wide) in paragraph at lines 123--124
+Overfull \hbox (10.087pt too wide) in paragraph at lines 154--155
 \T1/cmr/m/n/12 wspóªdzie-le-nie kodu utrud-nia testowanie ap-likacji co mo»e spowodowa¢
  []
 
 
-Overfull \hbox (8.97752pt too wide) in paragraph at lines 123--124
+Overfull \hbox (8.97752pt too wide) in paragraph at lines 154--155
 \T1/cmr/m/n/12 kilku miejs-cach w sys-temie jed-nocze±nie spowodowane wspóªdzielonym
  []
 
 
 
 [12]
-Overfull \hbox (1.27472pt too wide) in paragraph at lines 129--130
+Overfull \hbox (1.27472pt too wide) in paragraph at lines 160--161
 \T1/cmr/m/n/12 Po przeprowadze-niu dogª¦b-nej anal-izy tem-atu i mi¦dzy in-nymi ¹ródeª
  []
 
 
-Overfull \hbox (2.80132pt too wide) in paragraph at lines 132--133
+Overfull \hbox (2.80132pt too wide) in paragraph at lines 163--164
 []\T1/cmr/m/n/12 Komunikacja - Metoda wspóªdzie-le-nia obiek-tów powinna uwzgl¦d-
  []
 
 
-Overfull \hbox (1.8633pt too wide) in paragraph at lines 134--135
+Overfull \hbox (1.8633pt too wide) in paragraph at lines 165--166
 \T1/cmr/m/n/12 do obiek-tów powinien by¢ kon-trolowany i zabez-piec-zony w sposób,
  []
 
 
-Overfull \hbox (38.55804pt too wide) in paragraph at lines 134--135
+Overfull \hbox (38.55804pt too wide) in paragraph at lines 165--166
 \T1/cmr/m/n/12 który za-po-b-iega nieau-to-ry-zowanemu dost¦powi. Mech-a-nizmy uwierzytel-
  []
 
 
-Overfull \hbox (35.89313pt too wide) in paragraph at lines 135--136
+Overfull \hbox (35.89313pt too wide) in paragraph at lines 166--167
 []\T1/cmr/m/n/12 Skalowalno±¢ - Metoda wspóªdzie-le-nia obiek-tów powinna by¢ skalowalna.
  []
 
 
-Overfull \hbox (4.60426pt too wide) in paragraph at lines 136--137
+Overfull \hbox (4.60426pt too wide) in paragraph at lines 167--168
 \T1/cmr/m/n/12 wer-s-jami obiek-tów, szczegól-nie w ±rodowisku mikroser-wisów, gdzie
  []
 
 
 
 [13]
-Overfull \hbox (1.08086pt too wide) in paragraph at lines 143--144
+Overfull \hbox (1.08086pt too wide) in paragraph at lines 174--175
 \T1/cmr/m/n/12 wspóªdzie-le-nia konkret-nych typów obiek-tów, zdefin-iowanych powy»ej
  []
 
 
-Overfull \hbox (11.00078pt too wide) in paragraph at lines 159--160
+Overfull \hbox (11.00078pt too wide) in paragraph at lines 190--191
 \T1/cmr/m/n/12 c-zony przez twór-ców po-trafi na pod-stawie udost¦p-nionych reguª wygen-
  []
 
 
 
 [14]
-Overfull \hbox (1.01349pt too wide) in paragraph at lines 163--164
+Overfull \hbox (1.01349pt too wide) in paragraph at lines 194--195
 \T1/cmr/m/n/12 Pozwala to za-oszcz¦dzi¢ na tes-tach man-u-al-nych oraz au-tomaty-cznych
  []
 
 
-Overfull \hbox (4.7461pt too wide) in paragraph at lines 163--164
+Overfull \hbox (4.7461pt too wide) in paragraph at lines 194--195
 \T1/cmr/m/n/12 to ^^U mamy mikroser-wis, który udost¦p-nia API. API przyj-muje obiekty
  []
 
 
 
 [15]
-Overfull \hbox (1.73341pt too wide) in paragraph at lines 165--166
+Overfull \hbox (1.73341pt too wide) in paragraph at lines 196--197
 \T1/cmr/m/n/12 nikacji mi¦dzy mikroser-wisami i dla wspóªdzie-le-nia kodu w sys-temach
  []
 
 
-Overfull \hbox (1.7661pt too wide) in paragraph at lines 165--166
+Overfull \hbox (1.7661pt too wide) in paragraph at lines 196--197
 \T1/cmr/m/n/12 mog¡ by¢ mikroser-wis do uwierzytel-ni-a-nia u»ytkown-ików, który mo»e
  []
 
 
-Overfull \hbox (13.03096pt too wide) in paragraph at lines 165--166
+Overfull \hbox (13.03096pt too wide) in paragraph at lines 196--197
 \T1/cmr/m/n/12 SDK. Równie» wspóªdzie-le-nie kodu za po-moc¡ REST API nie powoduje
  []
 
 
 
 [16]
-Overfull \hbox (29.397pt too wide) in paragraph at lines 173--174
+Overfull \hbox (29.397pt too wide) in paragraph at lines 204--205
 []\T1/cmr/m/n/12 Obiekty DTO (In-ter-face Def-i-ni-tion Lan-guages) mog¡ by¢ wspówdzilone
  []
 
 
 
 [17]
-Overfull \hbox (3.33252pt too wide) in paragraph at lines 175--176
+Overfull \hbox (3.33252pt too wide) in paragraph at lines 206--207
 \T1/cmr/m/n/12 za po-moc¡ bib-liotek ale jak za-prezen-towano w  [[]] mo»e to powodowa¢
  []
 
 
-Overfull \hbox (0.21611pt too wide) in paragraph at lines 177--178
+Overfull \hbox (0.21611pt too wide) in paragraph at lines 208--209
 \T1/cmr/m/n/12 któreyni wymini-aj¡ si¦ el-e-menity sys-temu. W przy-padku wspówdzie-
  []
 
 
-Overfull \hbox (9.63004pt too wide) in paragraph at lines 177--178
+Overfull \hbox (9.63004pt too wide) in paragraph at lines 208--209
 \T1/cmr/m/n/12 le-nia za po-moca bib-liotek, tracimy mo»li-wo±¢ poª¡cz-nia kilku mikroser-
  []
 
 
-Overfull \hbox (6.85657pt too wide) in paragraph at lines 179--180
+Overfull \hbox (6.85657pt too wide) in paragraph at lines 210--211
 \T1/cmr/m/n/12 ni»nie wyda-jno±-cie ze wzgl¦du na rozprosze-nie sza-sobów na komójniki-
  []
 
 
 
 [18]
-Overfull \hbox (0.13469pt too wide) in paragraph at lines 181--182
+Overfull \hbox (0.13469pt too wide) in paragraph at lines 212--213
 \T1/cmr/m/n/12 pode-js-cia do ob-sªygi bªedów w sys-temie co powoduje lep-sze lo-gowanie
+ []
+
+
+
+[19]
+Overfull \hbox (15.3073pt too wide) in paragraph at lines 232--233
+\T1/cmr/m/n/12 temie mikroser-wisów przes-taj¡ ko-mu-nikawa¢ poprawnie co powoduje
+ []
+
+
+Overfull \hbox (8.65053pt too wide) in paragraph at lines 232--233
+\T1/cmr/m/n/12 odpowiedni poziom kon-troli nad wer-s-jami i izo-lacji rozwój i wdra»a-
+ []
+
+
+Overfull \hbox (7.06921pt too wide) in paragraph at lines 232--233
+\T1/cmr/m/n/12 nia zmian w sys-temie mog¡ by¢ prob-lematy-czne. Mo»emy posªu»y¢
+ []
+
+
+
+[20]
+Overfull \hbox (5.94016pt too wide) in paragraph at lines 241--242
+\T1/cmr/m/n/12 Dlatego w przy-padku prob-lemów z sche-matem wynika-j¡-cym cz¦sto
+ []
+
+
+Overfull \hbox (3.12758pt too wide) in paragraph at lines 241--242
+\T1/cmr/m/n/12 z niepraw-idªowo wybranego pode-j±-cia do zarz¡dza-nia plikami IDL. 
+ []
+
+
+Overfull \hbox (6.26857pt too wide) in paragraph at lines 246--247
+\T1/cmr/m/n/12 Cz¦ste re-ol-baki usªug w trak-cie wdro»e« mog¡ spowodowa¢ spowol-
+ []
+
+
+
+[21]
+Overfull \hbox (9.51566pt too wide) in paragraph at lines 263--264
+[]\T1/cmr/m/n/12 "Versioning APIs and li-braries care-fully en-sures that changes
+ []
+
+
+
+[22]
+Overfull \hbox (1.04684pt too wide) in paragraph at lines 275--275
+ \T1/cmr/bx/n/12 4.3.3 Definicja kry-terium oceny pod k¡tem bez-piecze«stwa[] 
+ []
+
+
+
+[23]
+Overfull \hbox (8.65755pt too wide) in paragraph at lines 288--289
+[]\T1/cmr/m/n/12 Autentyczno±¢ - (Au-then-tic-ity) Gwarancja tego, »e au-to-ry-zowanym
+ []
+
+
+Overfull \hbox (21.76813pt too wide) in paragraph at lines 292--293
+\T1/cmr/m/n/12 wykry¢ pode-jrzane za-chowa-nia, naruszenia przepisów bez-piecze«stwa.
+ []
+
+
+
+[24]
+Overfull \hbox (6.10475pt too wide) in paragraph at lines 310--311
+[]\T1/cmr/m/n/12 W rozdziale 1 au-torzy defini-uj¡ po-j¦-cie skalowal-no±ci jako 4 gªówne
  []
 
 (./thesismanuscript.lof)
@@ -813,27 +880,27 @@ Overfull \hbox (0.13469pt too wide) in paragraph at lines 181--182
 
  (./thesismanuscript.bbl
 
-[19])
+[25])
 
-[20] (./thesismanuscript.aux)
+[26] (./thesismanuscript.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15714 strings out of 475128
- 318392 string characters out of 5765300
- 790477 words of memory out of 5000000
- 38415 multiletter control sequences out of 15000+600000
+ 15719 strings out of 475128
+ 318502 string characters out of 5765300
+ 790500 words of memory out of 5000000
+ 38420 multiletter control sequences out of 15000+600000
  568810 words of font info for 55 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,11n,101p,1879b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>
-Output written on thesismanuscript.pdf (20 pages, 147411 bytes).
+Output written on thesismanuscript.pdf (26 pages, 165102 bytes).
 PDF statistics:
- 386 PDF objects out of 1000 (max. 8388607)
- 78 compressed objects within 1 object stream
+ 418 PDF objects out of 1000 (max. 8388607)
+ 91 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  18 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -3,51 +3,44 @@ Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
 The top-level auxiliary file: thesismanuscript.aux
 The style file: plain.bst
 Database file #1: thesisbibliography.bib
-Warning--entry type for "sharma2023monolithic" isn't style-file defined
---line 21 of file thesisbibliography.bib
-Warning--entry type for "wiki:interface_description_language" isn't style-file defined
---line 93 of file thesisbibliography.bib
-Warning--entry type for "ibm_serverless" isn't style-file defined
---line 109 of file thesisbibliography.bib
-You've used 9 entries,
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            540 strings with 5093 characters,
-and the built_in function-call counts, 1934 in all, are:
-= -- 172
-> -- 63
+            557 strings with 5562 characters,
+and the built_in function-call counts, 3200 in all, are:
+= -- 278
+> -- 130
 < -- 0
-+ -- 27
-- -- 18
-* -- 71
-:= -- 340
-add.period$ -- 27
-call.type$ -- 9
-change.case$ -- 30
++ -- 54
+- -- 40
+* -- 138
+:= -- 568
+add.period$ -- 40
+call.type$ -- 14
+change.case$ -- 51
 chr.to.int$ -- 0
-cite$ -- 9
-duplicate$ -- 93
-empty$ -- 199
-format.name$ -- 18
-if$ -- 413
+cite$ -- 14
+duplicate$ -- 158
+empty$ -- 309
+format.name$ -- 40
+if$ -- 675
 int.to.chr$ -- 0
-int.to.str$ -- 9
-missing$ -- 12
-newline$ -- 48
-num.names$ -- 18
-pop$ -- 73
+int.to.str$ -- 14
+missing$ -- 24
+newline$ -- 71
+num.names$ -- 28
+pop$ -- 119
 preamble$ -- 1
-purify$ -- 27
+purify$ -- 48
 quote$ -- 0
-skip$ -- 58
+skip$ -- 87
 stack$ -- 0
-substring$ -- 45
-swap$ -- 9
+substring$ -- 70
+swap$ -- 14
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 24
+type$ -- 32
 warning$ -- 0
-while$ -- 18
-width$ -- 10
-write$ -- 93
-(There were 3 warnings)
+while$ -- 28
+width$ -- 16
+write$ -- 139

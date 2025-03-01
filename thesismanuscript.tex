@@ -1,28 +1,55 @@
-\documentclass[runningheads,12pt]{llncs} \usepackage{graphicx} \usepackage{todonotes} \usepackage{fancyhdr} \usepackage{lipsum} \usepackage[T1]{fontenc} \usepackage[provide=*,english,polish]{babel}
+\documentclass[runningheads,12pt]{llncs}
+\usepackage{graphicx}
+\usepackage{todonotes}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage[T1]{fontenc}
+\usepackage[provide=*,english,polish]{babel}
 
-\setcounter{tocdepth}{4} \setcounter{secnumdepth}{4} \renewcommand{\headrulewidth}{0pt}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+\renewcommand{\headrulewidth}{0pt}
 
 \begin{document}
 
 \title{Współdzielenie kodu w mikroserwisach} \subtitle{}
 
-\author{\ Artem Romanenko \ Student number: S32237 \inst{}} \authorrunning{ } \titlerunning{Your thesis title abbreviated.} \institute{ \ \textbf{Polish-Japanese Academy of Information Technology} \ Promotor pracy magisterskiej :\ Krzysztof Barteczko, PhD \ }
+\author{Artem Romanenko \ Student number: S32237 \inst{}}
+\authorrunning{ }
+\titlerunning{Your thesis title abbreviated.}
+\institute{\textbf{Polish-Japanese Academy of Information Technology} \ Promotor pracy magisterskiej: Krzysztof Barteczko, PhD}
 
 \thispagestyle{fancy}
 
-\begin{figure}[t!] \centering \includegraphics[width=\linewidth]{images/Logo_EN_1.png} \label{fig:my_label} \end{figure}
+\begin{figure}[t!]
+    \centering
+    \includegraphics[width=\linewidth]{images/Logo_EN_1.png}
+    \label{fig:my_label}
+\end{figure}
 
-\selectlanguage{english} \cfoot{ Warsaw, \today}
+\selectlanguage{english}
+\cfoot{ Warsaw, \today}
 
 \clearpage
 
-\makeatletter \renewcommand*\l@author[2]{} \renewcommand*\l@title[2]{} \makeatletter
+\makeatletter
+\renewcommand*\l@author[2]{}
+\renewcommand*\l@title[2]{}
+\makeatletter
 
-\selectlanguage{english} \begin{abstract} Rapid development and adoption of microservices architecture in last few years changed the world of Informtics. Microservices architecture has many advantages, such as flexibility, fast and comfortable deployment, and easy maintenance. However, this architecture also causes new challenges, such as code duplication and complicated code management. In my master's thesis, I've ceried on deep and detailed analysis of all available approaches to manage shared code in system of microservices. In my work, I want to compare all available approaches of code share code in system of microservices using literature sources and prepared code laboratory, also to define cases in which it is better to choose one or another approach. In my practical part, I want to present my own approach to sharing code that will combine the advantages of all existing solutions and provide the best performance and code comfort for developer in code management. At the end of my work, I will place comparison of my solution with existing solutions using prepared performance tests. \keywords{Microservices Architecture \and Code Sharing \and Performance.} \end{abstract}
+\selectlanguage{english}
+\begin{abstract}
+Rapid development and adoption of microservices architecture in last few years changed the world of Informatics. Microservices architecture has many advantages, such as flexibility, fast and comfortable deployment, and easy maintenance. However, this architecture also causes new challenges, such as code duplication and complicated code management. In my master's thesis, I've carried on deep and detailed analysis of all available approaches to manage shared code in system of microservices. In my work, I want to compare all available approaches of code share code in system of microservices using literature sources and prepared code laboratory, also to define cases in which it is better to choose one or another approach. In my practical part, I want to present my own approach to sharing code that will combine the advantages of all existing solutions and provide the best performance and code comfort for developer in code management. At the end of my work, I will place comparison of my solution with existing solutions using prepared performance tests.
+\keywords{Microservices Architecture \and Code Sharing \and Performance.}
+\end{abstract}
 
 \newpage
 
-\selectlanguage{polish} \begin{abstract} Szybki rozwój i porwszechne przyjęcie architektóry mikroserwisowej w ostatnich latach zminił świat informatyki. Architerkura mikroserwisowa ma wile zalet, takich jak elastyczność, latłe wdrożenia i prostota w utrzymaniu. Natomast powoduje nowe wyzwanie, takie jak, na przykład, problem duplikacji kodu i zarządzanie kodem. W mojej pracy magisterskiej przeprowadziłem dokładną analizę metod i podejść wspówdzielenia kodu w systemach mikroserwisów. W mojej prace chcę porównać za pomocą żródeł literaturowych oraz preprowadonych badań dostępne metody wspówdzielenia kodu, zdofiniować przypadki w których warto wybrać takie lub inne podejście. Oraz w czesci praktycznej chcę zaproponować łasne wonoczesne podejście do wsówdzielenia kodu które połączy zalety istniejących rozwiązań i zapełni wydajność najbardziej oraz komfort w zarządzaniu kodem. Na końcu pracy znjaduje się poruwnanie mojego zowiązania z istniejącymi za pomocą przygotowanych testów wydajnośowych. \keywords{Architektura mikrousług \and Współdzielenie kodu \and Wydajność.} \end{abstract}
+\selectlanguage{polish}
+\begin{abstract}
+Szybki rozwój i powszechne przyjęcie architektury mikroserwisowej w ostatnich latach zmienił świat informatyki. Architektura mikroserwisowa ma wiele zalet, takich jak elastyczność, łatwe wdrożenia i prostota w utrzymaniu. Natomiast powoduje nowe wyzwania, takie jak, na przykład, problem duplikacji kodu i zarządzanie kodem. W mojej pracy magisterskiej przeprowadziłem dokładną analizę metod i podejść współdzielenia kodu w systemach mikroserwisów. W mojej pracy chcę porównać za pomocą źródeł literaturowych oraz przeprowadzonych badań dostępne metody współdzielenia kodu, zdefiniować przypadki w których warto wybrać takie lub inne podejście. Oraz w części praktycznej chcę zaproponować własne nowoczesne podejście do współdzielenia kodu które połączy zalety istniejących rozwiązań i zapewni wydajność oraz komfort w zarządzaniu kodem. Na końcu pracy znajduje się porównanie mojego rozwiązania z istniejącymi za pomocą przygotowanych testów wydajnościowych.
+\keywords{Architektura mikrousług \and Współdzielenie kodu \and Wydajność.}
+\end{abstract}
 
 \newpage
 
@@ -30,40 +57,43 @@
 
 \newpage
 
-\section{Wstęp} 
+\section{Wstęp}
 
-\subsection{Zakres pracy} W pracy magisterskiej przeprowadzono dokładną analizę metod i podejść do współdzielenia kodu w systemach mikroserwisów, zakres tej pracy zawiera porównanie między architekturą monolitową a mikroserwisową, identyfikację typów obiektów wykorzystywanych w kodzie wwspółczesnych aplikacji, analizę dostępnych metod i podejść do wspówdzielenia kodu IDL, SDK oraz biblioteki, praktyczna implementacja aplikacji wspierającej nowatorskie podejście do wpówdzielenia kodu ServerLess.
+\subsection{Zakres pracy}
+W pracy magisterskiej przeprowadzono dokładną analizę metod i podejść do współdzielenia kodu w systemach mikroserwisów, zakres tej pracy zawiera porównanie między architekturą monolitową a mikroserwisową, identyfikację typów obiektów wykorzystywanych w kodzie współczesnych aplikacji, analizę dostępnych metod i podejść do współdzielenia kodu IDL, SDK oraz biblioteki, praktyczna implementacja aplikacji wspierającej nowatorskie podejście do współdzielenia kodu ServerLess.
 
-\subsection{Motywacja} Główną motywacją do napisania pracy było rosnacę w współczesnych czasach zainteresowanie mikroserwisowym podejściem do architektury, które ma wiele zalet, takich jak elastyczność, łatwość wdrożenia i utrzymania na produkcji, możliwość łatwej i szybkiej naprawy problemów na produkcji ale natomiast ma róenież powoduje nowe wyzwania, takie jak problem duplikacji kodu i zapotrzebowanie na współdzielenie kodu między mikroserwisami w systemie.
+\subsection{Motywacja}
+Główną motywacją do napisania pracy było rosnące w współczesnych czasach zainteresowanie mikroserwisowym podejściem do architektury, które ma wiele zalet, takich jak elastyczność, łatwość wdrożenia i utrzymania na produkcji, możliwość łatwej i szybkiej naprawy problemów na produkcji ale natomiast ma również powoduje nowe wyzwania, takie jak problem duplikacji kodu i zapotrzebowanie na współdzielenie kodu między mikroserwisami w systemie.
 
-W mojej pracy chcę przeanalizować jakie metody współdzielenia kodu są dostępne na rynku, jakie są ich zalety i wady, jakie są najlepsze praktyki w spówdzieleniu kodu w systemach mikroserwisów. Porównać bardziej traqdycyjne podejścia do wspówdzielenia kodu, takie jak IDL, SDK, biblioteki z nowatorskim podejściem do wspówdzielenia kodu takich jak ServerLess, chcę stożyć oprogramanie które połączy główne zalety pradycyjnych modod wsówdzieniena kodu z zaletami bardziej nowczesnych podejść.
+W mojej pracy chcę przeanalizować jakie metody współdzielenia kodu są dostępne na rynku, jakie są ich zalety i wady, jakie są najlepsze praktyki w współdzieleniu kodu w systemach mikroserwisów. Porównać bardziej tradycyjne podejścia do współdzielenia kodu, takie jak IDL, SDK, biblioteki z nowatorskim podejściem do współdzielenia kodu takich jak ServerLess, chcę stworzyć oprogramowanie które połączy główne zalety tradycyjnych metod współdzielenia kodu z zaletami bardziej nowoczesnych podejść.
 
 \newpage
 
-\subsection{Zawartość pracy} Wpaca jesu ustrukturyzowana w kilka rozdziałów, które wprowadzają czytelnika najpierw czszegóły teoretyaczne a póżniej w praktyczne aspekty wspówdzielenia kodu w systemach mikroserwisów. Króki opis rozdziałów znajduje się poniżej: 
-\begin{enumerate} 
-    \item Wstęp - W tym rozdziale analizuję wady i zalety achitertrury mikroserwisowej, monolitwej, porównuję dlaczego z architektury monolitowej powstawa architektura mikroserwisowa, analizuje przybaki w których lepiej uzyc arcitektóry monolotowej a w któray architakturę mikroserwisową. Opisuję dlaczego powstało zapotrzebowanie na współdzielenie kodu. Wyjaśniam logikę leżącą u podstaw eksploracji wielu metod współdzielenia kodu. Uzasadnim informację przykladami z literatury. 
-    \item Architektura mikroserwisowa a Monolitowa - W tym rozdziale porównuję architekturę mikroserwisową z monolitową, przedstawiam różnie w utrumaniu i skalowalności, za pomozą żródeł literaturowych prozentuję. 
-    \item Analiza dziedziny problemowej - W tym rozdziale pracy kategoryzuję typy obiektów któte mogą potrzebować wspołdzielenia kodu w systemie mikroserwisów, analizuję możliwe wyswania zwiazane z współdzieleniem poszczególnych typów obiektów, przedstawiam uzasadnienia z literatury. 
-    \item Analiza metod współdzielenia kodu - W tym rozdziale kompleksowa analizę istniejących metod współdzielenia kodu w systemach mikroserwisów za pomocą źródeł literaturowych krytrrium oceniaia. 
-    \item Opis części praktycznej - Zawira opis przygtowanej w ramach pracy aplikacji która wpomaga nowoczesne rozwiąznie do współdzielenia kodu w systemach mikroserwisów - Server Less rozszeżając możliwosci tego rozwiązania. 
+\subsection{Zawartość pracy}
+Praca jest ustrukturyzowana w kilka rozdziałów, które wprowadzają czytelnika najpierw w szczegóły teoretyczne a później w praktyczne aspekty współdzielenia kodu w systemach mikroserwisów. Krótki opis rozdziałów znajduje się poniżej:
+\begin{enumerate}
+    \item Wstęp - W tym rozdziale analizuję wady i zalety architektury mikroserwisowej, monolitycznej, porównuję dlaczego z architektury monolitycznej powstała architektura mikroserwisowa, analizuję przypadki w których lepiej użyć architektury monolitycznej a w której architekturę mikroserwisową. Opisuję dlaczego powstało zapotrzebowanie na współdzielenie kodu. Wyjaśniam logikę leżącą u podstaw eksploracji wielu metod współdzielenia kodu. Uzasadniam informację przykładami z literatury.
+    \item Architektura mikroserwisowa a Monolitowa - W tym rozdziale porównuję architekturę mikroserwisową z monolityczną, przedstawiam różnice w utrzymaniu i skalowalności, za pomocą źródeł literaturowych prezentuję.
+    \item Analiza dziedziny problemowej - W tym rozdziale pracy kategoryzuję typy obiektów które mogą potrzebować współdzielenia kodu w systemie mikroserwisów, analizuję możliwe wyzwania związane z współdzieleniem poszczególnych typów obiektów, przedstawiam uzasadnienia z literatury.
+    \item Analiza metod współdzielenia kodu - W tym rozdziale kompleksowa analiza istniejących metod współdzielenia kodu w systemach mikroserwisów za pomocą źródeł literaturowych kryterium ocenia.
+    \item Opis części praktycznej - Zawiera opis przygotowanej w ramach pracy aplikacji która wspomaga nowoczesne rozwiązanie do współdzielenia kodu w systemach mikroserwisów - Server Less rozszerzając możliwości tego rozwiązania.
 \end{enumerate}
 
 \newpage
 
-\section{Architektura mikro serwisowa a monolitowa} 
+\section{Architektura mikroserwisowa a monolitowa}
 
-Rozwój architektury mikro serwisowej w ostatnich latach przyniósł wiele korzyści, takich jak łatwość skalowania, niezależność wdrożenia i elastyczność. Jednak, wraz z tą elastycznością, pojawiają się również nowe wyzwania, związane między innymi z odpowiednim współdzieleniem obiektów pomiędzy mikro serwisami. 
+Rozwój architektury mikroserwisowej w ostatnich latach przyniósł wiele korzyści, takich jak łatwość skalowania, niezależność wdrożenia i elastyczność. Jednak, wraz z tą elastycznością, pojawiają się również nowe wyzwania, związane między innymi z odpowiednim współdzieleniem obiektów pomiędzy mikroserwisami.
 
 \subsection{Architektura mikroserwisowa}
 
-Podział aplikacji na mniejsze, niezależne serwisy umożliwia elastyczne skalowanie poszczególnych komponentów, co przekłada się na lepszą wydajność i dostępność systemu. Ponadto, rozbudowa i utrzymanie aplikacji w oparciu o mikro serwisy jest znacznie prostsza, ponieważ każdy serwis może być rozwijany niezależnie. Taka modularna struktura pozwala na szybsze wprowadzanie nowych funkcjonalności oraz łatwiejsze naprawianie błędów. Istotną korzyścią jest również możliwość korzystania z różnych technologii w poszczególnych serwisach, co daje większą elastyczność i umożliwia wykorzystanie najlepszych narzędzi dla każdej części aplikacji. W rezultacie, architektura mikro serwisowa umożliwia bardziej efektywne zarządzanie projektem, lepszą skalowalność zespołu oraz izolację błędów, co przyczynia się do wyższej jakości i niezawodności systemu.
+Podział aplikacji na mniejsze, niezależne serwisy umożliwia elastyczne skalowanie poszczególnych komponentów, co przekłada się na lepszą wydajność i dostępność systemu. Ponadto, rozbudowa i utrzymanie aplikacji w oparciu o mikroserwisy jest znacznie prostsza, ponieważ każdy serwis może być rozwijany niezależnie. Taka modularna struktura pozwala na szybsze wprowadzanie nowych funkcjonalności oraz łatwiejsze naprawianie błędów. Istotną korzyścią jest również możliwość korzystania z różnych technologii w poszczególnych serwisach, co daje większą elastyczność i umożliwia wykorzystanie najlepszych narzędzi dla każdej części aplikacji. W rezultacie, architektura mikroserwisowa umożliwia bardziej efektywne zarządzanie projektem, lepszą skalowalność zespołu oraz izolację błędów, co przyczynia się do wyższej jakości i niezawodności systemu.
 
 \begin{quote}
     "Microservices are small, autonomous services that work together. Let’s break that definition down a bit and consider the characteristics that make microservices different."~\cite[p. 2]{newman2015building}
 \end{quote}
 
-Charakterystyka architektury mikrousług: 
+Charakterystyka architektury mikrousług:
 Modułowość - Usługi są modułowe, co umożliwia łatwiejszy rozwój, konserwację i skalowalność, ponieważ każda usługa kontroluje określoną funkcję lub cechę.
 Solidność - Mikrousługi zwiększają ogólną solidność systemu, ponieważ błędy w jednej usłudze nie wpływają na całą aplikację, zapewniając tolerancję błędów i niezawodność systemu.
 Interoperacyjność - Różne mikrousługi komunikują się za pośrednictwem dobrze zdefiniowanych interfejsów API, zapewniając bezproblemową integrację i interakcję usług.
@@ -74,37 +104,38 @@ Elastyczność w zakresie elastycznych technologii - Różne mikrousługi można
 
 Architektura monolityczna, która opiera się na jednym spójnym kodzie źródłowym, oferuje pewne korzyści w kontekście prostoty zarządzania i łatwości wdrożenia. Wszystkie komponenty aplikacji są ze sobą ściśle powiązane, co ułatwia debugowanie i śledzenie błędów. Ponadto, brak konieczności konfigurowania i zarządzania infrastrukturą dla wielu usług upraszcza proces wdrażania. W przypadku mniejszych projektów o prostszych wymaganiach, architektura monolityczna może być bardziej efektywna i wydajna, eliminując niepotrzebną złożoność komunikacji między usługami. Jednak warto pamiętać, że architektura monolityczna może napotkać trudności w skalowaniu i utrzymaniu w przypadku większych, bardziej złożonych systemów.
 
-Charakterystyka architektury monolitycznej: 
+Charakterystyka architektury monolitycznej:
 Pojedyncza jednostka wdrożenia - Cała aplikacja jest wdrażana jako pojedyncza, niepodzielna jednostka. Wszelkie uaktualnienia, ulepszenia lub modyfikacje wymagają wdrożenia całej aplikacji, w tym wszystkich jej komponentów.
 Scentralizowany przepływ kontroli - Centralny moduł lub funkcja podstawowa nadzoruje przepływ kontroli w aplikacji, koordynując sekwencyjny postęp wykonywania od jednego komponentu do następnego.
 Ścisłe sprzężenie - Komponenty i moduły w aplikacji są silnie powiązane i zależne od siebie.
 Współdzielona pamięć - Wszystkie komponenty oprogramowania mają bezpośredni dostęp do zasobów pamięci, co sprzyja ścisłej integracji. Jednak taka konfiguracja może również powodować konflikty zasobów i trudności ze skalowaniem aplikacji.~\cite{sharma2023monolithic}
+
 \subsection{Porównanie}
 
-W spówczesnym świecie programowania, zawsze wybieramy między podejściem monolitycznym i mikroserwisowym, to wiąże się z kompromisem między prostotą, głuwną cechą podejścia monolotycznego a elastycznością w przypadku podejścia mirkoserwisowego. Podejście monolitowe, które polega na przechowywaniu wszyskich komponentów suytemu w jednym miejscu, oferuje łatwośc w rozroju i zarządzaniu kodem ale natomiast może stać wąskim gardłem kiedy aplikacja urośnie. W przeciwienstwie do architektury monolitowej, architektura mikroserwisowa dekomponuje aplikacje w małe, niezaleźnie zarządzane i drażane mikrousługi, umożliwiające granularną skalowalność i niezależne aktualizacje, zmniejszając w ten sposób ryzyko tego, że zmiana w jednym module spowoduje awarię innych. Natomiast takie podejście dodaje skomplikowanoście projektom poprzez zapotrzebowanie na obługę komunikacji międze mikroserwisami, versjonowaniem, wspówdzielem kodu. 
+W współczesnym świecie programowania, zawsze wybieramy między podejściem monolitycznym i mikroserwisowym, to wiąże się z kompromisem między prostotą, główną cechą podejścia monolitycznego a elastycznością w przypadku podejścia mikroserwisowego. Podejście monolitowe, które polega na przechowywaniu wszystkich komponentów systemu w jednym miejscu, oferuje łatwość w rozwoju i zarządzaniu kodem ale natomiast może stać wąskim gardłem kiedy aplikacja urośnie. W przeciwieństwie do architektury monolitowej, architektura mikroserwisowa dekomponuje aplikacje w małe, niezależnie zarządzane i wdrażane mikrousługi, umożliwiające granularną skalowalność i niezależne aktualizacje, zmniejszając w ten sposób ryzyko tego, że zmiana w jednym module spowoduje awarię innych. Natomiast takie podejście dodaje skomplikowaności projektom poprzez zapotrzebowanie na obsługę komunikacji między mikroserwisami, wersjonowaniem, współdzieleniem kodu.
 
 \begin{quote}
     "I should call out that microservices are no free lunch or silver bullet, and make for a bad choice as a golden hammer. They have all the associated complexities of distributed systems."~\cite[p. 11]{newman2015building}
 \end{quote}
 
-Zalety architektury monolitowej: 
-Czas napisaznie aplikacji - W przypadku małych i średnich aplikacji budowanie aplikacji z architekturą monolityczną jest łatwiejsze i szybsze. Zespół programistów może pracować efektywniej z ujednoliconą bazą kodu bez konfigurowania i zarządzania komunikacją między usługami.
+Zalety architektury monolitycznej:
+Czas napisania aplikacji - W przypadku małych i średnich aplikacji budowanie aplikacji z architekturą monolityczną jest łatwiejsze i szybsze. Zespół programistów może pracować efektywniej z ujednoliconą bazą kodu bez konfigurowania i zarządzania komunikacją między usługami.
 Łatwe wdrożenie - Wdrożenie architektury monolitycznej obejmuje wdrożenie pojedynczej jednostki, co jest mniej złożone i wymaga mniejszej liczby katalogów konfiguracyjnych niż systemy rozproszone.
-Uproszczone testowanie i debugowani - O wiele watwiejszym jest testowanie aplikacji monolitycznej. Ze względu na ścisłą integrację wszystkich komponentów, testy jednostkowe i integracyjne można przeprowadzać w ramach pojedynczej bazy kodu, co upraszcza proces testowania.
+Uproszczone testowanie i debugowanie - O wiele łatwiejszym jest testowanie aplikacji monolitycznej. Ze względu na ścisłą integrację wszystkich komponentów, testy jednostkowe i integracyjne można przeprowadzać w ramach pojedynczej bazy kodu, co upraszcza proces testowania.
 Skalowalność - Architektura monolityczna, w przypadku małych i średnich aplikacji, zapewnia odpowiednią skalowalność poprzez replikację całej aplikacji.~\cite{sharma2023monolithic}
 
-Zalety architektury moikroserwisowej:
+Zalety architektury mikroserwisowej:
 Skalowalność - Mikrousługi umożliwiają niezależne skalowanie różnych usług w oparciu o ich zapotrzebowanie, optymalizując wykorzystanie zasobów i zapewniając wydajną wydajność nawet podczas szczytów ruchu.
 Utrzymanie kodu - Mikrousługi umożliwiają równoległy rozwój przez różne zespoły, co prowadzi do szybszego rozwoju funkcji i szybszego wdrażania.
 Elastyczność w trakcie wyboru technologii - Każda mikrousługa może być rozwijana przy użyciu najbardziej odpowiedniego stosu technologicznego dla jej konkretnej funkcji, co promuje elastyczność i adaptowalność do różnych technologii w ramach tej samej aplikacji.
 Łatwe debugowanie - Lokalizowanie i rozwiązywanie błędów w poszczególnych usługach jest proste.
 Bezpieczeństwo - Mikrousługi ułatwiają separację danych. Każda usługa ma swoją bazę danych, co utrudnia hakerom próbę naruszenia aplikacji.~\cite{sharma2023monolithic}
 
-Wybór między architerkturą monolotową a mikroserwisową zależy od wilu faktorów, takich jak zormiar projektu, zapotrzebowa nie na ciągły rozwój, wymagania dotycącze skalowalnosci oraz kompetencje i doświadczenia zespołu. Architektura monolitowa lepiej pasuje dla małych i mniej skomplikowanych projektów natomiast mikroserwisowa oferuje benefity p rzypadku wykorzystania w większych, bardziej skomplikowanych systemach.
+Wybór między architekturą monolityczną a mikroserwisową zależy od wielu faktorów, takich jak rozmiar projektu, zapotrzebowanie na ciągły rozwój, wymagania dotyczące skalowalności oraz kompetencje i doświadczenia zespołu. Architektura monolityczna lepiej pasuje dla małych i mniej skomplikowanych projektów natomiast mikroserwisowa oferuje benefity w przypadku wykorzystania w większych, bardziej skomplikowanych systemach.
 
 \newpage
 
-\section{Analiza dziedziny problemowej} 
+\section{Analiza dziedziny problemowej}
 
 Celem niniejszej pracy magisterskiej jest zgłębienie tematu współdzielenia obiektów w systemach mikroserwisów oraz zrozumienie wyzwań i możliwości związanych z tym zagadnieniem. Praca ma na celu analizę różnych strategii, narzędzi i metodyk, które mogą pomóc w efektywnym i bezpiecznym współdzieleniu danych i obiektów w skali mikroserwisowej architektury.
 
@@ -112,7 +143,7 @@ Celem niniejszej pracy magisterskiej jest zgłębienie tematu współdzielenia o
 
 Postanowiłem rozpocząć analizę dziedziny problemowej od tego że za pomocą źródeł literaturowych zidentyfikuję typy obiektów oraz dokonać analizy tego, które z nich mogą wymagać współdzielenia w systemach mikroserwisów.
 
-\begin{enumerate} 
+\begin{enumerate}
     \item DTO (Data Transfer Object) - Takie obiekty są specjalnie przeznaczone do obsługi przesyłania danych między elementami systemu mikroserwisów, są lekkie i nie zawierają logiki biznesowej, dlatego współdzielenie takich obiektów jest jak najbardziej zalecane ponieważ zapewniają spójność danych po obu stronach komunikacji oraz zmniejsza ilość błędów w przypadku rozwoju lub utrzymania aplikacji.
     \item Model (lub Encja) - Najczęściej są logicznie powiązane z tabelami w bazie danych, ze względu na to że we współczesnych czasach za dobrą praktykę jest uważane podejście w którym jeden mikroserwis jest powiązany z maksymalnie jedną bazą danych, współdzielenie tego typu obiektów nie jest zalecane.
     \item Wyjątek (Exception) - Zalecanym jest współdzielenie informacji o wyjątkach w systemie mikroserwisów tym samym tworząc jednolitą obsługę błędów w systemie. Logika związana z obsługą błędów, w przypadku podobności w kilku serwisach też jest dobrym kandydatem do współdzielenia. Taka standaryzacja w systemie mikroserwisów sprawia że łatwiej później znaleźć źródło błędu i naprawić go.
@@ -128,7 +159,7 @@ Zawsze należy pamiętać w trakcie developmentu aplikacji, że współdzielenie
 
 Po przeprowadzeniu dogłębnej analizy tematu i między innymi źródeł literaturowych, takich jak ~\cite{newman2015building}, ~\cite{richardson2018microservices}, ~\cite{nygard2008release}, ~\cite{kleppmann2017designing} mogę zdefiniować kryteria porównania metod współdzielenia kodu w systemach mikroserwisów jako następujące:
 
-\begin{enumerate} 
+\begin{enumerate}
     \item Komunikacja - Metoda współdzielenia obiektów powinna uwzględniać efektywną komunikację między serwisami. Ważne jest, aby obiekty były dostępne w sposób, który minimalizuje opóźnienia i obciążenie sieci. Dobre rozwiązania mogą obejmować użycie asynchronicznej komunikacji, takiej jak kolejki wiadomości, czy też bezpośrednie zapytania między serwisami.
     \item Izolacja - Metoda współdzielenia obiektów powinna zapewniać odpowiednią izolację między serwisami. Każdy serwis powinien mieć kontrolę nad swoimi własnymi obiektami i nie powinien być zależny od innych serwisów. To pozwala na większą elastyczność i umożliwia niezależny rozwój i skalowanie serwisów.
     \item Bezpieczeństwo - W przypadku współdzielenia obiektów, istotne jest zapewnienie odpowiedniego poziomu bezpieczeństwa. Dostęp do obiektów powinien być kontrolowany i zabezpieczony w sposób, który zapobiega nieautoryzowanemu dostępowi. Mechanizmy uwierzytelniania i autoryzacji powinny być odpowiednio wdrożone, aby zapewnić bezpieczne współdzielenie obiektów.
@@ -142,14 +173,14 @@ Po przeprowadzeniu dogłębnej analizy tematu i między innymi źródeł literat
 
 We współczesnych czasach współdzielenie kodu jest niezbędne w skomplikowanych systemach mikroserwisów, w tym rozdziale pracy porównuję istniejące podejścia do współdzielenia kodu oraz porównam je za pomocą zdefiniowanych w poprzednim rozdziale kryteriów. Głównym celem jest zdefiniowanie najlepszych praktyk współdzielenia kodu, zdefiniować, które podejście najbardziej dopasowane do współdzielenia konkretnych typów obiektów, zdefiniowanych powyżej w tej pracy oraz porównanie wydajności i możliwości skalowania w przypadku każdego z podejść za pomocą przygotowanych programistycznych testów wydajnościowych.
 
-\subsection{Metody współdzielenia kodu z opisem} 
+\subsection{Metody współdzielenia kodu z opisem}
 
-Za pomocą źródeł literatury oraz własnego doświadczenia zdefiniowałem dostępne na dzień dzisiejszy podejścia: 
+Za pomocą źródeł literatury oraz własnego doświadczenia zdefiniowałem dostępne na dzień dzisiejszy podejścia:
 
-\begin{enumerate} 
+\begin{enumerate}
     \item Interface definition languages - do IDL należą wiele popularnych technologii, Protocol buffers, Avro IDL, Open API. ~\cite{wiki:interface_description_language}
-    \item Libraries - najbardziej oczywiste podejście, które daje możliwość współdzielenia wszystkich rodzajów obiektów w aplikacji. 
-    \item Client Libraries - 
+    \item Libraries - najbardziej oczywiste podejście, które daje możliwość współdzielenia wszystkich rodzajów obiektów w aplikacji.
+    \item Client Libraries -
     \item Wyniesienie kodu do osobnego REST serwisu - podejście polega na przechwytywaniu i udostępnieniu wspólnej logiki poprzez utworzenie osobnego mikroserwisu.
     \item Serverless - nowoczesne podejście do pisania kodu i przetwarzania informacji wykorzystywane w chmurach obliczeniowych. Pozwala na uruchamianie kawałków kodu, metod i funkcji niezależnie, bez warstwy zarządzania aplikacją, a także na uruchamianie kodu bez konieczności zarządzania podstawową infrastrukturą. ~\cite{ibm_serverless}
 \end{enumerate}
@@ -176,9 +207,9 @@ Obiekty Model, wspówdzielenie takich obiektów zgodnie z wciesniejszą analizą
 
 Walidatory, jako obiekty zawirające w ograniczonej skali logię programu mogą byśwspówdzielone za pomocą biliotek, REST API oraz techmnologii Serverless. Współdzielenie walidatorów jest dobrą praktyką i jest zaleacane, poniważ pozwala na utrzymanie spójnych regół walidacji w systemi mikroserwisów co poprawia jakośc dancyh któreyni wyminiają się elemenity systemu. W przypadku wspówdzielenia za pomoca bibliotek, tracimy możliwość połącznia kilku mikroserwisów napisanyh w róznuch językach programowania w jeden system mikroserwósów co, natomiasr, możemy zrobic w rzybadku wspwodzielmnia za pomocą REST oraz serverless. Serverless jest najlepszą opją wspówdzielenia walidatorów, ze względu na to, że walidatory zawiraja zwykle niewilką ilość logiki która mieści się w jednej funkci ktrę idelnie nadają się do hostowania za pomoca serverless, równiż w tym przypadku nie tracimy mzliwości połacznia kilku mikroserwisów napisanych w różnych językach programowania w jeden system mikroserwisów.
 
-Serwisy, werwisą są gluwnym miejscem miejscem przechowywnia, serwisy mogą być wspówdzielone za pomoca bibliotek, SDK, REST oraz serverless. W przypadku wyboru podejścia do wspódzielenia mikroserwisów należy dokonać analizy i zastanowić się. Biblioteki kodu są najbardziej uniwezralnym podejściem w przypadu serwisów, pasują do wykorzystania w przypaktu współdzielenia małych metod zawirających mała oliśc kodu ja i tych większych. Podejście REST teżdobrze pasuje do wszystkich zormirów wszpówdzielonej logiki, ale natomiast w wysoko obciążonych systemach może powodować obniżnie wydajnoście ze względu na rozproszenie szasobów na komójnikiację sieciową. podejście serverless dorze się sprawdze w przypadku wspówdzieleinia mniejszych motod, zarząsdnie skomplikowana logiką za pomocą serwerles może skomplikowanym, jak w przypadku REST w wysoko obciążonych systemach podejsie raczej trzeba zminić na biliotekę lub sdk. 
+Serwisy, werwisą są gluwnym miejscem miejscem przechowywnia, serwisy mogą być wspówdzielone za pomoca bibliotek, SDK, REST oraz serverless. W przypadku wyboru podejścia do wspódzielenia mikroserwisów należy dokonać analizy i zastanowić się. Biblioteki kodu są najbardziej uniwezralnym podejściem w przypatu serwisów, pasują do wykorzystania w przypaktu współdzielenia małych metod zawirających mała oliśc kodu ja i tych większych. Podejście REST teżdobrze pasuje do wszystkich zormirów wszpówdzielonej logiki, ale natomiast w wysoko obciążonych systemach może powodować obniżnie wydajnoście ze względu na rozproszenie szasobów na komójnikiację sieciową. podejście serverless dorze się sprawdze w przypadku wspówdzieleinia mniejszych motod, zarząsdnie skomplikowaną logiką za pomocą serwerles może skomplikowanym, jak w przypadku REST w wysoko obciążonych systemach podejsie raczej trzeba zminić na biliotekę lub sdk.
 
-Wyjątki, do wspówdzielenia wyjątków możemy zastosować SDK oraz IDL w przypadku dyjątków nie zawirającyl logiki związaną z obsługą błędów. Stosowanie wspówdzielenia za pomocą SDK w systemie mikroserwisów wspomoaga stwożenie ustandaryzowanego podejscia do obsłygi błedów w systemie co powoduje lepsze logowanie i raportowanie błędów oraz szybsze ich naprawienie i zniejszenie ilosci porlpemów na przestrzeni czsu.  
+Wyjątki, do wspówdzielenia wyjątków możemy zastosować SDK oraz IDL w przypadku dyjątków nie zawirającyl logiki związaną z obsługą błędów. Stosowanie wspówdzielenia za pomocą SDK w systemie mikroserwisów wspomoaga stwożenie ustandaryzowanego podejscia do obsłygi błedów w systemie co powoduje lepsze logowanie i raportowanie błędów oraz szybsze ich naprawienie i zniejszenie ilosci porlpemów na przestrzeni czsu.
 
 \subsection{Ocena i porówananie metod współdzielenia kodu}
 
@@ -188,18 +219,119 @@ Na podstawie źródeł literaturowych, własnego doświadczenia oraz przygotowan
 
 Przedstawiam kryteria które wybrałem w rezultacie analizy źródeł internetowych oraz książek takich jak ~\cite{kleppmann2017designing} w których w znalezłem opis tego jak musi wyglądać architektura mikro serwisowa, wady i zalety różnych rozwiązań.
 
+\begin{enumerate}
+    \item Conflict Rate - wskażniek tego, jak często zminy w plikach IDL powoduje merge konflikty. Wyzwania dotyczące pracy z IDL i podejsia do ich pokonania są dobrze opisane w książce ~\cite{kleppmann2017designing}. W szczegówach są opisane metody pracy z schematami idl miedzy innumi narzędziem Protocal Byffer dostrzanego trzez Alphabet oraz Avro. Możeny posłużyć się cytetem z zosdziłu 4 żeby zaprezentować że muszę uwzględniać ten aspekt w analizie.
+    \begin{quote}
+        "This means that old and new versions of the code, and old and new data formats, may potentially all coexist in the system at the same time. In order for the system to continue running smoothly, we need to maintain compatibility in both directions: Backward compatibility and Forward compatibility." ~\cite[p. 112]{kleppmann2017designing}
+    \end{quote}
+    Również w tym rozdziale autor prezentuje dlaczego takie problemy powstają , możemy posłużyć się cytetem.
+    \begin{quote}
+        "When a data format or schema changes, a corresponding change to application code often needs to happen (for example, you add a new field to a record, and the application code starts reading and writing that field). However, in a large application, code changes often cannot happen instantaneously: old and new versions of the code, and old and new data formats, may potentially all coexist in the system at the same time." ~\cite[p. 111]{kleppmann2017designing}
+    \end{quote}
+    Nusimy uważać na tojaką ilość konflików generuje styosowanie wybranego podejścia. Podobne konflikty często są czasożerne i nawet w trzypadku nietrudnych przypadku potrafią spowolnic zespół deweloperski oraz zpowodować spowodowac inne, baardziej skomplikowane błędy.
+    \item Version Drift Occurrence - wskażnik tego, jak często rozwizanie powoduje użycie niezgodnych wersji IDL w różnych zespołach. Kiedy zespoły programistów pracujące nad jednym systemem zaczynają używać niezgodną wersje plików IDL mikroserwisy w systemie mikroserwisów przestają komunikawać poprawnie co powoduje błędy w runtime które są bardzo trudne do wyłapania i naprawy, nieoczekiwanego zachowania systemu oraz uszkodzenia danych. W przypadku wykorzystania podejścia które nie może zapewnić odpowiedni poziom kontroli nad wersjami i izolacji rozwój i wdrażania zmian w systemie mogą być problematyczne. Możemy posłużyć się cytatem:
+    \begin{quote}
+        "With Avro, when an application wants to encode some data (to write it to a file or database, to send it over the network, etc.), it encodes the data using whatever version of the schema it knows about... When an application wants to decode some data (read it from a file or database, receive it from the network, etc.), it is expecting the data to be in some schema, which is known as the reader’s schema... The key idea with Avro is that the writer’s schema and the reader’s schema don’t have to be the same—they only need to be compatible." ~\cite[p. 123]{kleppmann2017designing}
+    \end{quote}
+    W przypadku braku kompatybilności nie jest możliwe  poprawnie działanie systemu.
+    \item Build Failure Rate - wskażnik tego, jak często zmiany w plikach IDL powodują problęmy w trakcie budoania aplikacji.
+    \begin{quote}
+        "When an application wants to decode some data (read it from a file or database, receive it from the network, etc.), it is expecting the data to be in some schema, which is known as the reader’s schema. That is the schema the application code is relying on—code may have been generated from that schema during the application’s build process." ~\cite[p. 123]{kleppmann2017designing}
+    \end{quote}
+    Dlatego w przypadku problemów z schematem wynikającym często z nieprawidłowo wybranego podejścia do zarządzania  plikami IDL.
+    \item Deployment Rollback Frequency - wskażnik tego, jak często zmiany w plikach IDL powodują problęmy w trakcie wdrożenie aplikacji na żrodowiska w systemie mikroserwisów.
+    \begin{quote}
+        "With server-side applications you may want to perform a rolling upgrade (also known as a staged rollout), deploying the new version to a few nodes at a time, checking whether the new version is running smoothly, and gradually working your way through all the nodes. This allows new versions to be deployed without service downtime, and thus encourages more frequent releases and better evolvability." ~\cite[p. 92]{kleppmann2017designing}
+    \end{quote}
+    Częste reolbaki usług w trakcie wdrożeń mogą spowodować spowolnienie wdrożenia nowych zmian i opóźnienie projektu, dlatego w trakcie wyboru podejścia do zarządzania plikami idl musimy brać to pod uwagę. Musimy w trackie analizy i planowanie projektu wybrać podejście które zapełni najmniejsze ryzyko błędów w trakcie próbnego wdrożenia i wycofania zmian.
+\end{enumerate}
+    
+\subsubsection{Definicja kryterium oceny pod kątem izolacji w przypadku bibliotek, sdk, REST, serverless}
+
+W kontekście bibliotek, SDK, REST i serverless znaczenie pojęcia izolacji róezni się od izolacji w kontekście IDL, w tym przyadku izolacja to zdolność sustemu do odseparowania komponentów systemu i zminimalizować wpłył zmin w jedum serwisie na pozostałe co i daję podejciu mikoserwisowemu jego wygodność i elastyczność.
+
+W przypadku izolacji na podstawie analzy żródeł literaturowych oraz własnego doświadcznia zdefiniowałem kryteria porównania jako następujące:
+|
+\begin{enumerate}
+    \item Izolacja interfejsów - elementy w systemie mokroserwisów muszą zapełnić jasno określone interfejsy, które pozwolą na łatwą komunikację komponentów bez wprowadzania nieposządfanych zależności i nadmiernych powiązań. Zmiaby w jednym elelmencie systemu nie powinny wpływać ma pozostawe elementy systemu.
+    \begin{quote}
+        "A well-designed library or SDK isolates its implementation details from the user, allowing developers to interact with the API without needing to understand its inner workings. This reduces the risk of breaking changes and simplifies maintenance." ~\cite[p. 75]{bloch2018effective}
+    \end{quote}
+    Za pomocą tego cyctatu możemy wyjaśniść, w jaki sposób jasno dobrze zaprojektowane interfejsy pomagają oddzielić wewnętrzne implementacje od zewnętrznego interfejsu, umożliwiając zmiany bez wpływu na inne części systemu.
+    \item Izolacja wersji - w przypadku aktualizacji, nowa wersja utworzona to wprowadzeniu zmian powinna być kompatybilna wstecznie, umożliwiając migrację bez zakłóceń. Izolacja wersji zapewnia nam, że starte wersje, dostrczone przez bibliotek, sdk, REST  czy serverless mogą współistnieć z nowszymi wersjami, umożliwyjąc tym samym – W przypadku aktualizacji SDK, nowa wersja powinna być w pełni kompatybilna wstecz, umożliwiając migrację bez zakłóceń. Izolacja wersji zapewnia, że starsze wersje SDK mogą współistnieć z nowszymi, umożliwiając płynne przejście między nimi bez wymuszania natychmiastowych zmian w istniejącej aplikacji.
+    \begin{quote}
+        "Versioning APIs and libraries carefully ensures that changes can be introduced gradually, providing compatibility for both old and new clients. This allows legacy systems to function alongside the updated ones without breaking the user experience or requiring immediate changes." ~\cite[p. 172]{fowler2012patterns}
+    \end{quote}
+    Powyższy cytat pokazuje, jak ważne jest zavhowanei kontabilności wstecznej w przypadku wspówdzielenia kody w systemach mikroserwisów.
+    \item Izolacja zależności - w przypadku SDK, bibliotek, REST czy serverless powinniśmy minimalizować wpływ zewnętrznych zależności na aplikację końcową, pozwala to na kontrolowanie wersji zależności oraz odseparowanie od podstawowych komponentów aplikacji.
+    \begin{quote}
+        "Dependencies should be isolated to minimize their impact on the main application, allowing the code to remain flexible. One of the key principles of dependency management is to ensure that dependencies can be replaced without affecting the core business logic." ~\cite[p. 218]{martin2008clean}
+    \end{quote}
+    Powyższy cytat pokazuje, jak ważne jest odseparowanie i izolacja zależności, pomoże to w zachowaniu elastyczności i odseparowania bazy kodu aplikacji, co jest kluczowe dla uniknięcia niepożądanych efektów ubocznych i uproszczenia konserwacji.
+\end{enumerate}
+
+\subsubsection{Definicja kryterium oceny pod kątem bezpieczeństwa}
+
+\begin{enumerate}
+    \item Poufność - (Confidentiality) Zapewnienie tego, że poufne dane nie będą udostępnione osobom lub systemom nieupoważnionym do tego. Zachowanie poufności jest kluczowe dla ochrony danych osobowych i korporacyjnych.
+    \begin{quote}
+        "Preserving authorized restrictions on information access and disclosure, including means for protecting personal privacy and proprietary information. A loss of confidentiality is the unauthorized disclosure of information." ~\cite[p. 22]{stallings2017cryptography}
+    \end{quote}
+    \item Integralność danych - (Integrity) Integralność danych koncentruje się na dokładności i wiarygodności informacji, chroniąc je przed nieautoryzowanymi modyfikacjami, zapewnia, że dane są zarówno niezawodne, jak i spójne.
+    \begin{quote}
+        "Guarding against improper information modification or destruction, including ensuring information nonrepudiation and authenticity. A loss of integrity is the unauthorized modification or destruction of information." ~\cite[p. 22]{stallings2017cryptography}
+    \end{quote}
+    \item Dostępność - (Availability) Zapewnia to, że dane w systemie są dostępne, a różnego rodzaju zakłócenia dostępu do danych są zminimalizowane.
+    \begin{quote}
+        "Ensuring timely and reliable access to and use of information. A loss of availability is the disruption of access to or use of information or an information system." ~\cite[p. 22]{stallings2017cryptography}
+    \end{quote}
+    \item Autentyczność - (Authenticity) Gwarancja tego, że autoryzowanym użytkownikom można zaufać, co zapobiega podszywaniu się lub manipulacjom. Polega to na weryfikacji tożsamości użytkowników i potwierdzeniu źródeł danych w celu zapewnienia autentyczności.
+    \begin{quote}
+        "The property of being genuine and being able to be verified and trusted; confidence in the validity of a transmission, a message, or message originator. This means verifying that users are who they say they are and that each input arriving at the system came from a trusted source." ~\cite[p. 23]{stallings2017cryptography}
+    \end{quote}
+    \item Odpowiedzialność - (Accountability) Definiuje zapotrzebowanie na zapisywanie w celach monitoringu działań użytkowników w systemie w celu późniejszej analizy. W trakcie analizy można wykryć podejrzane zachowania, naruszenia przepisów bezpieczeństwa. Pomaga w zapewnieniu tego, że podmioty naruszające przepisy prawne oraz przepisy bezpieczeństwa poniosą odpowiedzialność oraz zapobiec podobnym sytuacjom w przyszłości.
+    \begin{quote}
+        "The security goal that generates the requirement for actions of an entity to be traced uniquely to that entity. This supports nonrepudiation, deterrence, fault isolation, intrusion detection and prevention, and afteraction recovery and legal action. Because truly secure systems are not yet an achievable goal, we must be able to trace a security breach to a responsible party. Systems must keep records of their activities to permit later forensic analysis to trace security breaches or to aid in transaction disputes." ~\cite[p. 23]{stallings2017cryptography}
+    \end{quote}
+    \item Poufność - (Confidentiality) Zapewnienie tego, że poufne dane nie będą udostępnione osobom lub systemom nieupoważnionym do tego. Zachowanie poufności jest kluczowe dla ochrony danych osobowych i korporacyjnych.
+    \begin{quote}
+        "Preserving authorized restrictions on information access and disclosure, including means for protecting personal privacy and proprietary information. A loss of confidentiality is the unauthorized disclosure of information." ~\cite[p. 22]{stallings2017cryptography}
+    \end{quote}
+\end{enumerate}
+
+\subsubsection{Definicja kryterium oceny pod kątem skalowalności}
+
+Czym jest skalowalność 
+
+\begin{quote}
+    "Scalability – the ability to work well when the load or the number of users increases – failure handling, concurrency of components, transparency and providing quality of service." ~\cite[p. 21]{coulouris2011distributed}
+\end{quote}
+
+W rozdziale 1 autorzy definiują pojęcie skalowalności jako 4 główne aspektu systemu Controlling the cost of physical resources, Controlling the performance loss, Preventing software resources running out, Avoiding performance bottlenecks, strony 20-21, czyli Kontrola kosztów zasobów fizycznych, Kontrola utraty wydajności, Zapobieganie wyczerpywaniu się zasobów oprogramowania, Unikanie wąskich gardeł wydajności, dlatego mogę zdefiniować kryterium oceny pod kątem skalowalności jako:
+
+Wpływ na koszty zasobów fizycznych - ocena tego, jak wybrane podejście wpływa na  wykorzystaniem zasobów sprzętowych w miarę wzrostu obciążenia.
+
+Wpływ na wydajność - ocena tego, jak wybrane podejście wpływa na wydajność systemu w miarę wzrostu obciążenia.
+
+Wpływ na zasoby serwera - ocena tego, jak wybrane podejście wpływa na jakość wykorzystania zasobów serwera w miarę wzrostu obciążenia.
+
+Unikanie wąskich gardeł wydajności - ocena tego,czy wybrane podejście powoduje powstanie wąskich gardeł  w miarę wzrostu obciążenia systemu.
+
+\subsubsection{Definicja kryterium oceny pod kątem wersjonowania}
+
 
 
 \nocite{*}
 
 \listoffigures
-
 \listoftables
 
-\bibliographystyle{plain} \bibliography{thesisbibliography}
+\bibliographystyle{plain}
+\bibliography{thesisbibliography}
 
 \section{Appendices}
 
-\subsection{Sample Code} \subsection{Sample Data}
+\subsection{Sample Code}
+\subsection{Sample Data}
 
 \end{document}

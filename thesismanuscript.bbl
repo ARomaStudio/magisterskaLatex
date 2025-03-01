@@ -1,30 +1,48 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{bhuyan2020microservices}
-Aditya~Pratap Bhuyan.
-\newblock {\em Microservices Design Patterns}.
-\newblock Packt Publishing, Birmingham, UK, 2020.
-\newblock Refer to page 255 for discussion on challenges of sharing models between microservices.
+\bibitem{bloch2018effective}
+Joshua Bloch.
+\newblock {\em Effective Java}.
+\newblock Addison-Wesley Professional, 2018.
+
+\bibitem{coulouris2011distributed}
+George Coulouris, Jean Dollimore, Tim Kindberg, and Gordon Blair.
+\newblock {\em Distributed Systems: Concepts and Design}.
+\newblock Pearson Education, 5th edition, 2011.
+
+\bibitem{fowler2012patterns}
+Martin Fowler.
+\newblock {\em Patterns of Enterprise Application Architecture}.
+\newblock Addison-Wesley Professional, 2012.
 
 \bibitem{ibm_serverless}
-{IBM}.
-\newblock What is serverless computing?, 2024.
-\newblock Accessed: 2025-02-26.
+IBM.
+\newblock What is serverless computing?, 2023.
 
 \bibitem{kleppmann2017designing}
 Martin Kleppmann.
 \newblock {\em Designing Data-Intensive Applications: The Big Ideas Behind Reliable, Scalable, and Maintainable Systems}.
-\newblock O'Reilly Media, 2017.
+\newblock O'Reilly Media, Inc., 2017.
 
 \bibitem{labouardy2021pipeline}
 Mohamed Labouardy.
 \newblock {\em Pipeline as Code: Continuous Delivery with Jenkins, Kubernetes, and Terraform}.
 \newblock Manning Publications, 2021.
 
+\bibitem{martin2008clean}
+Robert~C. Martin.
+\newblock {\em Clean Code: A Handbook of Agile Software Craftsmanship}.
+\newblock Prentice Hall, 2008.
+
+\bibitem{bhuyan2020microservices}
+Ronnie Mitra, Irakli Nadareishvili, Matt McLarty, and Mike Amundsen.
+\newblock {\em Microservices: Up and Running: A Step-by-Step Guide to Building a Microservice Architecture}.
+\newblock O'Reilly Media, Inc., 2020.
+
 \bibitem{newman2015building}
 Sam Newman.
 \newblock {\em Building Microservices: Designing Fine-Grained Systems}.
-\newblock O'Reilly Media, 2015.
+\newblock O'Reilly Media, Inc., 2015.
 
 \bibitem{nygard2008release}
 Michael~T. Nygard.
@@ -33,16 +51,21 @@ Michael~T. Nygard.
 
 \bibitem{richardson2018microservices}
 Chris Richardson.
-\newblock {\em Microservices Patterns: With Examples in Java}.
+\newblock {\em Microservices Patterns: With examples in Java}.
 \newblock Manning Publications, 2018.
 
 \bibitem{sharma2023monolithic}
-Harish Sharma.
-\newblock Monolithic vs microservices architecture: Advantages, disadvantages, and differences, February 2023.
+Raj Sharma.
+\newblock {\em Monolithic to Microservices: Evolution of Software Architecture}.
+\newblock Tech Publications, 2023.
+
+\bibitem{stallings2017cryptography}
+William Stallings.
+\newblock {\em Cryptography and Network Security: Principles and Practice}.
+\newblock Pearson, 2017.
 
 \bibitem{wiki:interface_description_language}
-{Wikipedia contributors}.
-\newblock Interface description language, 2025.
-\newblock Accessed: 2025-02-26.
+Wikipedia.
+\newblock Interface description language, 2023.
 
 \end{thebibliography}
