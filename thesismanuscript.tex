@@ -4,7 +4,8 @@
 \usepackage{fancyhdr}
 \usepackage{lipsum}
 \usepackage{tabularx}
-\usepackage{array} 
+\usepackage{array}
+\usepackage{longtable}
 \usepackage[T1]{fontenc}
 \usepackage[provide=*,english,polish]{babel}
 
@@ -412,7 +413,45 @@ Dane do porównania zostały zebrane z żródeł literaturowych ~\cite{newman201
 
 \newpage
 
-Ocena pod kątem bezpieczeństwa: 
+Ocena pod kątem bezpieczeństwa:
+
+\begin{longtable}{|p{4cm}|p{4cm}|p{4cm}|}
+\hline
+\textbf{Criterion} & \textbf{Advantages} & \textbf{Challenges} \\ \hline
+\multicolumn{3}{|c|}{\textbf{SVN (Subversion)}} \\ \hline
+Confidentiality & Advanced access control mechanisms ensure confidentiality & Requires proper configuration to prevent unauthorized access \\ \hline
+Integrity & Full change history ensures data integrity & Integrity issues can arise if changes are not properly synced \\ \hline
+Availability & Central repository accessible from multiple locations & Central server failure may disrupt availability \\ \hline
+Authenticity & User authentication controls access to the repository & Misconfigured authentication may lead to security issues \\ \hline
+Accountability & Full change history allows attribution of actions & Auditing process must be properly configured \\ \hline
+\multicolumn{3}{|c|}{\textbf{GIT}} \\ \hline
+Confidentiality & Strong access control mechanisms in private repositories & Security configurations must be properly managed \\ \hline
+Integrity & SHA-1 hashing ensures file integrity & Conflicts can arise if changes are not synchronized \\ \hline
+Availability & Distributed system ensures high availability & Requires proper synchronization infrastructure \\ \hline
+Authenticity & Supports authentication via SSH, HTTPS, and keys & Weak passwords or missing 2FA may pose risks \\ \hline
+Accountability & Complete change history ensures tracking & Auditing in multi-user environments can be complex \\ \hline
+\multicolumn{3}{|c|}{\textbf{Distribution via Repositories (Nexus, Artifactory)}} \\ \hline
+Confidentiality & Authentication and access control protect IDL files & Improper security settings may lead to unauthorized sharing \\ \hline
+Integrity & Version control and artifact signing ensure integrity & Lack of versioning or signing may cause issues \\ \hline
+Availability & Central storage for artifacts ensures availability & Requires strong infrastructure for reliability \\ \hline
+Authenticity & Signing mechanisms confirm trusted sources & Requires proper configuration to prevent forgery \\ \hline
+Accountability & Auditing and monitoring track user actions & Proper logging is needed for accountability \\ \hline
+\multicolumn{3}{|c|}{\textbf{Monorepo Approach}} \\ \hline
+Confidentiality & Centralized access control improves security & Managing access in large repositories is complex \\ \hline
+Integrity & Centralized changes ensure consistency & Synchronization challenges in large teams \\ \hline
+Availability & Central repository allows easy access & Requires strong infrastructure for large-scale usage \\ \hline
+Authenticity & Organizational-level access control ensures security & Managing permissions across large teams is difficult \\ \hline
+Accountability & Centralized process allows full change tracking & Harder to attribute responsibility in large organizations \\ \hline
+
+\end{longtable}
+
+Ocena pod kątem skalowalności:
+
+Systemy bazujące na IDL, taie jak Protocol Buffers oraz Avro zazwyczj sarilizują dane do kompaktowych formatów binarnych, to znaczy, że ilośc danych które trzeba przesłac przez sieć i przechowywac na dysku jest minimalna. Dzieki temu koszt zasobów fizycznych jest minimalny i ma tendencje do pozostania nizkim nawet w przypadku wzrostu obciążenia. 
+
+\begin{quote}
+    "" ~\cite[p. 75]{bloch2018effective}
+\end{quote}
 
 \nocite{*}
 
