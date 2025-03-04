@@ -447,11 +447,66 @@ Accountability & Centralized process allows full change tracking & Harder to att
 
 Ocena pod kątem skalowalności:
 
-Systemy bazujące na IDL, taie jak Protocol Buffers oraz Avro zazwyczj sarilizują dane do kompaktowych formatów binarnych, to znaczy, że ilośc danych które trzeba przesłac przez sieć i przechowywac na dysku jest minimalna. Dzieki temu koszt zasobów fizycznych jest minimalny i ma tendencje do pozostania nizkim nawet w przypadku wzrostu obciążenia. 
+Systemy bazujące na IDL, taie jak Protocol Buffers oraz Avro zazwyczj sarilizują dane do kompaktowych formatów binarnych, to znaczy, że ilośc danych które trzeba przesłac przez sieć i przechowywac na dysku jest minimalna. Dzieki temu koszt zasobów fizycznych jest minimalny i ma tendencje do pozostania nizkim nawet w przypadku wzrostu obciążenia. Wydajność systemu kożystającego z wspówdzielenia za pomocą IDL nie zależy od metody zarządazania plikami IDL jak w powyzwych przypadkach.
 
 \begin{quote}
-    "" ~\cite[p. 75]{bloch2018effective}
+    "With efficient binary serialization formats, IDLs allow rapid encoding and decoding of messages. This efficiency is crucial for high-throughput systems where low latency is required. IDLs also facilitate cross-language interoperability without incurring significant performance penalties." ~\cite[p. 123]{kleppmann2017designing}
 \end{quote}
+
+Ocena pod kątem wersjonowania:
+
+Na podstawie analizy żródeł literaturowych oraz doświadczenia włąsnego dokonałem analizy podejścia do wpółdzielenia kodu za pomocą plików IDL. W tym trzybaku ocena pod kątem wersjonowania rówżni się w zależnosci od podejścia do zarządzania plikamu IDL, dlatego dokonałem porównania dla każdego z podejść.
+
+\begin{longtable}{|p{3cm}|p{10cm}|}
+    \hline
+    \textbf{Approach} & \textbf{Mechanisms Provided} \\
+    \hline
+    \endfirsthead
+    
+    \hline
+    \textbf{Approach} & \textbf{Mechanisms Provided} \\
+    \hline
+    \endhead
+    
+    \hline
+    \endfoot
+    
+    \hline
+    \endlastfoot
+    
+    \multicolumn{2}{|c|}{\textbf{1. SVN Systems (e.g., Git)}} \\ \hline
+    Granular Tracking &
+    \begin{itemize}
+      \item Every change is recorded as a commit with messages, timestamps, and author information.
+      \item Branching and tagging enable isolated development and marking of stable releases.
+      \item The full commit history supports code reviews and audits.
+    \end{itemize} \\ \hline
+    
+    \multicolumn{2}{|c|}{\textbf{2. Distribution via Libraries}} \\ \hline
+    Semantic Versioning &
+    \begin{itemize}
+      \item Artifacts are assigned version numbers (MAJOR.MINOR.PATCH).
+      \item Release notes and changelogs accompany each version.
+      \item Central repositories maintain a full history of published versions.
+    \end{itemize} \\ \hline
+    
+    \multicolumn{2}{|c|}{\textbf{3. Monorepo Approach}} \\ \hline
+    Unified Change Log &
+    \begin{itemize}
+      \item All microservices and their associated IDL files reside in a single repository.
+      \item A unified commit history provides a holistic view of changes.
+      \item Synchronization minimizes version drift.
+    \end{itemize} \\ \hline
+    
+    \multicolumn{2}{|c|}{\textbf{4. IDL as a Service (IDLaS)}} \\ \hline
+    Integrated Version Control &
+    \begin{itemize}
+      \item The service includes built-in version control that tracks every change.
+      \item Dashboards display diffs and metadata (timestamps, authors).
+      \item Version history is accessible via standardized API calls.
+    \end{itemize} \\ \hline
+    
+    \end{longtable}
 
 \nocite{*}
 

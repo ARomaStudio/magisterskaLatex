@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  2 MAR 2025 10:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  5 MAR 2025 00:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1160,15 +1160,53 @@ Overfull \hbox (5.1271pt too wide) in paragraph at lines 450--451
  []
 
 
-Underfull \vbox (badness 1742) has occurred while \output is active []
-
-
 
 [32]
+Overfull \hbox (29.56224pt too wide) in alignment at lines 460--464
+ [] [] 
+ []
 
-LaTeX Warning: Citation `bloch2018effective' on page 33 undefined on input line 453.
 
-(./thesismanuscript.lot)
+Overfull \hbox (29.56224pt too wide) in alignment at lines 464--469
+ [] [] 
+ []
+
+
+Overfull \hbox (29.56224pt too wide) in alignment at lines 469--472
+ [] [] 
+ []
+
+
+Overfull \hbox (29.56224pt too wide) in alignment at lines 472--475
+ [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 486--486
+[]|\T1/cmr/m/n/12 Semantic Ver-
+ []
+
+
+Underfull \hbox (badness 5460) in paragraph at lines 488--489
+[]\T1/cmr/m/n/12 Artifacts are as-signed ver-sion num-bers (MA-
+ []
+
+
+Underfull \hbox (badness 2970) in paragraph at lines 494--494
+[]|\T1/cmr/m/n/12 Unified Change
+ []
+
+
+Underfull \hbox (badness 4660) in paragraph at lines 502--502
+[]|\T1/cmr/m/n/12 Integrated Ver-
+ []
+
+
+Overfull \hbox (29.56224pt too wide) in alignment at lines 475--509
+ [] [] 
+ []
+
+[33] (./thesismanuscript.lot)
 \tf@lot=\write5
 \openout5 = `thesismanuscript.lot'.
 
@@ -1176,29 +1214,29 @@ LaTeX Warning: Citation `bloch2018effective' on page 33 undefined on input line 
 \tf@lof=\write6
 \openout6 = `thesismanuscript.lof'.
 
- (./thesismanuscript.bbl)
+ (./thesismanuscript.bbl
 
-[33]
+[34])
 
-[34] (./thesismanuscript.aux)
+[35] (./thesismanuscript.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15978 strings out of 475128
- 322386 string characters out of 5765300
- 815386 words of memory out of 5000000
- 38667 multiletter control sequences out of 15000+600000
+ 15981 strings out of 475128
+ 322449 string characters out of 5765300
+ 815419 words of memory out of 5000000
+ 38670 multiletter control sequences out of 15000+600000
  570498 words of font info for 59 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,11n,101p,1879b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>
-Output written on thesismanuscript.pdf (34 pages, 286256 bytes).
+Output written on thesismanuscript.pdf (35 pages, 289325 bytes).
 PDF statistics:
- 519 PDF objects out of 1000 (max. 8388607)
- 112 compressed objects within 2 object streams
+ 523 PDF objects out of 1000 (max. 8388607)
+ 114 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 
