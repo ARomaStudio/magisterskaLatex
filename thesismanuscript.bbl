@@ -34,6 +34,11 @@ Robert~C. Martin.
 \newblock {\em Clean Code: A Handbook of Agile Software Craftsmanship}.
 \newblock Prentice Hall, 2008.
 
+\bibitem{azure2020}
+{Microsoft Azure}.
+\newblock Recommendations for optimizing code and infrastructure, 2020.
+\newblock Retrieved from Microsoft Azure Optimization Guide.
+
 \bibitem{bhuyan2020microservices}
 Ronnie Mitra, Irakli Nadareishvili, Matt McLarty, and Mike Amundsen.
 \newblock {\em Microservices: Up and Running: A Step-by-Step Guide to Building a Microservice Architecture}.

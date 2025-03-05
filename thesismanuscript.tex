@@ -9,6 +9,8 @@
 \usepackage[T1]{fontenc}
 \usepackage[provide=*,english,polish]{babel}
 
+\newcolumntype{C}[1]{>{\centering\arraybackslash}m{#1}}
+
 \setcounter{tocdepth}{4}
 \setcounter{secnumdepth}{4}
 \renewcommand{\headrulewidth}{0pt}
@@ -296,10 +298,6 @@ W przypadku izolacji na podstawie analzy żródeł literaturowych oraz własnego
     \begin{quote}
         "The security goal that generates the requirement for actions of an entity to be traced uniquely to that entity. This supports nonrepudiation, deterrence, fault isolation, intrusion detection and prevention, and afteraction recovery and legal action. Because truly secure systems are not yet an achievable goal, we must be able to trace a security breach to a responsible party. Systems must keep records of their activities to permit later forensic analysis to trace security breaches or to aid in transaction disputes." ~\cite[p. 23]{stallings2017cryptography}
     \end{quote}
-    \item Poufność - (Confidentiality) Zapewnienie tego, że poufne dane nie będą udostępnione osobom lub systemom nieupoważnionym do tego. Zachowanie poufności jest kluczowe dla ochrony danych osobowych i korporacyjnych.
-    \begin{quote}
-        "Preserving authorized restrictions on information access and disclosure, including means for protecting personal privacy and proprietary information. A loss of confidentiality is the unauthorized disclosure of information." ~\cite[p. 22]{stallings2017cryptography}
-    \end{quote}
 \end{enumerate}
 
 ~\ref{fig1}
@@ -352,7 +350,7 @@ Za pomocą żrudeł literaturowych oraz własnego doświadczenia zdefiniowałem 
 
 \subsection{Ocena i porównanie metod współdzielenia kodu}
 
-\subsubsection{Ocena Interface definition languages}
+\subsubsection{Ocena wspówdzieleina kodu za pomocą Interface definition languages}
 
 Ocena pod kątem komunikacji – zapewnia potrzebny poziom komunikacji, obiekty są generowane na podstawie definition language na etapie uruchamiania aplikacji, dalej w trakcie wykonania logiki programu takie obiekty mogą być użyte przez program bez żadnych obciążeń wydajnościowych. Obiekty wygenerowane z plików IDL mogą być wykorzystane dla komunikacji asynchronicznej takich jak brokery wiadomości jak również dla wysłania bezpośrednich zapytań między serwisami.
 
@@ -416,6 +414,7 @@ Dane do porównania zostały zebrane z żródeł literaturowych ~\cite{newman201
 Ocena pod kątem bezpieczeństwa:
 
 \begin{longtable}{|p{4cm}|p{4cm}|p{4cm}|}
+\caption{Sample Longtable Caption} \\
 \hline
 \textbf{Criterion} & \textbf{Advantages} & \textbf{Challenges} \\ \hline
 \multicolumn{3}{|c|}{\textbf{SVN (Subversion)}} \\ \hline
@@ -457,23 +456,24 @@ Ocena pod kątem wersjonowania:
 
 Na podstawie analizy żródeł literaturowych oraz doświadczenia włąsnego dokonałem analizy podejścia do wpółdzielenia kodu za pomocą plików IDL. W tym trzybaku ocena pod kątem wersjonowania rówżni się w zależnosci od podejścia do zarządzania plikamu IDL, dlatego dokonałem porównania dla każdego z podejść.
 
-\begin{longtable}{|p{3cm}|p{10cm}|}
+\begin{longtable}{|C{3cm}|C{9.1cm}|}
+    \caption{Sample Longtable Caption} \\
     \hline
-    \textbf{Approach} & \textbf{Mechanisms Provided} \\
+    \textbf{Zaleta} & \textbf{Opis} \\
     \hline
     \endfirsthead
-    
+
     \hline
-    \textbf{Approach} & \textbf{Mechanisms Provided} \\
+    \textbf{Zaleta} & \textbf{opis} \\
     \hline
     \endhead
-    
+
     \hline
     \endfoot
-    
+
     \hline
     \endlastfoot
-    
+
     \multicolumn{2}{|c|}{\textbf{1. SVN Systems (e.g., Git)}} \\ \hline
     Granular Tracking &
     \begin{itemize}
@@ -481,7 +481,13 @@ Na podstawie analizy żródeł literaturowych oraz doświadczenia włąsnego dok
       \item Branching and tagging enable isolated development and marking of stable releases.
       \item The full commit history supports code reviews and audits.
     \end{itemize} \\ \hline
-    
+    Granular Tracking &
+    \begin{itemize}
+      \item Every change is recorded as a commit with messages, timestamps, and author information.
+      \item Branching and tagging enable isolated development and marking of stable releases.
+      \item The full commit history supports code reviews and audits.
+    \end{itemize} \\ \hline
+
     \multicolumn{2}{|c|}{\textbf{2. Distribution via Libraries}} \\ \hline
     Semantic Versioning &
     \begin{itemize}
@@ -489,7 +495,7 @@ Na podstawie analizy żródeł literaturowych oraz doświadczenia włąsnego dok
       \item Release notes and changelogs accompany each version.
       \item Central repositories maintain a full history of published versions.
     \end{itemize} \\ \hline
-    
+
     \multicolumn{2}{|c|}{\textbf{3. Monorepo Approach}} \\ \hline
     Unified Change Log &
     \begin{itemize}
@@ -497,7 +503,7 @@ Na podstawie analizy żródeł literaturowych oraz doświadczenia włąsnego dok
       \item A unified commit history provides a holistic view of changes.
       \item Synchronization minimizes version drift.
     \end{itemize} \\ \hline
-    
+
     \multicolumn{2}{|c|}{\textbf{4. IDL as a Service (IDLaS)}} \\ \hline
     Integrated Version Control &
     \begin{itemize}
@@ -505,8 +511,156 @@ Na podstawie analizy żródeł literaturowych oraz doświadczenia włąsnego dok
       \item Dashboards display diffs and metadata (timestamps, authors).
       \item Version history is accessible via standardized API calls.
     \end{itemize} \\ \hline
-    
-    \end{longtable}
+
+\end{longtable}
+
+\subsubsection{Ocena wspówdzieleina kodu za pomocą bibliotek}
+
+Ocena pod kątem komunikacji:
+
+Pod kątem komunikacji podejście zapewnia potrzebny poziom komunikacji, obiekty są dodawane do projektu przez narzędzie do budowania projektów na etapie uruchamiania aplikacji, dalej w trakcie wykonania logiki programu takie obiekty mogą być użyte przez program bez żadnych obciążeń wydajnościowych. Obiekty wciągnięte z biblioteki mogą być użyte dla komunikacji asynchronicznej takich jak brokery wiadomości jak również dla wysłania bezpośrednich zapytań między serwisami.
+
+Ocena pod kątem izolacji:
+
+Zgodnie z wcieśniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji bibliotek kryteria oceny są następujące: ocena pod kątem zolacji interfejsów, isolacja wersji, izolacja zależności.
+
+Izolacja interfejsów: Biblioteki, złykle udostępniają zdefiniowany interfejs. Dobrze ustrukturyzowana biblioteka izoluje skonmlipkowane elementy logiki od swoich użytkowników. Gdy są użyte prawidłowo, pozwalają na zmianę lub aktualizację kodu przy minimalnym wpływie na kod wykorzystujący bibliotekę.
+
+\begin{quote}
+    "A well-designed library or SDK isolates its implementation details from the user." ~\cite[p. 75]{Essential}
+\end{quote}
+
+Izolacja wersji: Bibliotelki zazwycaj używają semantycznego wersjonowania za pomocą nazwy. Przejrzysta historia wersji umożliwia deweloperom odpowiednie zarządzanie zależnościami. Przy odpowiedniej izolacji wersji wiele wersji biblioteki może współistnieć i być używane jednocześnie, ułatwia to sproces stopniowej migracji.
+
+\begin{quote}
+    "Versioning APIs and libraries carefully ensures that changes can be introduced gradually." ~\cite[p. 172]{fowler2012patterns}
+\end{quote}
+
+Izolacja zależności: Biblioteki często zależą od innych bibliotek, w przypadku gdy zależności nie są prawidłowo izolowane mogą prowadzić do konfliktów i innych problemów. Dobre praktyki zarządzania zależnościami pomagają zapewnić, że zależności biblioteki nie będą miały negatywnego wpływu na aplikację.
+
+\begin{quote}
+    "Dependencies should be isolated to minimize their impact on the main application." ~\cite[p. 218]{martin2008clean}
+\end{quote}
+
+Ocena pod kątem bezpieczeństwa:
+
+Zgodnie z wcieśniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa bibliotek kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność
+
+Poufność: Biblioteki które są wykorzystywane dla preteażania poufnuch danych powinny pochodzić z sprawdzonych żródeł i ciągle aktualizowane aby zapobiec utratę danych. Ich integracja powinna wymuszać ścisłe kontrole dostępu. 
+
+\begin{quote}
+    "Ensuring that libraries handling sensitive information are sourced from reputable channels and regularly updated is critical to maintaining confidentiality throughout an application." ~\cite[p. 82]{Essential}
+\end{quote}
+
+Integralność danych: Biblioteki często korzystją z sum kontrolnych, certyfikatów, podpisów cyfrowych przeprowadzają obszerne testy, aby mieć pewność, że przetwarzane dane pozostają biezpieczne.
+
+\begin{quote}
+    "The integrity of a library is maintained through rigorous testing and the use of cryptographic measures that detect any unauthorized changes to the code or data it processes." ~\cite[p. 84]{Essential}
+\end{quote}
+
+Dostępność: Dostępność może zostać naruszona, jeśli biblioteki zewnętrzne staną się nieobsługiwane lub niedostępne lub wewnętrzne w przypadku awarii narzędzia do zarządzania bibliotekami. Dlatego jest ważnym wykożystanie managarów zależności które są zaufane i w tym przupadku możemy pomaga zapewnić, że aplikacje pozostaną dostępne nawet w miarę ewolucji bibliotek.
+
+\begin{quote}
+    "By leveraging modern dependency management tools and regularly updating libraries, developers can mitigate risks to availability due to deprecated or unsupported components." ~\cite[p. 85]{Essential}
+\end{quote}
+
+Autentyczność: W przypadku bibliotek jest zapewniania za pomocą sprawdznie jej pochodzenia za pomocą podpisów cyfrowych i sum kontrolnych dostarczonych przez wydawcę. Zapobiega to ryzyku włączenia wykonania złośliwego kodu po stronie klienta biblioteki. 
+
+\begin{quote}
+    "Authenticating libraries through digital signatures and secure distribution channels is essential to ensuring that only verified, unmodified code is used in production environments." ~\cite[p. 87]{Essential}
+\end{quote}
+
+Odpowiedzialność: W pzypadku bibliotek przejrzysta historia mnoże zostać zapełniona za pomocą menedżerów pakietów które umożliwiają śledzenie pochodzenia zmian. Wspomaga to w zabiezpieczniu odpowiedzialności w przypadku problemów.
+
+\begin{quote}
+    "A well-documented version history is indispensable for accountability, as it enables developers to trace and audit every modification made to a library over time." ~\cite[p. 88]{Essential}
+\end{quote}
+
+Ocena pod kątem skalowalności:
+
+Libraries are generally optimized for specific tasks within one language. However, if a library is not designed for high-concurrency environments, it may require additional hardware resources as the load increases. For example, intensive data processing libraries may consume more memory or CPU when dealing with large datasets. Supporting Idea: Studies on computational efficiency often note that non-optimized libraries can become bottlenecks under heavy load, leading to increased physical resource costs.
+
+\begin{quote}
+    "Non-optimized libraries can quickly become bottlenecks in high-concurrency environments, forcing systems to consume additional CPU and memory resources as load increases." ~\cite[p. 192]{fowler2012patterns}
+\end{quote}
+
+Ocena pod kątem wersjonowania:
+
+\begin{quote}
+    "When a data format or schema changes, … careful management of schema evolution is required to ensure that old and new versions can coexist. This is best achieved by maintaining a structured version history that records every change in the schema in a clear, traceable manner." ~\cite[p. 111]{kleppmann2017designing}
+\end{quote}
+
+Ustrukturyzowana historia wersji:
+
+\begin{quote}
+    "APIs, like diamonds, are forever. Once you publish an API, you are more or less stuck with it; hence, maintaining a clear, structured version history through semantic versioning is critical for ensuring that developers know exactly when breaking changes occur." ~\cite[p. 75]{Essential}
+\end{quote}
+
+text
+
+\begin{quote}
+    "When an API change turns out to be problematic, having a stable version available through semantic versioning allows developers to quickly roll back to a previous release and restore system stability." ~\cite[p. 75]{Essential}
+\end{quote}
+
+text
+
+\begin{quote}
+    "Inadequate versioning can lead to subtle incompatibilities, resulting in data inconsistencies that are difficult to debug. Hence, maintaining strict backward compatibility is crucial to avoid such pitfalls." ~\cite[p. 75]{Essential}
+\end{quote}
+
+\subsubsection{Ocena wspówdzieleina kodu za pomocą SDK}
+
+Ocena pod kątem komunikacji: zapewnia potrzebny poziom komunikacji, mechanizm współdzielenia jest podobny do biblioteki, tak samo jak w przypadku biblioteki obiekty są dodawane do projektu przez narzędzie do budowania projektów na etapie uruchamiania aplikacji, dalej w trakcie wykonania logiki programu takie obiekty mogą być użyte przez program bez żadnych obciążeń wydajnościowych. Obiekty wciągnięte z biblioteki mogą być użyte dla komunikacji asynchronicznej takich jak brokery wiadomości jak również dla wysłania bezpośrednich zapytań między serwisami.
+
+Ocena pod kątem izolacji: 
+
+Zgodnie z wcieśniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji SDK kryteria oceny są następujące: ocena pod kątem zolacji interfejsów, isolacja wersji, izolacja zależności. Jednak są one trudniejsze w projetowaniu i wymagają strrności w trakcie trzygowania.
+
+\begin{quote}
+    "SDK isolates its implementation details from the user, allowing developers to interact with the API without needing to understand its inner workings." ~\cite[p. 75]{Essential}
+\end{quote}
+
+Izolacja wersji: W przypadku SDK które agregują kilka bibliotek i narzędzi muszą zarządzać werjsjonowanie wszystkicjh zawartych komponentów. W idealnym przypadku zestaw SDK jest zaprojektowany tak, aby nowe dodane wersje byli kompatybilne wstecz umożliwiając klientom działanie bez natychmiastowych zmian.
+
+Izolacja zależności: SDK często zawerają wiele biblioter w spobie, co oznacze że często zarządzają wilką ilością zależności. Izolowanie tych zależności jest krytyczne, aby uniknąć konfliktów.
+
+\begin{quote}
+    "...ensuring that dependencies can be replaced without affecting the core business logic" ~\cite[p. 218]{martin2008clean}
+\end{quote}
+
+Ocena pod kątem bezpieczeństwa: 
+
+Zgodnie z wcieśniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa bibliotek kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność
+
+Poufność: SDK w przypadku polączenia wielu narzędzi i bibliotek, muszą zapewnić, że wszystkie zawarte komponenty przestrzegają ścisłych zasad kontroli dostępu. Zmniejsza to ryzyko nieautoryzowanego ujawnienia danych.
+
+\begin{quote}
+    "SDKs, when integrated with stringent access controls and privacy policies, help shield sensitive data from unauthorized access, thus preserving confidentiality across all integrated modules." ~\cite[para 4]{azure2020}
+\end{quote}
+
+Integralność danych: SDK wymaga, aby były one kompleksowo testowane, aby zapewnić, że zmiany nie naruszą integralności danych. Różne frameworki do testowania bezpieczeńswa SDK pomagają w wykrywaniu wszelkich podatności po modyfikacji.
+
+\begin{quote}
+    "Robust testing frameworks within SDKs are critical for maintaining integrity, ensuring that updates do not inadvertently alter data structures or application behavior." ~\cite[para 5]{azure2020}
+\end{quote}
+
+Dostępność: SDK muszą być zaprojektowane tak, aby działały zawszę, nawet przy dużym obciążeniu. 
+
+\begin{quote}
+    "The modular and redundant design of well-architected SDKs contributes significantly to system availability, ensuring that critical services remain accessible even under peak loads." ~\cite[para 6]{azure2020}
+\end{quote}
+
+Autentyczność: Autentyczność w przypadku z SDK może zostać zapewniona za pomocą weryfikacji dostawców i stosowanie środków kryptograficznych do walidacji ich komponentów. Warto dokonywac tachi wdziałań aby zapobiec wykonaniu złośliwego kodu w naszym systemie.
+
+\begin{quote}
+    "Verifying the authenticity of an SDK via cryptographic signatures and secure distribution channels is vital to ensure that the components used are genuine and have not been tampered with." ~\cite[para 7]{azure2020}
+\end{quote}
+
+Odpowiedzialność: SDK zazwyczaj posiadają przeróżne mechanizmy zarządzanie wersjami. Takie metody zarzadzania wersjami umożliwia deweloperom śledzenie pochodzenia wszelkich zmian lub problemów. Pomaga to zapełnić odpowiedzialność programistów za przygotowane zmiany.
+
+\begin{quote}
+    "Comprehensive logging and version tracking in SDKs provide the necessary audit trails that hold developers accountable for every change made, thereby ensuring that any issues can be traced back to their origin." ~\cite[para 7]{azure2020}
+\end{quote}
 
 \nocite{*}
 
