@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  5 MAR 2025 23:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  6 MAR 2025 23:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -604,15 +604,15 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <8> on input line 5.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <6> on input line 5.
-)
-\tf@toc=\write4
-\openout4 = `thesismanuscript.toc'.
-
 
 
 [4
 
-]
+])
+\tf@toc=\write4
+\openout4 = `thesismanuscript.toc'.
+
+
 
 [5]
 Overfull \hbox (15.89539pt too wide) in paragraph at lines 73--74
@@ -816,7 +816,7 @@ Overfull \hbox (29.397pt too wide) in paragraph at lines 209--210
 
 
 [18]
-Overfull \hbox (3.33252pt too wide) in paragraph at lines 211--212
+Overfull \hbox (9.20609pt too wide) in paragraph at lines 211--212
 \T1/cmr/m/n/12 za po-moc¡ bib-liotek ale jak za-prezen-towano w  [[]] mo»e to powodowa¢
  []
 
@@ -1188,63 +1188,123 @@ Overfull \hbox (3.95493pt too wide) in alignment at lines 472--475
  []
 
 
-Overfull \hbox (3.95493pt too wide) in alignment at lines 475--515
+Underfull \hbox (badness 10000) in paragraph at lines 481--482
+[]\T1/cmr/m/n/12 Rozgaª¦zianie i tagowanie umo»li-wiaj¡
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 481--482
+\T1/cmr/m/n/12 izolowane przy-go-towanie paczki zmian i
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 482--483
+[]\T1/cmr/m/n/12 Peªna his-to-ria com-mitów umo»li-wia
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 487--488
+[]\T1/cmr/m/n/12 Tagi daj¡ mo»li-wo±ci oz-nacza-nia sta-bil-nych
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 491--492
+[]\T1/cmr/m/n/12 Peªna his-to-ria com-mitów jest za-wsze prze-
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 492--493
+[]\T1/cmr/m/n/12 Zapewnia odpowiedzialnosc za wprowad-zone
+ []
+
+
+Underfull \hbox (badness 4403) in paragraph at lines 506--507
+[]\T1/cmr/m/n/12 Takie pode-j±-cie za-pew-nia to prze-jrzys-to±¢
+ []
+
+
+Underfull \hbox (badness 6758) in paragraph at lines 510--511
+[]\T1/cmr/m/n/12 Centralne re-pozy-to-rium prze-chowuje kom-
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 528--529
+[]\T1/cmr/m/n/12 Scentralizowana his-to-ria uªatwia powrót do
+ []
+
+
+Overfull \hbox (3.95493pt too wide) in alignment at lines 475--544
  [] [] 
  []
 
-[34]
-Overfull \hbox (10.82779pt too wide) in paragraph at lines 519--520
+[34] [35]
+Overfull \hbox (10.82779pt too wide) in paragraph at lines 548--549
  \T1/cmr/bx/n/12 4.4.2 Ocena wspówdzieleina kodu za po-moc¡ bib-liotek[] \T1/cmr/m/n/12 Ocena
  []
 
 
-Overfull \hbox (6.51724pt too wide) in paragraph at lines 527--528
+Overfull \hbox (6.51724pt too wide) in paragraph at lines 556--557
 \T1/cmr/m/n/12 in-ter-fejs. Do-brze us-truk-tu-ry-zowana bib-lioteka izoluje skon-m-lip-kowane
  []
 
 
+Underfull \vbox (badness 1558) has occurred while \output is active []
 
-[35]
-Overfull \hbox (6.71303pt too wide) in paragraph at lines 533--534
+
+
+[36]
+Overfull \hbox (6.71303pt too wide) in paragraph at lines 562--563
 \T1/cmr/m/n/12 deweloperom odpowied-nie zarz¡dzanie za-le»no±-ci-ami. Przy odpowied-
  []
 
 
-Overfull \hbox (19.15845pt too wide) in paragraph at lines 539--540
+Overfull \hbox (19.15845pt too wide) in paragraph at lines 568--569
 \T1/cmr/m/n/12 w przy-padku gdy za-le»no±ci nie s¡ praw-idªowo izolowane mog¡ prowadzi¢
  []
 
 
-Overfull \hbox (0.78728pt too wide) in paragraph at lines 555--556
+Overfull \hbox (0.78728pt too wide) in paragraph at lines 584--585
 \T1/cmr/m/n/12 testy, aby mie¢ pewno±¢, »e przetwarzane dane po-zostaj¡ biez-pieczne. 
  []
 
 
 
-[36]
-
 [37]
-Overfull \hbox (16.12383pt too wide) in paragraph at lines 613--614
+
+[38]
+Overfull \hbox (16.12383pt too wide) in paragraph at lines 642--643
 \T1/cmr/m/n/12 w przy-padku bib-lioteki obiekty s¡ do-dawane do pro-jektu przez narz¦dzie
  []
 
 
-Overfull \hbox (19.87628pt too wide) in paragraph at lines 613--614
+Overfull \hbox (19.87628pt too wide) in paragraph at lines 642--643
 \T1/cmr/m/n/12 icznej ta-kich jak bro-kery wiado-mo±ci jak równie» dla wysªa-nia bezpo±red-
  []
 
 
 
-[38]
-
 [39]
-Overfull \hbox (1.11351pt too wide) in paragraph at lines 641--642
+
+[40]
+Overfull \hbox (1.11351pt too wide) in paragraph at lines 670--671
 \T1/cmr/m/n/12 testowane, aby za-pewni¢, »e zmi-any nie narusz¡ in-te-gral-no±ci danych.
  []
 
 
 
-[40] (./thesismanuscript.lot)
+[41]
+Overfull \hbox (3.39775pt too wide) in paragraph at lines 696--697
+\T1/cmr/m/n/12 kom-plek-sowo±¢ oz-nacza, »e up-raszczaj¡ dewel-op-ment, maj¡ ten-dencj¦
+ []
+
+
+Overfull \hbox (33.84225pt too wide) in paragraph at lines 708--709
+\T1/cmr/m/n/12 zªo»one, poniewa» musi odzwier-cied-la¢ zmi-any we wszys-t-kich wewn¦trznych
+ []
+
+
+
+[42] (./thesismanuscript.lot)
 \tf@lot=\write5
 \openout5 = `thesismanuscript.lot'.
 
@@ -1254,27 +1314,27 @@ Overfull \hbox (1.11351pt too wide) in paragraph at lines 641--642
 
  (./thesismanuscript.bbl
 
-[41])
+[43])
 
-[42] (./thesismanuscript.aux)
+[44] (./thesismanuscript.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 15985 strings out of 475128
- 322496 string characters out of 5765300
- 815449 words of memory out of 5000000
- 38674 multiletter control sequences out of 15000+600000
+ 15986 strings out of 475128
+ 322513 string characters out of 5765300
+ 815454 words of memory out of 5000000
+ 38675 multiletter control sequences out of 15000+600000
  570498 words of font info for 59 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,11n,101p,1879b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>
-Output written on thesismanuscript.pdf (42 pages, 300645 bytes).
+Output written on thesismanuscript.pdf (44 pages, 306574 bytes).
 PDF statistics:
- 547 PDF objects out of 1000 (max. 8388607)
- 131 compressed objects within 2 object streams
+ 557 PDF objects out of 1000 (max. 8388607)
+ 136 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

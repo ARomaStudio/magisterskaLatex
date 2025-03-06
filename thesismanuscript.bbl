@@ -1,5 +1,10 @@
 \begin{thebibliography}{10}
 
+\bibitem{ahmed2019impact}
+O.~A. Ahmed et~al.
+\newblock Impact of third-party sdks on mobile application performance.
+\newblock In {\em Proceedings of the IEEE International Conference on Mobile Software Engineering and Systems}, 2019.
+
 \bibitem{Essential}
 Joshua Bloch.
 \newblock {\em Effective Java}.

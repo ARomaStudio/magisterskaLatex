@@ -474,42 +474,71 @@ Na podstawie analizy żródeł literaturowych oraz doświadczenia włąsnego dok
     \hline
     \endlastfoot
 
-    \multicolumn{2}{|c|}{\textbf{1. SVN Systems (e.g., Git)}} \\ \hline
-    Granular Tracking &
+    \multicolumn{2}{|c|}{\textbf{1. SVN Systemy (Git)}} \\ \hline
+    śledzienie zmian &
     \begin{itemize}
-      \item Every change is recorded as a commit with messages, timestamps, and author information.
-      \item Branching and tagging enable isolated development and marking of stable releases.
-      \item The full commit history supports code reviews and audits.
+      \item Każda zmiana jest rejestrowana w postaci commitu z timestampem i informacjami wskazującymi autora.
+      \item Rozgałęzianie i tagowanie umożliwiają izolowane przygotowanie paczki zmian i później oznaczanie stabilnych wersji.
+      \item Pełna historia commitów umożliwia przeprowadzani audytów.
     \end{itemize} \\ \hline
-    Granular Tracking &
+    Rozgałęzianie i tagowanie &
     \begin{itemize}
-      \item Every change is recorded as a commit with messages, timestamps, and author information.
-      \item Branching and tagging enable isolated development and marking of stable releases.
-      \item The full commit history supports code reviews and audits.
+      \item Rozgałęzienie pozwala zespołom na przygowtoanie nowych wersji oprogramowania w izolacji, nie prxerywając pracy innych zespołów.
+      \item Tagi dają możliwości oznaczania stabilnych wersji, zapewniając łatwą identyfikację wersji gotowych do użytku.
+    \end{itemize} \\ \hline
+    Audytowalność &
+    \begin{itemize}
+      \item Pełna historia commitów jest zawsze przechowywana, co umożliwia audyty kodu.
+      \item Zapewnia odpowiedzialnosc za wprowadzone zmniany i usprawnia współpracę w zespołów.
+    \end{itemize} \\ \hline
+    
+    \multicolumn{2}{|c|}{\textbf{2. Biblioteki}} \\ \hline
+    Wersjonowanie semantyczne &
+    \begin{itemize}
+      \item Artefaktom przypisywane są numery.
+      \item Do każdej wersji dołączone są "Release notes".
+      \item Repozytoria przechowują pełną historię wersji.
+    \end{itemize} \\ \hline
+    Dzienniki zmian &
+    \begin{itemize}
+      \item Do każdego wydania dołączona szczegółowa dokumentacja.
+      \item Takie changelogi zmian zapewniają uporządkowaną historię modyfikacji,.
+      \item Takie podejście zapewnia to przejrzystość śledzenia zmian.
+    \end{itemize} \\ \hline
+    Centralne repozytorium artefaktów &
+    \begin{itemize}
+      \item Centralne repozytorium przechowuje kompletną historię wersji.
+      \item Dzięki temu zespoły mogą, w razie potrzeby, pobierać, porównywać i przywracać wcześniejsze stabilne wersje.
     \end{itemize} \\ \hline
 
-    \multicolumn{2}{|c|}{\textbf{2. Distribution via Libraries}} \\ \hline
-    Semantic Versioning &
+    \multicolumn{2}{|c|}{\textbf{3. Podejście Monorepo}} \\ \hline
+    Zunifikowany dziennik zmian &
     \begin{itemize}
-      \item Artifacts are assigned version numbers (MAJOR.MINOR.PATCH).
-      \item Release notes and changelogs accompany each version.
-      \item Central repositories maintain a full history of published versions.
+      \item Wszystkie mikrserwisy w systemie i powiązane z nimi pliki IDL znajdują się w jednym repozytorium.
+      \item Historia commitów zapewnia całościowy widok zmian.
     \end{itemize} \\ \hline
-
-    \multicolumn{2}{|c|}{\textbf{3. Monorepo Approach}} \\ \hline
-    Unified Change Log &
+    Spójność &
     \begin{itemize}
-      \item All microservices and their associated IDL files reside in a single repository.
-      \item A unified commit history provides a holistic view of changes.
-      \item Synchronization minimizes version drift.
+      \item Wszystkie zmiany są wprowadzane do jednego repozytorium, co zapewnia synchronizację.
+      \item Takie podejście minimalizuje ryzyko różnic w wersjach pomiędzy usługami.
+      \item Spójne wersjonowanie poprawia stabilność systemu.
+    \end{itemize} \\ \hline
+    Łatwość cofanięcia &
+    \begin{itemize}
+      \item Scentralizowana historia ułatwia powrót do poprzedniego stabilnego stanu.
+      \item Takie podejście ułatwia debugowanie i zwieększa stabilność systemu.
     \end{itemize} \\ \hline
 
     \multicolumn{2}{|c|}{\textbf{4. IDL as a Service (IDLaS)}} \\ \hline
-    Integrated Version Control &
+    Zintegrowana kontrola wersji &
     \begin{itemize}
-      \item The service includes built-in version control that tracks every change.
-      \item Dashboards display diffs and metadata (timestamps, authors).
-      \item Version history is accessible via standardized API calls.
+      \item Dostarczana usługa obejmuje wbudowaną kontrolę wersji.
+      \item Dostarczana usługa daję dostęp do histoii wersji za pomocą API.
+    \end{itemize} \\ \hline
+    Automatyczna dokumentacja &
+    \begin{itemize}
+      \item IDLaS często udostępniają interfejsy webowe.
+      \item Ze względu na to, że IDL jest udostępniane jako usługa, każdy użytkownik może uzyskać dostęp do historii wersji za pomocą API
     \end{itemize} \\ \hline
 
 \end{longtable}
@@ -661,6 +690,50 @@ Odpowiedzialność: SDK zazwyczaj posiadają przeróżne mechanizmy zarządzanie
 \begin{quote}
     "Comprehensive logging and version tracking in SDKs provide the necessary audit trails that hold developers accountable for every change made, thereby ensuring that any issues can be traced back to their origin." ~\cite[para 7]{azure2020}
 \end{quote}
+
+Ocena pod kątem skalowalności:
+
+SDK zazwyczaj zawierają wiele narzędzi czy komponentów Ta kompleksowość oznacza, że upraszczają dewelopment, mają tendencję do wyższego zużycia zasobów pamięci i procesora w porównaniu z, na przykład, IDL. Róznbe raporty dotyczące skalowania aplikacji w chmurach podkreślają, że SDK mogą powodować dodatkowe obciążenie na środowiskach z dużym obciążeniem.
+
+\begin{quote}
+    "SDKs, though beneficial for rapid development by bundling multiple tools, tend to impose a higher baseline resource consumption, especially under high-load production scenarios." ~\cite[para 3]{azure2020}
+\end{quote}
+
+\begin{quote}
+    "Third-party SDKs can significantly increase memory and CPU usage, becoming a notable overhead in environments with high concurrent demands." ~\cite[p. 4]{ahmed2019impact}
+\end{quote}
+
+Ocena pod kątem wersjonowania:
+
+SDK mogą zawirać wiele bibliotek i narzędzi, z których każde może nieć własną historię wersji. Wersjonowanie SDK może być  złożone, ponieważ musi odzwierciedlać zmiany we wszystkich wewnętrznych komponentach. Prowadzi to do bardziej zawożonej historii wersji, która wymaga dovbrej  dokumentacji i koordynacji.
+
+\begin{quote}
+    "SDKs encapsulate multiple interdependent modules. As a result, maintaining a structured version history across all components is challenging but essential in order to manage compatibility and coordinate upgrades effectively." ~\cite[para. 3]{azure2020}
+\end{quote}
+
+Przywracanie kodu do stabilnej wersji: Wycofywanie zmian w przypadku SDK może być trudnym, ponieważ SDK  może integrowac wiele komponentów. Ta złożoność może sprawić, że wycofywanie jest bardziej czasochłonne i podatny na błędy, jeśli nie jest zarządzany prawidłowo.
+
+\begin{quote}
+    "SDKs, by virtue of bundling several interdependent tools and libraries, require a coordinated rollback mechanism to ensure that all components revert to a stable, compatible state. This adds complexity compared to single-module libraries or IDL files." ~\cite[para. 3]{azure2020}
+\end{quote}
+
+Utrata danych i niespójność: SDK są narażone na większe ryzyko wewnętrznych niespójności i problemów w przypadku gdy moduły są aktualizowane asynchronicznie, może to doprowadzić do błędów, które mogą spowodować utratę danych lub uszkodzenie danych, jeśli nie są w odpowiedni sposówb zarządazane zarządzane.
+
+\begin{quote}
+    "The interdependencies within an SDK mean that even small version mismatches can lead to significant inconsistencies or data loss, making rigorous testing and coordinated versioning critical." ~\cite[para. 3]{azure2020}
+\end{quote}
+
+\subsubsection{Ocena wspówdzieleina kodu za pomocą API}
+
+Ocena pod kątem komunikacji: 
+
+\subsubsection{Ocena wspówdzieleina kodu za pomocą ServerLess}
+
+\subsection{Opis części praktycznej}
+
+
+
+\subsection{Podsumowanie}
 
 \nocite{*}
 

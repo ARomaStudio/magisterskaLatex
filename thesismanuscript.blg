@@ -4,45 +4,45 @@ The top-level auxiliary file: thesismanuscript.aux
 The style file: plain.bst
 Database file #1: thesisbibliography.bib
 Warning--I didn't find a database entry for "bloch2018effective"
-You've used 16 entries,
+You've used 17 entries,
             2118 wiz_defined-function locations,
-            568 strings with 5835 characters,
-and the built_in function-call counts, 3630 in all, are:
-= -- 318
-> -- 144
+            573 strings with 6028 characters,
+and the built_in function-call counts, 3899 in all, are:
+= -- 341
+> -- 157
 < -- 0
-+ -- 60
-- -- 44
-* -- 152
-:= -- 642
-add.period$ -- 47
-call.type$ -- 16
-change.case$ -- 58
++ -- 65
+- -- 48
+* -- 164
+:= -- 687
+add.period$ -- 50
+call.type$ -- 17
+change.case$ -- 62
 chr.to.int$ -- 0
-cite$ -- 16
-duplicate$ -- 177
-empty$ -- 353
-format.name$ -- 44
-if$ -- 768
+cite$ -- 17
+duplicate$ -- 191
+empty$ -- 381
+format.name$ -- 48
+if$ -- 827
 int.to.chr$ -- 0
-int.to.str$ -- 16
-missing$ -- 26
-newline$ -- 82
-num.names$ -- 32
-pop$ -- 135
+int.to.str$ -- 17
+missing$ -- 27
+newline$ -- 87
+num.names$ -- 34
+pop$ -- 143
 preamble$ -- 1
-purify$ -- 54
+purify$ -- 57
 quote$ -- 0
-skip$ -- 100
+skip$ -- 109
 stack$ -- 0
-substring$ -- 80
-swap$ -- 16
+substring$ -- 85
+swap$ -- 18
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 38
+type$ -- 42
 warning$ -- 0
-while$ -- 32
-width$ -- 18
-write$ -- 161
+while$ -- 34
+width$ -- 19
+write$ -- 171
 (There was 1 warning)
