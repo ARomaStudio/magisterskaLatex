@@ -372,7 +372,7 @@ Dane do porównania zostały zebrane z żródeł literaturowych ~\cite{newman201
 
 \begin{table}[htbp]
     \centering
-    \caption{Comparison of Code Sharing Approaches in Microservices}
+    \caption{Porównanie podejść do współdzielenia kodu w systemach mikroserwisów}
     \label{tab:comparison}
     \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
     \hline
@@ -414,34 +414,33 @@ Dane do porównania zostały zebrane z żródeł literaturowych ~\cite{newman201
 Ocena pod kątem bezpieczeństwa:
 
 \begin{longtable}{|p{4cm}|p{4cm}|p{4cm}|}
-\caption{Sample Longtable Caption} \\
-\hline
-\textbf{Criterion} & \textbf{Advantages} & \textbf{Challenges} \\ \hline
-\multicolumn{3}{|c|}{\textbf{SVN (Subversion)}} \\ \hline
-Confidentiality & Advanced access control mechanisms ensure confidentiality & Requires proper configuration to prevent unauthorized access \\ \hline
-Integrity & Full change history ensures data integrity & Integrity issues can arise if changes are not properly synced \\ \hline
-Availability & Central repository accessible from multiple locations & Central server failure may disrupt availability \\ \hline
-Authenticity & User authentication controls access to the repository & Misconfigured authentication may lead to security issues \\ \hline
-Accountability & Full change history allows attribution of actions & Auditing process must be properly configured \\ \hline
-\multicolumn{3}{|c|}{\textbf{GIT}} \\ \hline
-Confidentiality & Strong access control mechanisms in private repositories & Security configurations must be properly managed \\ \hline
-Integrity & SHA-1 hashing ensures file integrity & Conflicts can arise if changes are not synchronized \\ \hline
-Availability & Distributed system ensures high availability & Requires proper synchronization infrastructure \\ \hline
-Authenticity & Supports authentication via SSH, HTTPS, and keys & Weak passwords or missing 2FA may pose risks \\ \hline
-Accountability & Complete change history ensures tracking & Auditing in multi-user environments can be complex \\ \hline
-\multicolumn{3}{|c|}{\textbf{Distribution via Repositories (Nexus, Artifactory)}} \\ \hline
-Confidentiality & Authentication and access control protect IDL files & Improper security settings may lead to unauthorized sharing \\ \hline
-Integrity & Version control and artifact signing ensure integrity & Lack of versioning or signing may cause issues \\ \hline
-Availability & Central storage for artifacts ensures availability & Requires strong infrastructure for reliability \\ \hline
-Authenticity & Signing mechanisms confirm trusted sources & Requires proper configuration to prevent forgery \\ \hline
-Accountability & Auditing and monitoring track user actions & Proper logging is needed for accountability \\ \hline
-\multicolumn{3}{|c|}{\textbf{Monorepo Approach}} \\ \hline
-Confidentiality & Centralized access control improves security & Managing access in large repositories is complex \\ \hline
-Integrity & Centralized changes ensure consistency & Synchronization challenges in large teams \\ \hline
-Availability & Central repository allows easy access & Requires strong infrastructure for large-scale usage \\ \hline
-Authenticity & Organizational-level access control ensures security & Managing permissions across large teams is difficult \\ \hline
-Accountability & Centralized process allows full change tracking & Harder to attribute responsibility in large organizations \\ \hline
-
+    \caption{Porównanie SVN, bibliotek, Monorepo i IDLaS pod kątem bezpieczeńswa.} \\
+    \hline
+    \textbf{Kryteria} & \textbf{Zalety} & \textbf{Wyzwania} \\ \hline
+    \multicolumn{3}{|c|}{\textbf{SVN }} \\ \hline
+    Poufność & Zaawansowane mechanizmy kontroli dostępu wspierają w zapewnieniu poufności & Wymaga odpowiedniej dodatkowej konfiguracji \\ \hline
+    Integralność & Pełna i przejrzysta historia zmian zapewnia integralność danych & Problemy z integralnością mogą wystąpić w przypadku, gdy zmiany nie zostaną prawidłowo zsynchronizowane \\ \hline
+    Dostępność & Scentralizowane repozytorium dostępne z wielu lokalizacji & Awaria serwera centralnego może ograniczyć dostęp \\ \hline
+    Autentyczność & Uwierzytelnianie użytkowników kontroluje dostęp do repozytorium & Nieprawidłowa konfiguracja uwierzytelniania może prowadzić do problemów z bezpieczeństwem \\ \hline
+    Odpowiedzialność & Za pomocą uwierzytelniania można kontrolować dostęp do repozytorium & Proces przeprowadzenia audytu w systemie musi być prawidłowo skonfigurowany \\ \hline
+    \multicolumn{3}{|c|}{\textbf{Dystrybucja za pomocą bibliotek (Nexus)}} \\ \hline
+    Poufność & Uwierzytelnianie i mechanizmy kontroli dostępu pomagają chronić pliki IDL & Nieprawidłowa konfiguracja może prowadzić do nieautoryzowanego udostępniania \\ \hline
+    Integralność & Kontrola wersji artefaktów zapewnia integralność & Brak wersjonowania może spowodować problemy \\ \hline
+    Dostępność & Scentralne przechowywanie artefaktów zapewnia dla nich dostępność & Wymaga dodatkowej konfiguracji do prawidłowego działania \\ \hline
+    Autentyczność & Mechanizmy podpisywania artefaktów pomagają w znalezieniu zaufanych źródeł & Wymaga prawidłowej konfiguracji \\ \hline
+    Odpowiedzialność & Nie wszystkie rozwiązania zapewniają audyt i monitorowanie działań użytkowników & Właściwe logowanie zewnętrzne jest niezbędne do rozliczalności \\ \hline
+    \multicolumn{3}{|c|}{\textbf{Podejście Monorepo}} \\ \hline
+    Poufność & Scentralizowana kontrola dostępu pomaga poprawić bezpieczeństwo & Zarządzanie dostępem w dużych repozytoriach potrafi być skomplikowane \\ \hline
+    Integralność & Scentralizowane zarządzanie zmianami pomaga w zapewnieniu spójności & Są różne wyzwania związane z synchronizacją w dużych zespołach \\ \hline
+    Dostępność & Scentralizowane repozytorium umożliwia łatwy dostęp do treści repozytorium & Wymaga solidnie postawionej infrastruktury do użytku na dużą skalę \\ \hline
+    Autentyczność & Kontrola dostępu na wyższym poziomie w organizacji pomaga w zapewnieniu bezpieczeństwa & Zarządzanie uprawnieniami w dużych zespołach jest trudne i może doprowadzić do błędów \\ \hline
+    Odpowiedzialność & Scentralizowane procesy biznesowe umożliwiają pełne śledzenie zmian & W dużych organizacjach trudniej znaleźć odpowiedzialnego za błąd w rezultacie audytu \\ \hline
+    \multicolumn{3}{|c|}{\textbf{IDL as a Service (IDLaS)}} \\ \hline
+    Poufność & Bezpieczne punkty końcowe API z uwierzytelnianiem i szyfrowaniem zapewniają poufność & Wymaga konfiguracji bezpieczeństwa i stałego monitorowania dostępu \\ \hline
+    Integralność & Systemy kontroli wersji i automatyczna dokumentacja mogą pomóc w zapewnieniu integralności zmian & Nieprawidłowe zarządzanie wersjami może prowadzić do problemów z integralnością \\ \hline
+    Dostępność & Zapewnia wysoką dostępność dzięki automatycznemu zarządzaniu zasobami & Zależność od stabilnego połączenia sieciowego \\ \hline
+    Autentyczność & Mechanizmy uwierzytelniania, autoryzacji i certyfikatów cyfrowych wspomagają uwierzytelnienie & Wymaga regularnego monitorowania systemu bezpieczeństwa \\ \hline
+    Odpowiedzialność & Szczegółowe logi umożliwiają precyzyjne śledzenie zmian & Integracja z systemami zarządzania logami wymaga konfiguracji \\ \hline
 \end{longtable}
 
 Ocena pod kątem skalowalności:
@@ -457,7 +456,7 @@ Ocena pod kątem wersjonowania:
 Na podstawie analizy żródeł literaturowych oraz doświadczenia włąsnego dokonałem analizy podejścia do wpółdzielenia kodu za pomocą plików IDL. W tym trzybaku ocena pod kątem wersjonowania rówżni się w zależnosci od podejścia do zarządzania plikamu IDL, dlatego dokonałem porównania dla każdego z podejść.
 
 \begin{longtable}{|C{3cm}|C{9.1cm}|}
-    \caption{Sample Longtable Caption} \\
+    \caption{Porównanie podejść do zarządzania kodem, wersjonowania i repozytoriami: Git, biblioteki, Monorepo i IDLaS.} \\
     \hline
     \textbf{Zaleta} & \textbf{Opis} \\
     \hline

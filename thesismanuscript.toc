@@ -24,12 +24,12 @@
 \contentsline {subsubsection}{\numberline {4.3.5}Definicja kryterium oceny pod kątem wersjonowania}{27}{}%
 \contentsline {subsection}{\numberline {4.4}Ocena i porównanie metod współdzielenia kodu}{29}{}%
 \contentsline {subsubsection}{\numberline {4.4.1}Ocena wspówdzieleina kodu za pomocą Interface definition languages}{29}{}%
-\contentsline {subsubsection}{\numberline {4.4.2}Ocena wspówdzieleina kodu za pomocą bibliotek}{36}{}%
-\contentsline {subsubsection}{\numberline {4.4.3}Ocena wspówdzieleina kodu za pomocą SDK}{40}{}%
-\contentsline {subsubsection}{\numberline {4.4.4}Ocena wspówdzieleina kodu za pomocą API}{43}{}%
-\contentsline {subsubsection}{\numberline {4.4.5}Ocena wspówdzieleina kodu za pomocą ServerLess}{43}{}%
-\contentsline {subsection}{\numberline {4.5}Opis części praktycznej}{43}{}%
-\contentsline {subsection}{\numberline {4.6}Podsumowanie}{43}{}%
-\contentsline {section}{\numberline {5}Appendices}{44}{}%
-\contentsline {subsection}{\numberline {5.1}Sample Code}{44}{}%
-\contentsline {subsection}{\numberline {5.2}Sample Data}{44}{}%
+\contentsline {subsubsection}{\numberline {4.4.2}Ocena wspówdzieleina kodu za pomocą bibliotek}{37}{}%
+\contentsline {subsubsection}{\numberline {4.4.3}Ocena wspówdzieleina kodu za pomocą SDK}{41}{}%
+\contentsline {subsubsection}{\numberline {4.4.4}Ocena wspówdzieleina kodu za pomocą API}{44}{}%
+\contentsline {subsubsection}{\numberline {4.4.5}Ocena wspówdzieleina kodu za pomocą ServerLess}{44}{}%
+\contentsline {subsection}{\numberline {4.5}Opis części praktycznej}{44}{}%
+\contentsline {subsection}{\numberline {4.6}Podsumowanie}{44}{}%
+\contentsline {section}{\numberline {5}Appendices}{45}{}%
+\contentsline {subsection}{\numberline {5.1}Sample Code}{45}{}%
+\contentsline {subsection}{\numberline {5.2}Sample Data}{45}{}%
