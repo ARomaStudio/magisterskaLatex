@@ -730,7 +730,72 @@ Ocena pod kątem komunikacji:
 
 \subsection{Opis części praktycznej}
 
+Jaką część praktyczną mojej pracy magisterskiej przygotowałem aplikację webową, która : 
+Składa się z dwóch części, back endowej i front endowej 
+Głównym celem napisania aplikacji jest wprowadzenie nowego podejścia do współdzielenia kodu - współdzielenie za pomocą technologii serwer less. Aplikacja wspiera deweloperów korzystających z technologii serwer less, zmniejsza wady tego rozwiązania natomiast dając możliwość skorzystania z mocnych stron tej technologii.  
 
+Czym jest technologia Serverless?
+
+Serverless to nowoczesny model wykonywania obliczeń w chmurze, w którym dostawcy chmury automatycznie obsługują aspekty infrastruktury, takie jak zarządzanie serwerem oraz skalowanie zasobów. Zamiast zarządzać serwerami fizycznymi lub wirtualnymi, programiści mogą skupić się się wyłącznie na pisaniu kodu. Termin „serverless” nie oznacza że niema fizycznych serwerów, ale, że zarządzanie serwerem jest oderwane od użytkowników. W architekturach serverless wdrażamy do chmury funkcje zamiast całych aplikacji, a dostawca chmury jest odpowiedzialny za zarządzanie kodem, skalowanie i utrzymywanie tych funkcji. Są one też często nazywane Function-as-a-Service (FaaS).
+
+Przykłady platform server less dostępnych w 2025 roku:
+
+\begin{enumerate}
+    \item AWS Lambda - Usługa, która umożliwia uruchamianie kodu bez zarządzania serwerami. AWS Lambda automatycznie skaluje aplikację, daje mozliwość uruchamiać kod po wyłowamiu odpowiednego zdarzenia.
+    \item Azure Functions - Usługa świadczona przez Microsoft Azure, która umożliwia uruchamianie funkcji w chmurze, z automatycznym skalowaniem.
+    \item Google Cloud Functions - Usługa świadczona przez Google Cloud, umożliwia uruchamianie kodu po wyłowamiu odpowiednego zdarzeniaw w Google Cloud lub w odpowiedzi na żądanie HTTP.
+    \item IBM Cloud Functions - Usługa oparta na Apache OpenWhisk, obsługuje wykonywanie funkcji w różnych językach.
+\end{enumerate}
+
+\subsubsection{Ogulny opis aplikacji}
+
+Przygotowana aplikacja webowa wykonuje następujące czynności:
+
+\begin{enumerate}
+    \item Przyjmuje i waliduje kod który użytkownik chce współdzielić za pomocą technologii server lees, w przypadku problemów w trakcie walidacji kodu użytkownik zostaje poinformowany o tem co on ma pojawić żeby sukcesywnie dokończyć operację.
+    \item Automatycznie przygotowuje kod do wdrożenia na Amazon Lambda (w przyszłości możliwe łatwe dodanie możliwości wyboru rozwiązania które będzie wykorzystane dla wdrożenia, na przykład Azure functions).
+    \item Automatycznie wdraża kod na platformę Server Less kod, po kilku sekundach kod już jest dostępny do wykorzystania.
+    \item Zapisuje kod w bazie danych do użytku w przyszłości, użytkownik widzi listę wdrożeniowych funkcji.
+    \item Umożliwia edycję i ponowne wdrożenie kodu w liście.
+    \item Wyszukiwanie kodu za pomocą opisu.
+    \item Dodanie wersjonowania kodu.
+    \item Automatycznie  przygotowuje pliki IDL które są zalecane do wykorzystania  w trakcie wywołania kodu na platformie IDL.
+    \item Przechowywanie plików IDL oraz udostępnienie razie zapotrzebowania, co umożliwia współdzielenie kodu między zespołami oraz członkami zespołu.
+\end{enumerate}
+
+\subsubsection{Opis aplikacji back-end}
+
+Używane technologie
+Java: Podstawowy język programowania używany do tworzenia aplikacji.
+Spring Boot: Framework, który upraszcza tworzenie aplikacji opartych w Javie.
+Maven: Narzędzie do automatyzacji kompilacji używane do zarządzania zależnościami projektu i budowania projektu.
+AWS Lambda: Usługa obliczeniowa bserverless, która uruchamia kod i zarządza zasobami obliczeniowymi.
+Protobuf: Nowoczesy, rozszerzalny mechanizm IDL, używany do wydajnej serializacji i deserializacji danych dostarczony prze Google.
+Jackson: Biblioteka do przetwarzania danych JSON, używana do konwersji danych wejściowych na DTO.
+Ogólny opis:
+Ta aplikacja jest częścią aplikacji webowej, która odpowiada za następujące wdizłania:
+Odbiera kod jako dane wejściowe użytkownika: Akceptuje kod od użytkownika za pośrednictwem żądań HTTP.
+Weryfikuje kod: Spawdza że otrzymany kod spełnia wymagane standardy i format.
+Automatycznie wdraża kod jako funkcję Lambda: wdraża sprawdzony kod jako funkcję AWS Lambda.
+Generuje pliki .proto: tworzy pliki .proto na podstawie kodu wejściowego, które mogą być używane do generowania obiektów DTO do komunikacji z wdrożoną funkcją Lambda.
+
+\subsubsection{Opis aplikacji front-end}
+
+Aplikacja front-endowa została przygotowana przy użyciu JavaScript, React i npm.
+React to popularna biblioteka JavaScript do tworzenia aplikacji front-endowych, w szczególności aplikacji jednostronicowych, w których można tworzyć komponenty interfejsu użytkownika wielokrotnego użytku.
+Npm (Node Package Manager) służy do zarządzania zależnościami i skryptami projektu.
+
+Aplikacja jest zbudowana przy użyciu komponentów React, co umożliwia modułowy kod który możnz uźywać wielokrotmie. Każdy komponent reprezentuje część interfejsu użytkownika.
+
+Ogólny opis:
+Ta aplikacja jest częścią aplikacji webowej, która odpowiada za następujące działania:
+Za pomocą aplikacji użytkownik może wprowadzić kod, który chce współdzielić, a następnie wysłać go do back-endu.
+Aplikacja front-endowa sprawdza kod, czy spełnia wymagane standardy i format.
+Aplikacja front-endowa wyświetla wyniki weryfikacji kodu użutkownikowi oraz daje informację zwrotną dla użytkownika.
+Użytkownik może przeglądać, edytować i usuwać kod, który został wcześniej zapisany i wdrożony na AWS Lambda.
+Użytkownik za pomocą aplikacji może wyszukać wdrożony kod za pomocą opisu i nazwy.
+Aplikacja wspiera wersjonowanie kodu, aby śledzić za zmianami lub przywracać poprzednie wersje w razie potrzeby.
+Udostępnienie plików .proto: Aplikacja front-endowa udostępnia pliki .proto które mogą być używane do generowania obiektów DTO do komunikacji z wdrożoną funkcją Lambda.
 
 \subsection{Podsumowanie}
 

@@ -29,7 +29,10 @@
 \contentsline {subsubsection}{\numberline {4.4.4}Ocena wspówdzieleina kodu za pomocą API}{44}{}%
 \contentsline {subsubsection}{\numberline {4.4.5}Ocena wspówdzieleina kodu za pomocą ServerLess}{44}{}%
 \contentsline {subsection}{\numberline {4.5}Opis części praktycznej}{44}{}%
-\contentsline {subsection}{\numberline {4.6}Podsumowanie}{44}{}%
-\contentsline {section}{\numberline {5}Appendices}{45}{}%
-\contentsline {subsection}{\numberline {5.1}Sample Code}{45}{}%
-\contentsline {subsection}{\numberline {5.2}Sample Data}{45}{}%
+\contentsline {subsubsection}{\numberline {4.5.1}Ogulny opis aplikacji}{45}{}%
+\contentsline {subsubsection}{\numberline {4.5.2}Opis aplikacji back-end}{46}{}%
+\contentsline {subsubsection}{\numberline {4.5.3}Opis aplikacji front-end}{46}{}%
+\contentsline {subsection}{\numberline {4.6}Podsumowanie}{47}{}%
+\contentsline {section}{\numberline {5}Appendices}{48}{}%
+\contentsline {subsection}{\numberline {5.1}Sample Code}{48}{}%
+\contentsline {subsection}{\numberline {5.2}Sample Data}{48}{}%
