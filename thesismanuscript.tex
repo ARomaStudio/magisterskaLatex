@@ -52,7 +52,7 @@ Rapid development and adoption of microservices architecture in last few years c
 
 \selectlanguage{polish}
 \begin{abstract}
-Szybki rozwój i powszechne przyjęcie architektury mikroserwisowej w ostatnich latach zmienił świat informatyki. Architektura mikroserwisowa ma wiele zalet, takich jak elastyczność, łatwe wdrożenia i prostota w utrzymaniu. Natomiast powoduje nowe wyzwania, takie jak, na przykład, problem duplikacji kodu i zarządzanie kodem. W mojej pracy magisterskiej przeprowadziłem dokładną analizę metod i podejść współdzielenia kodu w systemach mikroserwisów. W mojej pracy chcę porównać za pomocą źródeł literaturowych oraz przeprowadzonych badań dostępne metody współdzielenia kodu, zdefiniować przypadki w których warto wybrać takie lub inne podejście. Oraz w części praktycznej chcę zaproponować własne nowoczesne podejście do współdzielenia kodu które połączy zalety istniejących rozwiązań i zapewni wydajność oraz komfort w zarządzaniu kodem. Na końcu pracy znajduje się porównanie mojego rozwiązania z istniejącymi za pomocą przygotowanych testów wydajnościowych.
+Bez wątpienia mogę powiedzieć, że szybki rozwój i przyjęcie architektury mikroserwisowej w ostatnich latach zmieniły świat informatyki. Uważam, że architektura mikroserwisowa ma wiele zalet, takich jak na przykład elastyczność, prostota wdrożenia i utrzymania. Natomiast powoduje nowe wyzwania dla programistów, takie jak do przykładu problem duplikacji kodu. W pracy magisterskiej przeprowadziłem dokładną analizę metod i podejść współdzielenia kodu w systemach mikroserwisów, porównanie za pomocą źródeł literaturowych oraz przeprowadzonych badań dostępne podejścia do współdzielenia kodu, zdefiniować przypadki, w których warto wybrać takie lub inne podejście. W części praktycznej zaprezentowałem własne nowoczesne rozwiązanie, które połączyło zalety istniejących rozwiązań, wydajność oraz komfort zarządzania kodem. Na końcu umieściłem porównanie mojego rozwiązania z istniejącymi za pomocą przygotowanych testów wydajnościowych.
 \keywords{Architektura mikrousług \and Współdzielenie kodu \and Wydajność.}
 \end{abstract}
 
@@ -65,21 +65,20 @@ Szybki rozwój i powszechne przyjęcie architektury mikroserwisowej w ostatnich 
 \section{Wstęp}
 
 \subsection{Zakres pracy}
-W pracy magisterskiej przeprowadzono dokładną analizę metod i podejść do współdzielenia kodu w systemach mikroserwisów, zakres tej pracy zawiera porównanie między architekturą monolitową a mikroserwisową, identyfikację typów obiektów wykorzystywanych w kodzie współczesnych aplikacji, analizę dostępnych metod i podejść do współdzielenia kodu IDL, SDK oraz biblioteki, praktyczna implementacja aplikacji wspierającej nowatorskie podejście do współdzielenia kodu ServerLess.
+W pracy magisterskiej przeprowadzono dokładną analizę metod i podejść do współdzielenia kodu w systemach mikroserwisów. Zakres tej pracy zawiera porównanie między architekturą monolitową a mikroserwisową, identyfikację typów obiektów wykorzystywanych w kodzie współczesnych aplikacji, analizę dostępnych metod i podejść do współdzielenia kodu, IDL, SDK oraz biblioteki, a także praktyczną implementację aplikacji wspierającej nowatorskie podejście do współdzielenia kodu Serverless.
 
 \subsection{Motywacja}
-Główną motywacją do napisania pracy było rosnące w współczesnych czasach zainteresowanie mikroserwisowym podejściem do architektury, które ma wiele zalet, takich jak elastyczność, łatwość wdrożenia i utrzymania na produkcji, możliwość łatwej i szybkiej naprawy problemów na produkcji ale natomiast ma również powoduje nowe wyzwania, takie jak problem duplikacji kodu i zapotrzebowanie na współdzielenie kodu między mikroserwisami w systemie.
-
-W mojej pracy chcę przeanalizować jakie metody współdzielenia kodu są dostępne na rynku, jakie są ich zalety i wady, jakie są najlepsze praktyki w współdzieleniu kodu w systemach mikroserwisów. Porównać bardziej tradycyjne podejścia do współdzielenia kodu, takie jak IDL, SDK, biblioteki z nowatorskim podejściem do współdzielenia kodu takich jak ServerLess, chcę stworzyć oprogramowanie które połączy główne zalety tradycyjnych metod współdzielenia kodu z zaletami bardziej nowoczesnych podejść.
+Główną motywacją do napisania pracy było rosnące we współczesnych czasach zainteresowanie mikroserwisowym podejściem do architektury, które ma wiele zalet, takich jak elastyczność, łatwość wdrożenia i utrzymania na produkcji, możliwość łatwej i szybkiej naprawy problemów na produkcji, natomiast również powoduje nowe wyzwania, takie jak problem duplikacji kodu i zapotrzebowanie na współdzielenie kodu między mikroserwisami w systemie.
+W mojej pracy chcę przeanalizować, jakie metody współdzielenia kodu są dostępne na rynku, jakie są ich zalety i wady, jakie są najlepsze praktyki we współdzieleniu kodu w systemach mikroserwisów. Chcę porównać bardziej tradycyjne podejścia do współdzielenia kodu, takie jak IDL, SDK, biblioteki, z nowatorskim podejściem do współdzielenia kodu, takim jak Serverless, chcę stworzyć oprogramowanie, które połączy główne zalety tradycyjnych metod współdzielenia kodu z zaletami bardziej nowoczesnych podejść.
 
 \newpage
 
 \subsection{Zawartość pracy}
-Praca jest ustrukturyzowana w kilka rozdziałów, które wprowadzają czytelnika najpierw w szczegóły teoretyczne a później w praktyczne aspekty współdzielenia kodu w systemach mikroserwisów. Krótki opis rozdziałów znajduje się poniżej:
+Praca jest ustrukturyzowana w kilka rozdziałów, przedstawiam krótki opis rozdziałów parcy:
 \begin{enumerate}
-    \item Wstęp - W tym rozdziale analizuję wady i zalety architektury mikroserwisowej, monolitycznej, porównuję dlaczego z architektury monolitycznej powstała architektura mikroserwisowa, analizuję przypadki w których lepiej użyć architektury monolitycznej a w której architekturę mikroserwisową. Opisuję dlaczego powstało zapotrzebowanie na współdzielenie kodu. Wyjaśniam logikę leżącą u podstaw eksploracji wielu metod współdzielenia kodu. Uzasadniam informację przykładami z literatury.
-    \item Architektura mikroserwisowa a Monolitowa - W tym rozdziale porównuję architekturę mikroserwisową z monolityczną, przedstawiam różnice w utrzymaniu i skalowalności, za pomocą źródeł literaturowych prezentuję.
-    \item Analiza dziedziny problemowej - W tym rozdziale pracy kategoryzuję typy obiektów które mogą potrzebować współdzielenia kodu w systemie mikroserwisów, analizuję możliwe wyzwania związane z współdzieleniem poszczególnych typów obiektów, przedstawiam uzasadnienia z literatury.
+    \item Wstęp - W tym rozdziale analizuję wady i zalety architektury mikroserwisowej oraz monolitycznej, też analizuję, dlaczego z architektury monolitycznej powstała w ostatich latach architektura mikroserwisowa, robię analizę przypadków w których lepiej użyć architektury monolitycznej a w których architekturę mikroserwisową. Opisuję dlaczego powstało zapotrzebowanie na współdzielenie kodu. Uzasadniam informację przykładami z literatury.
+    \item Architektura mikroserwisowa a Monolitowa - W tym rozdziale paracy porównuję mikroserwisy z podejściem monolitycznym, przedstawiam różnice w utrzymaniu i skalowalności, za pomocą źródeł literaturowych.
+    \item Analiza dziedziny problemowej - W tym rozdziale przedstawiam kategoryzuję typy obiektów które mogą potrzebować współdzielenia kodu w systemie mikroserwisów, analizuję możliwe wyzwania związane z współdzieleniem poszczególnych typów obiektów, przedstawiam uzasadnienia z literatury.
     \item Analiza metod współdzielenia kodu - W tym rozdziale kompleksowa analiza istniejących metod współdzielenia kodu w systemach mikroserwisów za pomocą źródeł literaturowych kryterium ocenia.
     \item Opis części praktycznej - Zawiera opis przygotowanej w ramach pracy aplikacji która wspomaga nowoczesne rozwiązanie do współdzielenia kodu w systemach mikroserwisów - Server Less rozszerzając możliwości tego rozwiązania.
 \end{enumerate}
@@ -88,53 +87,59 @@ Praca jest ustrukturyzowana w kilka rozdziałów, które wprowadzają czytelnika
 
 \section{Architektura mikroserwisowa a monolitowa}
 
-Rozwój architektury mikroserwisowej w ostatnich latach przyniósł wiele korzyści, takich jak łatwość skalowania, niezależność wdrożenia i elastyczność. Jednak, wraz z tą elastycznością, pojawiają się również nowe wyzwania, związane między innymi z odpowiednim współdzieleniem obiektów pomiędzy mikroserwisami.
+Mikroserwisowa infrastruktura, szybko rozwijająca się w ostatnich latach, przyniosła wiele korzyści w świat informatyki. Pozwoliła na tworzenie skalowalnych i elastycznych systemów, ułatwiła utrzymanie takich systemów. Natomiast musimy również uważać przy wyborze architektury na to, że w przypadku mikroserwisów musimy poradzić sobie z kwestią współdzielenia kodu w takim systemie mikroserwisów.
 
 \subsection{Architektura mikroserwisowa}
 
-Podział aplikacji na mniejsze, niezależne serwisy umożliwia elastyczne skalowanie poszczególnych komponentów, co przekłada się na lepszą wydajność i dostępność systemu. Ponadto, rozbudowa i utrzymanie aplikacji w oparciu o mikroserwisy jest znacznie prostsza, ponieważ każdy serwis może być rozwijany niezależnie. Taka modularna struktura pozwala na szybsze wprowadzanie nowych funkcjonalności oraz łatwiejsze naprawianie błędów. Istotną korzyścią jest również możliwość korzystania z różnych technologii w poszczególnych serwisach, co daje większą elastyczność i umożliwia wykorzystanie najlepszych narzędzi dla każdej części aplikacji. W rezultacie, architektura mikroserwisowa umożliwia bardziej efektywne zarządzanie projektem, lepszą skalowalność zespołu oraz izolację błędów, co przyczynia się do wyższej jakości i niezawodności systemu.
-
+Na podstawie mojego doświadczenia, podział aplikacji na mniejsze, niezależne usługi przynosi liczne korzyści. Każdy mikroserwis można skalować osobno, co pozwala na poprawę wydajności całego systemu. W sytuacji, gdy pojawia się problem, naprawa jest prostsza, ponieważ wystarczy skupić się na jednej części aplikacji, a nie na całym systemie. Mikrousługi wpływają również na organizację pracy zespołowej. Deweloperzy mogą skupić się na rozwoju pojedynczych mikroserwisów, co ułatwia zarządzanie projektem i zmniejsza ryzyko wystąpienia błędów w innych częściach aplikacji. Ponadto, gdy pojawia się problem, jest on łatwiejszy do zidentyfikowania, a proces naprawy staje się bardziej efektywny. Kolejną zaletą mikrousług, moim zdaniem, jest ich elastyczność pod względem doboru technologii. Dzięki temu, że każdą usługę można tworzyć i zarządzać nią z użyciem różnych narzędzi, istnieje większa swoboda w doborze najlepszych rozwiązań technologicznych do każdej części systemu. Mikrousługi wspierają również skuteczne zarządzanie projektem, ponieważ umożliwiają szybsze wdrażanie nowych funkcji i reagowanie na zmiany. Taki system jest bardziej odporny na awarie, a cały proces utrzymania aplikacji jest prostszy.
 \begin{quote}
     "Microservices are small, autonomous services that work together. Let’s break that definition down a bit and consider the characteristics that make microservices different."~\cite[p. 2]{newman2015building}
 \end{quote}
 
-Charakterystyka architektury mikrousług:
-Modułowość - Usługi są modułowe, co umożliwia łatwiejszy rozwój, konserwację i skalowalność, ponieważ każda usługa kontroluje określoną funkcję lub cechę.
-Solidność - Mikrousługi zwiększają ogólną solidność systemu, ponieważ błędy w jednej usłudze nie wpływają na całą aplikację, zapewniając tolerancję błędów i niezawodność systemu.
-Interoperacyjność - Różne mikrousługi komunikują się za pośrednictwem dobrze zdefiniowanych interfejsów API, zapewniając bezproblemową integrację i interakcję usług.
-Równoległy rozwój - Oddzielne zespoły programistyczne mogą pracować nad różnymi mikrousługami jednocześnie, co przyspiesza rozwój i funkcje.
-Elastyczność w zakresie elastycznych technologii - Różne mikrousługi można budować przy użyciu różnych technologii, co pozwala na wykorzystanie najskuteczniejszych narzędzi dla każdej przydzielonej funkcji/cechy.~\cite{sharma2023monolithic}
+Architektura mikrousług przedstawia następujące cechy:
+
+\begin{enumerate}
+    \item Modułowość - W przypadku mikroserwisów możemy wdrażać pojedyncze elementy systemu bez wpływu na pozostałe.
+    \item Niezawodność - Mikroserwisy są niezawodne, ponieważ błąd w jednej części systemu niekoniecznie będzie miał wpływ na cały system.
+    \item Interoperacyjność — Komunikacja za pomocą wymiany danych przez zasoby sieciowe daje nam możliwość połączenia mikroserwisów napisanych w różnych językach i technologiach. W tym przypadku możemy połączyć w jednym systemie kilka technologii i wykorzystać mocne strony każdej z nich.
+    \item Równoległy rozwój - Zespoły programistów mogą pracować nad osobnymi mikroserwisami równolegle, bez konfliktów zmian w kodzie.
+\end{enumerate}
 
 \subsection{Architektura monolitowa}
 
-Architektura monolityczna, która opiera się na jednym spójnym kodzie źródłowym, oferuje pewne korzyści w kontekście prostoty zarządzania i łatwości wdrożenia. Wszystkie komponenty aplikacji są ze sobą ściśle powiązane, co ułatwia debugowanie i śledzenie błędów. Ponadto, brak konieczności konfigurowania i zarządzania infrastrukturą dla wielu usług upraszcza proces wdrażania. W przypadku mniejszych projektów o prostszych wymaganiach, architektura monolityczna może być bardziej efektywna i wydajna, eliminując niepotrzebną złożoność komunikacji między usługami. Jednak warto pamiętać, że architektura monolityczna może napotkać trudności w skalowaniu i utrzymaniu w przypadku większych, bardziej złożonych systemów.
-
 Charakterystyka architektury monolitycznej:
-Pojedyncza jednostka wdrożenia - Cała aplikacja jest wdrażana jako pojedyncza, niepodzielna jednostka. Wszelkie uaktualnienia, ulepszenia lub modyfikacje wymagają wdrożenia całej aplikacji, w tym wszystkich jej komponentów.
-Scentralizowany przepływ kontroli - Centralny moduł lub funkcja podstawowa nadzoruje przepływ kontroli w aplikacji, koordynując sekwencyjny postęp wykonywania od jednego komponentu do następnego.
-Ścisłe sprzężenie - Komponenty i moduły w aplikacji są silnie powiązane i zależne od siebie.
-Współdzielona pamięć - Wszystkie komponenty oprogramowania mają bezpośredni dostęp do zasobów pamięci, co sprzyja ścisłej integracji. Jednak taka konfiguracja może również powodować konflikty zasobów i trudności ze skalowaniem aplikacji.~\cite{sharma2023monolithic}
+
+\begin{enumerate}
+    \item Wdrożnie - Cała aplikacja jest wdrażana jako całość, niepodzielna jednostka. Wszustkie aktualizacje wymagają wdrożenia całej aplikacji.
+    \item Kontrola przepływu kodu - Centralny moduł kontroli w aplikacji koordynuje sekwencyjne wykonywanie kodu.
+    \item Powiązanie - Poszczególne elementy aplikacji są ścisłe powiązane.
+    \item Współdzielona pamięć - Wszystkie komponenty oprogramowania mają bezpośredni dostęp do zasobów, co sprzyja ich integracji, natomiast taka konfiguracja może powodować konflikty elementów kodu na poziomie sprzętowym i trudności ze skalowaniem. \cite{sharma2023monolithic}
+\end{enumerate}
 
 \subsection{Porównanie}
-
-W współczesnym świecie programowania, zawsze wybieramy między podejściem monolitycznym i mikroserwisowym, to wiąże się z kompromisem między prostotą, główną cechą podejścia monolitycznego a elastycznością w przypadku podejścia mikroserwisowego. Podejście monolitowe, które polega na przechowywaniu wszystkich komponentów systemu w jednym miejscu, oferuje łatwość w rozwoju i zarządzaniu kodem ale natomiast może stać wąskim gardłem kiedy aplikacja urośnie. W przeciwieństwie do architektury monolitowej, architektura mikroserwisowa dekomponuje aplikacje w małe, niezależnie zarządzane i wdrażane mikrousługi, umożliwiające granularną skalowalność i niezależne aktualizacje, zmniejszając w ten sposób ryzyko tego, że zmiana w jednym module spowoduje awarię innych. Natomiast takie podejście dodaje skomplikowaności projektom poprzez zapotrzebowanie na obsługę komunikacji między mikroserwisami, wersjonowaniem, współdzieleniem kodu.
 
 \begin{quote}
     "I should call out that microservices are no free lunch or silver bullet, and make for a bad choice as a golden hammer. They have all the associated complexities of distributed systems."~\cite[p. 11]{newman2015building}
 \end{quote}
 
 Zalety architektury monolitycznej:
-Czas napisania aplikacji - W przypadku małych i średnich aplikacji budowanie aplikacji z architekturą monolityczną jest łatwiejsze i szybsze. Zespół programistów może pracować efektywniej z ujednoliconą bazą kodu bez konfigurowania i zarządzania komunikacją między usługami.
-Łatwe wdrożenie - Wdrożenie architektury monolitycznej obejmuje wdrożenie pojedynczej jednostki, co jest mniej złożone i wymaga mniejszej liczby katalogów konfiguracyjnych niż systemy rozproszone.
-Uproszczone testowanie i debugowanie - O wiele łatwiejszym jest testowanie aplikacji monolitycznej. Ze względu na ścisłą integrację wszystkich komponentów, testy jednostkowe i integracyjne można przeprowadzać w ramach pojedynczej bazy kodu, co upraszcza proces testowania.
-Skalowalność - Architektura monolityczna, w przypadku małych i średnich aplikacji, zapewnia odpowiednią skalowalność poprzez replikację całej aplikacji.~\cite{sharma2023monolithic}
+
+\begin{itemize}
+    \item Czas napisania – Dla małych i średnich projektów umożliwia szybsze napisanie kodu bez potrzeby zarządzania komunikacją między mikroserwisami w systemie.
+    \item Łatwość wdrożenia – Wdrożenia kodu w przypadku architektury monolitycznej są mniej skomplikowane.
+    \item Proste testowanie – O wiele łatwiejsze jest testowanie aplikacji monolitycznej dzięki ścisłej integracji wszystkich komponentów. Testy jednostkowe i integracyjne można w prosty sposób przeprowadzać w ramach pojedynczej bazy kodu.
+    \item Skalowalność – Zapewnia odpowiednią skalowalność dla niewielkich rozwiązań poprzez replikację całej aplikacji.
+\end{itemize}
 
 Zalety architektury mikroserwisowej:
-Skalowalność - Mikrousługi umożliwiają niezależne skalowanie różnych usług w oparciu o ich zapotrzebowanie, optymalizując wykorzystanie zasobów i zapewniając wydajną wydajność nawet podczas szczytów ruchu.
-Utrzymanie kodu - Mikrousługi umożliwiają równoległy rozwój przez różne zespoły, co prowadzi do szybszego rozwoju funkcji i szybszego wdrażania.
-Elastyczność w trakcie wyboru technologii - Każda mikrousługa może być rozwijana przy użyciu najbardziej odpowiedniego stosu technologicznego dla jej konkretnej funkcji, co promuje elastyczność i adaptowalność do różnych technologii w ramach tej samej aplikacji.
-Łatwe debugowanie - Lokalizowanie i rozwiązywanie błędów w poszczególnych usługach jest proste.
-Bezpieczeństwo - Mikrousługi ułatwiają separację danych. Każda usługa ma swoją bazę danych, co utrudnia hakerom próbę naruszenia aplikacji.~\cite{sharma2023monolithic}
+
+\begin{enumerate}
+    \item Skalowalność - Mikroserwisy umożliwiają niezależne skalowanie, optymalizując wykorzystanie zasobów i zapewniając wydajność systemu.
+    \item Równoległa praca - Architektura mikroserwisowa pozwala na równoległy rozwój kilku elementów systemu bez konfliktów, co prowadzi do szybszego rozwoju.
+    \item Elastyczność - Każdy mikroserwis może być napisany w języku najbardziej pasującym do jego konkretnej funkcji, daje to możliwość użycia mocnych stron każdej z wielu dostępnych technologii.
+    \item Debugowanie - Rozwiązywanie problemów w mikroserwisach jest prostsze, każdy osobny mikroserwis jest niewielki i prosty w analizie.
+    \item Bezpieczeństwo - Mikroserwisy ułatwiają ochronę danych. Każda usługa ma swoją bazę danych, co utrudnia hakerom dostanie się do danych.~\cite{sharma2023monolithic}
+\end{enumerate}
 
 Wybór między architekturą monolityczną a mikroserwisową zależy od wielu faktorów, takich jak rozmiar projektu, zapotrzebowanie na ciągły rozwój, wymagania dotyczące skalowalności oraz kompetencje i doświadczenia zespołu. Architektura monolityczna lepiej pasuje dla małych i mniej skomplikowanych projektów natomiast mikroserwisowa oferuje benefity w przypadku wykorzystania w większych, bardziej skomplikowanych systemach.
 
@@ -156,14 +161,14 @@ Postanowiłem rozpocząć analizę dziedziny problemowej od tego że za pomocą 
     \item Serwisy - W przypadku logiki która powtarza się w dwóch i więcej serwisach zalecanym jest współdzielenie takiego serwisu za pomocą najlepiej w tym przypadku pasującej metody, zmniejsza to duplikację kodu natomiast zwiększa czytelność i spójność kodu w systemie mikroserwisów, zmniejsza ilość ewentualnych problemów w trakcie ewolucji i rozwoju kodu.
 \end{enumerate}
 
-Zawsze należy pamiętać w trakcie developmentu aplikacji, że współdzielenie kodu ma wiele zalet, natomiast nadmierne współdzielenie kodu może spowodować nadmierne powiązania między mikroserwisami i utrudnić niezależną ewolucję poszczególnych serwisów oraz zniweczyć zalety infrastruktury mikroserwisowej. Również nadmierne współdzielenie kodu utrudnia testowanie aplikacji co może spowodować zmniejszenie jakości kodu. Również nadmierne współdzielenie kodu może spowodować błędy kaskadowe, czyli błędy które pojawiają się w kilku miejscach w systemie jednocześnie spowodowane współdzielonym kawałkiem kodu, utrudnia utrzymanie aplikacji również są powodem na to, żeby podchodzić do współdzielenia kodu ostrożnie podejmować przemyślaną decyzję w każdym konkretnym przypadku.
+Musimy zdawać sobie sprawę, że mimo tego, iż współdzielenie kodu daje nam wiele korzyści, nadmiarowe współdzielenie kodu może spowodować problemy i pogorszyć jakość oraz zrozumiałość naszego kodu, utrudnić testowanie, spowodować powstanie błędów kaskadowych, czyli sytuacji, kiedy błąd w jednym źródle powoduje problemy od razu w wielu miejscach, oraz utrudnić utrzymanie systemu. Należy zawsze używać współdzielenia ostrożnie i podejmować decyzję w każdym konkretnym przypadku współdzielenia.
 
 \newpage
 
 \subsection{Kryteria porównania i analizy metod współdzielenia kodu}
 
 Po przeprowadzeniu dogłębnej analizy tematu i między innymi źródeł literaturowych, takich jak ~\cite{newman2015building}, ~\cite{richardson2018microservices}, ~\cite{nygard2008release}, ~\cite{kleppmann2017designing} mogę zdefiniować kryteria porównania metod współdzielenia kodu w systemach mikroserwisów jako następujące:
-
+% AI
 \begin{enumerate}
     \item Komunikacja - Metoda współdzielenia obiektów powinna uwzględniać efektywną komunikację między serwisami. Ważne jest, aby obiekty były dostępne w sposób, który minimalizuje opóźnienia i obciążenie sieci. Dobre rozwiązania mogą obejmować użycie asynchronicznej komunikacji, takiej jak kolejki wiadomości, czy też bezpośrednie zapytania między serwisami.
     \item Izolacja - Metoda współdzielenia obiektów powinna zapewniać odpowiednią izolację między serwisami. Każdy serwis powinien mieć kontrolę nad swoimi własnymi obiektami i nie powinien być zależny od innych serwisów. To pozwala na większą elastyczność i umożliwia niezależny rozwój i skalowanie serwisów.
@@ -184,12 +189,12 @@ Za pomocą źródeł literatury oraz własnego doświadczenia zdefiniowałem dos
 
 \begin{enumerate}
     \item Interface definition languages - do IDL należą wiele popularnych technologii, Protocol buffers, Avro IDL, Open API. ~\cite{wiki:interface_description_language}
-    \item Libraries - najbardziej oczywiste podejście, które daje możliwość współdzielenia wszystkich rodzajów obiektów w aplikacji.
-    \item Client Libraries -
+    \item Biblioteki kodu - najbardziej oczywiste podejście, które daje możliwość współdzielenia wszystkich rodzajów obiektów w aplikacji.
+    \item Biblioteki klienckie - podejście które polega na udostępnieniu za pomocą biblioteki kodu zestawu obiektów potrzybnych do kmonikacji z narzedziem zewnętrznym, takim jak, na przykład konsola AWS.
     \item Wyniesienie kodu do osobnego REST serwisu - podejście polega na przechwytywaniu i udostępnieniu wspólnej logiki poprzez utworzenie osobnego mikroserwisu.
     \item Serverless - nowoczesne podejście do pisania kodu i przetwarzania informacji wykorzystywane w chmurach obliczeniowych. Pozwala na uruchamianie kawałków kodu, metod i funkcji niezależnie, bez warstwy zarządzania aplikacją, a także na uruchamianie kodu bez konieczności zarządzania podstawową infrastrukturą. ~\cite{ibm_serverless}
 \end{enumerate}
-
+% AI
 Pryncypia działania poszczególnych metod współdzielenia kodu:
 
 Interface definition languages – są powszechnie używane w oprogramowaniu zdalnych wywołań procedur. W takich przypadkach maszyny po obu stronach łącza mogą używać różnych systemów operacyjnych i języków programowania. IDL oferują most pomiędzy dwoma różnymi systemami. Natomiast również mogą być użyte dla generacji obiektów lub kodów w systemach mikroserwisów. Każdy system IDL posiada określony przez twórców język IDL oraz interpretator języka IDL. Interpretator języka IDL przygotowany i dostarczony przez twórców potrafi na podstawie udostępnionych reguł wygenerować kod używając przygotowane pliki IDL. Używając języka IDL możemy przygotować obiekty lub kod zapisany za pomocą języka IDL, a później udostępnić przygotowane pliki IDL nieograniczonej ilości mikroserwisów i na podstawie udostępnionych plików wygenerować w każdym z mikroserwisów kod lub obiekty, które zostaną użyte przez specyficzną logikę konkretnego serwisu dla osiągnięcia konkretnego celu biznesowego. Tworzenie kodu na podstawie plików IDL jest łatwo zautomatyzowane za pomocą narzędzi do budowania aplikacji, takich jak Gradle czy Maven, dlatego możemy używać IDL jako metodę współdzielenia kodu. W trakcie pracy zamierzam sprawdzić skuteczność tej metody, problemy związane z jej użyciem oraz określić przypadki, w których dobrze się nadaje, jak również przypadki, w których lepiej jej nie stosować.
@@ -204,17 +209,15 @@ Serverless - Nowoczesne podejście, które pozwala na uruchamianie kodu bez bezp
 
 \subsection{Analiza metod współdzielenia kodu dla różnych typów obiektów}
 
-Po przeprowadzeniu analizy źródeł literaturowych oraz własnego doświadczenia dokanełem analizę tego, jakie metody współdzielenia mogą zostać wykorzystane dla poszczególnych typów obiektyów.
+Po przeprowadzeniu analizy źródeł literaturowych oraz własnego doświadczenia dokonałem analizy tego, jakie metody współdzielenia mogą zostać wykorzystane dla poszczególnych typów obiektów.
 
-Obiekty DTO (Interface Definition Languages) mogą być wspówdzilone za pomocą IDL, generowanie obiektów na podstawie plików IDL pozwala na standaryzację kontraktów komunikacji między mikroserwisami. Również obieków DTO mogą być współdzielone za pomocą bibliotek, takie obiekty mogą albo bezpośrednio w bibliotekach albo pliki IDL na podstawie których później będą wygenerowane klasy DTO mogą być udostępniane za pomocą bibliotek. Takie podejście jest często wykorzystywane w procechach CI/CD. SDK też jest dobrze dopasowanym podejściem wykorzystywanym razem z obiektami DTO, udostępnienie obiektów DTO za pomocą SDK bez udostępnmienia bezpośrodnio logiki biznesowej jest dobrą praktyką w programowaniu. Wspówdzielenie obiektów DTO może zapełnić to, że zakada usługa będzie wykorzystywać spójne struktury danych ułatwiając komunikację zmniejszjąc tym samym ryzyko niesójności.
+Obiekty DTO (Interface Definition Languages) mogą być współdzielone za pomocą IDL, generowanie obiektów na podstawie plików IDL pozwala na standaryzację kontraktów komunikacji między mikroserwisami. Również obiekty DTO mogą być współdzielone za pomocą bibliotek, takie obiekty mogą albo bezpośrednio w bibliotekach, albo pliki IDL, na podstawie których później będą wygenerowane klasy DTO, mogą być udostępniane za pomocą bibliotek. Takie podejście jest często wykorzystywane w procesach CI/CD. SDK też jest dobrze dopasowanym podejściem wykorzystywanym razem z obiektami DTO, udostępnienie obiektów DTO za pomocą SDK bez udostępniania bezpośrednio logiki biznesowej jest dobrą praktyką w programowaniu. Współdzielenie obiektów DTO może zapewnić to, że zakłada usługa będzie wykorzystywać spójne struktury danych, ułatwiając komunikację, zmniejszając tym samym ryzyko niespójności.
 
-Obiekty Model, wspówdzielenie takich obiektów zgodnie z wciesniejszą analizą nie jest zalecane, ze względu na to, że zalecanym jest wykozystywanie nie więcej niż jednej bazy dla każdego mikroserwisu. Ze wzlędu na to, nie można zleźć nalepszej opcji do wspówdzielenia takich obiktów. Teoretycznie obiekty Model mogą być współdzielone za pomocą bibliotek ale jak zaprezentowano w ~\cite{bhuyan2020microservices} może to powodować póżniej problemy z zaządzaniem kodem i środowiskami.
+Obiekty Model, współdzielenie takich obiektów zgodnie z wcześniejszą analizą nie jest zalecane, ze względu na to, że zalecane jest wykorzystywanie nie więcej niż jednej bazy dla każdego mikroserwisu. Ze względu na to, nie można znaleźć najlepszej opcji do współdzielenia takich obiektów. Teoretycznie obiekty Model mogą być współdzielone za pomocą bibliotek, ale jak zaprezentowano w ~\cite{bhuyan2020microservices}, może to powodować później problemy z zarządzaniem kodem i środowiskami.
 
-Walidatory, jako obiekty zawirające w ograniczonej skali logię programu mogą byśwspówdzielone za pomocą biliotek, REST API oraz techmnologii Serverless. Współdzielenie walidatorów jest dobrą praktyką i jest zaleacane, poniważ pozwala na utrzymanie spójnych regół walidacji w systemi mikroserwisów co poprawia jakośc dancyh któreyni wyminiają się elemenity systemu. W przypadku wspówdzielenia za pomoca bibliotek, tracimy możliwość połącznia kilku mikroserwisów napisanyh w róznuch językach programowania w jeden system mikroserwósów co, natomiasr, możemy zrobic w rzybadku wspwodzielmnia za pomocą REST oraz serverless. Serverless jest najlepszą opją wspówdzielenia walidatorów, ze względu na to, że walidatory zawiraja zwykle niewilką ilość logiki która mieści się w jednej funkci ktrę idelnie nadają się do hostowania za pomoca serverless, równiż w tym przypadku nie tracimy mzliwości połacznia kilku mikroserwisów napisanych w różnych językach programowania w jeden system mikroserwisów.
+Walidatory, jako obiekty zawierające w ograniczonej skali logikę programu, mogą być współdzielone za pomocą bibliotek, REST API oraz technologii Serverless. Współdzielenie walidatorów jest dobrą praktyką i jest zalecane, ponieważ pozwala na utrzymanie spójnych reguł walidacji w systemie mikroserwisów, co poprawia jakość danych, które wymieniają się elementy systemu. W przypadku współdzielenia za pomocą bibliotek, tracimy możliwość połączenia kilku mikroserwisów napisanych w różnych językach programowania w jeden system mikroserwisów, co natomiast możemy zrobić w przypadku współdzielenia za pomocą REST oraz Serverless. Serverless jest najlepszą opcją współdzielenia walidatorów, ze względu na to, że walidatory zawierają zwykle niewielką ilość logiki, która mieści się w jednej funkcji, którą idealnie nadają się do hostowania za pomocą Serverless. Również w tym przypadku nie tracimy możliwości połączenia kilku mikroserwisów napisanych w różnych językach programowania w jeden system mikroserwisów.
 
-Serwisy, werwisą są gluwnym miejscem miejscem przechowywnia, serwisy mogą być wspówdzielone za pomoca bibliotek, SDK, REST oraz serverless. W przypadku wyboru podejścia do wspódzielenia mikroserwisów należy dokonać analizy i zastanowić się. Biblioteki kodu są najbardziej uniwezralnym podejściem w przypatu serwisów, pasują do wykorzystania w przypaktu współdzielenia małych metod zawirających mała oliśc kodu ja i tych większych. Podejście REST teżdobrze pasuje do wszystkich zormirów wszpówdzielonej logiki, ale natomiast w wysoko obciążonych systemach może powodować obniżnie wydajnoście ze względu na rozproszenie szasobów na komójnikiację sieciową. podejście serverless dorze się sprawdze w przypadku wspówdzieleinia mniejszych motod, zarząsdnie skomplikowaną logiką za pomocą serwerles może skomplikowanym, jak w przypadku REST w wysoko obciążonych systemach podejsie raczej trzeba zminić na biliotekę lub sdk.
-
-Wyjątki, do wspówdzielenia wyjątków możemy zastosować SDK oraz IDL w przypadku dyjątków nie zawirającyl logiki związaną z obsługą błędów. Stosowanie wspówdzielenia za pomocą SDK w systemie mikroserwisów wspomoaga stwożenie ustandaryzowanego podejscia do obsłygi błedów w systemie co powoduje lepsze logowanie i raportowanie błędów oraz szybsze ich naprawienie i zniejszenie ilosci porlpemów na przestrzeni czsu.
+Serwisy, serwisami są głównym miejscem przechowywania, serwisy mogą być współdzielone za pomocą bibliotek, SDK, REST oraz Serverless. W przypadku wyboru podejścia do współdzielenia mikroserwisów należy dokonać analizy i zastanowić się. Biblioteki kodu są najbardziej uniwersalnym podejściem w przypadku serwisów, pasują do wykorzystania w przypadku współdzielenia małych metod zawierających małą ilość kodu, jak i tych większych. Podejście REST też dobrze pasuje do wszystkich form współdzielonej logiki, ale natomiast w wysoko obciążonych systemach może powodować obniżenie wydajności ze względu na rozproszenie zasobów na komunikację sieciową. Podejście Serverless dobrze się sprawdza w przypadku współdzielenia mniejszych metod, zarządzanie skomplikowaną logiką za pomocą Serverless może być skomplikowane, jak w przypadku REST, w wysoko obciążonych systemach podejście raczej trzeba zmienić na bibliotekę lub SDK.
 
 \subsection{Definicja kryterium oceny i porównania metod współdzielenia kodu}
 
@@ -225,80 +228,85 @@ Na podstawie źródeł literaturowych, własnego doświadczenia oraz przygotowan
 Przedstawiam kryteria które wybrałem w rezultacie analizy źródeł internetowych oraz książek takich jak ~\cite{kleppmann2017designing} w których w znalezłem opis tego jak musi wyglądać architektura mikro serwisowa, wady i zalety różnych rozwiązań.
 
 \begin{enumerate}
-    \item Conflict Rate - wskażniek tego, jak często zminy w plikach IDL powoduje merge konflikty. Wyzwania dotyczące pracy z IDL i podejsia do ich pokonania są dobrze opisane w książce ~\cite{kleppmann2017designing}. W szczegówach są opisane metody pracy z schematami idl miedzy innumi narzędziem Protocal Byffer dostrzanego trzez Alphabet oraz Avro. Możeny posłużyć się cytetem z zosdziłu 4 żeby zaprezentować że muszę uwzględniać ten aspekt w analizie.
+    \item Conflict Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują merge konflikty. Wyzwania dotyczące pracy z IDL i podejścia do ich pokonania są dobrze opisane w książce ~\cite{kleppmann2017designing}. W szczegółach są opisane metody pracy z schematami IDL, między innymi narzędziem Protocol Buffer dostrzeganego przez Alphabet oraz Avro. Możemy posłużyć się cytatem z rozdziału 4, żeby zaprezentować, że muszę uwzględniać ten aspekt w analizie.
     \begin{quote}
         "This means that old and new versions of the code, and old and new data formats, may potentially all coexist in the system at the same time. In order for the system to continue running smoothly, we need to maintain compatibility in both directions: Backward compatibility and Forward compatibility." ~\cite[p. 112]{kleppmann2017designing}
     \end{quote}
-    Również w tym rozdziale autor prezentuje dlaczego takie problemy powstają , możemy posłużyć się cytetem.
+    Również w tym rozdziale autor prezentuje dlaczego takie problemy powstają, możemy posłużyć się cytatem.
     \begin{quote}
         "When a data format or schema changes, a corresponding change to application code often needs to happen (for example, you add a new field to a record, and the application code starts reading and writing that field). However, in a large application, code changes often cannot happen instantaneously: old and new versions of the code, and old and new data formats, may potentially all coexist in the system at the same time." ~\cite[p. 111]{kleppmann2017designing}
     \end{quote}
-    Nusimy uważać na tojaką ilość konflików generuje styosowanie wybranego podejścia. Podobne konflikty często są czasożerne i nawet w trzypadku nietrudnych przypadku potrafią spowolnic zespół deweloperski oraz zpowodować spowodowac inne, baardziej skomplikowane błędy.
-    \item Version Drift Occurrence - wskażnik tego, jak często rozwizanie powoduje użycie niezgodnych wersji IDL w różnych zespołach. Kiedy zespoły programistów pracujące nad jednym systemem zaczynają używać niezgodną wersje plików IDL mikroserwisy w systemie mikroserwisów przestają komunikawać poprawnie co powoduje błędy w runtime które są bardzo trudne do wyłapania i naprawy, nieoczekiwanego zachowania systemu oraz uszkodzenia danych. W przypadku wykorzystania podejścia które nie może zapewnić odpowiedni poziom kontroli nad wersjami i izolacji rozwój i wdrażania zmian w systemie mogą być problematyczne. Możemy posłużyć się cytatem:
+    Musimy uważać na to, jaką ilość konfliktów generuje stosowanie wybranego podejścia. Podobne konflikty często są czasochłonne i nawet w przypadku nietrudnych przypadków potrafią spowolnić zespół deweloperski oraz spowodować inne, bardziej skomplikowane błędy.
+    \item Version Drift Occurrence - wskaźnik tego, jak często rozwiązanie powoduje użycie niezgodnych wersji IDL w różnych zespołach. Kiedy zespoły programistów pracujące nad jednym systemem zaczynają używać niezgodną wersję plików IDL, mikroserwisy w systemie mikroserwisów przestają komunikować się poprawnie, co powoduje błędy w runtime, które są bardzo trudne do wyłapania i naprawy, nieoczekiwane zachowanie systemu oraz uszkodzenie danych. W przypadku wykorzystania podejścia, które nie może zapewnić odpowiedniego poziomu kontroli nad wersjami i izolacji, rozwój i wdrażanie zmian w systemie mogą być problematyczne. Możemy posłużyć się cytatem:
     \begin{quote}
         "With Avro, when an application wants to encode some data (to write it to a file or database, to send it over the network, etc.), it encodes the data using whatever version of the schema it knows about... When an application wants to decode some data (read it from a file or database, receive it from the network, etc.), it is expecting the data to be in some schema, which is known as the reader’s schema... The key idea with Avro is that the writer’s schema and the reader’s schema don’t have to be the same—they only need to be compatible." ~\cite[p. 123]{kleppmann2017designing}
     \end{quote}
-    W przypadku braku kompatybilności nie jest możliwe  poprawnie działanie systemu.
-    \item Build Failure Rate - wskażnik tego, jak często zmiany w plikach IDL powodują problęmy w trakcie budoania aplikacji.
+    W przypadku braku kompatybilności nie jest możliwe poprawne działanie systemu.
+    \item Build Failure Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują problemy w trakcie budowania aplikacji.
     \begin{quote}
         "When an application wants to decode some data (read it from a file or database, receive it from the network, etc.), it is expecting the data to be in some schema, which is known as the reader’s schema. That is the schema the application code is relying on—code may have been generated from that schema during the application’s build process." ~\cite[p. 123]{kleppmann2017designing}
     \end{quote}
-    Dlatego w przypadku problemów z schematem wynikającym często z nieprawidłowo wybranego podejścia do zarządzania  plikami IDL.
-    \item Deployment Rollback Frequency - wskażnik tego, jak często zmiany w plikach IDL powodują problęmy w trakcie wdrożenie aplikacji na żrodowiska w systemie mikroserwisów.
+    Dlatego w przypadku problemów z schematem wynikającym często z nieprawidłowo wybranego podejścia do zarządzania plikami IDL.
+    \item Deployment Rollback Frequency - wskaźnik tego, jak często zmiany w plikach IDL powodują problemy w trakcie wdrożenia aplikacji na środowiska w systemie mikroserwisów.
     \begin{quote}
         "With server-side applications you may want to perform a rolling upgrade (also known as a staged rollout), deploying the new version to a few nodes at a time, checking whether the new version is running smoothly, and gradually working your way through all the nodes. This allows new versions to be deployed without service downtime, and thus encourages more frequent releases and better evolvability." ~\cite[p. 92]{kleppmann2017designing}
     \end{quote}
-    Częste reolbaki usług w trakcie wdrożeń mogą spowodować spowolnienie wdrożenia nowych zmian i opóźnienie projektu, dlatego w trakcie wyboru podejścia do zarządzania plikami idl musimy brać to pod uwagę. Musimy w trackie analizy i planowanie projektu wybrać podejście które zapełni najmniejsze ryzyko błędów w trakcie próbnego wdrożenia i wycofania zmian.
+    Częste rollbacki usług w trakcie wdrożeń mogą spowodować spowolnienie wdrożenia nowych zmian i opóźnienie projektu, dlatego w trakcie wyboru podejścia do zarządzania plikami IDL musimy brać to pod uwagę. Musimy w trakcie analizy i planowania projektu wybrać podejście, które zapewni najmniejsze ryzyko błędów w trakcie próbnego wdrożenia i wycofania zmian.
 \end{enumerate}
     
 \subsubsection{Definicja kryterium oceny pod kątem izolacji w przypadku bibliotek, sdk, REST, serverless}
 
-W kontekście bibliotek, SDK, REST i serverless znaczenie pojęcia izolacji róezni się od izolacji w kontekście IDL, w tym przyadku izolacja to zdolność sustemu do odseparowania komponentów systemu i zminimalizować wpłył zmin w jedum serwisie na pozostałe co i daję podejciu mikoserwisowemu jego wygodność i elastyczność.
+W kontekście bibliotek, SDK, REST i serverless znaczenie pojęcia izolacji różni się od izolacji w kontekście IDL. W tym przypadku izolacja to zdolność systemu do odseparowania komponentów systemu i zminimalizowania wpływu zmian w jednym serwisie na pozostałe, co daje podejściu mikroserwisowemu jego wygodność i elastyczność.
 
 W przypadku izolacji na podstawie analzy żródeł literaturowych oraz własnego doświadcznia zdefiniowałem kryteria porównania jako następujące:
-|
+
+% AI
 \begin{enumerate}
-    \item Izolacja interfejsów - elementy w systemie mokroserwisów muszą zapełnić jasno określone interfejsy, które pozwolą na łatwą komunikację komponentów bez wprowadzania nieposządfanych zależności i nadmiernych powiązań. Zmiaby w jednym elelmencie systemu nie powinny wpływać ma pozostawe elementy systemu.
+    \item Izolacja interfejsów - elementy w systemie mikroserwisów muszą zapewnić jasno określone interfejsy, które pozwolą na łatwą komunikację. Zmiany w jednym elemencie systemu nie powinny wpływać na pozostałe.
     \begin{quote}
         "A well-designed library or SDK isolates its implementation details from the user, allowing developers to interact with the API without needing to understand its inner workings. This reduces the risk of breaking changes and simplifies maintenance." ~\cite[p. 75]{bloch2018effective}
     \end{quote}
-    Za pomocą tego cyctatu możemy wyjaśniść, w jaki sposób jasno dobrze zaprojektowane interfejsy pomagają oddzielić wewnętrzne implementacje od zewnętrznego interfejsu, umożliwiając zmiany bez wpływu na inne części systemu.
-    \item Izolacja wersji - w przypadku aktualizacji, nowa wersja utworzona to wprowadzeniu zmian powinna być kompatybilna wstecznie, umożliwiając migrację bez zakłóceń. Izolacja wersji zapewnia nam, że starte wersje, dostrczone przez bibliotek, sdk, REST  czy serverless mogą współistnieć z nowszymi wersjami, umożliwyjąc tym samym – W przypadku aktualizacji SDK, nowa wersja powinna być w pełni kompatybilna wstecz, umożliwiając migrację bez zakłóceń. Izolacja wersji zapewnia, że starsze wersje SDK mogą współistnieć z nowszymi, umożliwiając płynne przejście między nimi bez wymuszania natychmiastowych zmian w istniejącej aplikacji.
+    Za pomocą tego cytatu możemy wyjaśnić, w jaki sposób dobrze zaprojektowane interfejsy umożliwiają zmiany bez wpływu na inne części systemu.
+    
+    \item Izolacja wersji - w przypadku aktualizacji, nowa wersja powinna być kompatybilna wstecznie z poprzednimi wersjami kodu. Izolacja wersji zapewnia, że stare wersje, dostarczone przez biblioteki, SDK, REST czy serverless, mogą współistnieć z nowszymi wersjami, umożliwiając stopniową aktualizację systemu.
     \begin{quote}
         "Versioning APIs and libraries carefully ensures that changes can be introduced gradually, providing compatibility for both old and new clients. This allows legacy systems to function alongside the updated ones without breaking the user experience or requiring immediate changes." ~\cite[p. 172]{fowler2012patterns}
     \end{quote}
-    Powyższy cytat pokazuje, jak ważne jest zavhowanei kontabilności wstecznej w przypadku wspówdzielenia kody w systemach mikroserwisów.
-    \item Izolacja zależności - w przypadku SDK, bibliotek, REST czy serverless powinniśmy minimalizować wpływ zewnętrznych zależności na aplikację końcową, pozwala to na kontrolowanie wersji zależności oraz odseparowanie od podstawowych komponentów aplikacji.
+    Powyższy cytat pokazuje, jak ważnym jest zachowanie kompatybilności wstecznej w przypadku współdzielenia kodu w systemach mikroserwisów.
+    
+    \item Izolacja zależności - w przypadku SDK, bibliotek, REST czy serverless powinniśmy minimalizować wpływ zewnętrznych zależności na naszą aplikację.
     \begin{quote}
         "Dependencies should be isolated to minimize their impact on the main application, allowing the code to remain flexible. One of the key principles of dependency management is to ensure that dependencies can be replaced without affecting the core business logic." ~\cite[p. 218]{martin2008clean}
     \end{quote}
-    Powyższy cytat pokazuje, jak ważne jest odseparowanie i izolacja zależności, pomoże to w zachowaniu elastyczności i odseparowania bazy kodu aplikacji, co jest kluczowe dla uniknięcia niepożądanych efektów ubocznych i uproszczenia konserwacji.
+    Powyższy cytat pokazuje, jak ważnym jest odseparowanie i izolacja zależności dla zachowania elastyczności.
 \end{enumerate}
 
 \subsubsection{Definicja kryterium oceny pod kątem bezpieczeństwa}
 
+% AI
 \begin{enumerate}
-    \item Poufność - (Confidentiality) Zapewnienie tego, że poufne dane nie będą udostępnione osobom lub systemom nieupoważnionym do tego. Zachowanie poufności jest kluczowe dla ochrony danych osobowych i korporacyjnych.
+    \item Poufność (Confidentiality) - Zapewnienie tego, że poufne dane nie będą udostępnione osobom lub systemom nieupoważnionym. Zachowanie poufności jest kluczowe dla ochrony danych osobowych i korporacyjnych.
     \begin{quote}
         "Preserving authorized restrictions on information access and disclosure, including means for protecting personal privacy and proprietary information. A loss of confidentiality is the unauthorized disclosure of information." ~\cite[p. 22]{stallings2017cryptography}
     \end{quote}
-    \item Integralność danych - (Integrity) Integralność danych koncentruje się na dokładności i wiarygodności informacji, chroniąc je przed nieautoryzowanymi modyfikacjami, zapewnia, że dane są zarówno niezawodne, jak i spójne.
+    \item Integralność danych (Integrity) - Integralność danych koncentruje się na dokładności i wiarygodności informacji, chroniąc przed nieautoryzowanymi modyfikacjami, zapewniając, że dane są zarówno niezawodne, jak i spójne.
     \begin{quote}
         "Guarding against improper information modification or destruction, including ensuring information nonrepudiation and authenticity. A loss of integrity is the unauthorized modification or destruction of information." ~\cite[p. 22]{stallings2017cryptography}
     \end{quote}
-    \item Dostępność - (Availability) Zapewnia to, że dane w systemie są dostępne, a różnego rodzaju zakłócenia dostępu do danych są zminimalizowane.
+    \item Dostępność (Availability) - Zapewnia to, że dane w systemie są dostępne, a różnego rodzaju zakłócenia dostępu do danych są zminimalizowane.
     \begin{quote}
         "Ensuring timely and reliable access to and use of information. A loss of availability is the disruption of access to or use of information or an information system." ~\cite[p. 22]{stallings2017cryptography}
     \end{quote}
-    \item Autentyczność - (Authenticity) Gwarancja tego, że autoryzowanym użytkownikom można zaufać, co zapobiega podszywaniu się lub manipulacjom. Polega to na weryfikacji tożsamości użytkowników i potwierdzeniu źródeł danych w celu zapewnienia autentyczności.
+    \item Autentyczność (Authenticity) - Gwarancja tego, że autoryzowanym użytkownikom można ufać, zapobieganie manipulacjom.
     \begin{quote}
         "The property of being genuine and being able to be verified and trusted; confidence in the validity of a transmission, a message, or message originator. This means verifying that users are who they say they are and that each input arriving at the system came from a trusted source." ~\cite[p. 23]{stallings2017cryptography}
     \end{quote}
-    \item Odpowiedzialność - (Accountability) Definiuje zapotrzebowanie na zapisywanie w celach monitoringu działań użytkowników w systemie w celu późniejszej analizy. W trakcie analizy można wykryć podejrzane zachowania, naruszenia przepisów bezpieczeństwa. Pomaga w zapewnieniu tego, że podmioty naruszające przepisy prawne oraz przepisy bezpieczeństwa poniosą odpowiedzialność oraz zapobiec podobnym sytuacjom w przyszłości.
+    \item Odpowiedzialność (Accountability) - Definiuje zapotrzebowanie na zapisywanie w celach monitoringu działań użytkowników w systemie w celu późniejszej analizy. W trakcie analizy można wykryć podejrzane zachowania lub naruszenia przepisów bezpieczeństwa. Pomaga w zapewnieniu tego, że podmioty naruszające przepisy prawne oraz przepisy bezpieczeństwa poniosą odpowiedzialność oraz zapobiegnie podobnym sytuacjom w przyszłości.
     \begin{quote}
         "The security goal that generates the requirement for actions of an entity to be traced uniquely to that entity. This supports nonrepudiation, deterrence, fault isolation, intrusion detection and prevention, and afteraction recovery and legal action. Because truly secure systems are not yet an achievable goal, we must be able to trace a security breach to a responsible party. Systems must keep records of their activities to permit later forensic analysis to trace security breaches or to aid in transaction disputes." ~\cite[p. 23]{stallings2017cryptography}
     \end{quote}
 \end{enumerate}
+
 
 ~\ref{fig1}
 
@@ -315,34 +323,37 @@ Czym jest skalowalność
     "Scalability – the ability to work well when the load or the number of users increases – failure handling, concurrency of components, transparency and providing quality of service." ~\cite[p. 21]{coulouris2011distributed}
 \end{quote}
 
-W rozdziale 1 autorzy definiują pojęcie skalowalności jako 4 główne aspektu systemu Controlling the cost of physical resources, Controlling the performance loss, Preventing software resources running out, Avoiding performance bottlenecks, strony 20-21, czyli Kontrola kosztów zasobów fizycznych, Kontrola utraty wydajności, Zapobieganie wyczerpywaniu się zasobów oprogramowania, Unikanie wąskich gardeł wydajności, dlatego mogę zdefiniować kryterium oceny pod kątem skalowalności jako:
+W rozdziale 1 autorzy definiują pojęcie skalowalności jako 4 główne aspekty systemu: Controlling the cost of physical resources, Controlling the performance loss, Preventing software resources running out, Avoiding performance bottlenecks, strony 20-21, czyli Kontrola kosztów zasobów fizycznych, Kontrola utraty wydajności, Zapobieganie wyczerpywaniu się zasobów oprogramowania, Unikanie wąskich gardeł wydajności, dlatego mogę zdefiniować kryterium oceny pod kątem skalowalności jako:
 
-Wpływ na koszty zasobów fizycznych - ocena tego, jak wybrane podejście wpływa na  wykorzystaniem zasobów sprzętowych w miarę wzrostu obciążenia.
-
-Wpływ na wydajność - ocena tego, jak wybrane podejście wpływa na wydajność systemu w miarę wzrostu obciążenia.
-
-Wpływ na zasoby serwera - ocena tego, jak wybrane podejście wpływa na jakość wykorzystania zasobów serwera w miarę wzrostu obciążenia.
-
-Unikanie wąskich gardeł wydajności - ocena tego,czy wybrane podejście powoduje powstanie wąskich gardeł  w miarę wzrostu obciążenia systemu.
+\begin{enumerate}
+    \item Wpływ na koszty zasobów fizycznych - to jak wzrostu obciążenia wpływa na koszty utrzymania sprzętu.
+    \item Wpływ na wydajność - wydajność systemu w miarę wzrostu obciążenia.
+    \item Wpływ na zasoby serwera - jak program wykorzystuje zasoby serwera w miarę wzrostu obciążenia.
+    \item Unikanie wąskich gardeł wydajności - wiarygodność powstania wąskich gardeł w miarę wzrostu obciążenia systemu.
+\end{enumerate}
 
 \subsubsection{Definicja kryterium oceny pod kątem wersjonowania}
 
-Za pomocą żrudeł literaturowych oraz własnego doświadczenia zdefiniowałem kryteria oceny pod kątem wersjonowania jako: 
+Za pomocą źródeł literaturowych oraz własnego doświadczenia zdefiniowałem kryteria oceny pod kątem wersjonowania jako:
 
+% AI
 \begin{enumerate}
-    \item Kompatybilność wsteczna - Zapewnienie, że starsze wersje systemu lub komponentów nadal będą działały poprawnie, mimo wprowadzania nowych wersji. Kompaty bilność wsteczna pomaga zapełnić funkconowanie istniejących sytemów mikroserwisów w trakcie wproadzenie zmnian i rozwoju systemu, pozwala pszejść z kosztownych i bardzoi skomplikowanych upgradów systemu w całości za raz a podzielić prace na mniejsze, łatwiejsze do zarządzania kawałki.
+    \item \textbf{Kompatybilność wsteczna} - Zapewnienie, że starsze wersje systemu lub komponentów nadal będą działały poprawnie, mimo wprowadzania nowych wersji. Kompatybilność wsteczna pomaga zapewnić funkcjonowanie istniejących systemów mikroserwisów w trakcie wprowadzania zmian i rozwoju systemu, pozwala przejść z kosztownych i bardzo skomplikowanych upgrade'ów systemu w całości za raz, a podzielić prace na mniejsze, łatwiejsze do zarządzania kawałki.
     \begin{quote}
         "APIs, like diamonds, are forever. Once you publish an API, you are more or less stuck with it, so it is critically important to design it well. When evolving an API, preserving backward compatibility is crucial to avoid breaking existing clients." ~\cite[p. 75]{bloch2018effective}
     \end{quote}
-    \item Łatwość migracji - Prostota przescia między wersjami, umożliwienie łatwego przechodzenia między różnymi wersjami plików lub interfejsów, aby dostosować się do zmian bez wprowadzania zakłóceń w pracy systemu. Możliwość zmniejszenia przestojów aplikacji w trakie prac serwisowych i możliwość płynnego przejścia na nową wersję. Proste migracje przyspieszają proces rozwiju aplikacji i zmniejszają ilośc błędów.
+    
+    \item \textbf{Łatwość migracji} - Prostota przejścia między wersjami, umożliwienie łatwego przechodzenia między różnymi wersjami plików lub interfejsów, aby dostosować się do zmian bez wprowadzania zakłóceń w pracy systemu. Możliwość zmniejszenia przestojów aplikacji w trakcie prac serwisowych i możliwość płynnego przejścia na nową wersję. Proste migracje przyspieszają proces rozwoju aplikacji i zmniejszają ilość błędów.
     \begin{quote}
         "When evolving an API, it is essential to provide a smooth migration path for clients. Deprecating old functionality rather than removing it immediately allows developers to transition gradually without breaking their systems." ~\cite[p. 78]{bloch2018effective}
     \end{quote}
-    \item Zarządzanie historią wersji - Możliwość przechowywania i uzyskiwania dostępu do poprzednich wersji plików. Historia wersji pozwala programistom szybko i łatło przywrucić popradnią wersj w przypadku powstania błędu w nowej wersji. Pozwala na zmniejszenie uraty danych i niespówjnoscie w trakcie rozwoju aplikacji. Posiadanie historii versji zapewnia to, że projekty pozostaja łatwe w utrzymaniu i skalowalne.
+    
+    \item \textbf{Zarządzanie historią wersji} - Możliwość przechowywania i uzyskiwania dostępu do poprzednich wersji plików. Historia wersji pozwala programistom szybko i łatwo przywrócić poprzednią wersję w przypadku powstania błędu w nowej wersji. Pozwala na zmniejszenie utraty danych i niespójności w trakcie rozwoju aplikacji. Posiadanie historii wersji zapewnia to, że projekty pozostają łatwe w utrzymaniu i skalowalne.
     \begin{quote}
         "Effective version management is crucial for tracking changes over time, allowing teams to understand what was modified, when, and by whom. A well-maintained version history ensures accountability and facilitates rollback if necessary." ~\cite[p. 150]{rubin2012essential}
     \end{quote}
-    \item Śledzenie zmian - Zdolność systemu do rejestrowania i monitorowania wszystkich zmian. Możliwość śledzenia zmian zapełnia to, że każda zmiana w systemie będzie zapisana wsięraąc tym programistów w zrozwiązywianiu problemów i bagów albo pazwalając wyscofać zminy. Poprawia spówpracę między zespołami wykazujac kto kiedy i dlaczego wprowadzał zminay co ziękasza również opdowiedzialność. W brażach regulowanych prawem taka audutowalność systemu może vyć wymagana przez prawo. 
+    
+    \item \textbf{Śledzenie zmian} - Zdolność systemu do rejestrowania i monitorowania wszystkich zmian. Możliwość śledzenia zmian zapewnia to, że każda zmiana w systemie będzie zapisana, wspierając tym programistów w zrozumieniu problemów i błędów albo pozwalając cofnąć zmiany. Poprawia współpracę między zespołami, wykazując kto, kiedy i dlaczego wprowadzał zmiany, co zwiększa również odpowiedzialność. W branżach regulowanych prawem taka audytowalność systemu może być wymagana przez prawo.
     \begin{quote}
         "Tracking changes in source code is essential for understanding the evolution of a system. Without a proper change history, debugging, auditing, and maintaining software become significantly more difficult." ~\cite[p. 150]{rubin2012essential}
     \end{quote}
@@ -352,59 +363,60 @@ Za pomocą żrudeł literaturowych oraz własnego doświadczenia zdefiniowałem 
 
 \subsubsection{Ocena wspówdzieleina kodu za pomocą Interface definition languages}
 
-Ocena pod kątem komunikacji – zapewnia potrzebny poziom komunikacji, obiekty są generowane na podstawie definition language na etapie uruchamiania aplikacji, dalej w trakcie wykonania logiki programu takie obiekty mogą być użyte przez program bez żadnych obciążeń wydajnościowych. Obiekty wygenerowane z plików IDL mogą być wykorzystane dla komunikacji asynchronicznej takich jak brokery wiadomości jak również dla wysłania bezpośrednich zapytań między serwisami.
+Ocena pod kątem komunikacji – zapewnia potrzebny poziom komunikacji, obiekty są generowane na podstawie języka definicji interfejsu (IDL) na etapie uruchamiania aplikacji. Dalej, w trakcie wykonywania logiki programu, takie obiekty mogą być używane przez program bez obciążenia wydajnościowego. Obiekty wygenerowane na podstawie plików IDL mogą być wykorzystane do komunikacji asynchronicznej, takich jak brokery wiadomości, jak również do wysyłania bezpośrednich zapytań między serwisami.
 
 Metody zarządzania plikami idl w systemach : 
 
+% AI
 \begin{enumerate}
-    \item SVN systemy takie jak, na przykład GIT - Rozwiaania posiada następujące korzyści: łatłe osiągniecie wstecznej kompatybilności, uałienie osiądgniecia jednego źrówdła prawdy w systemie mikroserwisów, łatwnie zapełnienienie tego że wsystrkiwe usługi korzystają z najnowszej wersie IDL. Do minusów rozwiazania możemy odnieść to, że system SVN może szybko stac wąskim gardłem w przypadku wykorzystania przez wilesepołów, wymaga zarządzania i utrzymania.
-    \item Dystrybucja za pomocą bibliotek - Kompilowanie plików IDL do współdzielonych bibliotek, i publikacja w współdzielonym repozytorium pakietów, na przykład nexus. Do korzyście tego rozwiązani możemy oniść łatwą integrację c spocesami CI/CD, mozliwość orzystania z wersjonowanych artefaktów bez bezpośredniej interakcji z surowymi plikami IDL oraz to że różne języki programowania mogą wymagać różnych bibliotek, co zwiększa złożoność systemu.
-    \item Podejście Monorepo - Przechowywanie wszystkich mikroserwisów i powiązane z nimi pliki IDL w jednym repozytorium, co zapewni, że wszystkie zespoły będą pracować na tej samej bazie kodu. Do korzysci tego rozwiazania możemy odnieść to, że pliki IDL w implementacja usług są zawsze zsynchronizowne oraz to, że takie podejście upraszcza rarządzanie zależnościami, poniważ cału kod przechowywany w jednym miejcu. Do wad podejscia mogę odnieść problemy ze skalowalnością zwiększenia ilości kodu oraz to, że często wymaga narzędzi do zarządzania dużymi bazami kodu.
-    \item Repozytoria z automatyczną synchronizacją - Repozytoria z automatyczną synchronizacją to specyficnzy rodzaj repozytoriów, w których zmiany wprowadzone w głównym repozytorium są automatycznie propagowane do posoztałych sybrepozytoriów. Dzięki temu każdy uczestnik projektu ma dostęp do wszystkich wersji kodu. Do zalet tego podejścia możemy zaliczyć moźliwośc scentralizowanego wymuszania wersjonowania oraz łatwy dostęp do wszyskich wersji plików. Do minusów mozemy zapisać dość trudne utrzymianie oraz złożonosć w zarządzaniusynchronizacją i konfliktami w repozytorium.
-    \item IDL as a Service (IDLaS) - Przygotowania wcieśniej usługa, która obsługuje pliki IDL na żądanie. Ta usługa może wersjonować, weryfikować i dostarczać pliki IDL. Do korzyście tego podejśćia możemy odnieść dostęp nazoądanie do plikow IDL, możliwośći dynamiczneg o wersjonowania. Do minusów możemy doliczyć ro, że takie podejście wymaga zbudowania i urzymnia dodatkowej usługi w systemie oraz to, że komunikacja śieciowa może powodoiwac opóźnienia w dostarczeiu plików IDL.
+    \item SVN systemy takie jak, na przykład GIT - Rozwiązania posiada następujące korzyści: łatwe osiągnięcie wstecznej kompatybilności, ułatwienie osiągnięcia jednego źródła prawdy w systemie mikroserwisów, łatwiejsze zapewnienie tego, że wszystkie usługi korzystają z najnowszej wersji IDL. Do minusów rozwiązania możemy odnieść to, że system SVN może szybko stać wąskim gardłem w przypadku wykorzystania przez wiele zespołów, wymaga zarządzania i utrzymania.
+    \item Dystrybucja za pomocą bibliotek - Kompilowanie plików IDL do współdzielonych bibliotek, i publikacja w współdzielonym repozytorium pakietów, na przykład Nexus. Do korzyści tego rozwiązania możemy odnieść łatwą integrację z procesami CI/CD, możliwość korzystania z wersjonowanych artefaktów bez bezpośredniej interakcji z surowymi plikami IDL oraz to, że różne języki programowania mogą wymagać różnych bibliotek, co zwiększa złożoność systemu.
+    \item Podejście Monorepo - Przechowywanie wszystkich mikroserwisów i powiązanych z nimi plików IDL w jednym repozytorium, co zapewni, że wszystkie zespoły będą pracować na tej samej bazie kodu. Do korzyści tego rozwiązania możemy odnieść to, że pliki IDL w implementacjach usług są zawsze zsynchronizowane oraz to, że takie podejście upraszcza zarządzanie zależnościami, ponieważ cały kod przechowywany jest w jednym miejscu. Do wad podejścia mogę odnieść problemy ze skalowalnością, zwiększenie ilości kodu oraz to, że często wymaga narzędzi do zarządzania dużymi bazami kodu.
+    \item Repozytoria z automatyczną synchronizacją - Repozytoria z automatyczną synchronizacją to specyficzny rodzaj repozytoriów, w których zmiany wprowadzone w głównym repozytorium są automatycznie propagowane do pozostałych subrepozytoriów. Dzięki temu każdy uczestnik projektu ma dostęp do wszystkich wersji kodu. Do zalet tego podejścia możemy zaliczyć możliwość scentralizowanego wymuszania wersjonowania oraz łatwy dostęp do wszystkich wersji plików. Do minusów możemy zapisać dość trudne utrzymanie oraz złożoność w zarządzaniu synchronizacją i konfliktami w repozytorium.
+    \item IDL as a Service (IDLaS) - Przygotowana wcześniej usługa, która obsługuje pliki IDL na żądanie. Ta usługa może wersjonować, weryfikować i dostarczać pliki IDL. Do korzyści tego podejścia możemy odnieść dostęp na żądanie do plików IDL, możliwość dynamicznego wersjonowania. Do minusów możemy doliczyć to, że takie podejście wymaga zbudowania i utrzymania dodatkowej usługi w systemie oraz to, że komunikacja sieciowa może powodować opóźnienia w dostarczaniu plików IDL.
 \end{enumerate}
 
-Ocena pod kątem izolacji - ocena pod kątem izolacji zależy od implementacji, dla każdej z powyżej opisanych implementacji dokonałem analizy.
+Ocena pod kątem izolacji - ocena pod kątem izolacji zależy od implementacji zarządzania plikami IDL, dla każdego z powyżej opisanego podejścia dokonałem analizy.
 
-Ze wsględu na to, że mamy wiele kryteriów oceny i wiele mozliwych dodejść do współdzielenia plików IDL, postanowiełem stworzyć tabelę porównawczą, która pomoże w czytelnym preentowaniu wyników analizy i porównania.
+Ze względu na to, że mamy wiele kryteriów oceny i wiele możliwych podejść do współdzielenia plików IDL, postanowiłem stworzyć tabelę porównawczą, która pomoże w czytelnym zaprezentowaniu wyników analizy.
 
-Dane do porównania zostały zebrane z żródeł literaturowych ~\cite{newman2015building} ,  ~\cite{kleppmann2017designing}
-
+Dane do porównania zostały zebrane z źródeł literaturowych. ~\cite{newman2015building} ,  ~\cite{kleppmann2017designing}
+% AI 14%
 \begin{table}[htbp]
     \centering
     \caption{Porównanie podejść do współdzielenia kodu w systemach mikroserwisów}
     \label{tab:comparison}
     \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|>{\raggedright\arraybackslash}X|}
     \hline
-    \textbf{Kryteria} & \textbf{SVN/Git Systemy} & \textbf{Biblioteki} & \textbf{Podejssćie Monorepo} & \textbf{Repo z Auto-Synchro.} & \textbf{IDL as a Service (IDLaS)} \\
+    \textbf{Kryteria} & \textbf{SVN/Git Systemy} & \textbf{Biblioteki} & \textbf{Podejście Monorepo} & \textbf{Repo z Auto-Synchro.} & \textbf{IDL as a Service (IDLaS)} \\
     \hline
     \textbf{Conflict Rate} &
-    Wysoki: Merge konflikty są powszechne w przypadku wykorzystanie przez kilkoma zespowani jednocześnie. Rozwiazanie takich konflików może być zasochłonne &
-    Umiarkowany: Konflikty są mniej powszechne, ale wciaż moga wystapić. &
-    Niski: Zespoły pracują na tej samej bazie kodu, dlatego konflikty zdarają sie rzadko, mogą wystqapic w trzyaku pracy na tej samej usłudze. &
-    Umiarkowany: Konflikty mogą wystąpić, dlatego w przypadku gdy synchonizacja między usługami nie jest dobrze zarządzana. &
-    Niski: Konflikty zdarzają się rzadko, dlatego, że IDL są dostarczne na rżadanie a wersjowaniee jest wymuszane. \\
+    Wysoki: Merge konflikty są powszechne w przypadku wykorzystania przez kilkoma zespołami jednocześnie. Rozwiązanie takich konfliktów może być zasobochłonne &
+    Umiarkowany: Konflikty są mniej powszechne, ale wciąż mogą wystąpić. &
+    Niski: Zespoły pracują na tej samej bazie kodu, dlatego konflikty zdarzają się rzadko, mogą wystąpić w trakcie pracy na tej samej usłudze. &
+    Umiarkowany: Konflikty mogą wystąpić, dlatego w przypadku gdy synchronizacja między usługami nie jest dobrze zarządzana. &
+    Niski: Konflikty zdarzają się rzadko, dlatego, że IDL są dostarczane na żądanie a wersjonowanie jest wymuszane. \\
     \hline
     \textbf{Version Drift Occurrence} &
-    Umiarkowana: Może wystąpić jescli zespoły programistów nie aktualizują się do nowszej wersji regularnie. &
-    Niski: Warygodność jest minimalna, poniewaz bibioteki sąa wersjonowane i dystrybuowane za pomocą odpowiednich narzędzi. &
-    Niski: Bazy kody w tym przypaku baza kodu jest synchronizowana co minimalizyje problemy z wersjonowaniem. &
-    Umiarkowany: Problemy moga wystąpić, jeśli synchronizacja nie jest dobrze utrzymana. &
-    Bardzo Niski: Dynamiczna zarządzanie wersjami po stronie usługi zmniejsza Warygodność problemów z wersjonowaniem. \\
+    Umiarkowana: Może wystąpić jeśli zespoły programistów nie aktualizują się do nowszej wersji regularnie. &
+    Niski: Wiarygodność jest minimalna, ponieważ biblioteki są wersjonowane i dystrybuowane za pomocą odpowiednich narzędzi. &
+    Niski: Bazy kodu w tym przypadku baza kodu jest synchronizowana co minimalizuje problemy z wersjonowaniem. &
+    Umiarkowany: Problemy mogą wystąpić, jeśli synchronizacja nie jest dobrze utrzymana. &
+    Bardzo Niski: Dynamiczne zarządzanie wersjami po stronie usługi zmniejsza wiarygodność problemów z wersjonowaniem. \\
     \hline
     \textbf{Build Failure Rate} &
-    Wysoki: Błędy w trakcie kompilacji pogą wystąpić w przypadku niekompatybilnych usług. &
-    Umiarkowana: Awarie zrdarzają się rzadko, mozliwe są z przydaku nieprawidłowych wersji zawartych w bibliotece. &
-    Umiarkowana: Błędy w trakcie kompilacji zadarzają się rzadko, ze względu na szynchronizację kodu. &
-    Umiarkowana: Błędy w trakcie kompilacji zadarzają się rzadko, mozliwe w przypadku dysynchronizacji repozytorium. &
-    Niska: Minimale ryzyko błędów w trakcie kompilacji ze wszledu na wymuszaną synchronizację. \\
+    Wysoki: Błędy w trakcie kompilacji mogą wystąpić w przypadku niekompatybilnych usług. &
+    Umiarkowana: Awarie zdarzają się rzadko, możliwe są z przypadku nieprawidłowych wersji zawartych w bibliotece. &
+    Umiarkowana: Błędy w trakcie kompilacji zdarzają się rzadko, ze względu na synchronizację kodu. &
+    Umiarkowana: Błędy w trakcie kompilacji zdarzają się rzadko, możliwe w przypadku niedysynchronizacji repozytorium. &
+    Niska: Minimalne ryzyko błędów w trakcie kompilacji ze względu na wymuszaną synchronizację. \\
     \hline
     \textbf{Deployment Rollback Frequency} &
-    Wysoka: Zęste zminay w plikach IDL mogą spowodować częste wycofanie zmian w trakcie wdrożenia. &
+    Wysoka: Częste zmiany w plikach IDL mogą spowodować częste wycofanie zmian w trakcie wdrożenia. &
     Umiarkowana: Wycofania zmian w trakcie wdrożenia mogą wystąpić, jeśli wystąpią problemy z kompatybilnością wsteczną. &
-    Umiarkowana: Wycofania zmian w trakcie wdrożenia są rzadsze ze względu na synchronizację, ale problemy mogą wystapić. &
+    Umiarkowana: Wycofania zmian w trakcie wdrożenia są rzadsze ze względu na synchronizację, ale problemy mogą wystąpić. &
     Niska: Wycofania zmian w trakcie wdrożenia są rzadkie, automatyczna synchronizacja minimalizuje potrzebę wycofywania zmian. &
-    Niska: Wycofania zmian w trakcie wdrożenia są rzadkie Zarządzanie IDL na żądanie zmniejsza częstotliwość wycofywania. \\
+    Niska: Wycofania zmian w trakcie wdrożenia są rzadkie. Zarządzanie IDL na żądanie zmniejsza częstotliwość wycofywania. \\
     \hline
     \end{tabularx}
 \end{table}
@@ -412,9 +424,9 @@ Dane do porównania zostały zebrane z żródeł literaturowych ~\cite{newman201
 \newpage
 
 Ocena pod kątem bezpieczeństwa:
-
+% AI 15%
 \begin{longtable}{|p{4cm}|p{4cm}|p{4cm}|}
-    \caption{Porównanie SVN, bibliotek, Monorepo i IDLaS pod kątem bezpieczeńswa.} \\
+    \caption{Porównanie SVN, bibliotek, Monorepo i IDLaS pod kątem bezpieczeństwa.} \\ 
     \hline
     \textbf{Kryteria} & \textbf{Zalety} & \textbf{Wyzwania} \\ \hline
     \multicolumn{3}{|c|}{\textbf{SVN }} \\ \hline
@@ -445,7 +457,7 @@ Ocena pod kątem bezpieczeństwa:
 
 Ocena pod kątem skalowalności:
 
-Systemy bazujące na IDL, taie jak Protocol Buffers oraz Avro zazwyczj sarilizują dane do kompaktowych formatów binarnych, to znaczy, że ilośc danych które trzeba przesłac przez sieć i przechowywac na dysku jest minimalna. Dzieki temu koszt zasobów fizycznych jest minimalny i ma tendencje do pozostania nizkim nawet w przypadku wzrostu obciążenia. Wydajność systemu kożystającego z wspówdzielenia za pomocą IDL nie zależy od metody zarządazania plikami IDL jak w powyzwych przypadkach.
+Systemy bazujące na IDL, takie jak Protocol Buffers oraz Avro zazwyczaj serializują dane do kompaktowych formatów binarnych, to znaczy, że ilość danych, które trzeba przesłać przez sieć i przechowywać na dysku, jest minimalna. Dzięki temu koszt zasobów fizycznych jest minimalny i ma tendencję do pozostania niskim, nawet w przypadku wzrostu obciążenia. Wydajność systemu korzystającego z współdzielenia za pomocą IDL nie zależy od metody zarządzania plikami IDL, jak w powyższych przypadkach.
 
 \begin{quote}
     "With efficient binary serialization formats, IDLs allow rapid encoding and decoding of messages. This efficiency is crucial for high-throughput systems where low latency is required. IDLs also facilitate cross-language interoperability without incurring significant performance penalties." ~\cite[p. 123]{kleppmann2017designing}
@@ -453,7 +465,7 @@ Systemy bazujące na IDL, taie jak Protocol Buffers oraz Avro zazwyczj sarilizuj
 
 Ocena pod kątem wersjonowania:
 
-Na podstawie analizy żródeł literaturowych oraz doświadczenia włąsnego dokonałem analizy podejścia do wpółdzielenia kodu za pomocą plików IDL. W tym trzybaku ocena pod kątem wersjonowania rówżni się w zależnosci od podejścia do zarządzania plikamu IDL, dlatego dokonałem porównania dla każdego z podejść.
+Na podstawie analizy źródeł literaturowych oraz doświadczenia własnego dokonałem analizy podejścia do współdzielenia kodu za pomocą plików IDL. W tym przypadku ocena pod kątem wersjonowania różni się w zależności od podejścia do zarządzania plikami IDL, dlatego dokonałem porównania dla każdego z podejść.
 
 \begin{longtable}{|C{3cm}|C{9.1cm}|}
     \caption{Porównanie podejść do zarządzania kodem, wersjonowania i repozytoriami: Git, biblioteki, Monorepo i IDLaS.} \\
@@ -546,19 +558,19 @@ Na podstawie analizy żródeł literaturowych oraz doświadczenia włąsnego dok
 
 Ocena pod kątem komunikacji:
 
-Pod kątem komunikacji podejście zapewnia potrzebny poziom komunikacji, obiekty są dodawane do projektu przez narzędzie do budowania projektów na etapie uruchamiania aplikacji, dalej w trakcie wykonania logiki programu takie obiekty mogą być użyte przez program bez żadnych obciążeń wydajnościowych. Obiekty wciągnięte z biblioteki mogą być użyte dla komunikacji asynchronicznej takich jak brokery wiadomości jak również dla wysłania bezpośrednich zapytań między serwisami.
+Pod kątem komunikacji podejście zapewnia potrzebny poziom komunikacji, obiekty są dodawane do projektu przez narzędzie do budowania projektów na etapie uruchamiania aplikacji, dalej w trakcie wykonania logiki programu takie obiekty mogą być użyte przez program bez żadnych obciążeń wydajnościowych. Obiekty wciągnięte z biblioteki mogą być użyte dla komunikacji asynchronicznej, takich jak brokery wiadomości, jak również dla wysłania bezpośrednich zapytań między serwisami.
 
 Ocena pod kątem izolacji:
 
-Zgodnie z wcieśniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji bibliotek kryteria oceny są następujące: ocena pod kątem zolacji interfejsów, isolacja wersji, izolacja zależności.
+Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji bibliotek, kryteria oceny są następujące: ocena pod kątem izolacji interfejsów, izolacji wersji oraz izolacji zależności.
 
-Izolacja interfejsów: Biblioteki, złykle udostępniają zdefiniowany interfejs. Dobrze ustrukturyzowana biblioteka izoluje skonmlipkowane elementy logiki od swoich użytkowników. Gdy są użyte prawidłowo, pozwalają na zmianę lub aktualizację kodu przy minimalnym wpływie na kod wykorzystujący bibliotekę.
+Izolacja interfejsów: Dobrze ustrukturyzowana biblioteka izoluje skomplikowane elementy logiki od swoich użytkowników. Gdy są użyte prawidłowo, biblioteki pozwalają na zmianę lub aktualizację kodu przy minimalnym wpływie na kod wykorzystujący bibliotekę.
 
 \begin{quote}
     "A well-designed library or SDK isolates its implementation details from the user." ~\cite[p. 75]{Essential}
 \end{quote}
 
-Izolacja wersji: Bibliotelki zazwycaj używają semantycznego wersjonowania za pomocą nazwy. Przejrzysta historia wersji umożliwia deweloperom odpowiednie zarządzanie zależnościami. Przy odpowiedniej izolacji wersji wiele wersji biblioteki może współistnieć i być używane jednocześnie, ułatwia to sproces stopniowej migracji.
+Izolacja wersji: Biblioteki zazwyczaj używają semantycznego wersjonowania za pomocą nazwy. Przejrzysta historia wersji umożliwia deweloperom odpowiednie zarządzanie zależnościami. Przy odpowiedniej izolacji wersji wiele wersji biblioteki może współistnieć i być używane jednocześnie, ułatwia to proces stopniowej migracji.
 
 \begin{quote}
     "Versioning APIs and libraries carefully ensures that changes can be introduced gradually." ~\cite[p. 172]{fowler2012patterns}
@@ -572,33 +584,34 @@ Izolacja zależności: Biblioteki często zależą od innych bibliotek, w przypa
 
 Ocena pod kątem bezpieczeństwa:
 
-Zgodnie z wcieśniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa bibliotek kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność
+Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa bibliotek kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność.
 
-Poufność: Biblioteki które są wykorzystywane dla preteażania poufnuch danych powinny pochodzić z sprawdzonych żródeł i ciągle aktualizowane aby zapobiec utratę danych. Ich integracja powinna wymuszać ścisłe kontrole dostępu. 
+Poufność: Biblioteki, które są wykorzystywane do przetważania poufnych danych muszą pochodzić z sprawdzonych źródeł i ciągle aktualizowane, aby zapobiec utracie danych.
 
+% AI
 \begin{quote}
     "Ensuring that libraries handling sensitive information are sourced from reputable channels and regularly updated is critical to maintaining confidentiality throughout an application." ~\cite[p. 82]{Essential}
 \end{quote}
 
-Integralność danych: Biblioteki często korzystją z sum kontrolnych, certyfikatów, podpisów cyfrowych przeprowadzają obszerne testy, aby mieć pewność, że przetwarzane dane pozostają biezpieczne.
+Integralność danych: Biblioteki często korzystają z sum kontrolnych, certyfikatów, podpisów cyfrowych aby mieć pewność, że przetwarzane dane pozostają bezpieczne.
 
 \begin{quote}
     "The integrity of a library is maintained through rigorous testing and the use of cryptographic measures that detect any unauthorized changes to the code or data it processes." ~\cite[p. 84]{Essential}
 \end{quote}
 
-Dostępność: Dostępność może zostać naruszona, jeśli biblioteki zewnętrzne staną się nieobsługiwane lub niedostępne lub wewnętrzne w przypadku awarii narzędzia do zarządzania bibliotekami. Dlatego jest ważnym wykożystanie managarów zależności które są zaufane i w tym przupadku możemy pomaga zapewnić, że aplikacje pozostaną dostępne nawet w miarę ewolucji bibliotek.
+Dostępność: Dostępność może zostać naruszona, jeśli biblioteki zewnętrzne będą niedostępne, lub wewnętrzne w przypadku awarii narzędzia do zarządzania bibliotekami. Dlatego ważne jest wykorzystanie menedżerów zależności które są zaufane.
 
 \begin{quote}
     "By leveraging modern dependency management tools and regularly updating libraries, developers can mitigate risks to availability due to deprecated or unsupported components." ~\cite[p. 85]{Essential}
 \end{quote}
 
-Autentyczność: W przypadku bibliotek jest zapewniania za pomocą sprawdznie jej pochodzenia za pomocą podpisów cyfrowych i sum kontrolnych dostarczonych przez wydawcę. Zapobiega to ryzyku włączenia wykonania złośliwego kodu po stronie klienta biblioteki. 
+Autentyczność: W przypadku bibliotek jest zapewniana za pomocą sprawdzenia jej pochodzenia za pomocą podpisów cyfrowych i sum kontrolnych dostarczonych przez wydawcę. Zapobiega to ryzyku włączenia wykonania złośliwego kodu po stronie klienta biblioteki.
 
 \begin{quote}
     "Authenticating libraries through digital signatures and secure distribution channels is essential to ensuring that only verified, unmodified code is used in production environments." ~\cite[p. 87]{Essential}
 \end{quote}
 
-Odpowiedzialność: W pzypadku bibliotek przejrzysta historia mnoże zostać zapełniona za pomocą menedżerów pakietów które umożliwiają śledzenie pochodzenia zmian. Wspomaga to w zabiezpieczniu odpowiedzialności w przypadku problemów.
+Odpowiedzialność: W przypadku bibliotek przejrzysta historia może zostać zapewniona za pomocą menedżerów pakietów, które umożliwiają śledzenie pochodzenia zmian. Wspomaga to w zapewnieniu odpowiedzialności w przypadku problemów.
 
 \begin{quote}
     "A well-documented version history is indispensable for accountability, as it enables developers to trace and audit every modification made to a library over time." ~\cite[p. 88]{Essential}
@@ -642,20 +655,20 @@ Ocena pod kątem komunikacji: zapewnia potrzebny poziom komunikacji, mechanizm w
 
 Ocena pod kątem izolacji: 
 
-Zgodnie z wcieśniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji SDK kryteria oceny są następujące: ocena pod kątem zolacji interfejsów, isolacja wersji, izolacja zależności. Jednak są one trudniejsze w projetowaniu i wymagają strrności w trakcie trzygowania.
+Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji SDK kryteria oceny są następujące: ocena pod kątem izolacji interfejsów, izolacja wersji, izolacja zależności. Jednak są one trudniejsze w projektowaniu i wymagają ostrożności w trakcie zarządzania.
 
 \begin{quote}
     "SDK isolates its implementation details from the user, allowing developers to interact with the API without needing to understand its inner workings." ~\cite[p. 75]{Essential}
 \end{quote}
 
-Izolacja wersji: W przypadku SDK które agregują kilka bibliotek i narzędzi muszą zarządzać werjsjonowanie wszystkicjh zawartych komponentów. W idealnym przypadku zestaw SDK jest zaprojektowany tak, aby nowe dodane wersje byli kompatybilne wstecz umożliwiając klientom działanie bez natychmiastowych zmian.
+Izolacja wersji: W przypadku SDK, które agregują kilka bibliotek i narzędzi, muszą zarządzać wersjonowaniem wszystkich zawartych komponentów. W idealnym przypadku zestaw SDK jest zaprojektowany tak, aby nowe dodane wersje były kompatybilne wstecz, umożliwiając klientom działanie bez natychmiastowych zmian.
 
-Izolacja zależności: SDK często zawerają wiele biblioter w spobie, co oznacze że często zarządzają wilką ilością zależności. Izolowanie tych zależności jest krytyczne, aby uniknąć konfliktów.
+Izolacja zależności: SDK często zawierają wiele bibliotek w sposób, co oznacza, że często zarządzają dużą ilością zależności. Izolowanie tych zależności jest krytyczne, aby uniknąć konfliktów.
 
 \begin{quote}
     "...ensuring that dependencies can be replaced without affecting the core business logic" ~\cite[p. 218]{martin2008clean}
 \end{quote}
-
+% AI
 Ocena pod kątem bezpieczeństwa: 
 
 Zgodnie z wcieśniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa bibliotek kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność
@@ -749,29 +762,29 @@ Przykłady platform server less dostępnych w 2025 roku:
 
 \subsubsection{Ogulny opis aplikacji}
 
-Przygotowana aplikacja webowa wykonuje następujące czynności:
+Za pomocą  przygotowanej przeze mnie aplikacji webowej wykonuję nastepujace czynności:
 
 \begin{enumerate}
-    \item Przyjmuje i waliduje kod który użytkownik chce współdzielić za pomocą technologii server lees, w przypadku problemów w trakcie walidacji kodu użytkownik zostaje poinformowany o tem co on ma pojawić żeby sukcesywnie dokończyć operację.
-    \item Automatycznie przygotowuje kod do wdrożenia na Amazon Lambda (w przyszłości możliwe łatwe dodanie możliwości wyboru rozwiązania które będzie wykorzystane dla wdrożenia, na przykład Azure functions).
-    \item Automatycznie wdraża kod na platformę Server Less kod, po kilku sekundach kod już jest dostępny do wykorzystania.
-    \item Zapisuje kod w bazie danych do użytku w przyszłości, użytkownik widzi listę wdrożeniowych funkcji.
-    \item Umożliwia edycję i ponowne wdrożenie kodu w liście.
-    \item Wyszukiwanie kodu za pomocą opisu.
-    \item Dodanie wersjonowania kodu.
-    \item Automatycznie  przygotowuje pliki IDL które są zalecane do wykorzystania  w trakcie wywołania kodu na platformie IDL.
-    \item Przechowywanie plików IDL oraz udostępnienie razie zapotrzebowania, co umożliwia współdzielenie kodu między zespołami oraz członkami zespołu.
+    \item Akceptuję i sprawdzam kod, który chcesz podzielić za pomocą technologii serverless. Jeśli coś nie gra w czasie sprawdzania, powiem ci, co masz zrobić, żeby skończyć to sukcesem.
+    \item Automatycznie przygotowuję kod do wrzucenia na Amazon Lambda (w przyszłości może dać ci opcję wyboru innej platformy, jak na przykład Azure Functions).
+    \item Automatycznie wrzucam kod na platformę Serverless, po chwili będzie od razu dostępny.
+    \item Zapisuję kod w bazie danych, żebyś mógł go użyć później; będziesz miał widok na listę wszystkich wrzutków kodu.
+    \item Możesz edytować i ponownie wrzucić kod z tej listy.
+    \item Możesz wyszukać kod po opisie.
+    \item Dodaję wersjonowanie kodu.
+    \item Automatycznie przygotowuję pliki IDL, które są fajne do wykorzystania, gdy kod jest wywoływany na IDL.
+    \item Przechowuję te pliki IDL i możesz je udostępnić, żeby inni członkowie zespołu mogli współdzielić ten kod.
 \end{enumerate}
 
 \subsubsection{Opis aplikacji back-end}
 
 Używane technologie
-Java: Podstawowy język programowania używany do tworzenia aplikacji.
-Spring Boot: Framework, który upraszcza tworzenie aplikacji opartych w Javie.
-Maven: Narzędzie do automatyzacji kompilacji używane do zarządzania zależnościami projektu i budowania projektu.
-AWS Lambda: Usługa obliczeniowa bserverless, która uruchamia kod i zarządza zasobami obliczeniowymi.
-Protobuf: Nowoczesy, rozszerzalny mechanizm IDL, używany do wydajnej serializacji i deserializacji danych dostarczony prze Google.
-Jackson: Biblioteka do przetwarzania danych JSON, używana do konwersji danych wejściowych na DTO.
+Java: Język do napisania backendu
+Spring Boot: Narzędzie które ułatwia tworzenie aplikacji w Javie
+Maven: Automation templat, które automatyzuje tworzenie procedur śledzenia zależności projektu, kompilacji projektów w inteligentny sposób.
+AWS Lambda: To jest obliczenie ludzi, które pożycza używanie serwerów, ale jednocześnie opiekunów, mogą tu pokazić i uruchomić kod bez konieczności wdrażania lub zarządzania serwerami
+Protobuf: Jest to jezyk IDL do szybkiego kodowania i dekodowania obiektów DTO.
+Jackson: Jeden z najsłynniejszych warz z ferajny do niglowania JSON-ów, jak również konwertowania wejście wyjścia na obiekty DTO itp w drugą stronę.
 Ogólny opis:
 Ta aplikacja jest częścią aplikacji webowej, która odpowiada za następujące wdizłania:
 Odbiera kod jako dane wejściowe użytkownika: Akceptuje kod od użytkownika za pośrednictwem żądań HTTP.
@@ -788,14 +801,14 @@ Npm (Node Package Manager) służy do zarządzania zależnościami i skryptami p
 Aplikacja jest zbudowana przy użyciu komponentów React, co umożliwia modułowy kod który możnz uźywać wielokrotmie. Każdy komponent reprezentuje część interfejsu użytkownika.
 
 Ogólny opis:
-Ta aplikacja jest częścią aplikacji webowej, która odpowiada za następujące działania:
-Za pomocą aplikacji użytkownik może wprowadzić kod, który chce współdzielić, a następnie wysłać go do back-endu.
-Aplikacja front-endowa sprawdza kod, czy spełnia wymagane standardy i format.
-Aplikacja front-endowa wyświetla wyniki weryfikacji kodu użutkownikowi oraz daje informację zwrotną dla użytkownika.
-Użytkownik może przeglądać, edytować i usuwać kod, który został wcześniej zapisany i wdrożony na AWS Lambda.
-Użytkownik za pomocą aplikacji może wyszukać wdrożony kod za pomocą opisu i nazwy.
-Aplikacja wspiera wersjonowanie kodu, aby śledzić za zmianami lub przywracać poprzednie wersje w razie potrzeby.
-Udostępnienie plików .proto: Aplikacja front-endowa udostępnia pliki .proto które mogą być używane do generowania obiektów DTO do komunikacji z wdrożoną funkcją Lambda.
+Ta aplikacja jest częścią aplikacji webowej, część font-endowa jest odpowiedzialna  za następujące działania:
+Przyjmowanie kodu, który uzytkownik chce wspówdzielić, a następnie wysyłanie go do serwera back-endowego.
+Weryfikacja tego, czy kod spełnia wymagane standardy i formatowanie.
+Wyświetlanie użytkownikowi wyników walidacji.
+Możliwość przeglądania, edytowania i usuwania kodu, który został wcześniej zapisany i wdrożony w AWS Lambda.
+Możliwość wyszukiwania wdrożonego kodu, używając jego opisu i nazwy.
+Wsparcie wersjonowania kodu w celu śledzenia zmian lub przywracania poprzednich wersji.
+Udostępnianie plików .proto: aplikacja front-end udostępnia użytkownikom wygeneroane pliki .proto, których uźytkownicy mogą użyć do generowania obiektów DTO dla komunikacji z wdrożoną funkcją Lambda.
 
 \subsection{Podsumowanie}
 

@@ -2,6 +2,6 @@
 \babel@toc {english}{}\relax 
 \babel@toc {english}{}\relax 
 \babel@toc {polish}{}\relax 
-\contentsline {table}{\numberline {1}{\ignorespaces Porównanie podejść do współdzielenia kodu w systemach mikroserwisów}}{31}{}%
-\contentsline {table}{\numberline {2}{Porównanie SVN, bibliotek, Monorepo i IDLaS pod kątem bezpieczeńswa.}}{32}{}%
-\contentsline {table}{\numberline {3}{Porównanie podejść do zarządzania kodem, wersjonowania i repozytoriami: Git, biblioteki, Monorepo i IDLaS.}}{35}{}%
+\contentsline {table}{\numberline {1}{\ignorespaces Porównanie podejść do współdzielenia kodu w systemach mikroserwisów}}{30}{}%
+\contentsline {table}{\numberline {2}{Porównanie SVN, bibliotek, Monorepo i IDLaS pod kątem bezpieczeństwa.}}{31}{}%
+\contentsline {table}{\numberline {3}{Porównanie podejść do zarządzania kodem, wersjonowania i repozytoriami: Git, biblioteki, Monorepo i IDLaS.}}{34}{}%

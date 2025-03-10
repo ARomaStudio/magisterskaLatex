@@ -10,29 +10,29 @@
 \contentsline {subsection}{\numberline {2.1}Architektura mikroserwisowa}{8}{}%
 \contentsline {subsection}{\numberline {2.2}Architektura monolitowa}{9}{}%
 \contentsline {subsection}{\numberline {2.3}Porównanie}{9}{}%
-\contentsline {section}{\numberline {3}Analiza dziedziny problemowej}{12}{}%
-\contentsline {subsection}{\numberline {3.1}Typy obiektów w aplikacjach mikroserwisowych}{12}{}%
-\contentsline {subsection}{\numberline {3.2}Kryteria porównania i analizy metod współdzielenia kodu}{14}{}%
-\contentsline {section}{\numberline {4}Analiza metod współdzielenia kodu}{15}{}%
-\contentsline {subsection}{\numberline {4.1}Metody współdzielenia kodu z opisem}{15}{}%
-\contentsline {subsection}{\numberline {4.2}Analiza metod współdzielenia kodu dla różnych typów obiektów}{18}{}%
-\contentsline {subsection}{\numberline {4.3}Definicja kryterium oceny i porównania metod współdzielenia kodu}{20}{}%
-\contentsline {subsubsection}{\numberline {4.3.1}Definicja kryterium oceny pod kątem izolacji w przypadku IDL}{20}{}%
-\contentsline {subsubsection}{\numberline {4.3.2}Definicja kryterium oceny pod kątem izolacji w przypadku bibliotek, sdk, REST, serverless}{22}{}%
-\contentsline {subsubsection}{\numberline {4.3.3}Definicja kryterium oceny pod kątem bezpieczeństwa}{24}{}%
-\contentsline {subsubsection}{\numberline {4.3.4}Definicja kryterium oceny pod kątem skalowalności}{25}{}%
-\contentsline {subsubsection}{\numberline {4.3.5}Definicja kryterium oceny pod kątem wersjonowania}{27}{}%
-\contentsline {subsection}{\numberline {4.4}Ocena i porównanie metod współdzielenia kodu}{29}{}%
-\contentsline {subsubsection}{\numberline {4.4.1}Ocena wspówdzieleina kodu za pomocą Interface definition languages}{29}{}%
-\contentsline {subsubsection}{\numberline {4.4.2}Ocena wspówdzieleina kodu za pomocą bibliotek}{37}{}%
-\contentsline {subsubsection}{\numberline {4.4.3}Ocena wspówdzieleina kodu za pomocą SDK}{41}{}%
-\contentsline {subsubsection}{\numberline {4.4.4}Ocena wspówdzieleina kodu za pomocą API}{44}{}%
-\contentsline {subsubsection}{\numberline {4.4.5}Ocena wspówdzieleina kodu za pomocą ServerLess}{44}{}%
-\contentsline {subsection}{\numberline {4.5}Opis części praktycznej}{44}{}%
-\contentsline {subsubsection}{\numberline {4.5.1}Ogulny opis aplikacji}{45}{}%
-\contentsline {subsubsection}{\numberline {4.5.2}Opis aplikacji back-end}{46}{}%
-\contentsline {subsubsection}{\numberline {4.5.3}Opis aplikacji front-end}{46}{}%
-\contentsline {subsection}{\numberline {4.6}Podsumowanie}{47}{}%
-\contentsline {section}{\numberline {5}Appendices}{48}{}%
-\contentsline {subsection}{\numberline {5.1}Sample Code}{48}{}%
-\contentsline {subsection}{\numberline {5.2}Sample Data}{48}{}%
+\contentsline {section}{\numberline {3}Analiza dziedziny problemowej}{11}{}%
+\contentsline {subsection}{\numberline {3.1}Typy obiektów w aplikacjach mikroserwisowych}{11}{}%
+\contentsline {subsection}{\numberline {3.2}Kryteria porównania i analizy metod współdzielenia kodu}{13}{}%
+\contentsline {section}{\numberline {4}Analiza metod współdzielenia kodu}{14}{}%
+\contentsline {subsection}{\numberline {4.1}Metody współdzielenia kodu z opisem}{14}{}%
+\contentsline {subsection}{\numberline {4.2}Analiza metod współdzielenia kodu dla różnych typów obiektów}{17}{}%
+\contentsline {subsection}{\numberline {4.3}Definicja kryterium oceny i porównania metod współdzielenia kodu}{19}{}%
+\contentsline {subsubsection}{\numberline {4.3.1}Definicja kryterium oceny pod kątem izolacji w przypadku IDL}{19}{}%
+\contentsline {subsubsection}{\numberline {4.3.2}Definicja kryterium oceny pod kątem izolacji w przypadku bibliotek, sdk, REST, serverless}{21}{}%
+\contentsline {subsubsection}{\numberline {4.3.3}Definicja kryterium oceny pod kątem bezpieczeństwa}{22}{}%
+\contentsline {subsubsection}{\numberline {4.3.4}Definicja kryterium oceny pod kątem skalowalności}{24}{}%
+\contentsline {subsubsection}{\numberline {4.3.5}Definicja kryterium oceny pod kątem wersjonowania}{26}{}%
+\contentsline {subsection}{\numberline {4.4}Ocena i porównanie metod współdzielenia kodu}{27}{}%
+\contentsline {subsubsection}{\numberline {4.4.1}Ocena wspówdzieleina kodu za pomocą Interface definition languages}{27}{}%
+\contentsline {subsubsection}{\numberline {4.4.2}Ocena wspówdzieleina kodu za pomocą bibliotek}{36}{}%
+\contentsline {subsubsection}{\numberline {4.4.3}Ocena wspówdzieleina kodu za pomocą SDK}{39}{}%
+\contentsline {subsubsection}{\numberline {4.4.4}Ocena wspówdzieleina kodu za pomocą API}{43}{}%
+\contentsline {subsubsection}{\numberline {4.4.5}Ocena wspówdzieleina kodu za pomocą ServerLess}{43}{}%
+\contentsline {subsection}{\numberline {4.5}Opis części praktycznej}{43}{}%
+\contentsline {subsubsection}{\numberline {4.5.1}Ogulny opis aplikacji}{44}{}%
+\contentsline {subsubsection}{\numberline {4.5.2}Opis aplikacji back-end}{44}{}%
+\contentsline {subsubsection}{\numberline {4.5.3}Opis aplikacji front-end}{45}{}%
+\contentsline {subsection}{\numberline {4.6}Podsumowanie}{46}{}%
+\contentsline {section}{\numberline {5}Appendices}{47}{}%
+\contentsline {subsection}{\numberline {5.1}Sample Code}{47}{}%
+\contentsline {subsection}{\numberline {5.2}Sample Data}{47}{}%
