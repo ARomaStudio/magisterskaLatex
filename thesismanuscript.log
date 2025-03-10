@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  10 MAR 2025 19:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  10 MAR 2025 22:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1566,110 +1566,113 @@ Overfull \hbox (2.69734pt too wide) in paragraph at lines 614--615
 
 
 [38]
-Overfull \hbox (16.12383pt too wide) in paragraph at lines 654--655
+Overfull \hbox (16.12383pt too wide) in paragraph at lines 636--637
 \T1/cmr/m/n/12 w przy-padku bib-lioteki obiekty s¡ do-dawane do pro-jektu przez narz¦dzie
  []
 
 
-Overfull \hbox (19.87628pt too wide) in paragraph at lines 654--655
+Overfull \hbox (19.87628pt too wide) in paragraph at lines 636--637
 \T1/cmr/m/n/12 icznej ta-kich jak bro-kery wiado-mo±ci jak równie» dla wysªa-nia bezpo±red-
  []
 
 
-
-[39]
-Overfull \hbox (6.03311pt too wide) in paragraph at lines 666--667
+Overfull \hbox (6.03311pt too wide) in paragraph at lines 648--649
 []\T1/cmr/m/n/12 Izolacja za-le»no±ci: SDK cz¦sto za-w-ier-aj¡ wiele bib-liotek w sposób,
  []
 
 
 
-[40]
-Overfull \hbox (1.11351pt too wide) in paragraph at lines 682--683
+[39]
+Overfull \hbox (5.6492pt too wide) in paragraph at lines 658--659
+\T1/cmr/m/n/12 nenty przestrze-gaj¡ ±cisªych za-sad kon-troli dost¦pu zm-niej¡c to ryzyko
+ []
+
+
+Overfull \hbox (1.11351pt too wide) in paragraph at lines 664--665
 \T1/cmr/m/n/12 testowane, aby za-pewni¢, »e zmi-any nie narusz¡ in-te-gral-no±ci danych.
  []
 
 
-Overfull \hbox (3.39775pt too wide) in paragraph at lines 708--709
-\T1/cmr/m/n/12 kom-plek-sowo±¢ oz-nacza, »e up-raszczaj¡ dewel-op-ment, maj¡ ten-dencj¦
+
+[40]
+Overfull \hbox (37.10536pt too wide) in paragraph at lines 702--703
+\T1/cmr/m/n/12 zªo»one, poniewa» musimy uwzgl¦d-nia¢ zmi-any we wszys-t-kich wewn¦trznych
  []
 
 
 
 [41]
-Overfull \hbox (33.84225pt too wide) in paragraph at lines 720--721
-\T1/cmr/m/n/12 zªo»one, poniewa» musi odzwier-cied-la¢ zmi-any we wszys-t-kich wewn¦trznych
+
+[42]
+Overfull \hbox (2.87971pt too wide) in paragraph at lines 734--735
+[]\T1/cmr/m/n/12 Serverless to nowoczesny model wykony-wa-nia oblicze« w chmurze,
  []
 
 
+Overfull \hbox (21.41pt too wide) in paragraph at lines 734--735
+\T1/cmr/m/n/12 ^^Rserver-less^^Q nie oz-nacza, »e nie ma fizy-cznych ser-w-erów, ale »e zarz¡dzanie
+ []
 
-[42]
-Overfull \hbox (2.87971pt too wide) in paragraph at lines 752--753
-[]\T1/cmr/m/n/12 Serverless to nowoczesny model wykony-wa-nia oblicze« w chmurze,
+
+Overfull \hbox (3.56078pt too wide) in paragraph at lines 734--735
+\T1/cmr/m/n/12 less wdra»amy do chmury funkcje za-mi-ast caªych ap-likacji, a dostawca
+ []
+
+
+Overfull \hbox (20.03937pt too wide) in paragraph at lines 734--735
+\T1/cmr/m/n/12 chmury jest odpowiedzialny za zarz¡dzanie ko-dem, skalowanie i utrzymy-
+ []
+
+
+Overfull \hbox (12.0012pt too wide) in paragraph at lines 751--752
+[]\T1/cmr/m/n/12 Automatycznie przy-go-towuj¦ kod do wrzuce-nia na Ama-zon Lambda
+ []
+
+
+Overfull \hbox (2.00471pt too wide) in paragraph at lines 753--754
+[]\T1/cmr/m/n/12 Zapisuj¦ kod w bazie danych, »e-by± mógª go u»y¢ pó¹niej; b¦dziesz
  []
 
 
 
 [43]
-Overfull \hbox (0.32137pt too wide) in paragraph at lines 759--760
-[]\T1/cmr/m/n/12 Google Cloud Func-tions - Usªuga ±wiad-c-zona przez Google Cloud,
- []
-
-
-Overfull \hbox (30.15434pt too wide) in paragraph at lines 759--760
-\T1/cmr/m/n/12 umo»li-wia uruchami-anie kodu po wyªowamiu odpowied-nego zdarzeniaw
- []
-
-
-Overfull \hbox (12.0012pt too wide) in paragraph at lines 769--770
-[]\T1/cmr/m/n/12 Automatycznie przy-go-towuj¦ kod do wrzuce-nia na Ama-zon Lambda
- []
-
-
-Overfull \hbox (2.00471pt too wide) in paragraph at lines 771--772
-[]\T1/cmr/m/n/12 Zapisuj¦ kod w bazie danych, »e-by± mógª go u»y¢ pó¹niej; b¦dziesz
- []
-
-
-Overfull \hbox (16.6661pt too wide) in paragraph at lines 776--777
+Overfull \hbox (16.6661pt too wide) in paragraph at lines 758--759
 []\T1/cmr/m/n/12 Przechowuj¦ te pliki IDL i mo»esz je udost¦p-ni¢, »eby inni czªonkowie
  []
 
 
-Overfull \hbox (0.38449pt too wide) in paragraph at lines 781--794
- \T1/cmr/bx/n/12 4.5.2 Opis ap-likacji back-end[] \T1/cmr/m/n/12 U»y-wane tech-nolo-gie Java: J¦zyk
+Overfull \hbox (6.19289pt too wide) in paragraph at lines 780--781
+[]\T1/cmr/m/n/12 Automatycznie wdra»a kod jako funkcj¦ Lambda - Wdra»a sprawd-
  []
 
 
-Overfull \hbox (6.03044pt too wide) in paragraph at lines 781--794
-\T1/cmr/m/n/12 nie ap-likacji w Javie Maven: Au-toma-tion tem-plat, które au-tomatyzuje
+Overfull \hbox (14.41187pt too wide) in paragraph at lines 787--790
+\T1/cmr/m/n/12 u»y-wana do tworzenia ap-likacji fron-tendowych. Npm sªu»y do zarz¡dza-
  []
 
 
 
 [44]
-Overfull \hbox (10.13307pt too wide) in paragraph at lines 797--800
-\T1/cmr/m/n/12 kom-po-nenty in-ter-fe-jsu u»ytkown-ika wielokrot-nego u»ytku. Npm (Node
+Overfull \hbox (4.86322pt too wide) in paragraph at lines 795--796
+[]\T1/cmr/m/n/12 Przyjmowanie kodu, który u»ytkownik chce wspóªdzieli¢, a nast¦p-
  []
 
 
-Overfull \hbox (8.01624pt too wide) in paragraph at lines 803--812
-\T1/cmr/m/n/12 speª-nia wyma-gane stan-dardy i for-ma-towanie. Wy±wi-et-lanie u»ytkown-
+Overfull \hbox (2.8054pt too wide) in paragraph at lines 798--799
+[]\T1/cmr/m/n/12 Mo»liwo±¢ przegl¡-da-nia, edy-towa-nia i usuwa-nia kodu, który zostaª
  []
 
 
-Overfull \hbox (9.15819pt too wide) in paragraph at lines 803--812
-\T1/cmr/m/n/12 ikowi wyników wal-i-dacji. Mo»li-wo±¢ przegl¡-da-nia, edy-towa-nia i usuwa-
+Overfull \hbox (27.63757pt too wide) in paragraph at lines 801--802
+[]\T1/cmr/m/n/12 Udost¦pnianie plików .proto: ap-likacja front-end udost¦p-nia u»ytkown-
  []
 
 
-Overfull \hbox (3.647pt too wide) in paragraph at lines 803--812
-\T1/cmr/m/n/12 nia kodu, który zostaª wcze±niej za-pisany i wdro»ony w AWS Lambda.
+Overfull \hbox (6.13466pt too wide) in paragraph at lines 801--802
+\T1/cmr/m/n/12 do gen-erowa-nia obiek-tów DTO dla ko-mu-nikacji z wdro»on¡ funkcj¡
  []
 
-
-
-[45] (./thesismanuscript.lot)
+(./thesismanuscript.lot)
 \tf@lot=\write5
 \openout5 = `thesismanuscript.lot'.
 
@@ -1679,9 +1682,9 @@ Overfull \hbox (3.647pt too wide) in paragraph at lines 803--812
 
  (./thesismanuscript.bbl
 
-[46])
+[45])
 
-[47] (./thesismanuscript.aux)
+[46] (./thesismanuscript.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -1696,10 +1699,10 @@ Here is how much of TeX's memory you used:
  36 hyphenation exceptions out of 8191
  99i,11n,101p,1879b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk>
-Output written on thesismanuscript.pdf (47 pages, 312228 bytes).
+Output written on thesismanuscript.pdf (46 pages, 310544 bytes).
 PDF statistics:
- 570 PDF objects out of 1000 (max. 8388607)
- 142 compressed objects within 2 object streams
+ 567 PDF objects out of 1000 (max. 8388607)
+ 140 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  23 words of extra memory for PDF output out of 10000 (max. 10000000)
 

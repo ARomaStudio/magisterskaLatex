@@ -631,24 +631,6 @@ Ocena pod kątem wersjonowania:
     "When a data format or schema changes, … careful management of schema evolution is required to ensure that old and new versions can coexist. This is best achieved by maintaining a structured version history that records every change in the schema in a clear, traceable manner." ~\cite[p. 111]{kleppmann2017designing}
 \end{quote}
 
-Ustrukturyzowana historia wersji:
-
-\begin{quote}
-    "APIs, like diamonds, are forever. Once you publish an API, you are more or less stuck with it; hence, maintaining a clear, structured version history through semantic versioning is critical for ensuring that developers know exactly when breaking changes occur." ~\cite[p. 75]{Essential}
-\end{quote}
-
-text
-
-\begin{quote}
-    "When an API change turns out to be problematic, having a stable version available through semantic versioning allows developers to quickly roll back to a previous release and restore system stability." ~\cite[p. 75]{Essential}
-\end{quote}
-
-text
-
-\begin{quote}
-    "Inadequate versioning can lead to subtle incompatibilities, resulting in data inconsistencies that are difficult to debug. Hence, maintaining strict backward compatibility is crucial to avoid such pitfalls." ~\cite[p. 75]{Essential}
-\end{quote}
-
 \subsubsection{Ocena wspówdzieleina kodu za pomocą SDK}
 
 Ocena pod kątem komunikacji: zapewnia potrzebny poziom komunikacji, mechanizm współdzielenia jest podobny do biblioteki, tak samo jak w przypadku biblioteki obiekty są dodawane do projektu przez narzędzie do budowania projektów na etapie uruchamiania aplikacji, dalej w trakcie wykonania logiki programu takie obiekty mogą być użyte przez program bez żadnych obciążeń wydajnościowych. Obiekty wciągnięte z biblioteki mogą być użyte dla komunikacji asynchronicznej takich jak brokery wiadomości jak również dla wysłania bezpośrednich zapytań między serwisami.
@@ -673,7 +655,7 @@ Ocena pod kątem bezpieczeństwa:
 
 Zgodnie z wcieśniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa bibliotek kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność
 
-Poufność: SDK w przypadku polączenia wielu narzędzi i bibliotek, muszą zapewnić, że wszystkie zawarte komponenty przestrzegają ścisłych zasad kontroli dostępu. Zmniejsza to ryzyko nieautoryzowanego ujawnienia danych.
+Poufność: SDK muszą zapewnić, że wszystkie zawarte komponenty przestrzegają ścisłych zasad kontroli dostępu zmniejąc to ryzyko nieautoryzowanego dostępu do danych.
 
 \begin{quote}
     "SDKs, when integrated with stringent access controls and privacy policies, help shield sensitive data from unauthorized access, thus preserving confidentiality across all integrated modules." ~\cite[para 4]{azure2020}
@@ -685,19 +667,19 @@ Integralność danych: SDK wymaga, aby były one kompleksowo testowane, aby zape
     "Robust testing frameworks within SDKs are critical for maintaining integrity, ensuring that updates do not inadvertently alter data structures or application behavior." ~\cite[para 5]{azure2020}
 \end{quote}
 
-Dostępność: SDK muszą być zaprojektowane tak, aby działały zawszę, nawet przy dużym obciążeniu. 
+Dostępność: SDK muszą być zaprojektowane tak, aby działały zawsze, nawet przy dużym obciążeniu.
 
 \begin{quote}
     "The modular and redundant design of well-architected SDKs contributes significantly to system availability, ensuring that critical services remain accessible even under peak loads." ~\cite[para 6]{azure2020}
 \end{quote}
 
-Autentyczność: Autentyczność w przypadku z SDK może zostać zapewniona za pomocą weryfikacji dostawców i stosowanie środków kryptograficznych do walidacji ich komponentów. Warto dokonywac tachi wdziałań aby zapobiec wykonaniu złośliwego kodu w naszym systemie.
+Autentyczność: Autentyczność w przypadku SDK może zostać zapewniona za pomocą weryfikacji dostawców i stosowania środków kryptograficznych do walidacji ich komponentów. Warto dokonywać takich działań, aby zapobiec wykonaniu złośliwego kodu w naszym systemie.
 
 \begin{quote}
     "Verifying the authenticity of an SDK via cryptographic signatures and secure distribution channels is vital to ensure that the components used are genuine and have not been tampered with." ~\cite[para 7]{azure2020}
 \end{quote}
 
-Odpowiedzialność: SDK zazwyczaj posiadają przeróżne mechanizmy zarządzanie wersjami. Takie metody zarzadzania wersjami umożliwia deweloperom śledzenie pochodzenia wszelkich zmian lub problemów. Pomaga to zapełnić odpowiedzialność programistów za przygotowane zmiany.
+Odpowiedzialność: SDK zazwyczaj posiadają różne mechanizmy zarządzania wersjami. Takie metody zarządzania wersjami umożliwiają deweloperom śledzenie pochodzenia wszelkich zmian lub problemów. Pomaga to zapewnić odpowiedzialność programistów za przygotowane zmiany.
 
 \begin{quote}
     "Comprehensive logging and version tracking in SDKs provide the necessary audit trails that hold developers accountable for every change made, thereby ensuring that any issues can be traced back to their origin." ~\cite[para 7]{azure2020}
@@ -705,7 +687,7 @@ Odpowiedzialność: SDK zazwyczaj posiadają przeróżne mechanizmy zarządzanie
 
 Ocena pod kątem skalowalności:
 
-SDK zazwyczaj zawierają wiele narzędzi czy komponentów Ta kompleksowość oznacza, że upraszczają dewelopment, mają tendencję do wyższego zużycia zasobów pamięci i procesora w porównaniu z, na przykład, IDL. Róznbe raporty dotyczące skalowania aplikacji w chmurach podkreślają, że SDK mogą powodować dodatkowe obciążenie na środowiskach z dużym obciążeniem.
+SDK zazwyczaj zawierają wiele narzędzi lub komponentów, mają tendencję do wyższego zużycia zasobów pamięci i procesora w porównaniu z, na przykład, IDL. Różne raporty dotyczące skalowania aplikacji w chmurze podkreślają, że SDK mogą powodować dodatkowe obciążenie w środowiskach z dużym obciążeniem.
 
 \begin{quote}
     "SDKs, though beneficial for rapid development by bundling multiple tools, tend to impose a higher baseline resource consumption, especially under high-load production scenarios." ~\cite[para 3]{azure2020}
@@ -717,19 +699,19 @@ SDK zazwyczaj zawierają wiele narzędzi czy komponentów Ta kompleksowość ozn
 
 Ocena pod kątem wersjonowania:
 
-SDK mogą zawirać wiele bibliotek i narzędzi, z których każde może nieć własną historię wersji. Wersjonowanie SDK może być  złożone, ponieważ musi odzwierciedlać zmiany we wszystkich wewnętrznych komponentach. Prowadzi to do bardziej zawożonej historii wersji, która wymaga dovbrej  dokumentacji i koordynacji.
+SDK mogą zawierać wiele bibliotek i narzędzi, z których każde może mieć własną historię wersji. Wersjonowanie SDK potrafi być złożone, ponieważ musimy uwzględniać zmiany we wszystkich wewnętrznych komponentach, prowadzi to do bardziej złożonej historii wersji, która wymaga dobrej dokumentacji.
 
 \begin{quote}
     "SDKs encapsulate multiple interdependent modules. As a result, maintaining a structured version history across all components is challenging but essential in order to manage compatibility and coordinate upgrades effectively." ~\cite[para. 3]{azure2020}
 \end{quote}
 
-Przywracanie kodu do stabilnej wersji: Wycofywanie zmian w przypadku SDK może być trudnym, ponieważ SDK  może integrowac wiele komponentów. Ta złożoność może sprawić, że wycofywanie jest bardziej czasochłonne i podatny na błędy, jeśli nie jest zarządzany prawidłowo.
+Przywracanie kodu do stabilnej wersji: Wycofywanie zmian w przypadku SDK może być trudne, ponieważ SDK może integrować wiele komponentów. Ta złożoność może sprawić, że wycofywanie jest bardziej czasochłonne i podatne na błędy, jeśli nie jest zarządzane prawidłowo.
 
 \begin{quote}
     "SDKs, by virtue of bundling several interdependent tools and libraries, require a coordinated rollback mechanism to ensure that all components revert to a stable, compatible state. This adds complexity compared to single-module libraries or IDL files." ~\cite[para. 3]{azure2020}
 \end{quote}
 
-Utrata danych i niespójność: SDK są narażone na większe ryzyko wewnętrznych niespójności i problemów w przypadku gdy moduły są aktualizowane asynchronicznie, może to doprowadzić do błędów, które mogą spowodować utratę danych lub uszkodzenie danych, jeśli nie są w odpowiedni sposówb zarządazane zarządzane.
+Utrata danych i niespójność: SDK są narażone na większe ryzyko wewnętrznych niespójności i problemów w przypadku, gdy moduły są aktualizowane asynchronicznie. Może to doprowadzić do błędów, które mogą spowodować utratę danych lub uszkodzenie danych, jeśli nie są w odpowiedni sposób zarządzane.
 
 \begin{quote}
     "The interdependencies within an SDK mean that even small version mismatches can lead to significant inconsistencies or data loss, making rigorous testing and coordinated versioning critical." ~\cite[para. 3]{azure2020}
@@ -743,72 +725,81 @@ Ocena pod kątem komunikacji:
 
 \subsection{Opis części praktycznej}
 
-Jaką część praktyczną mojej pracy magisterskiej przygotowałem aplikację webową, która : 
-Składa się z dwóch części, back endowej i front endowej 
-Głównym celem napisania aplikacji jest wprowadzenie nowego podejścia do współdzielenia kodu - współdzielenie za pomocą technologii serwer less. Aplikacja wspiera deweloperów korzystających z technologii serwer less, zmniejsza wady tego rozwiązania natomiast dając możliwość skorzystania z mocnych stron tej technologii.  
+Jaką część praktyczną mojej pracy magisterskiej przygotowałem aplikację webową, która:
+Składa się z dwóch części, backendowej i frontendowej.
+Głównym celem napisania aplikacji jest wprowadzenie nowego podejścia do współdzielenie kodu – współdzielenie za pomocą technologii serverless. Aplikacja wspiera deweloperów korzystających z technologii serverless, zmniejsza wady tego rozwiązania, jednocześnie dając możliwość skorzystania z mocnych stron tej technologii.
 
 Czym jest technologia Serverless?
 
-Serverless to nowoczesny model wykonywania obliczeń w chmurze, w którym dostawcy chmury automatycznie obsługują aspekty infrastruktury, takie jak zarządzanie serwerem oraz skalowanie zasobów. Zamiast zarządzać serwerami fizycznymi lub wirtualnymi, programiści mogą skupić się się wyłącznie na pisaniu kodu. Termin „serverless” nie oznacza że niema fizycznych serwerów, ale, że zarządzanie serwerem jest oderwane od użytkowników. W architekturach serverless wdrażamy do chmury funkcje zamiast całych aplikacji, a dostawca chmury jest odpowiedzialny za zarządzanie kodem, skalowanie i utrzymywanie tych funkcji. Są one też często nazywane Function-as-a-Service (FaaS).
+Serverless to nowoczesny model wykonywania obliczeń w chmurze, w którym dostawcy chmury automatycznie obsługują aspekty infrastruktury, takie jak zarządzanie serwerem oraz skalowanie zasobów. Zamiast zarządzać serwerami fizycznymi lub wirtualnymi, programiści mogą skupić się wyłącznie na pisaniu kodu. Termin „serverless” nie oznacza, że nie ma fizycznych serwerów, ale że zarządzanie serwerem jest oderwane od użytkowników. W architekturach serverless wdrażamy do chmury funkcje zamiast całych aplikacji, a dostawca chmury jest odpowiedzialny za zarządzanie kodem, skalowanie i utrzymywanie tych funkcji. Są one też często nazywane Function-as-a-Service (FaaS).
 
 Przykłady platform server less dostępnych w 2025 roku:
 
 \begin{enumerate}
-    \item AWS Lambda - Usługa, która umożliwia uruchamianie kodu bez zarządzania serwerami. AWS Lambda automatycznie skaluje aplikację, daje mozliwość uruchamiać kod po wyłowamiu odpowiednego zdarzenia.
-    \item Azure Functions - Usługa świadczona przez Microsoft Azure, która umożliwia uruchamianie funkcji w chmurze, z automatycznym skalowaniem.
-    \item Google Cloud Functions - Usługa świadczona przez Google Cloud, umożliwia uruchamianie kodu po wyłowamiu odpowiednego zdarzeniaw w Google Cloud lub w odpowiedzi na żądanie HTTP.
-    \item IBM Cloud Functions - Usługa oparta na Apache OpenWhisk, obsługuje wykonywanie funkcji w różnych językach.
+    \item AWS Lambda 
+    \item Azure Functions 
+    \item Google Cloud Functions 
+    \item IBM Cloud Functions 
 \end{enumerate}
 
 \subsubsection{Ogulny opis aplikacji}
 
-Za pomocą  przygotowanej przeze mnie aplikacji webowej wykonuję nastepujace czynności:
+Za pomocą przygotowanej przeze mnie aplikacji webowej wykonuję następujące czynności:
 
 \begin{enumerate}
     \item Akceptuję i sprawdzam kod, który chcesz podzielić za pomocą technologii serverless. Jeśli coś nie gra w czasie sprawdzania, powiem ci, co masz zrobić, żeby skończyć to sukcesem.
-    \item Automatycznie przygotowuję kod do wrzucenia na Amazon Lambda (w przyszłości może dać ci opcję wyboru innej platformy, jak na przykład Azure Functions).
+    \item Automatycznie przygotowuję kod do wrzucenia na Amazon Lambda (w przyszłości może dać ci opcję wyboru innej platformy, np. Azure Functions).
     \item Automatycznie wrzucam kod na platformę Serverless, po chwili będzie od razu dostępny.
-    \item Zapisuję kod w bazie danych, żebyś mógł go użyć później; będziesz miał widok na listę wszystkich wrzutków kodu.
+    \item Zapisuję kod w bazie danych, żebyś mógł go użyć później; będziesz miał widok na listę wszystkich wrzutek kodu.
     \item Możesz edytować i ponownie wrzucić kod z tej listy.
-    \item Możesz wyszukać kod po opisie.
+    \item Możesz wyszukiwać kod po opisie.
     \item Dodaję wersjonowanie kodu.
-    \item Automatycznie przygotowuję pliki IDL, które są fajne do wykorzystania, gdy kod jest wywoływany na IDL.
+    \item Automatycznie przygotowuję pliki IDL, które są przydatne do wykorzystania, gdy kod jest wywoływany na IDL.
     \item Przechowuję te pliki IDL i możesz je udostępnić, żeby inni członkowie zespołu mogli współdzielić ten kod.
 \end{enumerate}
 
 \subsubsection{Opis aplikacji back-end}
 
 Używane technologie
-Java: Język do napisania backendu
-Spring Boot: Narzędzie które ułatwia tworzenie aplikacji w Javie
-Maven: Automation templat, które automatyzuje tworzenie procedur śledzenia zależności projektu, kompilacji projektów w inteligentny sposób.
-AWS Lambda: To jest obliczenie ludzi, które pożycza używanie serwerów, ale jednocześnie opiekunów, mogą tu pokazić i uruchomić kod bez konieczności wdrażania lub zarządzania serwerami
-Protobuf: Jest to jezyk IDL do szybkiego kodowania i dekodowania obiektów DTO.
-Jackson: Jeden z najsłynniejszych warz z ferajny do niglowania JSON-ów, jak również konwertowania wejście wyjścia na obiekty DTO itp w drugą stronę.
-Ogólny opis:
-Ta aplikacja jest częścią aplikacji webowej, która odpowiada za następujące wdizłania:
-Odbiera kod jako dane wejściowe użytkownika: Akceptuje kod od użytkownika za pośrednictwem żądań HTTP.
-Weryfikuje kod: Spawdza że otrzymany kod spełnia wymagane standardy i format.
-Automatycznie wdraża kod jako funkcję Lambda: wdraża sprawdzony kod jako funkcję AWS Lambda.
-Generuje pliki .proto: tworzy pliki .proto na podstawie kodu wejściowego, które mogą być używane do generowania obiektów DTO do komunikacji z wdrożoną funkcją Lambda.
+
+\begin{enumerate}
+    \item Java - Język do napisania backendu.
+    \item Spring Boot - Narzędzie, które ułatwia tworzenie aplikacji w Javie.
+    \item Maven - Automation template, które automatyzuje tworzenie procedur śledzenia zależności projektu, kompilacji projektów w inteligentny sposób.
+    \item AWS Lambda - To jest usługa obliczeniowa, która nie wymaga używania serwerów, ale jednocześnie dostawcy mogą tu pokazywać i uruchomić kod bez konieczności wdrażania lub zarządzania serwerami.
+    \item Protobuf - Jest to język IDL do szybkiego kodowania i dekodowania obiektów DTO.
+    \item Jackson - Jeden z najsłynniejszych narzędzi do parsowania JSON-ów, jak również konwertowania wejść/wyjść na obiekty DTO itp. w drugą stronę.
+\end{enumerate}
+
+Ogólny opis
+
+Ta aplikacja jest częścią aplikacji webowej, która odpowiada za następujące działania:
+\begin{enumerate}
+    \item Odbiera kod jako dane wejściowe użytkownika - Akceptuje kod od użytkownika za pośrednictwem żądań HTTP.
+    \item Weryfikuje kod - Sprawdza, że otrzymany kod spełnia wymagane standardy i format.
+    \item Automatycznie wdraża kod jako funkcję Lambda -  Wdraża sprawdzony kod jako funkcję AWS Lambda.
+    \item Generuje pliki .proto - Tworzy pliki .proto na podstawie kodu wejściowego, które mogą być używane do generowania obiektów DTO do komunikacji z wdrożoną funkcją Lambda.
+\end{enumerate}
+
 
 \subsubsection{Opis aplikacji front-end}
 
-Aplikacja front-endowa została przygotowana przy użyciu JavaScript, React i npm.
-React to popularna biblioteka JavaScript do tworzenia aplikacji front-endowych, w szczególności aplikacji jednostronicowych, w których można tworzyć komponenty interfejsu użytkownika wielokrotnego użytku.
-Npm (Node Package Manager) służy do zarządzania zależnościami i skryptami projektu.
-
-Aplikacja jest zbudowana przy użyciu komponentów React, co umożliwia modułowy kod który możnz uźywać wielokrotmie. Każdy komponent reprezentuje część interfejsu użytkownika.
+Aplikację front-endową przygotowałem za pomocą JavaScript, React i npm.  
+React to biblioteka używana do tworzenia aplikacji frontendowych.  
+Npm służy do zarządzania zależnościami projektu.
 
 Ogólny opis:
-Ta aplikacja jest częścią aplikacji webowej, część font-endowa jest odpowiedzialna  za następujące działania:
-Przyjmowanie kodu, który uzytkownik chce wspówdzielić, a następnie wysyłanie go do serwera back-endowego.
-Weryfikacja tego, czy kod spełnia wymagane standardy i formatowanie.
-Wyświetlanie użytkownikowi wyników walidacji.
-Możliwość przeglądania, edytowania i usuwania kodu, który został wcześniej zapisany i wdrożony w AWS Lambda.
-Możliwość wyszukiwania wdrożonego kodu, używając jego opisu i nazwy.
-Wsparcie wersjonowania kodu w celu śledzenia zmian lub przywracania poprzednich wersji.
-Udostępnianie plików .proto: aplikacja front-end udostępnia użytkownikom wygeneroane pliki .proto, których uźytkownicy mogą użyć do generowania obiektów DTO dla komunikacji z wdrożoną funkcją Lambda.
+
+Ta aplikacja jest częścią aplikacji webowej, część front-endowa jest odpowiedzialna za następujące działania:
+\begin{enumerate}
+    \item Przyjmowanie kodu, który użytkownik chce współdzielić, a następnie wysyłanie go do serwera back-endowego.
+    \item Weryfikacja tego, czy kod spełnia wymagane standardy i formatowanie.
+    \item Wyświetlanie wyników walidacji.
+    \item Możliwość przeglądania, edytowania i usuwania kodu, który został wcześniej zapisany i wdrożony w AWS Lambda.
+    \item Możliwość wyszukiwania wdrożonego kodu, używając jego opisu i nazwy.
+    \item Wsparcie wersjonowania kodu w celu śledzenia zmian lub przywracania poprzednich wersji.
+    \item Udostępnianie plików .proto: aplikacja front-end udostępnia użytkownikom wygenerowane pliki .proto, których użytkownicy mogą użyć do generowania obiektów DTO dla komunikacji z wdrożoną funkcją Lambda.
+\end{enumerate}
 
 \subsection{Podsumowanie}
 
