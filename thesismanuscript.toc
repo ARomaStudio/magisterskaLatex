@@ -1,5 +1,8 @@
 \babel@toc {polish}{}\relax 
-\babel@toc {english}{}\relax 
+\contentsline {title}{Współdzielenie kodu w mikroserwisach}{1}{}%
+\authcount {1}
+\contentsline {author}{Artem Romanenko \ Numer albumu: S32237 }{1}{}%
+\babel@toc {polish}{}\relax 
 \babel@toc {english}{}\relax 
 \babel@toc {polish}{}\relax 
 \contentsline {section}{\numberline {1}Wstęp}{6}{}%
