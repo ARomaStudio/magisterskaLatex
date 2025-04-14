@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  15 MAR 2025 08:18
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  14 APR 2025 23:18
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -481,7 +481,77 @@ Package babel Info: Hyphen rules for 'polish' set to \l@english
 ) (c:/tools/TinyTeX/texmf-dist/tex/generic/babel/locale/en/babel-english.tex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
-) (./thesismanuscript.aux)
+) (./thesismanuscript.aux
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+
+LaTeX Warning: Label `fig1' multiply defined.
+
+)
 \openout1 = `thesismanuscript.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
@@ -789,115 +859,742 @@ Overfull \hbox (12.14273pt too wide) in paragraph at lines 222--223
 
 [19]
 
+LaTeX Warning: Citation `bloch2018effective' on page 20 undefined on input line 252.
+
+
+
 [20]
-Overfull \hbox (5.94016pt too wide) in paragraph at lines 251--252
-\T1/cmr/m/n/12 Dlatego w przy-padku prob-lemów z sche-matem wynika-j¡-cym cz¦sto
+Overfull \hbox (5.96172pt too wide) in paragraph at lines 253--255
+\T1/cmr/m/n/12 wer-s-jami, umo»li-wia-j¡c stop-niow¡ ak-tu-al-iza-cj¦ sys-temu. Powy»szy
  []
 
 
-Overfull \hbox (3.12758pt too wide) in paragraph at lines 251--252
-\T1/cmr/m/n/12 z niepraw-idªowo wybranego pode-j±-cia do zarz¡dza-nia plikami IDL. 
+Overfull \hbox (26.66277pt too wide) in paragraph at lines 253--255
+\T1/cmr/m/n/12 cy-tat pokazuje, jak wa»nym jest za-chowanie kom-paty-bil-no±ci wstecznej
  []
 
 
-Overfull \hbox (9.2053pt too wide) in paragraph at lines 256--257
-\T1/cmr/m/n/12 Cz¦ste roll-backi usªug w trak-cie wdro»e« mog¡ spowodowa¢ spowol-
+Overfull \hbox (1.26285pt too wide) in paragraph at lines 255--257
+\T1/cmr/m/n/12 le»no±ci na nasz¡ ap-likacj¦. Powy»szy cy-tat pokazuje, jak wa»nym
  []
 
 
-
-[21]
-
-LaTeX Warning: Citation `bloch2018effective' on page 22 undefined on input line 269.
-
-
-Overfull \hbox (9.51566pt too wide) in paragraph at lines 275--276
-[]\T1/cmr/m/n/12 "Versioning APIs and li-braries care-fully en-sures that changes
- []
-
-
-Overfull \hbox (1.04684pt too wide) in paragraph at lines 289--289
+Overfull \hbox (1.04684pt too wide) in paragraph at lines 262--262
  \T1/cmr/bx/n/12 4.3.3 Definicja kry-terium oceny pod k¡tem bez-piecze«stwa[] 
  []
 
 
-
-[22]
-Overfull \hbox (15.6988pt too wide) in paragraph at lines 294--295
+Overfull \hbox (15.6988pt too wide) in paragraph at lines 264--265
 \T1/cmr/m/n/12 nieau-to-ry-zowanymi mody-fikac-jami, za-pew-ni-a-j¡c, »e dane s¡ zarówno
  []
 
 
-Overfull \hbox (8.65755pt too wide) in paragraph at lines 302--303
+Overfull \hbox (8.65755pt too wide) in paragraph at lines 266--267
 []\T1/cmr/m/n/12 Autentyczno±¢ (Au-then-tic-ity) - Gwarancja tego, »e au-to-ry-zowanym
  []
 
 
-Overfull \hbox (37.23521pt too wide) in paragraph at lines 306--307
+Overfull \hbox (37.23521pt too wide) in paragraph at lines 267--268
 \T1/cmr/m/n/12 j¡ce przepisy prawne oraz przepisy bez-piecze«stwa ponios¡ odpowiedzial-
  []
 
 
 
-[23]
-<images/image-security.png, id=87, 419.31656pt x 398.23781pt>
+[21]
+<images/image-security.png, id=81, 419.31656pt x 398.23781pt>
 File: images/image-security.png Graphic file (type png)
 <use images/image-security.png>
-Package pdftex.def Info: images/image-security.png  used on input line 316.
+Package pdftex.def Info: images/image-security.png  used on input line 274.
 (pdftex.def)             Requested size: 347.12354pt x 329.67441pt.
 
-Overfull \hbox (6.10475pt too wide) in paragraph at lines 328--329
+
+[22 <./images/image-security.png>]
+Overfull \hbox (6.10475pt too wide) in paragraph at lines 286--287
 []\T1/cmr/m/n/12 W rozdziale 1 au-torzy defini-uj¡ po-j¦-cie skalowal-no±ci jako 4 gªówne
  []
 
 
-
-[24]
-
-[25 <./images/image-security.png>]
-
-LaTeX Warning: Citation `bloch2018effective' on page 26 undefined on input line 345.
+LaTeX Warning: Citation `bloch2018effective' on page 23 undefined on input line 301.
 
 
-LaTeX Warning: Citation `bloch2018effective' on page 26 undefined on input line 350.
-
-
-Overfull \hbox (10.3113pt too wide) in paragraph at lines 355--356
-[]\T1/cmr/m/n/12 "Effective ver-sion man-age-ment is cru-cial for track-ing changes
- []
+LaTeX Warning: Citation `bloch2018effective' on page 23 undefined on input line 302.
 
 
 
-[26]
-Overfull \hbox (10.46484pt too wide) in paragraph at lines 358--359
+[23]
+Overfull \hbox (10.46484pt too wide) in paragraph at lines 304--305
 \T1/cmr/m/n/12 pozwala-j¡c cofn¡¢ zmi-any. Poprawia wspóªprac¦ mi¦dzy ze-spoªami,
  []
 
 
-Overfull \hbox (19.31873pt too wide) in paragraph at lines 368--369
+Overfull \hbox (19.31873pt too wide) in paragraph at lines 311--312
 \T1/cmr/bx/n/12 i-ni-tion lan-guages[] \T1/cmr/m/n/12 Ocena pod k¡tem ko-mu-nikacji ^^U za-pew-nia potrzebny
  []
 
 
-Overfull \hbox (9.36848pt too wide) in paragraph at lines 374--375
+Overfull \hbox (9.36848pt too wide) in paragraph at lines 317--318
 \T1/cmr/m/n/12 gardªem w przy-padku wyko-rzys-ta-nia przez wiele ze-spoªów, wymaga
  []
 
 
 
-[27]
-Overfull \hbox (13.2188pt too wide) in paragraph at lines 376--377
+[24]
+Overfull \hbox (13.2188pt too wide) in paragraph at lines 319--320
 \T1/cmr/m/n/12 to, »e takie pode-j±-cie up-raszcza zarz¡dzanie za-le»no±-ci-ami, poniewa»
  []
 
 
-Overfull \hbox (11.09789pt too wide) in paragraph at lines 378--379
+Overfull \hbox (11.09789pt too wide) in paragraph at lines 321--322
 \T1/cmr/m/n/12 usªugi w sys-temie oraz to, »e ko-mu-nikacja sieciowa mo»e powodowa¢
  []
 
 
-Overfull \hbox (5.67348pt too wide) in paragraph at lines 381--382
+Underfull \vbox (badness 5417) has occurred while \output is active []
+
+
+
+[25]
+Overfull \hbox (5.67348pt too wide) in paragraph at lines 324--325
 \T1/cmr/m/n/12 ple-men-tacji zarz¡dza-nia plikami IDL, dla ka»dego z powy»ej opisanego
+ []
+
+
+Overfull \hbox (3.23044pt too wide) in paragraph at lines 366--366
+[]|\T1/cmr/m/n/9 Umiarkowany: 
+ []
+
+
+Overfull \hbox (3.23044pt too wide) in paragraph at lines 366--366
+[]|\T1/cmr/m/n/9 Umiarkowany: 
+ []
+
+
+Overfull \hbox (3.23045pt too wide) in paragraph at lines 366--366
+[]|\T1/cmr/m/n/9 Umiarkowana: 
+ []
+
+
+Overfull \hbox (3.23044pt too wide) in paragraph at lines 366--366
+[]|\T1/cmr/m/n/9 Umiarkowany: 
+ []
+
+
+Overfull \hbox (3.23045pt too wide) in paragraph at lines 366--366
+[]|\T1/cmr/m/n/9 Umiarkowana: 
+ []
+
+
+Overfull \hbox (3.23045pt too wide) in paragraph at lines 366--366
+[]|\T1/cmr/m/n/9 Umiarkowana: 
+ []
+
+
+Overfull \hbox (3.23045pt too wide) in paragraph at lines 366--366
+[]|\T1/cmr/m/n/9 Umiarkowana: 
+ []
+
+
+Overfull \hbox (1.49478pt too wide) in paragraph at lines 366--366
+[]|\T1/cmr/bx/n/9 Deployment 
+ []
+
+
+Overfull \hbox (3.23045pt too wide) in paragraph at lines 366--366
+[]|\T1/cmr/m/n/9 Umiarkowana: 
+ []
+
+
+Overfull \hbox (3.23045pt too wide) in paragraph at lines 366--366
+[]|\T1/cmr/m/n/9 Umiarkowana: 
+ []
+
+
+LaTeX Warning: Float too large for page by 99.22224pt on input line 367.
+
+
+
+[26]
+
+[27]
+Underfull \hbox (badness 1158) in paragraph at lines 378--378
+[]|\T1/cmr/m/n/12 Zaawansowane mech-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
+\T1/cmr/m/n/12 a-nizmy kon-troli
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
+\T1/cmr/m/n/12 dost¦pu wspier-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
+\T1/cmr/m/n/12 aj¡ w za-pewnie-niu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
+[]|\T1/cmr/m/n/12 Wymaga odpowied-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 378--378
+\T1/cmr/m/n/12 niej do-datkowej
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--379
+[]|\T1/cmr/m/n/12 Peªna i prze-jrzysta
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--379
+\T1/cmr/m/n/12 his-to-ria zmian za-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--379
+\T1/cmr/m/n/12 pew-nia in-te-gral-no±¢
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 379--379
+[]|\T1/cmr/m/n/12 Problemy z in-te-gral-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 379--379
+\T1/cmr/m/n/12 w przy-padku, gdy
+ []
+
+
+Underfull \hbox (badness 6625) in paragraph at lines 379--379
+\T1/cmr/m/n/12 zmi-any nie zostan¡
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
+[]|\T1/cmr/m/n/12 Scentralizowane re-
+ []
+
+
+Underfull \hbox (badness 2961) in paragraph at lines 380--380
+\T1/cmr/m/n/12 pozy-to-rium dost¦pne
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
+[]|\T1/cmr/m/n/12 Awaria ser-w-era
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 380--380
+\T1/cmr/m/n/12 cen-tral-nego mo»e
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--381
+[]|\T1/cmr/m/n/12 Uwierzytelnianie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--381
+\T1/cmr/m/n/12 u»ytkown-ików kon-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 381--381
+\T1/cmr/m/n/12 troluje dost¦p do
+ []
+
+
+Underfull \hbox (badness 3579) in paragraph at lines 381--381
+\T1/cmr/m/n/12 u-racja uwierzytel-ni-a-
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 381--381
+\T1/cmr/m/n/12 nia mo»e prowadzi¢
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--382
+[]|\T1/cmr/m/n/12 Za po-moc¡
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--382
+\T1/cmr/m/n/12 uwierzytel-ni-a-nia
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--382
+\T1/cmr/m/n/12 mo»na kon-trolowa¢
+ []
+
+
+Underfull \hbox (badness 2828) in paragraph at lines 382--382
+\T1/cmr/m/n/12 dost¦p do re-pozy-to-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--382
+[]|\T1/cmr/m/n/12 Proces
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--382
+\T1/cmr/m/n/12 przeprowadzenia
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 382--382
+\T1/cmr/m/n/12 au-dytu w sys-temie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
+[]|\T1/cmr/m/n/12 Uwierzytelnianie i
+ []
+
+
+Underfull \hbox (badness 5460) in paragraph at lines 384--384
+\T1/cmr/m/n/12 mech-a-nizmy kon-troli
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
+\T1/cmr/m/n/12 dost¦pu po-ma-gaj¡
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
+[]|\T1/cmr/m/n/12 Nieprawidªowa
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 384--384
+\T1/cmr/m/n/12 kon-fig-u-racja mo»e
+ []
+
+
+Underfull \hbox (badness 4647) in paragraph at lines 384--384
+\T1/cmr/m/n/12 ry-zowanego udost¦p-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--385
+[]|\T1/cmr/m/n/12 Brak wer-sjonowa-nia
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 385--385
+\T1/cmr/m/n/12 mo»e spowodowa¢
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--386
+[]|\T1/cmr/m/n/12 Scentralne prze-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--386
+\T1/cmr/m/n/12 chowywanie arte-fak-
+ []
+
+
+Underfull \hbox (badness 4779) in paragraph at lines 386--386
+[]|\T1/cmr/m/n/12 Wymaga do-datkowej
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+[]|\T1/cmr/m/n/12 Nie wszys-tkie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+\T1/cmr/m/n/12 rozwi¡za-nia za-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+\T1/cmr/m/n/12 pew-ni-aj¡ au-dyt i
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+\T1/cmr/m/n/12 mon-i-torowanie dzi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+[]|\T1/cmr/m/n/12 Wªa±ciwe lo-gowanie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+\T1/cmr/m/n/12 zewn¦trzne jest
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 388--388
+\T1/cmr/m/n/12 niezb¦dne do ro-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--390
+[]|\T1/cmr/m/n/12 Scentralizowana
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--390
+\T1/cmr/m/n/12 kon-trola dost¦pu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 390--390
+\T1/cmr/m/n/12 po-maga poprawi¢
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+[]|\T1/cmr/m/n/12 Scentralizowane
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\T1/cmr/m/n/12 zarz¡dzanie zmi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
+\T1/cmr/m/n/12 anami po-maga w
+ []
+
+
+Underfull \hbox (badness 7558) in paragraph at lines 391--391
+[]|\T1/cmr/m/n/12 S¡ ró»ne wyzwa-nia
+ []
+
+
+Underfull \hbox (badness 2828) in paragraph at lines 391--391
+\T1/cmr/m/n/12 zwi¡zane z syn-chro-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--392
+[]|\T1/cmr/m/n/12 Scentralizowane re-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--392
+[]|\T1/cmr/m/n/12 Wymaga solid-nie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 392--392
+\T1/cmr/m/n/12 postaw-ionej in-fras-
+ []
+
+
+Underfull \hbox (badness 5189) in paragraph at lines 392--392
+\T1/cmr/m/n/12 truk-tury do u»ytku
+ []
+
+
+Underfull \hbox (badness 1087) in paragraph at lines 393--393
+[]|\T1/cmr/m/n/12 Kontrola dost¦pu na
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--393
+\T1/cmr/m/n/12 wy»szym poziomie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--393
+\T1/cmr/m/n/12 w or-ga-ni-za-cji po-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--393
+[]|\T1/cmr/m/n/12 Zarz¡dzanie up-
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 393--393
+\T1/cmr/m/n/12 i mo»e do-prowadzi¢
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+[]|\T1/cmr/m/n/12 Scentralizowane
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+\T1/cmr/m/n/12 pro-cesy biz-ne-sowe
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+\T1/cmr/m/n/12 umo»li-wiaj¡ peªne
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+\T1/cmr/m/n/12 odpowiedzial-nego za
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 394--394
+\T1/cmr/m/n/12 bª¡d w rezulta-cie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
+[]|\T1/cmr/m/n/12 Bezpieczne punkty
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
+\T1/cmr/m/n/12 ko«-cowe API z
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
+\T1/cmr/m/n/12 uwierzytel-ni-an-iem i
+ []
+
+
+Underfull \hbox (badness 2512) in paragraph at lines 396--396
+\T1/cmr/m/n/12 szyfrowaniem za-pew-
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 396--396
+[]|\T1/cmr/m/n/12 Wymaga kon-fig-u-racji
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
+\T1/cmr/m/n/12 bez-piecze«stwa i
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 396--396
+\T1/cmr/m/n/12 staªego mon-i-torowa-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
+[]|\T1/cmr/m/n/12 Systemy kon-troli
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
+\T1/cmr/m/n/12 doku-men-tacja mog¡
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
+[]|\T1/cmr/m/n/12 Nieprawidªowe
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
+\T1/cmr/m/n/12 zarz¡dzanie wer-s-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 397--397
+\T1/cmr/m/n/12 do prob-lemów z
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
+[]|\T1/cmr/m/n/12 Zapewnia wysok¡
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
+\T1/cmr/m/n/12 dost¦p-no±¢ dz-i¦ki
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
+\T1/cmr/m/n/12 au-tomaty-cznemu
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
+[]|\T1/cmr/m/n/12 Zale»no±¢ od sta-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 398--398
+\T1/cmr/m/n/12 bil-nego poª¡czenia
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--399
+[]|\T1/cmr/m/n/12 Mechanizmy
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--399
+\T1/cmr/m/n/12 uwierzytel-ni-a-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--399
+\T1/cmr/m/n/12 nia, au-to-ryza-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--399
+\T1/cmr/m/n/12 cji i cer-ty-fikatów
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--399
+\T1/cmr/m/n/12 cyfrowych wspo-ma-
+ []
+
+
+Underfull \hbox (badness 2600) in paragraph at lines 399--399
+[]|\T1/cmr/m/n/12 Wymaga reg-u-larnego
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--399
+\T1/cmr/m/n/12 mon-i-torowa-nia sys-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--400
+[]|\T1/cmr/m/n/12 Szczegóªowe logi
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--400
+\T1/cmr/m/n/12 umo»li-wiaj¡ pre-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--400
+\T1/cmr/m/n/12 cyzyjne ±ledze-nie
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--400
+[]|\T1/cmr/m/n/12 Integracja z sys-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--400
+\T1/cmr/m/n/12 temami zarz¡dza-nia
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 400--400
+\T1/cmr/m/n/12 logami wymaga
+ []
+
+
+Overfull \hbox (4.30946pt too wide) in alignment at lines 373--401
+ [] [] [] 
+ []
+
+[28] [29]
+Overfull \hbox (10.1196pt too wide) in paragraph at lines 405--406
+[]\T1/cmr/m/n/12 Na pod-stawie anal-izy ¹ródeª lit-er-atur-owych oraz wªas-nych do±wiad-
+ []
+
+
+Underfull \hbox (badness 1237) in paragraph at lines 408--408
+[]\T1/cmr/m/n/12 Tablica 3: Porów-nanie pode-j±¢ do zarz¡dza-nia ko-
+ []
+
+
+Overfull \hbox (3.95493pt too wide) in alignment at lines 407--412
+ [] [] 
+ []
+
+
+Overfull \hbox (3.95493pt too wide) in alignment at lines 412--417
+ [] [] 
+ []
+
+
+Overfull \hbox (3.95493pt too wide) in alignment at lines 417--420
+ [] [] 
+ []
+
+
+Overfull \hbox (3.95493pt too wide) in alignment at lines 420--423
+ [] [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
+[]\T1/cmr/m/n/12 Rozgaª¦zianie i tagowanie umo»li-wiaj¡
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
+\T1/cmr/m/n/12 izolowane przy-go-towanie paczki zmian i
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 430--431
+[]\T1/cmr/m/n/12 Peªna his-to-ria com-mitów umo»li-wia
+ []
+
+
+Underfull \hbox (badness 1478) in paragraph at lines 435--436
+[]\T1/cmr/m/n/12 Tagi daj¡ mo»li-wo±ci oz-nacza-nia sta-bil-nych
+ []
+
+
+Underfull \hbox (badness 1509) in paragraph at lines 439--440
+[]\T1/cmr/m/n/12 Peªna his-to-ria com-mitów jest za-wsze prze-
+ []
+
+
+Underfull \hbox (badness 1028) in paragraph at lines 440--441
+[]\T1/cmr/m/n/12 Zapewnia odpowiedzialnosc za wprowad-zone
+ []
+
+
+Underfull \hbox (badness 4403) in paragraph at lines 454--455
+[]\T1/cmr/m/n/12 Takie pode-j±-cie za-pew-nia to prze-jrzys-to±¢
+ []
+
+
+Underfull \hbox (badness 6758) in paragraph at lines 458--459
+[]\T1/cmr/m/n/12 Centralne re-pozy-to-rium prze-chowuje kom-
+ []
+
+
+Underfull \hbox (badness 1490) in paragraph at lines 476--477
+[]\T1/cmr/m/n/12 Scentralizowana his-to-ria uªatwia powrót do
+ []
+
+
+Overfull \hbox (3.95493pt too wide) in alignment at lines 423--492
+ [] [] 
+ []
+
+
+
+[30] [31]
+Overfull \hbox (10.82779pt too wide) in paragraph at lines 496--497
+ \T1/cmr/bx/n/12 4.4.2 Ocena wspówdzieleina kodu za po-moc¡ bib-liotek[] \T1/cmr/m/n/12 Ocena
  []
 
 
@@ -905,770 +1602,425 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[28]
-Overfull \hbox (3.23044pt too wide) in paragraph at lines 423--423
-[]|\T1/cmr/m/n/9 Umiarkowany: 
- []
-
-
-Overfull \hbox (3.23044pt too wide) in paragraph at lines 423--423
-[]|\T1/cmr/m/n/9 Umiarkowany: 
- []
-
-
-Overfull \hbox (3.23045pt too wide) in paragraph at lines 423--423
-[]|\T1/cmr/m/n/9 Umiarkowana: 
- []
-
-
-Overfull \hbox (3.23044pt too wide) in paragraph at lines 423--423
-[]|\T1/cmr/m/n/9 Umiarkowany: 
- []
-
-
-Overfull \hbox (3.23045pt too wide) in paragraph at lines 423--423
-[]|\T1/cmr/m/n/9 Umiarkowana: 
- []
-
-
-Overfull \hbox (3.23045pt too wide) in paragraph at lines 423--423
-[]|\T1/cmr/m/n/9 Umiarkowana: 
- []
-
-
-Overfull \hbox (3.23045pt too wide) in paragraph at lines 423--423
-[]|\T1/cmr/m/n/9 Umiarkowana: 
- []
-
-
-Overfull \hbox (1.49478pt too wide) in paragraph at lines 423--423
-[]|\T1/cmr/bx/n/9 Deployment 
- []
-
-
-Overfull \hbox (3.23045pt too wide) in paragraph at lines 423--423
-[]|\T1/cmr/m/n/9 Umiarkowana: 
- []
-
-
-Overfull \hbox (3.23045pt too wide) in paragraph at lines 423--423
-[]|\T1/cmr/m/n/9 Umiarkowana: 
- []
-
-
-LaTeX Warning: Float too large for page by 99.22224pt on input line 424.
-
-
-
-[29]
-
-[30]
-Underfull \hbox (badness 1158) in paragraph at lines 435--435
-[]|\T1/cmr/m/n/12 Zaawansowane mech-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--435
-\T1/cmr/m/n/12 a-nizmy kon-troli
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--435
-\T1/cmr/m/n/12 dost¦pu wspier-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--435
-\T1/cmr/m/n/12 aj¡ w za-pewnie-niu
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--435
-[]|\T1/cmr/m/n/12 Wymaga odpowied-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 435--435
-\T1/cmr/m/n/12 niej do-datkowej
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 436--436
-[]|\T1/cmr/m/n/12 Peªna i prze-jrzysta
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 436--436
-\T1/cmr/m/n/12 his-to-ria zmian za-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 436--436
-\T1/cmr/m/n/12 pew-nia in-te-gral-no±¢
- []
-
-
-Underfull \hbox (badness 1173) in paragraph at lines 436--436
-[]|\T1/cmr/m/n/12 Problemy z in-te-gral-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 436--436
-\T1/cmr/m/n/12 w przy-padku, gdy
- []
-
-
-Underfull \hbox (badness 6625) in paragraph at lines 436--436
-\T1/cmr/m/n/12 zmi-any nie zostan¡
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 437--437
-[]|\T1/cmr/m/n/12 Scentralizowane re-
- []
-
-
-Underfull \hbox (badness 2961) in paragraph at lines 437--437
-\T1/cmr/m/n/12 pozy-to-rium dost¦pne
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 437--437
-[]|\T1/cmr/m/n/12 Awaria ser-w-era
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 437--437
-\T1/cmr/m/n/12 cen-tral-nego mo»e
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 438--438
-[]|\T1/cmr/m/n/12 Uwierzytelnianie
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 438--438
-\T1/cmr/m/n/12 u»ytkown-ików kon-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 438--438
-\T1/cmr/m/n/12 troluje dost¦p do
- []
-
-
-Underfull \hbox (badness 3579) in paragraph at lines 438--438
-\T1/cmr/m/n/12 u-racja uwierzytel-ni-a-
- []
-
-
-Underfull \hbox (badness 3919) in paragraph at lines 438--438
-\T1/cmr/m/n/12 nia mo»e prowadzi¢
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-[]|\T1/cmr/m/n/12 Za po-moc¡
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-\T1/cmr/m/n/12 uwierzytel-ni-a-nia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-\T1/cmr/m/n/12 mo»na kon-trolowa¢
- []
-
-
-Underfull \hbox (badness 2828) in paragraph at lines 439--439
-\T1/cmr/m/n/12 dost¦p do re-pozy-to-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-[]|\T1/cmr/m/n/12 Proces
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-\T1/cmr/m/n/12 przeprowadzenia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-\T1/cmr/m/n/12 au-dytu w sys-temie
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--441
-[]|\T1/cmr/m/n/12 Uwierzytelnianie i
- []
-
-
-Underfull \hbox (badness 5460) in paragraph at lines 441--441
-\T1/cmr/m/n/12 mech-a-nizmy kon-troli
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--441
-\T1/cmr/m/n/12 dost¦pu po-ma-gaj¡
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--441
-[]|\T1/cmr/m/n/12 Nieprawidªowa
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--441
-\T1/cmr/m/n/12 kon-fig-u-racja mo»e
- []
-
-
-Underfull \hbox (badness 4647) in paragraph at lines 441--441
-\T1/cmr/m/n/12 ry-zowanego udost¦p-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--442
-[]|\T1/cmr/m/n/12 Brak wer-sjonowa-nia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 442--442
-\T1/cmr/m/n/12 mo»e spowodowa¢
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 443--443
-[]|\T1/cmr/m/n/12 Scentralne prze-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 443--443
-\T1/cmr/m/n/12 chowywanie arte-fak-
- []
-
-
-Underfull \hbox (badness 4779) in paragraph at lines 443--443
-[]|\T1/cmr/m/n/12 Wymaga do-datkowej
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
-[]|\T1/cmr/m/n/12 Nie wszys-tkie
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
-\T1/cmr/m/n/12 rozwi¡za-nia za-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
-\T1/cmr/m/n/12 pew-ni-aj¡ au-dyt i
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
-\T1/cmr/m/n/12 mon-i-torowanie dzi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
-[]|\T1/cmr/m/n/12 Wªa±ciwe lo-gowanie
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
-\T1/cmr/m/n/12 zewn¦trzne jest
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--445
-\T1/cmr/m/n/12 niezb¦dne do ro-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-[]|\T1/cmr/m/n/12 Scentralizowana
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-\T1/cmr/m/n/12 kon-trola dost¦pu
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-\T1/cmr/m/n/12 po-maga poprawi¢
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 448--448
-[]|\T1/cmr/m/n/12 Scentralizowane
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 448--448
-\T1/cmr/m/n/12 zarz¡dzanie zmi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 448--448
-\T1/cmr/m/n/12 anami po-maga w
- []
-
-
-Underfull \hbox (badness 7558) in paragraph at lines 448--448
-[]|\T1/cmr/m/n/12 S¡ ró»ne wyzwa-nia
- []
-
-
-Underfull \hbox (badness 2828) in paragraph at lines 448--448
-\T1/cmr/m/n/12 zwi¡zane z syn-chro-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 449--449
-[]|\T1/cmr/m/n/12 Scentralizowane re-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 449--449
-[]|\T1/cmr/m/n/12 Wymaga solid-nie
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 449--449
-\T1/cmr/m/n/12 postaw-ionej in-fras-
- []
-
-
-Underfull \hbox (badness 5189) in paragraph at lines 449--449
-\T1/cmr/m/n/12 truk-tury do u»ytku
- []
-
-
-Underfull \hbox (badness 1087) in paragraph at lines 450--450
-[]|\T1/cmr/m/n/12 Kontrola dost¦pu na
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 450--450
-\T1/cmr/m/n/12 wy»szym poziomie
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 450--450
-\T1/cmr/m/n/12 w or-ga-ni-za-cji po-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 450--450
-[]|\T1/cmr/m/n/12 Zarz¡dzanie up-
- []
-
-
-Underfull \hbox (badness 3919) in paragraph at lines 450--450
-\T1/cmr/m/n/12 i mo»e do-prowadzi¢
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 451--451
-[]|\T1/cmr/m/n/12 Scentralizowane
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 451--451
-\T1/cmr/m/n/12 pro-cesy biz-ne-sowe
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 451--451
-\T1/cmr/m/n/12 umo»li-wiaj¡ peªne
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 451--451
-\T1/cmr/m/n/12 odpowiedzial-nego za
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 451--451
-\T1/cmr/m/n/12 bª¡d w rezulta-cie
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 453--453
-[]|\T1/cmr/m/n/12 Bezpieczne punkty
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 453--453
-\T1/cmr/m/n/12 ko«-cowe API z
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 453--453
-\T1/cmr/m/n/12 uwierzytel-ni-an-iem i
- []
-
-
-Underfull \hbox (badness 2512) in paragraph at lines 453--453
-\T1/cmr/m/n/12 szyfrowaniem za-pew-
- []
-
-
-Underfull \hbox (badness 2189) in paragraph at lines 453--453
-[]|\T1/cmr/m/n/12 Wymaga kon-fig-u-racji
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 453--453
-\T1/cmr/m/n/12 bez-piecze«stwa i
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 453--453
-\T1/cmr/m/n/12 staªego mon-i-torowa-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 454--454
-[]|\T1/cmr/m/n/12 Systemy kon-troli
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 454--454
-\T1/cmr/m/n/12 doku-men-tacja mog¡
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 454--454
-[]|\T1/cmr/m/n/12 Nieprawidªowe
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 454--454
-\T1/cmr/m/n/12 zarz¡dzanie wer-s-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 454--454
-\T1/cmr/m/n/12 do prob-lemów z
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 455--455
-[]|\T1/cmr/m/n/12 Zapewnia wysok¡
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 455--455
-\T1/cmr/m/n/12 dost¦p-no±¢ dz-i¦ki
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 455--455
-\T1/cmr/m/n/12 au-tomaty-cznemu
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 455--455
-[]|\T1/cmr/m/n/12 Zale»no±¢ od sta-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 455--455
-\T1/cmr/m/n/12 bil-nego poª¡czenia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 456--456
-[]|\T1/cmr/m/n/12 Mechanizmy
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 456--456
-\T1/cmr/m/n/12 uwierzytel-ni-a-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 456--456
-\T1/cmr/m/n/12 nia, au-to-ryza-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 456--456
-\T1/cmr/m/n/12 cji i cer-ty-fikatów
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 456--456
-\T1/cmr/m/n/12 cyfrowych wspo-ma-
- []
-
-
-Underfull \hbox (badness 2600) in paragraph at lines 456--456
-[]|\T1/cmr/m/n/12 Wymaga reg-u-larnego
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 456--456
-\T1/cmr/m/n/12 mon-i-torowa-nia sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 457--457
-[]|\T1/cmr/m/n/12 Szczegóªowe logi
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 457--457
-\T1/cmr/m/n/12 umo»li-wiaj¡ pre-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 457--457
-\T1/cmr/m/n/12 cyzyjne ±ledze-nie
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 457--457
-[]|\T1/cmr/m/n/12 Integracja z sys-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 457--457
-\T1/cmr/m/n/12 temami zarz¡dza-nia
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 457--457
-\T1/cmr/m/n/12 logami wymaga
- []
-
-
-Overfull \hbox (4.30946pt too wide) in alignment at lines 430--458
- [] [] [] 
- []
-
-[31] [32]
-
-[33]
-Underfull \hbox (badness 1237) in paragraph at lines 473--473
-[]\T1/cmr/m/n/12 Tablica 3: Porów-nanie pode-j±¢ do zarz¡dza-nia ko-
- []
-
-
-Overfull \hbox (3.95493pt too wide) in alignment at lines 472--477
- [] [] 
- []
-
-
-Overfull \hbox (3.95493pt too wide) in alignment at lines 477--482
- [] [] 
- []
-
-
-Overfull \hbox (3.95493pt too wide) in alignment at lines 482--485
- [] [] 
- []
-
-
-Overfull \hbox (3.95493pt too wide) in alignment at lines 485--488
- [] [] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 494--495
-[]\T1/cmr/m/n/12 Rozgaª¦zianie i tagowanie umo»li-wiaj¡
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 494--495
-\T1/cmr/m/n/12 izolowane przy-go-towanie paczki zmian i
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 495--496
-[]\T1/cmr/m/n/12 Peªna his-to-ria com-mitów umo»li-wia
- []
-
-
-Underfull \hbox (badness 1478) in paragraph at lines 500--501
-[]\T1/cmr/m/n/12 Tagi daj¡ mo»li-wo±ci oz-nacza-nia sta-bil-nych
- []
-
-
-Underfull \hbox (badness 1509) in paragraph at lines 504--505
-[]\T1/cmr/m/n/12 Peªna his-to-ria com-mitów jest za-wsze prze-
- []
-
-
-Underfull \hbox (badness 1028) in paragraph at lines 505--506
-[]\T1/cmr/m/n/12 Zapewnia odpowiedzialnosc za wprowad-zone
- []
-
-
-Underfull \hbox (badness 4403) in paragraph at lines 519--520
-[]\T1/cmr/m/n/12 Takie pode-j±-cie za-pew-nia to prze-jrzys-to±¢
- []
-
-
-Underfull \hbox (badness 6758) in paragraph at lines 523--524
-[]\T1/cmr/m/n/12 Centralne re-pozy-to-rium prze-chowuje kom-
- []
-
-
-Underfull \hbox (badness 1490) in paragraph at lines 541--542
-[]\T1/cmr/m/n/12 Scentralizowana his-to-ria uªatwia powrót do
- []
-
-
-Overfull \hbox (3.95493pt too wide) in alignment at lines 488--557
- [] [] 
- []
-
-[34] [35]
-Overfull \hbox (10.82779pt too wide) in paragraph at lines 561--562
- \T1/cmr/bx/n/12 4.4.2 Ocena wspówdzieleina kodu za po-moc¡ bib-liotek[] \T1/cmr/m/n/12 Ocena
- []
-
-
-Overfull \hbox (1.33974pt too wide) in paragraph at lines 575--576
+[32]
+Overfull \hbox (1.33974pt too wide) in paragraph at lines 506--507
 []\T1/cmr/m/n/12 Izolacja wer-sji: Bib-lioteki za-zwyczaj u»y-waj¡ se-man-ty-cznego wer-
  []
 
 
-Overfull \hbox (6.71303pt too wide) in paragraph at lines 575--576
+Overfull \hbox (6.71303pt too wide) in paragraph at lines 506--507
 \T1/cmr/m/n/12 deweloperom odpowied-nie zarz¡dzanie za-le»no±-ci-ami. Przy odpowied-
  []
 
 
-
-[36]
-Overfull \hbox (19.15845pt too wide) in paragraph at lines 581--582
+Overfull \hbox (19.15845pt too wide) in paragraph at lines 508--509
 \T1/cmr/m/n/12 w przy-padku gdy za-le»no±ci nie s¡ praw-idªowo izolowane mog¡ prowadzi¢
  []
 
 
 
-[37]
-Overfull \hbox (2.69734pt too wide) in paragraph at lines 616--617
+[33]
+Overfull \hbox (2.69734pt too wide) in paragraph at lines 522--523
 \T1/cmr/m/n/12 umo»li-wiaj¡ ±ledze-nie pochodzenia zmian. Wspo-maga to w za-pewnie-
  []
 
 
-
-[38]
-Overfull \hbox (16.12383pt too wide) in paragraph at lines 638--639
+Overfull \hbox (16.12383pt too wide) in paragraph at lines 532--533
 \T1/cmr/m/n/12 w przy-padku bib-lioteki obiekty s¡ do-dawane do pro-jektu przez narz¦dzie
  []
 
 
-Overfull \hbox (19.87628pt too wide) in paragraph at lines 638--639
+Overfull \hbox (19.87628pt too wide) in paragraph at lines 532--533
 \T1/cmr/m/n/12 icznej ta-kich jak bro-kery wiado-mo±ci jak równie» dla wysªa-nia bezpo±red-
  []
 
 
-Overfull \hbox (6.03311pt too wide) in paragraph at lines 650--651
+
+[34]
+Overfull \hbox (6.03311pt too wide) in paragraph at lines 540--541
 []\T1/cmr/m/n/12 Izolacja za-le»no±ci: SDK cz¦sto za-w-ier-aj¡ wiele bib-liotek w sposób,
  []
 
 
-
-[39]
-Overfull \hbox (5.6492pt too wide) in paragraph at lines 660--661
+Overfull \hbox (5.6492pt too wide) in paragraph at lines 547--548
 \T1/cmr/m/n/12 nenty przestrze-gaj¡ ±cisªych za-sad kon-troli dost¦pu zm-niej¡c to ryzyko
  []
 
 
-Overfull \hbox (1.11351pt too wide) in paragraph at lines 666--667
+Overfull \hbox (1.11351pt too wide) in paragraph at lines 549--550
 \T1/cmr/m/n/12 testowane, aby za-pewni¢, »e zmi-any nie narusz¡ in-te-gral-no±ci danych.
  []
 
 
-
-[40]
-Overfull \hbox (37.10536pt too wide) in paragraph at lines 704--705
+Overfull \hbox (37.10536pt too wide) in paragraph at lines 559--560
 \T1/cmr/m/n/12 zªo»one, poniewa» musimy uwzgl¦d-nia¢ zmi-any we wszys-t-kich wewn¦trznych
  []
 
 
 
-[41]
+[35]
+Overfull \hbox (4.79176pt too wide) in paragraph at lines 573--574
+ \T1/cmr/bx/n/12 4.4.6 Ocena wspówdzieleina pod k¡tem skalowal-no±ci[] \T1/cmr/m/n/12 Ocena
+ []
+
+
+
+[36]
+Overfull \hbox (13.72437pt too wide) in paragraph at lines 584--585
+\T1/cmr/m/n/12 ane s¡ testy wyda-jno±-ciowe przy-go-towane za po-moc¡ narz¦dzia Gatling.
+ []
+
+
+Overfull \hbox (3.23438pt too wide) in paragraph at lines 588--589
+[]\T1/cmr/m/n/12 Aplikacja tes-tu-j¡ca wyda-jno±¢ ap-likacji przykªad-owej posi-ada trzy
+ []
+
+
+Overfull \hbox (9.30379pt too wide) in paragraph at lines 588--589
+\T1/cmr/m/n/12 al-i-zowane w celu ob-serwacji dzi-aªa-nia ap-likacji przy ró»nych poziomach
+ []
+
+
+
+[37]
+<images/idl-memory-low-graph.jpg, id=135, 963.6pt x 196.48407pt>
+File: images/idl-memory-low-graph.jpg Graphic file (type jpg)
+<use images/idl-memory-low-graph.jpg>
+Package pdftex.def Info: images/idl-memory-low-graph.jpg  used on input line 593.
+(pdftex.def)             Requested size: 347.12354pt x 70.77917pt.
+File: images/idl-memory-low-graph.jpg Graphic file (type jpg)
+<use images/idl-memory-low-graph.jpg>
+Package pdftex.def Info: images/idl-memory-low-graph.jpg  used on input line 598.
+(pdftex.def)             Requested size: 347.12354pt x 70.77917pt.
+
+
+[38 <./images/idl-memory-low-graph.jpg>]
+Overfull \hbox (4.81825pt too wide) in paragraph at lines 606--610
+[]\T1/cmr/m/n/12 Winiki ob-serwacji: 1. Alokacja (górny wykres ^^V niebieskie sªupki)
+ []
+
+
+Overfull \hbox (3.72394pt too wide) in paragraph at lines 611--612
+[]\T1/cmr/m/n/12 Wyst¦puje wi¦cej prz-erw mi¦dzy zdarzeni-ami alokacji, co wskazuje
+ []
+
+
+
+[39]
+<images/idl-low-gatling-graph.jpg, id=142, 567.62062pt x 285.31593pt>
+File: images/idl-low-gatling-graph.jpg Graphic file (type jpg)
+<use images/idl-low-gatling-graph.jpg>
+Package pdftex.def Info: images/idl-low-gatling-graph.jpg  used on input line 647.
+(pdftex.def)             Requested size: 347.12354pt x 174.48653pt.
+<images/idl-midle-gatling-graph.jpg, id=143, 567.62062pt x 280.79906pt>
+File: images/idl-midle-gatling-graph.jpg Graphic file (type jpg)
+<use images/idl-midle-gatling-graph.jpg>
+Package pdftex.def Info: images/idl-midle-gatling-graph.jpg  used on input line 661.
+(pdftex.def)             Requested size: 347.12354pt x 171.7242pt.
+
+
+[40 <./images/idl-low-gatling-graph.jpg>]
+
+[41 <./images/idl-midle-gatling-graph.jpg>]
+Overfull \hbox (2.79727pt too wide) in paragraph at lines 678--679
+\T1/cmr/m/n/12 odpowied¹. Porównu-j¡c czas oczeki-wa-nia w przy-padku ró»nych pode-
+ []
+
+
+Overfull \hbox (13.72437pt too wide) in paragraph at lines 688--689
+\T1/cmr/m/n/12 ane s¡ testy wyda-jno±-ciowe przy-go-towane za po-moc¡ narz¦dzia Gatling.
+ []
+
+
+Overfull \hbox (3.23438pt too wide) in paragraph at lines 692--693
+[]\T1/cmr/m/n/12 Aplikacja tes-tu-j¡ca wyda-jno±¢ ap-likacji przykªad-owej posi-ada trzy
+ []
+
+
+Overfull \hbox (9.30379pt too wide) in paragraph at lines 692--693
+\T1/cmr/m/n/12 al-i-zowane w celu ob-serwacji dzi-aªa-nia ap-likacji przy ró»nych poziomach
+ []
+
+
 
 [42]
-Overfull \hbox (2.87971pt too wide) in paragraph at lines 736--737
-[]\T1/cmr/m/n/12 Serverless to nowoczesny model wykony-wa-nia oblicze« w chmurze,
+<images/library-memory-low-graph.jpg, id=153, 963.6pt x 198.7425pt>
+File: images/library-memory-low-graph.jpg Graphic file (type jpg)
+<use images/library-memory-low-graph.jpg>
+Package pdftex.def Info: images/library-memory-low-graph.jpg  used on input line 697.
+(pdftex.def)             Requested size: 347.12354pt x 71.59273pt.
+<images/library-memory-midle-graph.jpg, id=154, 963.6pt x 205.5178pt>
+File: images/library-memory-midle-graph.jpg Graphic file (type jpg)
+<use images/library-memory-midle-graph.jpg>
+Package pdftex.def Info: images/library-memory-midle-graph.jpg  used on input line 702.
+(pdftex.def)             Requested size: 347.12354pt x 74.03339pt.
+
+Overfull \hbox (9.07416pt too wide) in paragraph at lines 728--729
+[]\T1/cmr/m/n/12 Liczba zdarze« GC (Garbage Col-lec-tion) jest sto-sunkowo niewielka. 
  []
 
 
-Overfull \hbox (21.41pt too wide) in paragraph at lines 736--737
-\T1/cmr/m/n/12 ^^Rserver-less^^Q nie oz-nacza, »e nie ma fizy-cznych ser-w-erów, ale »e zarz¡dzanie
- []
-
-
-Overfull \hbox (3.56078pt too wide) in paragraph at lines 736--737
-\T1/cmr/m/n/12 less wdra»amy do chmury funkcje za-mi-ast caªych ap-likacji, a dostawca
- []
-
-
-Overfull \hbox (20.03937pt too wide) in paragraph at lines 736--737
-\T1/cmr/m/n/12 chmury jest odpowiedzialny za zarz¡dzanie ko-dem, skalowanie i utrzymy-
- []
-
-
-Overfull \hbox (12.0012pt too wide) in paragraph at lines 753--754
-[]\T1/cmr/m/n/12 Automatycznie przy-go-towuj¦ kod do wrzuce-nia na Ama-zon Lambda
- []
-
-
-Overfull \hbox (2.00471pt too wide) in paragraph at lines 755--756
-[]\T1/cmr/m/n/12 Zapisuj¦ kod w bazie danych, »e-by± mógª go u»y¢ pó¹niej; b¦dziesz
+Overfull \hbox (7.37852pt too wide) in paragraph at lines 730--731
+[]\T1/cmr/m/n/12 Mechanizm od±mieca-nia uruchami-any jest spo-rady-cznie, co wynika
  []
 
 
 
-[43]
-Overfull \hbox (16.6661pt too wide) in paragraph at lines 760--761
-[]\T1/cmr/m/n/12 Przechowuj¦ te pliki IDL i mo»esz je udost¦p-ni¢, »eby inni czªonkowie
- []
-
-
-Overfull \hbox (6.19289pt too wide) in paragraph at lines 782--783
-[]\T1/cmr/m/n/12 Automatycznie wdra»a kod jako funkcj¦ Lambda - Wdra»a sprawd-
- []
-
-
-Overfull \hbox (14.41187pt too wide) in paragraph at lines 789--792
-\T1/cmr/m/n/12 u»y-wana do tworzenia ap-likacji fron-tendowych. Npm sªu»y do zarz¡dza-
+[43 <./images/library-memory-low-graph.jpg> <./images/library-memory-midle-graph.jpg>]
+Overfull \hbox (2.19441pt too wide) in paragraph at lines 743--744
+[]\T1/cmr/m/n/12 Charakterystyczny jest ªagodny wzrost z reg-u-larnymi, niewielkimi
  []
 
 
 
 [44]
-Overfull \hbox (4.86322pt too wide) in paragraph at lines 797--798
+<images/library-gatling-low-graph.jpg, id=162, 572.89032pt x 287.57437pt>
+File: images/library-gatling-low-graph.jpg Graphic file (type jpg)
+<use images/library-gatling-low-graph.jpg>
+Package pdftex.def Info: images/library-gatling-low-graph.jpg  used on input line 758.
+(pdftex.def)             Requested size: 347.12354pt x 174.2485pt.
+<images/library-gatling-middle-graph.jpg, id=163, 573.64313pt x 287.57437pt>
+File: images/library-gatling-middle-graph.jpg Graphic file (type jpg)
+<use images/library-gatling-middle-graph.jpg>
+Package pdftex.def Info: images/library-gatling-middle-graph.jpg  used on input line 763.
+(pdftex.def)             Requested size: 347.12354pt x 174.02032pt.
+<images/library-gatling-high-graph.jpg, id=164, 574.39594pt x 287.57437pt>
+File: images/library-gatling-high-graph.jpg Graphic file (type jpg)
+<use images/library-gatling-high-graph.jpg>
+Package pdftex.def Info: images/library-gatling-high-graph.jpg  used on input line 768.
+(pdftex.def)             Requested size: 347.12354pt x 173.79214pt.
+
+
+[45 <./images/library-gatling-low-graph.jpg>]
+
+[46 <./images/library-gatling-middle-graph.jpg> <./images/library-gatling-high-graph.jpg>]
+Overfull \hbox (14.92044pt too wide) in paragraph at lines 775--776
+[]\T1/cmr/m/n/12 Ocena wspóªdzie-le-nia kodu za po-moc¡ bib-liotek pod k¡tem skalowal-
+ []
+
+
+Overfull \hbox (4.44043pt too wide) in paragraph at lines 781--782
+[]\T1/cmr/m/n/12 W celu przy-go-towa-nia anal-izy pod k¡tem skalowal-no±ci, tak samo0
+ []
+
+
+Overfull \hbox (31.32962pt too wide) in paragraph at lines 781--782
+\T1/cmr/m/n/12 wyda-jno±ci przykªad-owej ap-likacji wyko-rzys-tu-j¡cej bib-lioteki do wspóªdzie-
+ []
+
+
+Overfull \hbox (13.72437pt too wide) in paragraph at lines 787--788
+\T1/cmr/m/n/12 ane s¡ testy wyda-jno±-ciowe przy-go-towane za po-moc¡ narz¦dzia Gatling.
+ []
+
+
+Underfull \vbox (badness 1009) has occurred while \output is active []
+
+
+
+[47]
+Overfull \hbox (3.23438pt too wide) in paragraph at lines 791--792
+[]\T1/cmr/m/n/12 Aplikacja tes-tu-j¡ca wyda-jno±¢ ap-likacji przykªad-owej posi-ada trzy
+ []
+
+
+Overfull \hbox (9.30379pt too wide) in paragraph at lines 791--792
+\T1/cmr/m/n/12 al-i-zowane w celu ob-serwacji dzi-aªa-nia ap-likacji przy ró»nych poziomach
+ []
+
+<images/sdk-memory-low-graph.jpg, id=174, 963.6pt x 196.48407pt>
+File: images/sdk-memory-low-graph.jpg Graphic file (type jpg)
+<use images/sdk-memory-low-graph.jpg>
+Package pdftex.def Info: images/sdk-memory-low-graph.jpg  used on input line 794.
+(pdftex.def)             Requested size: 347.12354pt x 70.77917pt.
+<images/sdk-memory-middle-graph.jpg, id=175, 963.6pt x 199.49532pt>
+File: images/sdk-memory-middle-graph.jpg Graphic file (type jpg)
+<use images/sdk-memory-middle-graph.jpg>
+Package pdftex.def Info: images/sdk-memory-middle-graph.jpg  used on input line 799.
+(pdftex.def)             Requested size: 347.12354pt x 71.8639pt.
+<images/sdk-gatling-low-graph.jpg, id=176, 567.62062pt x 286.06876pt>
+File: images/sdk-gatling-low-graph.jpg Graphic file (type jpg)
+<use images/sdk-gatling-low-graph.jpg>
+Package pdftex.def Info: images/sdk-gatling-low-graph.jpg  used on input line 810.
+(pdftex.def)             Requested size: 347.12354pt x 174.94691pt.
+<images/sdk-gatling-middle-graph.jpg, id=177, 569.87906pt x 285.31593pt>
+File: images/sdk-gatling-middle-graph.jpg Graphic file (type jpg)
+<use images/sdk-gatling-middle-graph.jpg>
+Package pdftex.def Info: images/sdk-gatling-middle-graph.jpg  used on input line 815.
+(pdftex.def)             Requested size: 347.12354pt x 173.78995pt.
+<images/sdk-gatling-high-graph.jpg, id=178, 570.63188pt x 286.06876pt>
+File: images/sdk-gatling-high-graph.jpg Graphic file (type jpg)
+<use images/sdk-gatling-high-graph.jpg>
+Package pdftex.def Info: images/sdk-gatling-high-graph.jpg  used on input line 820.
+(pdftex.def)             Requested size: 347.12354pt x 174.01717pt.
+
+
+[48 <./images/sdk-memory-low-graph.jpg> <./images/sdk-memory-middle-graph.jpg>]
+
+[49 <./images/sdk-gatling-low-graph.jpg> <./images/sdk-gatling-middle-graph.jpg>]
+Overfull \hbox (1.86264pt too wide) in paragraph at lines 828--829
+[]\T1/cmr/m/n/12 Ocena wspóªdzie-le-nia kodu za po-moc¡ REST pod k¡tem skalowal-
+ []
+
+
+Overfull \hbox (13.72437pt too wide) in paragraph at lines 836--837
+\T1/cmr/m/n/12 ane s¡ testy wyda-jno±-ciowe przy-go-towane za po-moc¡ narz¦dzia Gatling.
+ []
+
+
+
+[50 <./images/sdk-gatling-high-graph.jpg>]
+Overfull \hbox (3.23438pt too wide) in paragraph at lines 840--841
+[]\T1/cmr/m/n/12 Aplikacja tes-tu-j¡ca wyda-jno±¢ ap-likacji przykªad-owej posi-ada trzy
+ []
+
+
+Overfull \hbox (9.30379pt too wide) in paragraph at lines 840--841
+\T1/cmr/m/n/12 al-i-zowane w celu ob-serwacji dzi-aªa-nia ap-likacji przy ró»nych poziomach
+ []
+
+<images/rest-memory-low-graph.jpg, id=190, 963.6pt x 204.765pt>
+File: images/rest-memory-low-graph.jpg Graphic file (type jpg)
+<use images/rest-memory-low-graph.jpg>
+Package pdftex.def Info: images/rest-memory-low-graph.jpg  used on input line 843.
+(pdftex.def)             Requested size: 347.12354pt x 73.76219pt.
+<images/rest-memory-middle-graph.jpg, id=191, 963.6pt x 204.01219pt>
+File: images/rest-memory-middle-graph.jpg Graphic file (type jpg)
+<use images/rest-memory-middle-graph.jpg>
+Package pdftex.def Info: images/rest-memory-middle-graph.jpg  used on input line 848.
+(pdftex.def)             Requested size: 347.12354pt x 73.49101pt.
+<images/rest-gatling-low-graph.jpg, id=192, 571.38469pt x 287.57437pt>
+File: images/rest-gatling-low-graph.jpg Graphic file (type jpg)
+<use images/rest-gatling-low-graph.jpg>
+Package pdftex.def Info: images/rest-gatling-low-graph.jpg  used on input line 859.
+(pdftex.def)             Requested size: 347.12354pt x 174.70486pt.
+<images/rest-gatling-moddle-rest.jpg, id=193, 569.12625pt x 286.06876pt>
+File: images/rest-gatling-moddle-rest.jpg Graphic file (type jpg)
+<use images/rest-gatling-moddle-rest.jpg>
+Package pdftex.def Info: images/rest-gatling-moddle-rest.jpg  used on input line 864.
+(pdftex.def)             Requested size: 347.12354pt x 174.48859pt.
+
+
+[51 <./images/rest-memory-low-graph.jpg> <./images/rest-memory-middle-graph.jpg>]
+
+[52 <./images/rest-gatling-low-graph.jpg> <./images/rest-gatling-moddle-rest.jpg>]
+Overfull \hbox (15.31206pt too wide) in paragraph at lines 872--873
+[]\T1/cmr/m/n/12 Ocena wspóªdzie-le-nia kodu za po-moc¡ Server-les pod k¡tem skalowal-
+ []
+
+
+Overfull \hbox (13.72437pt too wide) in paragraph at lines 880--881
+\T1/cmr/m/n/12 ane s¡ testy wyda-jno±-ciowe przy-go-towane za po-moc¡ narz¦dzia Gatling.
+ []
+
+
+Overfull \hbox (3.23438pt too wide) in paragraph at lines 884--885
+[]\T1/cmr/m/n/12 Aplikacja tes-tu-j¡ca wyda-jno±¢ ap-likacji przykªad-owej posi-ada trzy
+ []
+
+
+Overfull \hbox (9.30379pt too wide) in paragraph at lines 884--885
+\T1/cmr/m/n/12 al-i-zowane w celu ob-serwacji dzi-aªa-nia ap-likacji przy ró»nych poziomach
+ []
+
+<images/serverless-memory-low-graph.jpg, id=200, 963.6pt x 203.25937pt>
+File: images/serverless-memory-low-graph.jpg Graphic file (type jpg)
+<use images/serverless-memory-low-graph.jpg>
+Package pdftex.def Info: images/serverless-memory-low-graph.jpg  used on input line 887.
+(pdftex.def)             Requested size: 347.12354pt x 73.21983pt.
+<images/serverless-memory-middle-graph.jpg, id=201, 963.6pt x 198.7425pt>
+File: images/serverless-memory-middle-graph.jpg Graphic file (type jpg)
+<use images/serverless-memory-middle-graph.jpg>
+Package pdftex.def Info: images/serverless-memory-middle-graph.jpg  used on input line 892.
+(pdftex.def)             Requested size: 347.12354pt x 71.59273pt.
+
+
+[53 <./images/serverless-memory-low-graph.jpg>]
+<images/serverless-gatling-low-graph.jpg, id=205, 569.87906pt x 285.31593pt>
+File: images/serverless-gatling-low-graph.jpg Graphic file (type jpg)
+<use images/serverless-gatling-low-graph.jpg>
+Package pdftex.def Info: images/serverless-gatling-low-graph.jpg  used on input line 903.
+(pdftex.def)             Requested size: 347.12354pt x 173.78995pt.
+<images/serverless-gatling-middle-graph.jpg, id=206, 569.12625pt x 285.31593pt>
+File: images/serverless-gatling-middle-graph.jpg Graphic file (type jpg)
+<use images/serverless-gatling-middle-graph.jpg>
+Package pdftex.def Info: images/serverless-gatling-middle-graph.jpg  used on input line 908.
+(pdftex.def)             Requested size: 347.12354pt x 174.0294pt.
+<images/serverless-gatling-high-graph.jpg, id=207, 568.37344pt x 284.56313pt>
+File: images/serverless-gatling-high-graph.jpg Graphic file (type jpg)
+<use images/serverless-gatling-high-graph.jpg>
+Package pdftex.def Info: images/serverless-gatling-high-graph.jpg  used on input line 913.
+(pdftex.def)             Requested size: 347.12354pt x 173.796pt.
+
+
+[54 <./images/serverless-memory-middle-graph.jpg> <./images/serverless-gatling-low-graph.jpg>]
+
+[55 <./images/serverless-gatling-middle-graph.jpg> <./images/serverless-gatling-high-graph.jpg>]
+Overfull \hbox (2.87971pt too wide) in paragraph at lines 931--932
+[]\T1/cmr/m/n/12 Serverless to nowoczesny model wykony-wa-nia oblicze« w chmurze,
+ []
+
+
+Overfull \hbox (21.41pt too wide) in paragraph at lines 931--932
+\T1/cmr/m/n/12 ^^Rserver-less^^Q nie oz-nacza, »e nie ma fizy-cznych ser-w-erów, ale »e zarz¡dzanie
+ []
+
+
+Overfull \hbox (3.56078pt too wide) in paragraph at lines 931--932
+\T1/cmr/m/n/12 less wdra»amy do chmury funkcje za-mi-ast caªych ap-likacji, a dostawca
+ []
+
+
+Overfull \hbox (20.03937pt too wide) in paragraph at lines 931--932
+\T1/cmr/m/n/12 chmury jest odpowiedzialny za zarz¡dzanie ko-dem, skalowanie i utrzymy-
+ []
+
+
+Overfull \hbox (12.0012pt too wide) in paragraph at lines 948--949
+[]\T1/cmr/m/n/12 Automatycznie przy-go-towuj¦ kod do wrzuce-nia na Ama-zon Lambda
+ []
+
+
+Overfull \hbox (2.00471pt too wide) in paragraph at lines 950--951
+[]\T1/cmr/m/n/12 Zapisuj¦ kod w bazie danych, »e-by± mógª go u»y¢ pó¹niej; b¦dziesz
+ []
+
+
+
+[56]
+Overfull \hbox (16.6661pt too wide) in paragraph at lines 955--956
+[]\T1/cmr/m/n/12 Przechowuj¦ te pliki IDL i mo»esz je udost¦p-ni¢, »eby inni czªonkowie
+ []
+
+
+Overfull \hbox (6.19289pt too wide) in paragraph at lines 977--978
+[]\T1/cmr/m/n/12 Automatycznie wdra»a kod jako funkcj¦ Lambda - Wdra»a sprawd-
+ []
+
+
+
+[57]
+Overfull \hbox (14.41187pt too wide) in paragraph at lines 984--987
+\T1/cmr/m/n/12 u»y-wana do tworzenia ap-likacji fron-tendowych. Npm sªu»y do zarz¡dza-
+ []
+
+
+Overfull \hbox (4.86322pt too wide) in paragraph at lines 992--993
 []\T1/cmr/m/n/12 Przyjmowanie kodu, który u»ytkownik chce wspóªdzieli¢, a nast¦p-
  []
 
 
-Overfull \hbox (2.8054pt too wide) in paragraph at lines 800--801
+Overfull \hbox (2.8054pt too wide) in paragraph at lines 995--996
 []\T1/cmr/m/n/12 Mo»liwo±¢ przegl¡-da-nia, edy-towa-nia i usuwa-nia kodu, który zostaª
  []
 
 
-Overfull \hbox (27.63757pt too wide) in paragraph at lines 803--804
+Overfull \hbox (27.63757pt too wide) in paragraph at lines 998--999
 []\T1/cmr/m/n/12 Udost¦pnianie plików .proto: ap-likacja front-end udost¦p-nia u»ytkown-
  []
 
 
-Overfull \hbox (6.13466pt too wide) in paragraph at lines 803--804
+Overfull \hbox (6.13466pt too wide) in paragraph at lines 998--999
 \T1/cmr/m/n/12 do gen-erowa-nia obiek-tów DTO dla ko-mu-nikacji z wdro»on¡ funkcj¡
  []
 
@@ -1676,33 +2028,41 @@ Overfull \hbox (6.13466pt too wide) in paragraph at lines 803--804
 \tf@lot=\write5
 \openout5 = `thesismanuscript.lot'.
 
- (./thesismanuscript.lof)
+
+
+[58] (./thesismanuscript.lof
+
+[59])
 \tf@lof=\write6
 \openout6 = `thesismanuscript.lof'.
 
  (./thesismanuscript.bbl
 
-[45])
+[60])
 
-[46] (./thesismanuscript.aux)
+[61] (./thesismanuscript.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 15992 strings out of 475128
- 322615 string characters out of 5765300
- 820464 words of memory out of 5000000
- 38681 multiletter control sequences out of 15000+600000
+ 16146 strings out of 475128
+ 329138 string characters out of 5765300
+ 820505 words of memory out of 5000000
+ 38835 multiletter control sequences out of 15000+600000
  570498 words of font info for 59 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,11n,101p,1879b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk>
-Output written on thesismanuscript.pdf (46 pages, 316217 bytes).
+Output written on thesismanuscript.pdf (61 pages, 1329160 bytes).
 PDF statistics:
- 582 PDF objects out of 1000 (max. 8388607)
- 140 compressed objects within 2 object streams
+ 662 PDF objects out of 1000 (max. 8388607)
+ 173 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 23 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 133 words of extra memory for PDF output out of 10000 (max. 10000000)
 

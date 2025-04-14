@@ -230,30 +230,14 @@ Na podstawie źródeł literaturowych, własnego doświadczenia oraz przygotowan
 Przedstawiam kryteria które wybrałem w rezultacie analizy źródeł internetowych oraz książek takich jak ~\cite{kleppmann2017designing} w których w znalezłem opis tego jak musi wyglądać architektura mikro serwisowa, wady i zalety różnych rozwiązań.
 
 \begin{enumerate}
-    \item Conflict Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują merge konflikty. Wyzwania dotyczące pracy z IDL i podejścia do ich pokonania są dobrze opisane w książce ~\cite{kleppmann2017designing}. W szczegółach są opisane metody pracy z schematami IDL, między innymi narzędziem Protocol Buffer dostrzeganego przez Alphabet oraz Avro. Możemy posłużyć się cytatem z rozdziału 4, żeby zaprezentować, że muszę uwzględniać ten aspekt w analizie.
-    \begin{quote}
-        "This means that old and new versions of the code, and old and new data formats, may potentially all coexist in the system at the same time. In order for the system to continue running smoothly, we need to maintain compatibility in both directions: Backward compatibility and Forward compatibility." ~\cite[p. 112]{kleppmann2017designing}
-    \end{quote}
-    Również w tym rozdziale autor prezentuje dlaczego takie problemy powstają, możemy posłużyć się cytatem.
-    \begin{quote}
-        "When a data format or schema changes, a corresponding change to application code often needs to happen (for example, you add a new field to a record, and the application code starts reading and writing that field). However, in a large application, code changes often cannot happen instantaneously: old and new versions of the code, and old and new data formats, may potentially all coexist in the system at the same time." ~\cite[p. 111]{kleppmann2017designing}
-    \end{quote}
-    Musimy uważać na to, jaką ilość konfliktów generuje stosowanie wybranego podejścia. Podobne konflikty często są czasochłonne i nawet w przypadku nietrudnych przypadków potrafią spowolnić zespół deweloperski oraz spowodować inne, bardziej skomplikowane błędy.
-    \item Version Drift Occurrence - wskaźnik tego, jak często rozwiązanie powoduje użycie niezgodnych wersji IDL w różnych zespołach. Kiedy zespoły programistów pracujące nad jednym systemem zaczynają używać niezgodną wersję plików IDL, mikroserwisy w systemie mikroserwisów przestają komunikować się poprawnie, co powoduje błędy w runtime, które są bardzo trudne do wyłapania i naprawy, nieoczekiwane zachowanie systemu oraz uszkodzenie danych. W przypadku wykorzystania podejścia, które nie może zapewnić odpowiedniego poziomu kontroli nad wersjami i izolacji, rozwój i wdrażanie zmian w systemie mogą być problematyczne. Możemy posłużyć się cytatem:
-    \begin{quote}
-        "With Avro, when an application wants to encode some data (to write it to a file or database, to send it over the network, etc.), it encodes the data using whatever version of the schema it knows about... When an application wants to decode some data (read it from a file or database, receive it from the network, etc.), it is expecting the data to be in some schema, which is known as the reader’s schema... The key idea with Avro is that the writer’s schema and the reader’s schema don’t have to be the same—they only need to be compatible." ~\cite[p. 123]{kleppmann2017designing}
-    \end{quote}
-    W przypadku braku kompatybilności nie jest możliwe poprawne działanie systemu.
-    \item Build Failure Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują problemy w trakcie budowania aplikacji.
-    \begin{quote}
-        "When an application wants to decode some data (read it from a file or database, receive it from the network, etc.), it is expecting the data to be in some schema, which is known as the reader’s schema. That is the schema the application code is relying on—code may have been generated from that schema during the application’s build process." ~\cite[p. 123]{kleppmann2017designing}
-    \end{quote}
-    Dlatego w przypadku problemów z schematem wynikającym często z nieprawidłowo wybranego podejścia do zarządzania plikami IDL.
-    \item Deployment Rollback Frequency - wskaźnik tego, jak często zmiany w plikach IDL powodują problemy w trakcie wdrożenia aplikacji na środowiska w systemie mikroserwisów.
-    \begin{quote}
-        "With server-side applications you may want to perform a rolling upgrade (also known as a staged rollout), deploying the new version to a few nodes at a time, checking whether the new version is running smoothly, and gradually working your way through all the nodes. This allows new versions to be deployed without service downtime, and thus encourages more frequent releases and better evolvability." ~\cite[p. 92]{kleppmann2017designing}
-    \end{quote}
-    Częste rollbacki usług w trakcie wdrożeń mogą spowodować spowolnienie wdrożenia nowych zmian i opóźnienie projektu, dlatego w trakcie wyboru podejścia do zarządzania plikami IDL musimy brać to pod uwagę. Musimy w trakcie analizy i planowania projektu wybrać podejście, które zapewni najmniejsze ryzyko błędów w trakcie próbnego wdrożenia i wycofania zmian.
+    \item Conflict Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują merge konflikty. Wyzwania dotyczące pracy z IDL i podejścia do ich pokonania są dobrze opisane w książce ~\cite{kleppmann2017designing}. W szczegółach są opisane metody pracy z schematami IDL, między innymi narzędziem Protocol Buffer dostrzeganego przez Alphabet oraz Avro. To oznacza, że stare i nowe wersje kodu oraz stare i nowe formaty danych mogą potencjalnie współistnieć w systemie w tym samym czasie. Aby system działał płynnie, musimy zachować kompatybilność w obu kierunkach: Kompatybilność wsteczna i kompatybilność w przód. 
+    Musimy uważać na to, jaką ilość konfliktów generuje stosowanie wybranego podejścia. Podobne konflikty często są czasochłonne i nawet w przypadku nietrudnych przypadków potrafią spowolnić zespół deweloperski oraz spowodować inne, bardziej skomplikowane błędy. ~\cite[p. 112]{kleppmann2017designing}
+    \item Version Drift Occurrence - wskaźnik tego, jak często rozwiązanie powoduje użycie niezgodnych wersji IDL w różnych zespołach. Kiedy zespoły programistów pracujące nad jednym systemem zaczynają używać niezgodną wersję plików IDL, mikroserwisy w systemie mikroserwisów przestają komunikować się poprawnie, co powoduje błędy w runtime, które są bardzo trudne do wyłapania i naprawy, nieoczekiwane zachowanie systemu oraz uszkodzenie danych. W przypadku wykorzystania podejścia, które nie może zapewnić odpowiedniego poziomu kontroli nad wersjami i izolacji, rozwój i wdrażanie zmian w systemie mogą być problematyczne. 
+    W przypadku braku kompatybilności nie jest możliwe poprawne działanie systemu. ~\cite[p. 123]{kleppmann2017designing}
+    \item Build Failure Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują problemy w trakcie budowania aplikacji.  
+    Dlatego w przypadku problemów z schematem wynikającym często z nieprawidłowo wybranego podejścia do zarządzania plikami IDL. ~\cite[p. 123]{kleppmann2017designing}
+    \item Deployment Rollback Frequency - wskaźnik tego, jak często zmiany w plikach IDL powodują problemy w trakcie wdrożenia aplikacji na środowiska w systemie mikroserwisów. 
+    Częste rollbacki usług w trakcie wdrożeń mogą spowodować spowolnienie wdrożenia nowych zmian i opóźnienie projektu, dlatego w trakcie wyboru podejścia do zarządzania plikami IDL musimy brać to pod uwagę. Musimy w trakcie analizy i planowania projektu wybrać podejście, które zapewni najmniejsze ryzyko błędów w trakcie próbnego wdrożenia i wycofania zmian. ~\cite[p. 92]{kleppmann2017designing}
 \end{enumerate}
     
 \subsubsection{Definicja kryterium oceny pod kątem izolacji w przypadku bibliotek, sdk, REST, serverless}
@@ -265,48 +249,22 @@ W przypadku izolacji na podstawie analzy żródeł literaturowych oraz własnego
 % AI
 \begin{enumerate}
     \item Izolacja interfejsów - elementy w systemie mikroserwisów muszą zapewnić jasno określone interfejsy, które pozwolą na łatwą komunikację. Zmiany w jednym elemencie systemu nie powinny wpływać na pozostałe.
-    \begin{quote}
-        "A well-designed library or SDK isolates its implementation details from the user, allowing developers to interact with the API without needing to understand its inner workings. This reduces the risk of breaking changes and simplifies maintenance." ~\cite[p. 75]{bloch2018effective}
-    \end{quote}
-    Za pomocą tego cytatu możemy wyjaśnić, w jaki sposób dobrze zaprojektowane interfejsy umożliwiają zmiany bez wpływu na inne części systemu.
-    
+    Za pomocą tego cytatu możemy wyjaśnić, w jaki sposób dobrze zaprojektowane interfejsy umożliwiają zmiany bez wpływu na inne części systemu. ~\cite[p. 75]{bloch2018effective}
     \item Izolacja wersji - w przypadku aktualizacji, nowa wersja powinna być kompatybilna wstecznie z poprzednimi wersjami kodu. Izolacja wersji zapewnia, że stare wersje, dostarczone przez biblioteki, SDK, REST czy serverless, mogą współistnieć z nowszymi wersjami, umożliwiając stopniową aktualizację systemu.
-    \begin{quote}
-        "Versioning APIs and libraries carefully ensures that changes can be introduced gradually, providing compatibility for both old and new clients. This allows legacy systems to function alongside the updated ones without breaking the user experience or requiring immediate changes." ~\cite[p. 172]{fowler2012patterns}
-    \end{quote}
-    Powyższy cytat pokazuje, jak ważnym jest zachowanie kompatybilności wstecznej w przypadku współdzielenia kodu w systemach mikroserwisów.
-    
+    Powyższy cytat pokazuje, jak ważnym jest zachowanie kompatybilności wstecznej w przypadku współdzielenia kodu w systemach mikroserwisów. ~\cite[p. 172]{fowler2012patterns}
     \item Izolacja zależności - w przypadku SDK, bibliotek, REST czy serverless powinniśmy minimalizować wpływ zewnętrznych zależności na naszą aplikację.
-    \begin{quote}
-        "Dependencies should be isolated to minimize their impact on the main application, allowing the code to remain flexible. One of the key principles of dependency management is to ensure that dependencies can be replaced without affecting the core business logic." ~\cite[p. 218]{martin2008clean}
-    \end{quote}
-    Powyższy cytat pokazuje, jak ważnym jest odseparowanie i izolacja zależności dla zachowania elastyczności.
+    Powyższy cytat pokazuje, jak ważnym jest odseparowanie i izolacja zależności dla zachowania elastyczności. ~\cite[p. 218]{martin2008clean}
 \end{enumerate}
 
 \subsubsection{Definicja kryterium oceny pod kątem bezpieczeństwa}
 
 % AI
 \begin{enumerate}
-    \item Poufność (Confidentiality) - Zapewnienie tego, że poufne dane nie będą udostępnione osobom lub systemom nieupoważnionym. Zachowanie poufności jest kluczowe dla ochrony danych osobowych i korporacyjnych.
-    \begin{quote}
-        "Preserving authorized restrictions on information access and disclosure, including means for protecting personal privacy and proprietary information. A loss of confidentiality is the unauthorized disclosure of information." ~\cite[p. 22]{stallings2017cryptography}
-    \end{quote}
-    \item Integralność danych (Integrity) - Integralność danych koncentruje się na dokładności i wiarygodności informacji, chroniąc przed nieautoryzowanymi modyfikacjami, zapewniając, że dane są zarówno niezawodne, jak i spójne.
-    \begin{quote}
-        "Guarding against improper information modification or destruction, including ensuring information nonrepudiation and authenticity. A loss of integrity is the unauthorized modification or destruction of information." ~\cite[p. 22]{stallings2017cryptography}
-    \end{quote}
-    \item Dostępność (Availability) - Zapewnia to, że dane w systemie są dostępne, a różnego rodzaju zakłócenia dostępu do danych są zminimalizowane.
-    \begin{quote}
-        "Ensuring timely and reliable access to and use of information. A loss of availability is the disruption of access to or use of information or an information system." ~\cite[p. 22]{stallings2017cryptography}
-    \end{quote}
-    \item Autentyczność (Authenticity) - Gwarancja tego, że autoryzowanym użytkownikom można ufać, zapobieganie manipulacjom.
-    \begin{quote}
-        "The property of being genuine and being able to be verified and trusted; confidence in the validity of a transmission, a message, or message originator. This means verifying that users are who they say they are and that each input arriving at the system came from a trusted source." ~\cite[p. 23]{stallings2017cryptography}
-    \end{quote}
-    \item Odpowiedzialność (Accountability) - Definiuje zapotrzebowanie na zapisywanie w celach monitoringu działań użytkowników w systemie w celu późniejszej analizy. W trakcie analizy można wykryć podejrzane zachowania lub naruszenia przepisów bezpieczeństwa. Pomaga w zapewnieniu tego, że podmioty naruszające przepisy prawne oraz przepisy bezpieczeństwa poniosą odpowiedzialność oraz zapobiegnie podobnym sytuacjom w przyszłości.
-    \begin{quote}
-        "The security goal that generates the requirement for actions of an entity to be traced uniquely to that entity. This supports nonrepudiation, deterrence, fault isolation, intrusion detection and prevention, and afteraction recovery and legal action. Because truly secure systems are not yet an achievable goal, we must be able to trace a security breach to a responsible party. Systems must keep records of their activities to permit later forensic analysis to trace security breaches or to aid in transaction disputes." ~\cite[p. 23]{stallings2017cryptography}
-    \end{quote}
+    \item Poufność (Confidentiality) - Zapewnienie tego, że poufne dane nie będą udostępnione osobom lub systemom nieupoważnionym. Zachowanie poufności jest kluczowe dla ochrony danych osobowych i korporacyjnych. ~\cite[p. 22]{stallings2017cryptography}
+    \item Integralność danych (Integrity) - Integralność danych koncentruje się na dokładności i wiarygodności informacji, chroniąc przed nieautoryzowanymi modyfikacjami, zapewniając, że dane są zarówno niezawodne, jak i spójne.  ~\cite[p. 22]{stallings2017cryptography}
+    \item Dostępność (Availability) - Zapewnia to, że dane w systemie są dostępne, a różnego rodzaju zakłócenia dostępu do danych są zminimalizowane.  ~\cite[p. 22]{stallings2017cryptography}
+    \item Autentyczność (Authenticity) - Gwarancja tego, że autoryzowanym użytkownikom można ufać, zapobieganie manipulacjom. ~\cite[p. 23]{stallings2017cryptography}
+    \item Odpowiedzialność (Accountability) - Definiuje zapotrzebowanie na zapisywanie w celach monitoringu działań użytkowników w systemie w celu późniejszej analizy. W trakcie analizy można wykryć podejrzane zachowania lub naruszenia przepisów bezpieczeństwa. Pomaga w zapewnieniu tego, że podmioty naruszające przepisy prawne oraz przepisy bezpieczeństwa poniosą odpowiedzialność oraz zapobiegnie podobnym sytuacjom w przyszłości. ~\cite[p. 23]{stallings2017cryptography}
 \end{enumerate}
 
 
@@ -340,25 +298,10 @@ Za pomocą źródeł literaturowych oraz własnego doświadczenia zdefiniowałem
 
 % AI
 \begin{enumerate}
-    \item \textbf{Kompatybilność wsteczna} - Zapewnienie, że starsze wersje systemu lub komponentów nadal będą działały poprawnie, mimo wprowadzania nowych wersji. Kompatybilność wsteczna pomaga zapewnić funkcjonowanie istniejących systemów mikroserwisów w trakcie wprowadzania zmian i rozwoju systemu, pozwala przejść z kosztownych i bardzo skomplikowanych upgrade'ów systemu w całości za raz, a podzielić prace na mniejsze, łatwiejsze do zarządzania kawałki.
-    \begin{quote}
-        "APIs, like diamonds, are forever. Once you publish an API, you are more or less stuck with it, so it is critically important to design it well. When evolving an API, preserving backward compatibility is crucial to avoid breaking existing clients." ~\cite[p. 75]{bloch2018effective}
-    \end{quote}
-    
-    \item \textbf{Łatwość migracji} - Prostota przejścia między wersjami, umożliwienie łatwego przechodzenia między różnymi wersjami plików lub interfejsów, aby dostosować się do zmian bez wprowadzania zakłóceń w pracy systemu. Możliwość zmniejszenia przestojów aplikacji w trakcie prac serwisowych i możliwość płynnego przejścia na nową wersję. Proste migracje przyspieszają proces rozwoju aplikacji i zmniejszają ilość błędów.
-    \begin{quote}
-        "When evolving an API, it is essential to provide a smooth migration path for clients. Deprecating old functionality rather than removing it immediately allows developers to transition gradually without breaking their systems." ~\cite[p. 78]{bloch2018effective}
-    \end{quote}
-    
-    \item \textbf{Zarządzanie historią wersji} - Możliwość przechowywania i uzyskiwania dostępu do poprzednich wersji plików. Historia wersji pozwala programistom szybko i łatwo przywrócić poprzednią wersję w przypadku powstania błędu w nowej wersji. Pozwala na zmniejszenie utraty danych i niespójności w trakcie rozwoju aplikacji. Posiadanie historii wersji zapewnia to, że projekty pozostają łatwe w utrzymaniu i skalowalne.
-    \begin{quote}
-        "Effective version management is crucial for tracking changes over time, allowing teams to understand what was modified, when, and by whom. A well-maintained version history ensures accountability and facilitates rollback if necessary." ~\cite[p. 150]{rubin2012essential}
-    \end{quote}
-    
-    \item \textbf{Śledzenie zmian} - Zdolność systemu do rejestrowania i monitorowania wszystkich zmian. Możliwość śledzenia zmian zapewnia to, że każda zmiana w systemie będzie zapisana, wspierając tym programistów w zrozumieniu problemów i błędów albo pozwalając cofnąć zmiany. Poprawia współpracę między zespołami, wykazując kto, kiedy i dlaczego wprowadzał zmiany, co zwiększa również odpowiedzialność. W branżach regulowanych prawem taka audytowalność systemu może być wymagana przez prawo.
-    \begin{quote}
-        "Tracking changes in source code is essential for understanding the evolution of a system. Without a proper change history, debugging, auditing, and maintaining software become significantly more difficult." ~\cite[p. 150]{rubin2012essential}
-    \end{quote}
+    \item \textbf{Kompatybilność wsteczna} - Zapewnienie, że starsze wersje systemu lub komponentów nadal będą działały poprawnie, mimo wprowadzania nowych wersji. Kompatybilność wsteczna pomaga zapewnić funkcjonowanie istniejących systemów mikroserwisów w trakcie wprowadzania zmian i rozwoju systemu, pozwala przejść z kosztownych i bardzo skomplikowanych upgrade'ów systemu w całości za raz, a podzielić prace na mniejsze, łatwiejsze do zarządzania kawałki.  ~\cite[p. 75]{bloch2018effective}
+    \item \textbf{Łatwość migracji} - Prostota przejścia między wersjami, umożliwienie łatwego przechodzenia między różnymi wersjami plików lub interfejsów, aby dostosować się do zmian bez wprowadzania zakłóceń w pracy systemu. Możliwość zmniejszenia przestojów aplikacji w trakcie prac serwisowych i możliwość płynnego przejścia na nową wersję. Proste migracje przyspieszają proces rozwoju aplikacji i zmniejszają ilość błędów. ~\cite[p. 78]{bloch2018effective}
+    \item \textbf{Zarządzanie historią wersji} - Możliwość przechowywania i uzyskiwania dostępu do poprzednich wersji plików. Historia wersji pozwala programistom szybko i łatwo przywrócić poprzednią wersję w przypadku powstania błędu w nowej wersji. Pozwala na zmniejszenie utraty danych i niespójności w trakcie rozwoju aplikacji. Posiadanie historii wersji zapewnia to, że projekty pozostają łatwe w utrzymaniu i skalowalne. ~\cite[p. 150]{rubin2012essential}
+    \item \textbf{Śledzenie zmian} - Zdolność systemu do rejestrowania i monitorowania wszystkich zmian. Możliwość śledzenia zmian zapewnia to, że każda zmiana w systemie będzie zapisana, wspierając tym programistów w zrozumieniu problemów i błędów albo pozwalając cofnąć zmiany. Poprawia współpracę między zespołami, wykazując kto, kiedy i dlaczego wprowadzał zmiany, co zwiększa również odpowiedzialność. W branżach regulowanych prawem taka audytowalność systemu może być wymagana przez prawo. ~\cite[p. 150]{rubin2012essential}
 \end{enumerate}
 
 \subsection{Ocena i porównanie metod współdzielenia kodu}
@@ -457,17 +400,9 @@ Ocena pod kątem bezpieczeństwa:
     Odpowiedzialność & Szczegółowe logi umożliwiają precyzyjne śledzenie zmian & Integracja z systemami zarządzania logami wymaga konfiguracji \\ \hline
 \end{longtable}
 
-Ocena pod kątem skalowalności:
-
-Systemy bazujące na IDL, takie jak Protocol Buffers oraz Avro zazwyczaj serializują dane do kompaktowych formatów binarnych, to znaczy, że ilość danych, które trzeba przesłać przez sieć i przechowywać na dysku, jest minimalna. Dzięki temu koszt zasobów fizycznych jest minimalny i ma tendencję do pozostania niskim, nawet w przypadku wzrostu obciążenia. Wydajność systemu korzystającego z współdzielenia za pomocą IDL nie zależy od metody zarządzania plikami IDL, jak w powyższych przypadkach.
-
-\begin{quote}
-    "With efficient binary serialization formats, IDLs allow rapid encoding and decoding of messages. This efficiency is crucial for high-throughput systems where low latency is required. IDLs also facilitate cross-language interoperability without incurring significant performance penalties." ~\cite[p. 123]{kleppmann2017designing}
-\end{quote}
-
 Ocena pod kątem wersjonowania:
 
-Na podstawie analizy źródeł literaturowych oraz doświadczenia własnego dokonałem analizy podejścia do współdzielenia kodu za pomocą plików IDL. W tym przypadku ocena pod kątem wersjonowania różni się w zależności od podejścia do zarządzania plikami IDL, dlatego dokonałem porównania dla każdego z podejść.
+Na podstawie analizy źródeł literaturowych oraz własnych doświadczeń dokonałem analizy podejścia do współdzielenia kodu za pomocą plików IDL. W tym przypadku ocena pod kątem wersjonowania różni się w zależności od przyjętego podejścia do zarządzania plikami IDL, dlatego przeprowadziłem porównanie dla każdego z tych podejść.
 
 \begin{longtable}{|C{3cm}|C{9.1cm}|}
     \caption{Porównanie podejść do zarządzania kodem, wersjonowania i repozytoriami: Git, biblioteki, Monorepo i IDLaS.} \\
@@ -566,66 +501,25 @@ Ocena pod kątem izolacji:
 
 Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji bibliotek, kryteria oceny są następujące: ocena pod kątem izolacji interfejsów, izolacji wersji oraz izolacji zależności.
 
-Izolacja interfejsów: Dobrze ustrukturyzowana biblioteka izoluje skomplikowane elementy logiki od swoich użytkowników. Gdy są użyte prawidłowo, biblioteki pozwalają na zmianę lub aktualizację kodu przy minimalnym wpływie na kod wykorzystujący bibliotekę.
+Izolacja interfejsów: Dobrze ustrukturyzowana biblioteka izoluje skomplikowane elementy logiki od swoich użytkowników. Gdy są użyte prawidłowo, biblioteki pozwalają na zmianę lub aktualizację kodu przy minimalnym wpływie na kod wykorzystujący bibliotekę.  ~\cite[p. 75]{Essential}
 
-\begin{quote}
-    "A well-designed library or SDK isolates its implementation details from the user." ~\cite[p. 75]{Essential}
-\end{quote}
+Izolacja wersji: Biblioteki zazwyczaj używają semantycznego wersjonowania za pomocą nazwy. Przejrzysta historia wersji umożliwia deweloperom odpowiednie zarządzanie zależnościami. Przy odpowiedniej izolacji wersji wiele wersji biblioteki może współistnieć i być używane jednocześnie, ułatwia to proces stopniowej migracji. ~\cite[p. 172]{fowler2012patterns}
 
-Izolacja wersji: Biblioteki zazwyczaj używają semantycznego wersjonowania za pomocą nazwy. Przejrzysta historia wersji umożliwia deweloperom odpowiednie zarządzanie zależnościami. Przy odpowiedniej izolacji wersji wiele wersji biblioteki może współistnieć i być używane jednocześnie, ułatwia to proces stopniowej migracji.
-
-\begin{quote}
-    "Versioning APIs and libraries carefully ensures that changes can be introduced gradually." ~\cite[p. 172]{fowler2012patterns}
-\end{quote}
-
-Izolacja zależności: Biblioteki często zależą od innych bibliotek, w przypadku gdy zależności nie są prawidłowo izolowane mogą prowadzić do konfliktów i innych problemów. Dobre praktyki zarządzania zależnościami pomagają zapewnić, że zależności biblioteki nie będą miały negatywnego wpływu na aplikację.
-
-\begin{quote}
-    "Dependencies should be isolated to minimize their impact on the main application." ~\cite[p. 218]{martin2008clean}
-\end{quote}
+Izolacja zależności: Biblioteki często zależą od innych bibliotek, w przypadku gdy zależności nie są prawidłowo izolowane mogą prowadzić do konfliktów i innych problemów. Dobre praktyki zarządzania zależnościami pomagają zapewnić, że zależności biblioteki nie będą miały negatywnego wpływu na aplikację. ~\cite[p. 218]{martin2008clean}
 
 Ocena pod kątem bezpieczeństwa:
 
 Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa bibliotek kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność.
 
-Poufność: Biblioteki, które są wykorzystywane do przetważania poufnych danych muszą pochodzić z sprawdzonych źródeł i ciągle aktualizowane, aby zapobiec utracie danych.
+Poufność: Biblioteki, które są wykorzystywane do przetważania poufnych danych muszą pochodzić z sprawdzonych źródeł i ciągle aktualizowane, aby zapobiec utracie danych. ~\cite[p. 82]{Essential}
 
-% AI
-\begin{quote}
-    "Ensuring that libraries handling sensitive information are sourced from reputable channels and regularly updated is critical to maintaining confidentiality throughout an application." ~\cite[p. 82]{Essential}
-\end{quote}
+Integralność danych: Biblioteki często korzystają z sum kontrolnych, certyfikatów, podpisów cyfrowych aby mieć pewność, że przetwarzane dane pozostają bezpieczne. ~\cite[p. 84]{Essential}
 
-Integralność danych: Biblioteki często korzystają z sum kontrolnych, certyfikatów, podpisów cyfrowych aby mieć pewność, że przetwarzane dane pozostają bezpieczne.
+Dostępność: Dostępność może zostać naruszona, jeśli biblioteki zewnętrzne będą niedostępne, lub wewnętrzne w przypadku awarii narzędzia do zarządzania bibliotekami. Dlatego ważne jest wykorzystanie menedżerów zależności które są zaufane. ~\cite[p. 85]{Essential}
 
-\begin{quote}
-    "The integrity of a library is maintained through rigorous testing and the use of cryptographic measures that detect any unauthorized changes to the code or data it processes." ~\cite[p. 84]{Essential}
-\end{quote}
+Autentyczność: W przypadku bibliotek jest zapewniana za pomocą sprawdzenia jej pochodzenia za pomocą podpisów cyfrowych i sum kontrolnych dostarczonych przez wydawcę. Zapobiega to ryzyku włączenia wykonania złośliwego kodu po stronie klienta biblioteki.  ~\cite[p. 87]{Essential}
 
-Dostępność: Dostępność może zostać naruszona, jeśli biblioteki zewnętrzne będą niedostępne, lub wewnętrzne w przypadku awarii narzędzia do zarządzania bibliotekami. Dlatego ważne jest wykorzystanie menedżerów zależności które są zaufane.
-
-\begin{quote}
-    "By leveraging modern dependency management tools and regularly updating libraries, developers can mitigate risks to availability due to deprecated or unsupported components." ~\cite[p. 85]{Essential}
-\end{quote}
-
-Autentyczność: W przypadku bibliotek jest zapewniana za pomocą sprawdzenia jej pochodzenia za pomocą podpisów cyfrowych i sum kontrolnych dostarczonych przez wydawcę. Zapobiega to ryzyku włączenia wykonania złośliwego kodu po stronie klienta biblioteki.
-
-\begin{quote}
-    "Authenticating libraries through digital signatures and secure distribution channels is essential to ensuring that only verified, unmodified code is used in production environments." ~\cite[p. 87]{Essential}
-\end{quote}
-
-Odpowiedzialność: W przypadku bibliotek przejrzysta historia może zostać zapewniona za pomocą menedżerów pakietów, które umożliwiają śledzenie pochodzenia zmian. Wspomaga to w zapewnieniu odpowiedzialności w przypadku problemów.
-
-\begin{quote}
-    "A well-documented version history is indispensable for accountability, as it enables developers to trace and audit every modification made to a library over time." ~\cite[p. 88]{Essential}
-\end{quote}
-
-Ocena pod kątem skalowalności:
-
-Libraries are generally optimized for specific tasks within one language. However, if a library is not designed for high-concurrency environments, it may require additional hardware resources as the load increases. For example, intensive data processing libraries may consume more memory or CPU when dealing with large datasets. Supporting Idea: Studies on computational efficiency often note that non-optimized libraries can become bottlenecks under heavy load, leading to increased physical resource costs.
-
-\begin{quote}
-    "Non-optimized libraries can quickly become bottlenecks in high-concurrency environments, forcing systems to consume additional CPU and memory resources as load increases." ~\cite[p. 192]{fowler2012patterns}
-\end{quote}
+Odpowiedzialność: W przypadku bibliotek przejrzysta historia może zostać zapewniona za pomocą menedżerów pakietów, które umożliwiają śledzenie pochodzenia zmian. Wspomaga to w zapewnieniu odpowiedzialności w przypadku problemów.  ~\cite[p. 88]{Essential}
 
 Ocena pod kątem wersjonowania:
 
@@ -639,91 +533,392 @@ Ocena pod kątem komunikacji: zapewnia potrzebny poziom komunikacji, mechanizm w
 
 Ocena pod kątem izolacji: 
 
-Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji SDK kryteria oceny są następujące: ocena pod kątem izolacji interfejsów, izolacja wersji, izolacja zależności. Jednak są one trudniejsze w projektowaniu i wymagają ostrożności w trakcie zarządzania.
-
-\begin{quote}
-    "SDK isolates its implementation details from the user, allowing developers to interact with the API without needing to understand its inner workings." ~\cite[p. 75]{Essential}
-\end{quote}
+Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji SDK kryteria oceny są następujące: ocena pod kątem izolacji interfejsów, izolacja wersji, izolacja zależności. Jednak są one trudniejsze w projektowaniu i wymagają ostrożności w trakcie zarządzania. ~\cite[p. 75]{Essential}
 
 Izolacja wersji: W przypadku SDK, które agregują kilka bibliotek i narzędzi, muszą zarządzać wersjonowaniem wszystkich zawartych komponentów. W idealnym przypadku zestaw SDK jest zaprojektowany tak, aby nowe dodane wersje były kompatybilne wstecz, umożliwiając klientom działanie bez natychmiastowych zmian.
 
-Izolacja zależności: SDK często zawierają wiele bibliotek w sposób, co oznacza, że często zarządzają dużą ilością zależności. Izolowanie tych zależności jest krytyczne, aby uniknąć konfliktów.
+Izolacja zależności: SDK często zawierają wiele bibliotek w sposób, co oznacza, że często zarządzają dużą ilością zależności. Izolowanie tych zależności jest krytyczne, aby uniknąć konfliktów. ~\cite[p. 218]{martin2008clean}
 
-\begin{quote}
-    "...ensuring that dependencies can be replaced without affecting the core business logic" ~\cite[p. 218]{martin2008clean}
-\end{quote}
 % AI
 Ocena pod kątem bezpieczeństwa: 
 
 Zgodnie z wcieśniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa bibliotek kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność
 
-Poufność: SDK muszą zapewnić, że wszystkie zawarte komponenty przestrzegają ścisłych zasad kontroli dostępu zmniejąc to ryzyko nieautoryzowanego dostępu do danych.
+Poufność: SDK muszą zapewnić, że wszystkie zawarte komponenty przestrzegają ścisłych zasad kontroli dostępu zmniejąc to ryzyko nieautoryzowanego dostępu do danych.  ~\cite[para 4]{azure2020}
 
-\begin{quote}
-    "SDKs, when integrated with stringent access controls and privacy policies, help shield sensitive data from unauthorized access, thus preserving confidentiality across all integrated modules." ~\cite[para 4]{azure2020}
-\end{quote}
+Integralność danych: SDK wymaga, aby były one kompleksowo testowane, aby zapewnić, że zmiany nie naruszą integralności danych. Różne frameworki do testowania bezpieczeńswa SDK pomagają w wykrywaniu wszelkich podatności po modyfikacji.  ~\cite[para 5]{azure2020}
 
-Integralność danych: SDK wymaga, aby były one kompleksowo testowane, aby zapewnić, że zmiany nie naruszą integralności danych. Różne frameworki do testowania bezpieczeńswa SDK pomagają w wykrywaniu wszelkich podatności po modyfikacji.
+Dostępność: SDK muszą być zaprojektowane tak, aby działały zawsze, nawet przy dużym obciążeniu. ~\cite[para 6]{azure2020}
 
-\begin{quote}
-    "Robust testing frameworks within SDKs are critical for maintaining integrity, ensuring that updates do not inadvertently alter data structures or application behavior." ~\cite[para 5]{azure2020}
-\end{quote}
+Autentyczność: Autentyczność w przypadku SDK może zostać zapewniona za pomocą weryfikacji dostawców i stosowania środków kryptograficznych do walidacji ich komponentów. Warto dokonywać takich działań, aby zapobiec wykonaniu złośliwego kodu w naszym systemie. ~\cite[para 7]{azure2020}
 
-Dostępność: SDK muszą być zaprojektowane tak, aby działały zawsze, nawet przy dużym obciążeniu.
-
-\begin{quote}
-    "The modular and redundant design of well-architected SDKs contributes significantly to system availability, ensuring that critical services remain accessible even under peak loads." ~\cite[para 6]{azure2020}
-\end{quote}
-
-Autentyczność: Autentyczność w przypadku SDK może zostać zapewniona za pomocą weryfikacji dostawców i stosowania środków kryptograficznych do walidacji ich komponentów. Warto dokonywać takich działań, aby zapobiec wykonaniu złośliwego kodu w naszym systemie.
-
-\begin{quote}
-    "Verifying the authenticity of an SDK via cryptographic signatures and secure distribution channels is vital to ensure that the components used are genuine and have not been tampered with." ~\cite[para 7]{azure2020}
-\end{quote}
-
-Odpowiedzialność: SDK zazwyczaj posiadają różne mechanizmy zarządzania wersjami. Takie metody zarządzania wersjami umożliwiają deweloperom śledzenie pochodzenia wszelkich zmian lub problemów. Pomaga to zapewnić odpowiedzialność programistów za przygotowane zmiany.
-
-\begin{quote}
-    "Comprehensive logging and version tracking in SDKs provide the necessary audit trails that hold developers accountable for every change made, thereby ensuring that any issues can be traced back to their origin." ~\cite[para 7]{azure2020}
-\end{quote}
-
-Ocena pod kątem skalowalności:
-
-SDK zazwyczaj zawierają wiele narzędzi lub komponentów, mają tendencję do wyższego zużycia zasobów pamięci i procesora w porównaniu z, na przykład, IDL. Różne raporty dotyczące skalowania aplikacji w chmurze podkreślają, że SDK mogą powodować dodatkowe obciążenie w środowiskach z dużym obciążeniem.
-
-\begin{quote}
-    "SDKs, though beneficial for rapid development by bundling multiple tools, tend to impose a higher baseline resource consumption, especially under high-load production scenarios." ~\cite[para 3]{azure2020}
-\end{quote}
-
-\begin{quote}
-    "Third-party SDKs can significantly increase memory and CPU usage, becoming a notable overhead in environments with high concurrent demands." ~\cite[p. 4]{ahmed2019impact}
-\end{quote}
+Odpowiedzialność: SDK zazwyczaj posiadają różne mechanizmy zarządzania wersjami. Takie metody zarządzania wersjami umożliwiają deweloperom śledzenie pochodzenia wszelkich zmian lub problemów. Pomaga to zapewnić odpowiedzialność programistów za przygotowane zmiany. ~\cite[para 7]{azure2020}
 
 Ocena pod kątem wersjonowania:
 
-SDK mogą zawierać wiele bibliotek i narzędzi, z których każde może mieć własną historię wersji. Wersjonowanie SDK potrafi być złożone, ponieważ musimy uwzględniać zmiany we wszystkich wewnętrznych komponentach, prowadzi to do bardziej złożonej historii wersji, która wymaga dobrej dokumentacji.
+SDK mogą zawierać wiele bibliotek i narzędzi, z których każde może mieć własną historię wersji. Wersjonowanie SDK potrafi być złożone, ponieważ musimy uwzględniać zmiany we wszystkich wewnętrznych komponentach, prowadzi to do bardziej złożonej historii wersji, która wymaga dobrej dokumentacji. ~\cite[para. 3]{azure2020}
 
-\begin{quote}
-    "SDKs encapsulate multiple interdependent modules. As a result, maintaining a structured version history across all components is challenging but essential in order to manage compatibility and coordinate upgrades effectively." ~\cite[para. 3]{azure2020}
-\end{quote}
+Przywracanie kodu do stabilnej wersji: Wycofywanie zmian w przypadku SDK może być trudne, ponieważ SDK może integrować wiele komponentów. Ta złożoność może sprawić, że wycofywanie jest bardziej czasochłonne i podatne na błędy, jeśli nie jest zarządzane prawidłowo. ~\cite[para. 3]{azure2020}
 
-Przywracanie kodu do stabilnej wersji: Wycofywanie zmian w przypadku SDK może być trudne, ponieważ SDK może integrować wiele komponentów. Ta złożoność może sprawić, że wycofywanie jest bardziej czasochłonne i podatne na błędy, jeśli nie jest zarządzane prawidłowo.
-
-\begin{quote}
-    "SDKs, by virtue of bundling several interdependent tools and libraries, require a coordinated rollback mechanism to ensure that all components revert to a stable, compatible state. This adds complexity compared to single-module libraries or IDL files." ~\cite[para. 3]{azure2020}
-\end{quote}
-
-Utrata danych i niespójność: SDK są narażone na większe ryzyko wewnętrznych niespójności i problemów w przypadku, gdy moduły są aktualizowane asynchronicznie. Może to doprowadzić do błędów, które mogą spowodować utratę danych lub uszkodzenie danych, jeśli nie są w odpowiedni sposób zarządzane.
-
-\begin{quote}
-    "The interdependencies within an SDK mean that even small version mismatches can lead to significant inconsistencies or data loss, making rigorous testing and coordinated versioning critical." ~\cite[para. 3]{azure2020}
-\end{quote}
+Utrata danych i niespójność: SDK są narażone na większe ryzyko wewnętrznych niespójności i problemów w przypadku, gdy moduły są aktualizowane asynchronicznie. Może to doprowadzić do błędów, które mogą spowodować utratę danych lub uszkodzenie danych, jeśli nie są w odpowiedni sposób zarządzane. ~\cite[para. 3]{azure2020}
 
 \subsubsection{Ocena wspówdzieleina kodu za pomocą API}
 
 Ocena pod kątem komunikacji: 
 
 \subsubsection{Ocena wspówdzieleina kodu za pomocą ServerLess}
+
+\subsubsection{Ocena wspówdzieleina pod kątem skalowalności}
+
+Ocena podejścia IDL pod kątem skalowalności:
+
+Systemy bazujące na IDL, takie jak Protocol Buffers oraz Avro zazwyczaj serializują dane do kompaktowych formatów binarnych, to znaczy, że ilość danych, które trzeba przesłać przez sieć i przechowywać na dysku, jest minimalna. Dzięki temu koszt zasobów fizycznych jest minimalny i ma tendencję do pozostania niskim, nawet w przypadku wzrostu obciążenia. Wydajność systemu korzystającego z współdzielenia za pomocą IDL nie zależy od metody zarządzania plikami IDL, jak w powyższych przypadkach.
+
+% new 
+W celu przygotowania analizy pod kątem skalowalności, opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej podejście IDL do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
+
+Przygotowane aplikacje przykładowe oraz kod systemu, który powstał w celu sprawdzenia i porównania wydajności, zostały dołączone do materiałów pracy.
+
+Testowany system mikroserwisów składa się z dwóch mikroserwisów napisanych z użyciem technologii Java oraz Spring. Pierwszy mikroserwis produkuje dane, drugi je konsumuje. Oba serwisy uruchamiane są za pomocą narzędzia Docker. Kontenery Dockera mają ustawione limity zasobów, które mogą wykorzystywać.
+
+Po uruchomieniu aplikacji w Dockerze, automatycznie uruchamiane są testy wydajnościowe przygotowane za pomocą narzędzia Gatling. Projekt został stworzony przy użyciu Javy, Springa oraz Gatlinga i znajduje się w materiałach dołączonych do pracy.
+
+W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pamięci, liczby wątków, zużycia CPU, garbage collection i inne. Dane te są zapisywane do pliku za pomocą narzędzia Java Flight Recorder. Uruchomienie JFR odbywa się również automatycznie w momencie startu aplikacji.
+
+Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby testowania: małe obciążenie, średnie oraz duże. Zostało to zrealizowane w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
+
+\newpage
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/idl-memory-low-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z IDL pod wpłyłem małego obciażenia} \label{fig1}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/idl-memory-low-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z IDL pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
+
+\newpage
+
+Winiki obserwacji:
+1. Alokacja (górny wykres — niebieskie słupki)
+Niskie obciążenie:
+Szczyty alokacji są bardziej okresowe i zazwyczaj utrzymują się poniżej 32 MiB.
+
+Występuje więcej przerw między zdarzeniami alokacji, co wskazuje na rzadsze tworzenie obiektów.
+
+Wysokie obciążenie:
+Aktywność alokacji jest większa i bardziej spójna.
+
+Maksymalne wartości osiągają 48 MiB, co wskazuje na znaczny wzrost alokacji obiektów ze względu na większą liczbę żądań.
+
+Alokacje są utrzymywane przez dłuższy okres z krótszym czasem bezczynności między słupkami.
+
+2. Zbieranie śmieci (pionowe pomarańczowe linie)
+Niskie obciążenie:
+Ogólnie mniej zdarzeń GC.
+
+GC wydaje się być wyzwalane rzadziej ze względu na mniejsze obciążenie pamięci.
+
+Wysokie obciążenie:
+Znacznie częstsze zdarzenia GC.
+
+Wskazuje na zwiększoną utratę pamięci — częstsze tworzenie i czyszczenie obiektów ze względu na dużą liczbę żądań.
+
+3. Wykorzystanie pamięci (dolny wykres - fioletowa linia)
+Niskie obciążenie:
+Wykorzystanie sterty rośnie powoli i konsekwentnie, osiągając maksymalnie około 24 MiB.
+
+Stopniowy wzrost z regularnymi małymi spadkami (GC), pokazujący stabilne wykorzystanie pamięci.
+
+Wysokie obciążenie:
+Wykorzystanie sterty wzrasta do 64 MiB i okresowo spada.
+
+Wzór pokazuje częste cykle alokacji i GC, sugerując agresywne wykorzystanie pamięci i czyszczenie.
+
+\newpage
+
+Raporty wygenerowane przez narzędzie Gatling: 
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/idl-low-gatling-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z IDL pod wpłyłem małego obciażenia} \label{fig1}
+\end{figure}
+
+Na rysunku widać że:
+
+\begin{itemize}
+    \item Czas odpowiedzi krótszy niż 800 ms: Zdecydowana większość żądań (około 580), oznaczona kolorem zielonym.
+    \item Czas odpowiedzi od 800 ms do poniżej 1200 ms: Niewielka liczba żądań, przedstawiona kolorem żółtym.
+    \item Czas odpowiedzi równy lub przekraczający 1200 ms: Również niewielka liczba żądań.
+    \item Żądania nieudane: Brak nieudanych żądań.
+  \end{itemize}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/idl-midle-gatling-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z IDL pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+Na rysunku widać że:
+
+\begin{itemize}
+    \item Czas odpowiedzi krótszy niż 800 ms: Duża liczba żądań (około 2000), jednak proporcjonalnie mniej niż w przypadku niskiego obciążenia.
+    \item Czas odpowiedzi od 800 ms do poniżej 1200 ms: Niewielki wzrost liczby żądań w porównaniu do niskiego obciążenia.
+    \item Czas odpowiedzi równy lub przekraczający 1200 ms: Wyraźny wzrost – znacznie więcej żądań z długim czasem odpowiedzi.
+    \item Żądania nieudane: Nadal brak nieudanych żądań.
+  \end{itemize}
+
+Na przedstawionych wykresach widać, że zarówno w przypadku małego, jak i średniego obciążenia aplikacja zachowuje się stabilnie. Przy średnim obciążeniu zauważalne jest jednak nieznaczne wydłużenie czasu oczekiwania na odpowiedź.
+
+\newpage
+
+Wraz ze zwiększaniem obciążenia wzrasta czas oczekiwania na odpowiedź. Porównując czas oczekiwania w przypadku różnych podejść do współdzielenia kodu, możemy ocenić efektywność poszczególnych narzędzi.
+
+Ocena współdzielenia kodu za pomocą SDK pod kątem skalowalności:
+
+W celu przygotowania analizy pod kątem skalowalności, tak samo jak w poprzednim przypadku opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej SDK do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
+
+Przygotowane aplikacje przykładowe oraz kod systemu, który powstał w celu sprawdzenia i porównania wydajności, zostały dołączone do materiałów pracy.
+
+Testowany system mikroserwisów składa się z dwóch mikroserwisów napisanych z użyciem technologii Java oraz Spring. Pierwszy mikroserwis produkuje dane, drugi je konsumuje. Oba serwisy uruchamiane są za pomocą narzędzia Docker. Kontenery Dockera mają ustawione limity zasobów, które mogą wykorzystywać.
+
+Po uruchomieniu aplikacji w Dockerze, automatycznie uruchamiane są testy wydajnościowe przygotowane za pomocą narzędzia Gatling. Projekt został stworzony przy użyciu Javy, Springa oraz Gatlinga i znajduje się w materiałach dołączonych do pracy.
+
+W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pamięci, liczby wątków, zużycia CPU, garbage collection i inne. Dane te są zapisywane do pliku za pomocą narzędzia Java Flight Recorder. Uruchomienie JFR odbywa się również automatycznie w momencie startu aplikacji.
+
+Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby testowania: małe obciążenie, średnie oraz duże. Zostało to zrealizowane w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
+
+\newpage
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/library-memory-low-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z SDK pod wpłyłem małego obciażenia} \label{fig1}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/library-memory-midle-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z SDK pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
+
+1. Alokacja (górny wykres — niebieskie słupki)
+Małe obciążenie:
+
+Szczyty alokacji występują okresowo i zwykle nie przekraczają wartości 32 MiB.
+
+Widoczne są dłuższe przerwy pomiędzy zdarzeniami alokacji, co sugeruje rzadsze tworzenie obiektów i mniejsze zapotrzebowanie na pamięć.
+
+Po początkowej fazie obciążenia, alokacja szybko stabilizuje się na niskim poziomie.
+
+Średnie obciążenie:
+
+Alokacja jest wyraźnie intensywniejsza i bardziej regularna.
+
+Maksymalne wartości alokacji dochodzą do 48 MiB, co wskazuje na wzmożone tworzenie obiektów w wyniku większej liczby żądań.
+
+Alokacje są utrzymywane przez dłuższy czas, a okresy bezczynności między kolejnymi słupkami są znacznie krótsze.
+
+2. Zbieranie śmieci (Garbage Collection – pionowe pomarańczowe linie)
+Małe obciążenie:
+
+Liczba zdarzeń GC (Garbage Collection) jest stosunkowo niewielka.
+
+Mechanizm odśmiecania uruchamiany jest sporadycznie, co wynika z niskiego poziomu zużycia pamięci.
+
+Średnie obciążenie:
+
+Zdarzenia GC są znacznie częstsze i bardziej cykliczne.
+
+Taki wzorzec odzwierciedla wzmożone wykorzystanie pamięci — więcej obiektów jest tworzonych i usuwanych, co jest typowe przy zwiększonym ruchu w aplikacji.
+
+3. Wykorzystanie pamięci (dolny wykres – fioletowa linia)
+Małe obciążenie:
+
+Wzrost zużycia sterty jest powolny i przewidywalny, osiągając maksymalnie około 24 MiB.
+
+Charakterystyczny jest łagodny wzrost z regularnymi, niewielkimi spadkami, które odpowiadają działaniu GC – co świadczy o stabilnym zarządzaniu pamięcią.
+
+Średnie obciążenie:
+
+Użycie sterty wzrasta dynamiczniej i osiąga wartości nawet do 64 MiB.
+
+Fioletowa linia ukazuje klasyczny wzór zęba piły, który sugeruje intensywne cykle alokacji i czyszczenia pamięci.
+
+System zarządzania pamięcią reaguje odpowiednio na zwiększone obciążenie, ale wymaga częstszych interwencji GC.
+
+\newpage
+
+Raporty wygenerowane przez narzędzie Gatling:
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/library-gatling-low-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z SDK pod wpłyłem małego obciażenia} \label{fig1}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/library-gatling-middle-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z SDK pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/library-gatling-high-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z SDK pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+\newpage
+% descripion here
+
+Ocena współdzielenia kodu za pomocą bibliotek pod kątem skalowalności:
+
+SDK zazwyczaj zawierają wiele narzędzi lub komponentów, mają tendencję do wyższego zużycia zasobów pamięci i procesora w porównaniu z, na przykład, IDL. Różne raporty dotyczące skalowania aplikacji w chmurze podkreślają, że SDK mogą powodować dodatkowe obciążenie w środowiskach z dużym obciążeniem. ~\cite[para 3]{azure2020}
+
+Biblioteki są zazwyczaj zoptymalizowane pod kątem konkretnego zadania w jednym języku. Jednak jeśli biblioteka nie jest zaprojektowana do pracy w środowiskach o dużej współbieżności, może wymagać dodatkowych zasobów sprzętowych w miarę wzrostu obciążenia. Na przykład intensywne przetwarzanie danych w bibliotekach może powodować większe zużycie pamięci lub CPU podczas pracy z dużymi zbiorami danych. Wspierająca myśl: Badania nad wydajnością obliczeniową często zauważają, że nieoptymalizowane biblioteki mogą stać się wąskimi gardłami pod dużym obciążeniem, prowadząc do zwiększenia kosztów zasobów fizycznych. ~\cite[p. 192]{fowler2012patterns}
+
+W celu przygotowania analizy pod kątem skalowalności, tak samo0 jak w przypadku opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej biblioteki do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
+
+Przygotowane aplikacje przykładowe oraz kod systemu, który powstał w celu sprawdzenia i porównania wydajności, zostały dołączone do materiałów pracy.
+
+Testowany system mikroserwisów składa się z dwóch mikroserwisów napisanych z użyciem technologii Java oraz Spring. Pierwszy mikroserwis produkuje dane, drugi je konsumuje. Oba serwisy uruchamiane są za pomocą narzędzia Docker. Kontenery Dockera mają ustawione limity zasobów, które mogą wykorzystywać.
+
+Po uruchomieniu aplikacji w Dockerze, automatycznie uruchamiane są testy wydajnościowe przygotowane za pomocą narzędzia Gatling. Projekt został stworzony przy użyciu Javy, Springa oraz Gatlinga i znajduje się w materiałach dołączonych do pracy.
+
+W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pamięci, liczby wątków, zużycia CPU, garbage collection i inne. Dane te są zapisywane do pliku za pomocą narzędzia Java Flight Recorder. Uruchomienie JFR odbywa się również automatycznie w momencie startu aplikacji.
+
+Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby testowania: małe obciążenie, średnie oraz duże. Zostało to zrealizowane w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/sdk-memory-low-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z użyciem bibliotek pod wpłyłem małego obciażenia} \label{fig1}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/sdk-memory-middle-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z użyciem bibliotek pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
+
+% descripion here
+
+Raporty wygenerowane przez narzędzie Gatling:
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/sdk-gatling-low-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z użyciem bibliotek pod wpłyłem małego obciażenia} \label{fig1}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/sdk-gatling-middle-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z użyciem bibliotek pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/sdk-gatling-high-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z użyciem bibliotek pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+\newpage
+
+% descripion here
+
+Ocena współdzielenia kodu za pomocą REST pod kątem skalowalności:
+
+W celu przygotowania analizy pod kątem skalowalności, tak samo jak w poprzednim przypadku opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej biblioteki do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
+
+Przygotowane aplikacje przykładowe oraz kod systemu, który powstał w celu sprawdzenia i porównania wydajności, zostały dołączone do materiałów pracy.
+
+Testowany system mikroserwisów składa się z dwóch mikroserwisów napisanych z użyciem technologii Java oraz Spring. Pierwszy mikroserwis produkuje dane, drugi je konsumuje. Oba serwisy uruchamiane są za pomocą narzędzia Docker. Kontenery Dockera mają ustawione limity zasobów, które mogą wykorzystywać.
+
+Po uruchomieniu aplikacji w Dockerze, automatycznie uruchamiane są testy wydajnościowe przygotowane za pomocą narzędzia Gatling. Projekt został stworzony przy użyciu Javy, Springa oraz Gatlinga i znajduje się w materiałach dołączonych do pracy.
+
+W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pamięci, liczby wątków, zużycia CPU, garbage collection i inne. Dane te są zapisywane do pliku za pomocą narzędzia Java Flight Recorder. Uruchomienie JFR odbywa się również automatycznie w momencie startu aplikacji.
+
+Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby testowania: małe obciążenie, średnie oraz duże. Zostało to zrealizowane w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/rest-memory-low-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z REST pod wpłyłem małego obciażenia} \label{fig1}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/rest-memory-middle-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z REST pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
+
+% descripion here
+
+Raporty wygenerowane przez narzędzie Gatling:
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/rest-gatling-low-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z REST pod wpłyłem małego obciażenia} \label{fig1}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/rest-gatling-moddle-rest.jpg}
+    \caption{Użycia pamiąci aplikacji z REST pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+\newpage
+
+% descripion here
+
+Ocena współdzielenia kodu za pomocą Serverles pod kątem skalowalności:
+
+W celu przygotowania analizy pod kątem skalowalności, tak samo jak w poprzednim przypadku opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej biblioteki do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
+
+Przygotowane aplikacje przykładowe oraz kod systemu, który powstał w celu sprawdzenia i porównania wydajności, zostały dołączone do materiałów pracy.
+
+Testowany system mikroserwisów składa się z dwóch mikroserwisów napisanych z użyciem technologii Java oraz Spring. Pierwszy mikroserwis produkuje dane, drugi je konsumuje. Oba serwisy uruchamiane są za pomocą narzędzia Docker. Kontenery Dockera mają ustawione limity zasobów, które mogą wykorzystywać.
+
+Po uruchomieniu aplikacji w Dockerze, automatycznie uruchamiane są testy wydajnościowe przygotowane za pomocą narzędzia Gatling. Projekt został stworzony przy użyciu Javy, Springa oraz Gatlinga i znajduje się w materiałach dołączonych do pracy.
+
+W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pamięci, liczby wątków, zużycia CPU, garbage collection i inne. Dane te są zapisywane do pliku za pomocą narzędzia Java Flight Recorder. Uruchomienie JFR odbywa się również automatycznie w momencie startu aplikacji.
+
+Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby testowania: małe obciążenie, średnie oraz duże. Zostało to zrealizowane w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/serverless-memory-low-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem małego obciażenia} \label{fig1}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/serverless-memory-middle-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
+
+% descripion here
+
+Raporty wygenerowane przez narzędzie Gatling:
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/serverless-gatling-low-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem małego obciażenia} \label{fig1}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/serverless-gatling-middle-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/serverless-gatling-high-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+\newpage
+
+% descripion here
+
+% scalability end
 
 \subsection{Opis części praktycznej}
 
