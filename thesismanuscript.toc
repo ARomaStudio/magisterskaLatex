@@ -32,11 +32,11 @@
 \contentsline {subsubsection}{\numberline {4.4.4}Ocena wspówdzieleina kodu za pomocą API}{36}{}%
 \contentsline {subsubsection}{\numberline {4.4.5}Ocena wspówdzieleina kodu za pomocą ServerLess}{36}{}%
 \contentsline {subsubsection}{\numberline {4.4.6}Ocena wspówdzieleina pod kątem skalowalności}{36}{}%
-\contentsline {subsection}{\numberline {4.5}Opis części praktycznej}{56}{}%
-\contentsline {subsubsection}{\numberline {4.5.1}Ogulny opis aplikacji}{56}{}%
-\contentsline {subsubsection}{\numberline {4.5.2}Opis aplikacji back-end}{57}{}%
-\contentsline {subsubsection}{\numberline {4.5.3}Opis aplikacji front-end}{58}{}%
-\contentsline {subsection}{\numberline {4.6}Podsumowanie}{58}{}%
-\contentsline {section}{\numberline {5}Appendices}{61}{}%
-\contentsline {subsection}{\numberline {5.1}Sample Code}{61}{}%
-\contentsline {subsection}{\numberline {5.2}Sample Data}{61}{}%
+\contentsline {subsection}{\numberline {4.5}Opis części praktycznej}{62}{}%
+\contentsline {subsubsection}{\numberline {4.5.1}Ogulny opis aplikacji}{62}{}%
+\contentsline {subsubsection}{\numberline {4.5.2}Opis aplikacji back-end}{63}{}%
+\contentsline {subsubsection}{\numberline {4.5.3}Opis aplikacji front-end}{64}{}%
+\contentsline {subsection}{\numberline {4.6}Podsumowanie}{64}{}%
+\contentsline {section}{\numberline {5}Appendices}{67}{}%
+\contentsline {subsection}{\numberline {5.1}Sample Code}{67}{}%
+\contentsline {subsection}{\numberline {5.2}Sample Data}{67}{}%
