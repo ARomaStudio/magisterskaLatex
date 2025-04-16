@@ -1039,13 +1039,36 @@ Raporty wygenerowane przez narzędzie Gatling:
     \caption{Użycia pamiąci aplikacji z REST pod wpłyłem małego obciażenia} \label{fig1}
 \end{figure}
 
+\begin{itemize}
+    \item Czas reakcji poniżej 800 ms: Dominująca liczba żądań (~600), oznaczona na zielono. Wskazuje to na efektywne działanie przy minimalnym obciążeniu.
+    \item Czas reakcji od 800 ms do 1200 ms: Kilkaset żądań (~200), sugerujące drobne opóźnienia.
+    \item Czas reakcji powyżej 1200 ms: Znikoma liczba żądań, praktycznie zerowa.
+    \item Nieudane żądania: Brak (KO = 0), co potwierdza niezawodność systemu.
+\end{itemize}
+
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-gatling-moddle-rest.jpg}
     \caption{Użycia pamiąci aplikacji z REST pod wpłyłem średnigo obciażenia} \label{fig1}
 \end{figure}
 
+\begin{itemize}
+    \item Czas reakcji poniżej 800 ms: Około 1500 żądań - spadek liczby szybkich odpowiedzi względem niskiego obciążenia.
+    \item Czas reakcji od 800 ms do 1200 ms: Około 1000 żądań, co wskazuje na rosnące opóźnienia.
+    \item Czas reakcji powyżej 1200 ms: Około 500 żądań (oznaczone na czerwono), co ujawnia pojawiające się opóźnienia.
+    \item Nieudane żądania: Minimalne - KO prawdopodobnie bliskie zeru, choć pojawiają się oznaki niestabilności.
+\end{itemize}
 
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/rest-gatling-high-graph.jpg}
+    \caption{Użycia pamiąci aplikacji z REST pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
 
+\begin{itemize}
+    \item Czas reakcji poniżej 800 ms: Praktycznie brak - słupki są bliskie zeru.
+    \item Czas reakcji od 800 ms do 1200 ms: Około 2500 żądań.
+    \item Czas reakcji powyżej 1200 ms: Około 89 procent żądań od 7500 do 10000, oznaczonych na czerwono - wskazują na przeciążenie.
+    \item Nieudane żądania: Błędy są obecne - dokładna liczba nieznana, ale większa niż zero, co sygnalizuje przeciążenie systemu.
+\end{itemize}
 \newpage
 
 % descripion here
@@ -1146,15 +1169,46 @@ Raporty wygenerowane przez narzędzie Gatling:
     \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem małego obciażenia} \label{fig1}
 \end{figure}
 
+\begin{itemize}
+    \item Czas reakcji krótszy niż 800 ms: Duża liczba żądań – ponad 2500, przeważnie oznaczonych na zielono. Wskazuje to na optymalną wydajność aplikacji przy niskim obciążeniu.
+    \item Czas reakcji od 800 ms do poniżej 1200 ms: Niewielki wzrost liczby żądań w porównaniu do warunków niskiego obciążenia, ale nadal minimalny.
+    \item Czas reakcji większy lub równy 1200 ms: Niewielka liczba żądań w tej kategorii, co sugeruje sporadyczne opóźnienia bez istotnego wpływu na ogólną wydajność.
+    \item Nieudane żądania: Brak nieudanych żądań, co wskazuje na solidną wydajność i niezawodność.
+\end{itemize}
+
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-gatling-middle-graph.jpg}
     \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem średnigo obciażenia} \label{fig1}
 \end{figure}
 
+\begin{itemize}
+    \item Czas reakcji krótszy niż 800 ms: Około 3000 żądań – poprawa w porównaniu do wykresu drugiego, ale nadal mniej niż na pierwszym wykresie. Sugeruje to częściowe przywrócenie wydajności przy średnim obciążeniu.
+    \item Czas reakcji od 800 ms do poniżej 1200 ms: Minimalna liczba żądań w tym zakresie, co oznacza, że aplikacja lepiej radzi sobie z obciążeniem niż w przypadku wykresu drugiego.
+    \item Czas reakcji większy lub równy 1200 ms: Tylko kilka żądań w tej kategorii, co sugeruje lepszą obsługę warunków wysokiego obciążenia, mimo że pewne opóźnienia nadal występują.
+    \item Nieudane żądania: Brak nieudanych żądań, podobnie jak w pierwszym wykresie, co wskazuje na przywrócenie niezawodności po wcześniejszym spadku wydajności.
+\end{itemize}
+
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-gatling-high-graph.jpg}
     \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem średnigo obciażenia} \label{fig1}
 \end{figure}
+
+\begin{itemize}
+    \item Czas reakcji krótszy niż 800 ms: Bardzo niska liczba żądań – znacznie mniejsza niż na innych wykresach, co wskazuje na spadek wydajności przy zwiększonym obciążeniu.
+    \item Czas reakcji od 800 ms do poniżej 1200 ms: Zauważalny wzrost liczby żądań w tym zakresie – żółty pasek osiąga wysoką pozycję. Sugeruje to pogorszenie czasu reakcji wraz ze wzrostem obciążenia.
+    \item Czas reakcji większy lub równy 1200 ms: Dominująca liczba żądań – 39 procent wszystkich żądań, oznaczone na czerwono. Wskazuje to na znaczne opóźnienia i problemy z wydajnością przy średnim obciążeniu.
+    \item Nieudane żądania: Widoczne są żądania zakończone niepowodzeniem, co wskazuje na niestabilność i trudności w obsłudze zwiększonego zapotrzebowania.
+\end{itemize}
+
+Wyniki obserwacji:
+
+\begin{itemize}
+    \item \textbf{Niskie obciążenie (Wykres 3):} Doskonała wydajność przy szybkim czasie reakcji i braku błędów.
+    \item \textbf{Średnie obciążenie (Wykres 2):} Zrównoważona wydajność, niewielkie opóźnienia, brak błędów.
+    \item \textbf{Wysokie obciążenie (Wykres 1):} Znaczące opóźnienia i występowanie błędów, wskazujące na pogorszenie wydajności.
+\end{itemize}
+
+Obserwowane pogorszenie wydajności, szczególnie przy większych obciążeniach, prawdopodobnie wynika z opóźnienia sieciowego wprowadzonego przez architekturę serverless. W porównaniu z innymi podejściami do współdzielenia kodu.
 
 \newpage
 

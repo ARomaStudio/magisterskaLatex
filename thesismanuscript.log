@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  16 APR 2025 00:15
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.2.21)  17 APR 2025 00:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -482,6 +482,9 @@ Package babel Info: Hyphen rules for 'polish' set to \l@english
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
 ) (./thesismanuscript.aux
+
+LaTeX Warning: Label `fig1' multiply defined.
+
 
 LaTeX Warning: Label `fig1' multiply defined.
 
@@ -1938,160 +1941,196 @@ File: images/rest-gatling-low-graph.jpg Graphic file (type jpg)
 <use images/rest-gatling-low-graph.jpg>
 Package pdftex.def Info: images/rest-gatling-low-graph.jpg  used on input line 1038.
 (pdftex.def)             Requested size: 347.12354pt x 174.70486pt.
-<images/rest-gatling-moddle-rest.jpg, id=209, 569.12625pt x 286.06876pt>
-File: images/rest-gatling-moddle-rest.jpg Graphic file (type jpg)
-<use images/rest-gatling-moddle-rest.jpg>
-Package pdftex.def Info: images/rest-gatling-moddle-rest.jpg  used on input line 1043.
-(pdftex.def)             Requested size: 347.12354pt x 174.48859pt.
 
 
 [56 <./images/rest-gatling-low-graph.jpg>]
-Overfull \hbox (15.31206pt too wide) in paragraph at lines 1055--1056
+<images/rest-gatling-moddle-rest.jpg, id=212, 569.12625pt x 286.06876pt>
+File: images/rest-gatling-moddle-rest.jpg Graphic file (type jpg)
+<use images/rest-gatling-moddle-rest.jpg>
+Package pdftex.def Info: images/rest-gatling-moddle-rest.jpg  used on input line 1050.
+(pdftex.def)             Requested size: 347.12354pt x 174.48859pt.
+
+Overfull \hbox (3.26651pt too wide) in paragraph at lines 1056--1057
+[]\T1/cmr/m/n/12 Czas reakcji od 800 ms do 1200 ms: Okoªo 1000 »¡-da«, co wskazuje
+ []
+
+<images/rest-gatling-high-graph.jpg, id=213, 710.655pt x 360.59718pt>
+File: images/rest-gatling-high-graph.jpg Graphic file (type jpg)
+<use images/rest-gatling-high-graph.jpg>
+Package pdftex.def Info: images/rest-gatling-high-graph.jpg  used on input line 1062.
+(pdftex.def)             Requested size: 347.12354pt x 176.13843pt.
+
+
+[57 <./images/rest-gatling-moddle-rest.jpg>]
+Overfull \hbox (15.31206pt too wide) in paragraph at lines 1078--1079
 []\T1/cmr/m/n/12 Ocena wspóªdzie-le-nia kodu za po-moc¡ Server-les pod k¡tem skalowal-
  []
 
 
-Overfull \hbox (13.72437pt too wide) in paragraph at lines 1063--1064
+Overfull \hbox (13.72437pt too wide) in paragraph at lines 1086--1087
 \T1/cmr/m/n/12 ane s¡ testy wyda-jno±-ciowe przy-go-towane za po-moc¡ narz¦dzia Gatling.
  []
 
 
 
-[57 <./images/rest-gatling-moddle-rest.jpg>]
-Overfull \hbox (3.23438pt too wide) in paragraph at lines 1067--1068
+[58 <./images/rest-gatling-high-graph.jpg>]
+Overfull \hbox (3.23438pt too wide) in paragraph at lines 1090--1091
 []\T1/cmr/m/n/12 Aplikacja tes-tu-j¡ca wyda-jno±¢ ap-likacji przykªad-owej posi-ada trzy
  []
 
 
-Overfull \hbox (9.30379pt too wide) in paragraph at lines 1067--1068
+Overfull \hbox (9.30379pt too wide) in paragraph at lines 1090--1091
 \T1/cmr/m/n/12 al-i-zowane w celu ob-serwacji dzi-aªa-nia ap-likacji przy ró»nych poziomach
  []
 
-<images/serverless-memory-low-graph.jpg, id=216, 963.6pt x 203.25937pt>
+<images/serverless-memory-low-graph.jpg, id=220, 963.6pt x 203.25937pt>
 File: images/serverless-memory-low-graph.jpg Graphic file (type jpg)
 <use images/serverless-memory-low-graph.jpg>
-Package pdftex.def Info: images/serverless-memory-low-graph.jpg  used on input line 1072.
+Package pdftex.def Info: images/serverless-memory-low-graph.jpg  used on input line 1095.
 (pdftex.def)             Requested size: 347.12354pt x 73.21983pt.
-<images/serverless-memory-middle-graph.jpg, id=217, 963.6pt x 198.7425pt>
+<images/serverless-memory-middle-graph.jpg, id=221, 963.6pt x 198.7425pt>
 File: images/serverless-memory-middle-graph.jpg Graphic file (type jpg)
 <use images/serverless-memory-middle-graph.jpg>
-Package pdftex.def Info: images/serverless-memory-middle-graph.jpg  used on input line 1077.
+Package pdftex.def Info: images/serverless-memory-middle-graph.jpg  used on input line 1100.
 (pdftex.def)             Requested size: 347.12354pt x 71.59273pt.
 
-Overfull \hbox (2.77344pt too wide) in paragraph at lines 1085--1087
+Overfull \hbox (2.77344pt too wide) in paragraph at lines 1108--1110
 []\T1/cmr/m/n/12 Alokacja (niebieskie sªupki) Niskie ob-ci¡»e-nie (serverless-memory-
  []
 
 
 
-[58 <./images/serverless-memory-low-graph.jpg> <./images/serverless-memory-middle-graph.jpg>]
-Overfull \hbox (0.55797pt too wide) in paragraph at lines 1097--1098
+[59 <./images/serverless-memory-low-graph.jpg> <./images/serverless-memory-middle-graph.jpg>]
+Overfull \hbox (0.55797pt too wide) in paragraph at lines 1120--1121
 []\T1/cmr/m/n/12 Zwi¦kszona cz¦s-totli-wo±¢ alokacji sugeruje wi¦k-sze ob-ci¡»e-nie sys-
  []
 
 
-Overfull \hbox (3.12546pt too wide) in paragraph at lines 1126--1127
+Overfull \hbox (3.12546pt too wide) in paragraph at lines 1149--1150
 []\T1/cmr/m/n/12 Wykorzystanie pami¦ci jest wy»sze, os-i¡-ga-j¡c warto±ci do 128 MB,
  []
 
 
-Overfull \hbox (8.52003pt too wide) in paragraph at lines 1128--1129
+Overfull \hbox (8.52003pt too wide) in paragraph at lines 1151--1152
 []\T1/cmr/m/n/12 System radzi so-bie z ob-ci¡»e-niem, ale wymaga cz¦st-szego od±mieca-
  []
 
 
-Overfull \hbox (4.36086pt too wide) in paragraph at lines 1136--1137
+Overfull \hbox (4.36086pt too wide) in paragraph at lines 1159--1160
 \T1/cmr/m/n/12 ty-wnie zarz¡dza pami¦-ci¡. Wykresy wskazuj¡ na do-br¡ równowag¦
  []
 
 
 
-[59]
-<images/serverless-gatling-low-graph.jpg, id=224, 569.87906pt x 285.31593pt>
+[60]
+<images/serverless-gatling-low-graph.jpg, id=228, 569.87906pt x 285.31593pt>
 File: images/serverless-gatling-low-graph.jpg Graphic file (type jpg)
 <use images/serverless-gatling-low-graph.jpg>
-Package pdftex.def Info: images/serverless-gatling-low-graph.jpg  used on input line 1145.
+Package pdftex.def Info: images/serverless-gatling-low-graph.jpg  used on input line 1168.
 (pdftex.def)             Requested size: 347.12354pt x 173.78995pt.
-<images/serverless-gatling-middle-graph.jpg, id=225, 569.12625pt x 285.31593pt>
+
+Overfull \hbox (3.91284pt too wide) in paragraph at lines 1176--1177
+[]\T1/cmr/m/n/12 Nieudane »¡-da-nia: Brak nieu-danych »¡-da«, co wskazuje na solidn¡
+ []
+
+<images/serverless-gatling-middle-graph.jpg, id=229, 569.12625pt x 285.31593pt>
 File: images/serverless-gatling-middle-graph.jpg Graphic file (type jpg)
 <use images/serverless-gatling-middle-graph.jpg>
-Package pdftex.def Info: images/serverless-gatling-middle-graph.jpg  used on input line 1150.
+Package pdftex.def Info: images/serverless-gatling-middle-graph.jpg  used on input line 1180.
 (pdftex.def)             Requested size: 347.12354pt x 174.0294pt.
-<images/serverless-gatling-high-graph.jpg, id=226, 568.37344pt x 284.56313pt>
+
+
+[61 <./images/serverless-gatling-low-graph.jpg>]
+<images/serverless-gatling-high-graph.jpg, id=234, 568.37344pt x 284.56313pt>
 File: images/serverless-gatling-high-graph.jpg Graphic file (type jpg)
 <use images/serverless-gatling-high-graph.jpg>
-Package pdftex.def Info: images/serverless-gatling-high-graph.jpg  used on input line 1155.
+Package pdftex.def Info: images/serverless-gatling-high-graph.jpg  used on input line 1192.
 (pdftex.def)             Requested size: 347.12354pt x 173.796pt.
 
+Overfull \hbox (1.27594pt too wide) in paragraph at lines 1197--1198
+\T1/cmr/m/n/12 znacznie mniejsza ni» na in-nych wykre-sach, co wskazuje na spadek
+ []
 
-[60 <./images/serverless-gatling-low-graph.jpg>]
 
-[61 <./images/serverless-gatling-middle-graph.jpg> <./images/serverless-gatling-high-graph.jpg>]
-Overfull \hbox (2.87971pt too wide) in paragraph at lines 1173--1174
+
+[62 <./images/serverless-gatling-middle-graph.jpg>]
+Overfull \hbox (1.31335pt too wide) in paragraph at lines 1211--1212
+[]\T1/cmr/m/n/12 Obserwowane pogorsze-nie wyda-jno±ci, szczegól-nie przy wi¦k-szych
+ []
+
+
+Overfull \hbox (18.6689pt too wide) in paragraph at lines 1211--1212
+\T1/cmr/m/n/12 ob-ci¡»e-ni-ach, praw-dopodob-nie wynika z opó¹nienia sieciowego wprowad-
+ []
+
+
+
+[63 <./images/serverless-gatling-high-graph.jpg>]
+Overfull \hbox (2.87971pt too wide) in paragraph at lines 1227--1228
 []\T1/cmr/m/n/12 Serverless to nowoczesny model wykony-wa-nia oblicze« w chmurze,
  []
 
 
-Overfull \hbox (21.41pt too wide) in paragraph at lines 1173--1174
+Overfull \hbox (21.41pt too wide) in paragraph at lines 1227--1228
 \T1/cmr/m/n/12 ^^Rserver-less^^Q nie oz-nacza, »e nie ma fizy-cznych ser-w-erów, ale »e zarz¡dzanie
  []
 
 
-Overfull \hbox (3.56078pt too wide) in paragraph at lines 1173--1174
+Overfull \hbox (3.56078pt too wide) in paragraph at lines 1227--1228
 \T1/cmr/m/n/12 less wdra»amy do chmury funkcje za-mi-ast caªych ap-likacji, a dostawca
  []
 
 
-Overfull \hbox (20.03937pt too wide) in paragraph at lines 1173--1174
+Overfull \hbox (20.03937pt too wide) in paragraph at lines 1227--1228
 \T1/cmr/m/n/12 chmury jest odpowiedzialny za zarz¡dzanie ko-dem, skalowanie i utrzymy-
  []
 
 
-Overfull \hbox (12.0012pt too wide) in paragraph at lines 1190--1191
+Overfull \hbox (12.0012pt too wide) in paragraph at lines 1244--1245
 []\T1/cmr/m/n/12 Automatycznie przy-go-towuj¦ kod do wrzuce-nia na Ama-zon Lambda
  []
 
 
-Overfull \hbox (2.00471pt too wide) in paragraph at lines 1192--1193
+Overfull \hbox (2.00471pt too wide) in paragraph at lines 1246--1247
 []\T1/cmr/m/n/12 Zapisuj¦ kod w bazie danych, »e-by± mógª go u»y¢ pó¹niej; b¦dziesz
  []
 
 
 
-[62]
-Overfull \hbox (16.6661pt too wide) in paragraph at lines 1197--1198
+[64]
+Overfull \hbox (16.6661pt too wide) in paragraph at lines 1251--1252
 []\T1/cmr/m/n/12 Przechowuj¦ te pliki IDL i mo»esz je udost¦p-ni¢, »eby inni czªonkowie
  []
 
 
-Overfull \hbox (6.19289pt too wide) in paragraph at lines 1219--1220
+Overfull \hbox (6.19289pt too wide) in paragraph at lines 1273--1274
 []\T1/cmr/m/n/12 Automatycznie wdra»a kod jako funkcj¦ Lambda - Wdra»a sprawd-
  []
 
 
 
-[63]
-Overfull \hbox (14.41187pt too wide) in paragraph at lines 1226--1229
+[65]
+Overfull \hbox (14.41187pt too wide) in paragraph at lines 1280--1283
 \T1/cmr/m/n/12 u»y-wana do tworzenia ap-likacji fron-tendowych. Npm sªu»y do zarz¡dza-
  []
 
 
-Overfull \hbox (4.86322pt too wide) in paragraph at lines 1234--1235
+Overfull \hbox (4.86322pt too wide) in paragraph at lines 1288--1289
 []\T1/cmr/m/n/12 Przyjmowanie kodu, który u»ytkownik chce wspóªdzieli¢, a nast¦p-
  []
 
 
-Overfull \hbox (2.8054pt too wide) in paragraph at lines 1237--1238
+Overfull \hbox (2.8054pt too wide) in paragraph at lines 1291--1292
 []\T1/cmr/m/n/12 Mo»liwo±¢ przegl¡-da-nia, edy-towa-nia i usuwa-nia kodu, który zostaª
  []
 
 
-Overfull \hbox (27.63757pt too wide) in paragraph at lines 1240--1241
+Overfull \hbox (27.63757pt too wide) in paragraph at lines 1294--1295
 []\T1/cmr/m/n/12 Udost¦pnianie plików .proto: ap-likacja front-end udost¦p-nia u»ytkown-
  []
 
 
-Overfull \hbox (6.13466pt too wide) in paragraph at lines 1240--1241
+Overfull \hbox (6.13466pt too wide) in paragraph at lines 1294--1295
 \T1/cmr/m/n/12 do gen-erowa-nia obiek-tów DTO dla ko-mu-nikacji z wdro»on¡ funkcj¡
  []
 
@@ -2101,17 +2140,17 @@ Overfull \hbox (6.13466pt too wide) in paragraph at lines 1240--1241
 
 
 
-[64] (./thesismanuscript.lof
+[66] (./thesismanuscript.lof
 
-[65])
+[67])
 \tf@lof=\write6
 \openout6 = `thesismanuscript.lof'.
 
  (./thesismanuscript.bbl
 
-[66])
+[68])
 
-[67] (./thesismanuscript.aux)
+[69] (./thesismanuscript.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -2122,18 +2161,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 16146 strings out of 475128
- 329138 string characters out of 5765300
+ 16153 strings out of 475128
+ 329424 string characters out of 5765300
  820503 words of memory out of 5000000
- 38835 multiletter control sequences out of 15000+600000
+ 38842 multiletter control sequences out of 15000+600000
  570498 words of font info for 59 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  99i,11n,101p,1879b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
  <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk> <c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1728.600pk>
-Output written on thesismanuscript.pdf (67 pages, 1339902 bytes).
+Output written on thesismanuscript.pdf (69 pages, 1392383 bytes).
 PDF statistics:
- 682 PDF objects out of 1000 (max. 8388607)
- 186 compressed objects within 2 object streams
+ 690 PDF objects out of 1000 (max. 8388607)
+ 190 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 133 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 138 words of extra memory for PDF output out of 10000 (max. 10000000)
 
