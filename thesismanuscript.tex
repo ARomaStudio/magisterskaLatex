@@ -240,7 +240,7 @@ Przedstawiam kryteria które wybrałem w rezultacie analizy źródeł internetow
     Częste rollbacki usług w trakcie wdrożeń mogą spowodować spowolnienie wdrożenia nowych zmian i opóźnienie projektu, dlatego w trakcie wyboru podejścia do zarządzania plikami IDL musimy brać to pod uwagę. Musimy w trakcie analizy i planowania projektu wybrać podejście, które zapewni najmniejsze ryzyko błędów w trakcie próbnego wdrożenia i wycofania zmian. ~\cite[p. 92]{kleppmann2017designing}
 \end{enumerate}
     
-\subsubsection{Definicja kryterium oceny pod kątem izolacji w przypadku bibliotek, sdk, REST, serverless}
+\subsubsection{Definicja kryterium oceny pod kątem izolacji w przypadku bibliotek, SDK, REST, serverless}
 
 W kontekście bibliotek, SDK, REST i serverless znaczenie pojęcia izolacji różni się od izolacji w kontekście IDL. W tym przypadku izolacja to zdolność systemu do odseparowania komponentów systemu i zminimalizowania wpływu zmian w jednym serwisie na pozostałe, co daje podejściu mikroserwisowemu jego wygodność i elastyczność.
 
@@ -533,7 +533,7 @@ Ocena pod kątem komunikacji: zapewnia potrzebny poziom komunikacji, mechanizm w
 
 Ocena pod kątem izolacji: 
 
-Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji SDK kryteria oceny są następujące: ocena pod kątem izolacji interfejsów, izolacja wersji, izolacja zależności. Jednak są one trudniejsze w projektowaniu i wymagają ostrożności w trakcie zarządzania. ~\cite[p. 75]{Essential}
+Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji SDK kryteria oceny są następujące: ocena pod kątem izolacji interfejsów, izolacja wersji, izolacja zależności. Jednak są one trudniejsze w projektowaniu i wymagają ostrożności w trakcie zarządzania. ~\cite[p. 75]{EssentialIan}
 
 Izolacja wersji: W przypadku SDK, które agregują kilka bibliotek i narzędzi, muszą zarządzać wersjonowaniem wszystkich zawartych komponentów. W idealnym przypadku zestaw SDK jest zaprojektowany tak, aby nowe dodane wersje były kompatybilne wstecz, umożliwiając klientom działanie bez natychmiastowych zmian.
 
@@ -561,20 +561,120 @@ SDK mogą zawierać wiele bibliotek i narzędzi, z których każde może mieć w
 Przywracanie kodu do stabilnej wersji: Wycofywanie zmian w przypadku SDK może być trudne, ponieważ SDK może integrować wiele komponentów. Ta złożoność może sprawić, że wycofywanie jest bardziej czasochłonne i podatne na błędy, jeśli nie jest zarządzane prawidłowo. ~\cite[para. 3]{azure2020}
 
 Utrata danych i niespójność: SDK są narażone na większe ryzyko wewnętrznych niespójności i problemów w przypadku, gdy moduły są aktualizowane asynchronicznie. Może to doprowadzić do błędów, które mogą spowodować utratę danych lub uszkodzenie danych, jeśli nie są w odpowiedni sposób zarządzane. ~\cite[para. 3]{azure2020}
-
+%Ai
 \subsubsection{Ocena wspówdzieleina kodu za pomocą API}
 
 Ocena pod kątem komunikacji: 
 
+zapewnia podstawowy poziom komunikacji poprzez standardowy protokół HTTP/HTTPS, mechanizm współdzielenia opiera się na wywoływaniu endpointów API poprzez żądania HTTP. Komunikacja odbywa się poprzez wymianę dokumentów JSON/XML między serwisami, możliwe są zarówno wywołania synchroniczne (bezpośrednie żądania) jak i asynchroniczne (poprzez kolejki i brokery wiadomości). Wymaga dodatkowej konfiguracji i obsługi serializacji/deserializacji danych.
+
+Ocena pod kątem izolacji:
+
+Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji REST kryteria oceny są następujące: ocena pod kątem izolacji interfejsów, izolacja wersji, izolacja zależności.
+
+Izolacja interfejsów: REST API zapewnia jasno zdefiniowane punkty końcowe i kontrakty. Interfejsy są wersjonowane poprzez URL lub nagłówki HTTP, zmiana implementacji wewnętrznej nie wpływa na kontrakt API. Wymagane jest dokładne dokumentowanie API (np. poprzez Swagger/OpenAPI). ~\cite[p. 124]{richardson2013rest}
+
+Izolacja wersji: 
+
+Możliwość utrzymywania wielu wersji API równolegle. Wersjonowanie może być realizowane poprzez URL (np. /api/v1/, /api/v2/). Konieczność obsługi kompatybilności wstecznej między wersjami. Złożoność zarządzania rośnie z każdą nową wersją API. ~\cite[p. 89]{richardson2013rest}\
+
+Izolacja zależności: 
+
+Serwisy są luźno powiązane, komunikują się tylko poprzez zdefiniowane interfejsy REST. Każdy serwis może być rozwijany i wdrażany niezależnie. Wymagane jest zarządzanie dostępnością i odpornością na błędy. ~\cite[p. 156]{newman2015building}
+
+Ocena pod kątem bezpieczeństwa:
+
+Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa REST API kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność.
+
+Poufność: 
+
+Konieczność implementacji mechanizmów autentykacji (np. JWT, OAuth). Wymagane szyfrowanie komunikacji poprzez HTTPS. Możliwość definiowania różnych poziomów dostępu do zasobów. ~\cite[p. 245]{newman2015building}
+
+Integralność danych: 
+
+Walidacja danych wejściowych na poziomie API. Konieczność weryfikacji poprawności przesyłanych danych. Możliwość zastosowania podpisów cyfrowych dla krytycznych operacji. ~\cite[p. 267]{newman2015building}
+
+Dostępność: 
+
+Konieczność implementacji mechanizmów retry i circuit breaker. Wymagane monitorowanie dostępności usług. Możliwość skalowania poziomego dla zwiększenia dostępności. ~\cite[p. 178]{richardson2013rest}
+
+Autentyczność: 
+
+Implementacja mechanizmów uwierzytelniania i autoryzacji. Możliwość wykorzystania certyfikatów SSL/TLS. Konieczność weryfikacji źródła żądań. ~\cite[p. 289]{newman2015building}
+
+Odpowiedzialność: 
+
+Możliwość śledzenia wszystkich operacji poprzez logi. Konieczność implementacji mechanizmów audytu. Identyfikacja źródła każdego żądania. ~\cite[p. 312]{newman2015building}
+
+Ocena pod kątem wersjonowania:
+
+REST API wymaga precyzyjnego zarządzania wersjami interfejsów. Konieczność utrzymywania kompatybilności wstecznej. Możliwość równoległego działania wielu wersji API. Wymagane jasne zasady deprecjacji starych wersji. Dokumentacja zmian między wersjami musi być dokładna i aktualna. ~\cite[p. 134]{richardson2013rest}
+%AI
 \subsubsection{Ocena wspówdzieleina kodu za pomocą ServerLess}
 
+Ocena pod kątem komunikacji: 
+
+Zapewnia wysoki poziom komunikacji poprzez zdarzenia (events) i wywołania funkcji. Mechanizm współdzielenia opiera się na wywoływaniu funkcji bezserwerowych poprzez różne wyzwalacze (triggers), takie jak żądania HTTP, kolejki wiadomości, czy harmonogramy czasowe. Komunikacja odbywa się poprzez przekazywanie zdarzeń i danych między funkcjami, które są automatycznie skalowane w zależności od obciążenia. ~\cite[p. 45]{roberts2018cloud}
+
+Ocena pod kątem izolacji:
+
+Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji architektury serverless kryteria oceny są następujące: ocena pod kątem izolacji interfejsów, izolacja wersji, izolacja zależności.
+
+Izolacja interfejsów: 
+
+Funkcje serverless są naturalnie izolowane, każda funkcja posiada własny, jasno zdefiniowany interfejs wejścia/wyjścia. Interfejsy są definiowane poprzez konfigurację zdarzeń i wyzwalaczy. Zmiana implementacji jednej funkcji nie wpływa na inne, o ile zachowany jest kontrakt interfejsu. ~\cite[p. 78]{roberts2018cloud}
+
+Izolacja wersji: 
+Platformy serverless oferują wbudowane mechanizmy wersjonowania funkcji. Możliwe jest równoległe uruchamianie różnych wersji tej samej funkcji, co ułatwia wdrażanie zmian i testowanie. System aliasów i etapów (stages) pozwala na kontrolowane przełączanie między wersjami. ~\cite[p. 112]{roberts2018cloud}
+
+Izolacja zależności: 
+
+Każda funkcja serverless jest całkowicie niezależna i może mieć własne zależności. Pakiety i biblioteki są izolowane na poziomie funkcji, co eliminuje konflikty zależności. Wymaga to jednak zarządzania duplikacją kodu i zależności między funkcjami. ~\cite[p. 156]{roberts2018cloud}
+
+Ocena pod kątem bezpieczeństwa:
+
+Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa architektury serverless kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność.
+
+Poufność: 
+
+Platformy serverless zapewniają wbudowane mechanizmy bezpieczeństwa i izolacji. Każda funkcja działa w izolowanym środowisku (sandbox). Dostęp do zasobów jest kontrolowany przez system uprawnień i ról. ~\cite[p. 167]{roberts2018cloud}
+
+Integralność danych: 
+
+Funkcje serverless mogą wykorzystywać wbudowane mechanizmy walidacji i transformacji danych. Platformy oferują narzędzia do monitorowania i logowania wszystkich operacji. Możliwe jest wykorzystanie managed services do przechowywania i przetwarzania danych. ~\cite[p. 189]{roberts2018cloud}
+
+Dostępność: 
+
+Architektura serverless zapewnia automatyczne skalowanie i wysoką dostępność. Platformy zarządzają infrastrukturą i gwarantują określony poziom SLA. Funkcje są automatycznie replikowane w różnych strefach dostępności. ~\cite[p. 198]{roberts2018cloud}
+
+Autentyczność: 
+
+Platformy serverless oferują wbudowane mechanizmy uwierzytelniania i autoryzacji. Możliwa jest integracja z różnymi dostawcami tożsamości. Każde wywołanie funkcji może być weryfikowane pod kątem uprawnień. ~\cite[p. 223]{roberts2018cloud}
+
+Odpowiedzialność: 
+
+Platformy zapewniają szczegółowe logowanie i monitorowanie wszystkich wywołań funkcji. Dostępne są narzędzia do analizy wydajności i kosztów. Możliwe jest śledzenie całego łańcucha wywołań między funkcjami. ~\cite[p. 245]{roberts2018cloud}
+
+Ocena pod kątem wersjonowania:
+
+Wersjonowanie w architekturze serverless jest wspierane przez wbudowane mechanizmy platform. Każda funkcja może mieć wiele wersji, które są zarządzane niezależnie. System aliasów pozwala na kierowanie ruchu do określonych wersji funkcji. Możliwe jest stopniowe wdrażanie zmian poprzez techniki takie jak canary deployments. ~\cite[p. 267]{roberts2018cloud}
+
+Przywracanie kodu do stabilnej wersji: 
+
+W przypadku problemów możliwe jest szybkie przełączenie na poprzednią stabilną wersję funkcji. Platformy serverless przechowują historię wersji i umożliwiają łatwe przełączanie między nimi. ~\cite[p. 289]{roberts2018cloud}
+
+Utrata danych i niespójność: 
+
+Ryzyko utraty danych jest minimalizowane przez wykorzystanie managed services do przechowywania stanu. Transakcyjność może być zapewniona przez odpowiednie projektowanie przepływu danych między funkcjami. ~\cite[p. 312]{roberts2018cloud}
+
+\newpage
+% new 
 \subsubsection{Ocena wspówdzieleina pod kątem skalowalności}
 
 Ocena podejścia IDL pod kątem skalowalności:
 
 Systemy bazujące na IDL, takie jak Protocol Buffers oraz Avro zazwyczaj serializują dane do kompaktowych formatów binarnych, to znaczy, że ilość danych, które trzeba przesłać przez sieć i przechowywać na dysku, jest minimalna. Dzięki temu koszt zasobów fizycznych jest minimalny i ma tendencję do pozostania niskim, nawet w przypadku wzrostu obciążenia. Wydajność systemu korzystającego z współdzielenia za pomocą IDL nie zależy od metody zarządzania plikami IDL, jak w powyższych przypadkach.
 
-% new 
 % idl
 W celu przygotowania analizy pod kątem skalowalności, opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej podejście IDL do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
 
@@ -584,7 +684,7 @@ Testowany system mikroserwisów składa się z dwóch mikroserwisów napisanych 
 
 Po uruchomieniu aplikacji w Dockerze, automatycznie uruchamiane są testy wydajnościowe przygotowane za pomocą narzędzia Gatling. Projekt został stworzony przy użyciu Javy, Springa oraz Gatlinga i znajduje się w materiałach dołączonych do pracy.
 
-W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pamięci, liczby wątków, zużycia CPU, garbage collection i inne. Dane te są zapisywane do pliku za pomocą narzędzia Java Flight Recorder. Uruchomienie JFR odbywa się również automatycznie w momencie startu aplikacji.
+W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pamięci, liczby wątków, zużycia CPU, garbage collection i inne. Dane te są zapisywane do pliku za pomocą narzędzia Java Flight Recorder. Uruchomienie JFR odbywa się również automatycznie w momencie startu aplikacji ca poomocą skrypu, kod skryptu również znajdije sie w materiałach dołączonych do pracy. 
 
 Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby testowania: małe obciążenie, średnie oraz duże. Zostało to zrealizowane w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
 
@@ -592,32 +692,43 @@ Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby test
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/idl-memory-low-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z IDL pod wpłyłem małego obciażenia} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście IDL pod wpłyłem małego obciażenia.} \label{fig1}
 \end{figure}
-
-\begin{figure}
-    \includegraphics[width=\linewidth]{images/idl-memory-low-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z IDL pod wpłyłem średnigo obciażenia} \label{fig1}
-\end{figure}
-
-W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
-
-\newpage
 
 % idl memory descriptiuon
-
 Wyniki obserwacji:
 
 Alokacja (górny wykres — niebieskie słupki)
 
-Niskie obciążenie:
-
 \begin{itemize}
-  \item Szczyty alokacji są bardziej okresowe i zazwyczaj utrzymują się poniżej 32~MiB.
-  \item Występuje więcej przerw między zdarzeniami alokacji, co wskazuje na rzadsze tworzenie obiektów.
+    \item Szczyty alokacji są bardziej okresowe i zazwyczaj utrzymują się poniżej 32~MiB.
+    \item Występuje więcej przerw między zdarzeniami alokacji, co wskazuje na rzadsze tworzenie nowych obiektów.
 \end{itemize}
 
-Wysokie obciążenie:
+Garbage collection (pionowe pomarańczowe linie)
+
+\begin{itemize}
+    \item Ogólnie mniej zdarzeń GC.
+    \item GC wydaje się być wyzwalane rzadziej ze względu na mniejsze obciążenie pamięci.
+\end{itemize}
+
+Wykorzystanie pamięci (dolny wykres – fioletowa linia)
+
+\begin{itemize}
+  \item Wykorzystanie sterty rośnie powoli i konsekwentnie, osiągając maksymalnie około 24~MiB.
+  \item Stopniowy wzrost z regularnymi małymi spadkami (GC), pokazujący stabilne wykorzystanie pamięci.
+\end{itemize}
+
+\newpage
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/idl-memory-low-graph.jpg}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście IDL pod wpłyłem średnigo obciażenia.} \label{fig1}
+\end{figure}
+
+Wyniki obserwacji:
+
+Alokacja (górny wykres — niebieskie słupki)
 
 \begin{itemize}
   \item Aktywność alokacji jest większa i bardziej spójna.
@@ -625,41 +736,21 @@ Wysokie obciążenie:
   \item Alokacje są utrzymywane przez dłuższy okres z krótszym czasem bezczynności między słupkami.
 \end{itemize}
 
-\vspace{0.5cm}
-
-Zbieranie śmieci (pionowe pomarańczowe linie)
-
-Niskie obciążenie:
-
-\begin{itemize}
-  \item Ogólnie mniej zdarzeń GC.
-  \item GC wydaje się być wyzwalane rzadziej ze względu na mniejsze obciążenie pamięci.
-\end{itemize}
-
-Wysokie obciążenie:
+Garbage collection (pionowe pomarańczowe linie)
 
 \begin{itemize}
   \item Znacznie częstsze zdarzenia GC.
   \item Wskazuje na zwiększoną utratę pamięci — częstsze tworzenie i czyszczenie obiektów ze względu na dużą liczbę żądań.
 \end{itemize}
 
-\vspace{0.5cm}
-
 Wykorzystanie pamięci (dolny wykres – fioletowa linia)
-
-Niskie obciążenie:
-
-\begin{itemize}
-  \item Wykorzystanie sterty rośnie powoli i konsekwentnie, osiągając maksymalnie około 24~MiB.
-  \item Stopniowy wzrost z regularnymi małymi spadkami (GC), pokazujący stabilne wykorzystanie pamięci.
-\end{itemize}
-
-Wysokie obciążenie:
 
 \begin{itemize}
   \item Wykorzystanie sterty wzrasta do 64~MiB i okresowo spada.
   \item Wzór pokazuje częste cykle alokacji i GC, sugerując agresywne wykorzystanie pamięci i czyszczenie.
 \end{itemize}
+
+W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
 
 \newpage
 
@@ -669,7 +760,7 @@ Raporty wygenerowane przez narzędzie Gatling:
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/idl-low-gatling-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z IDL pod wpłyłem małego obciażenia} \label{fig1}
+    \caption{Raport wygenerowany w narzędziu Galing dla aplikacji działającej w oparciu o podejście IDL, testowanej przy niskim obciążeniu.} \label{fig1}
 \end{figure}
 
 Na rysunku widać że:
@@ -679,21 +770,23 @@ Na rysunku widać że:
     \item Czas odpowiedzi od 800 ms do poniżej 1200 ms: Niewielka liczba żądań, przedstawiona kolorem żółtym.
     \item Czas odpowiedzi równy lub przekraczający 1200 ms: Również niewielka liczba żądań.
     \item Żądania nieudane: Brak nieudanych żądań.
-  \end{itemize}
+\end{itemize}
+
+\newpage
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/idl-midle-gatling-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z IDL pod wpłyłem średnigo obciażenia} \label{fig1}
+    \caption{Raport wygenerowany w narzędziu Galing dla aplikacji działającej w oparciu o podejście IDL, testowanej przy średnim obciążeniu.} \label{fig1}
 \end{figure}
 
 Na rysunku widać że:
 
 \begin{itemize}
-    \item Czas odpowiedzi krótszy niż 800 ms: Duża liczba żądań (około 2000), jednak proporcjonalnie mniej niż w przypadku niskiego obciążenia.
+    \item Czas odpowiedzi krótszy niż 800 ms: Duża liczba żądań (około 2300), jednak proporcjonalnie mniej niż w przypadku niskiego obciążenia.
     \item Czas odpowiedzi od 800 ms do poniżej 1200 ms: Niewielki wzrost liczby żądań w porównaniu do niskiego obciążenia.
     \item Czas odpowiedzi równy lub przekraczający 1200 ms: Wyraźny wzrost – znacznie więcej żądań z długim czasem odpowiedzi.
     \item Żądania nieudane: Nadal brak nieudanych żądań.
-  \end{itemize}
+\end{itemize}
 
 Na przedstawionych wykresach widać, że zarówno w przypadku małego, jak i średniego obciążenia aplikacja zachowuje się stabilnie. Przy średnim obciążeniu zauważalne jest jednak nieznaczne wydłużenie czasu oczekiwania na odpowiedź.
 
@@ -702,7 +795,6 @@ Na przedstawionych wykresach widać, że zarówno w przypadku małego, jak i śr
 Wraz ze zwiększaniem obciążenia wzrasta czas oczekiwania na odpowiedź. Porównując czas oczekiwania w przypadku różnych podejść do współdzielenia kodu, możemy ocenić efektywność poszczególnych narzędzi.
 
 %sdk
-
 Ocena współdzielenia kodu za pomocą SDK pod kątem skalowalności:
 
 W celu przygotowania analizy pod kątem skalowalności, tak samo jak w poprzednim przypadku opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej SDK do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
@@ -722,130 +814,100 @@ Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby test
 %sdk memory description
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{images/library-memory-low-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z SDK pod wpłyłem małego obciażenia} \label{fig1}
-\end{figure}
-
-\begin{figure}
-    \includegraphics[width=\linewidth]{images/library-memory-midle-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z SDK pod wpłyłem średnigo obciażenia} \label{fig1}
-\end{figure}
-
-W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
-
-1. Alokacja (górny wykres — niebieskie słupki)
-
-Małe obciążenie:
-
-Alokacja górny wykres — niebieskie słupki
-
-Małe obciążenie:
-
-%sdk memory description
-
-\begin{itemize}
-  \item Szczyty alokacji występują okresowo i zwykle nie przekraczają wartości 32~MiB.
-  \item Widoczne są dłuższe przerwy pomiędzy zdarzeniami alokacji, co sugeruje rzadsze tworzenie obiektów i mniejsze zapotrzebowanie na pamięć.
-  \item Po początkowej fazie obciążenia alokacja szybko stabilizuje się na niskim poziomie.
-\end{itemize}/
-
-Średnie obciążenie:
-
-\begin{itemize}
-  \item Alokacja jest wyraźnie intensywniejsza i bardziej regularna.
-  \item Maksymalne wartości alokacji dochodzą do 48~MiB, co wskazuje na wzmożone tworzenie obiektów w wyniku większej liczby żądań.
-  \item Alokacje są utrzymywane przez dłuższy czas, a okresy bezczynności między kolejnymi słupkami są znacznie krótsze.
-\end{itemize}
-
-\vspace{0.5cm}
-
-Zbieranie śmieci Garbage Collection – pionowe pomarańczowe linie
-
-Małe obciążenie:
-
-\begin{itemize}
-  \item Liczba zdarzeń GC (Garbage Collection) jest stosunkowo niewielka.
-  \item Mechanizm odśmiecania uruchamiany jest sporadycznie, co wynika z niskiego poziomu zużycia pamięci.
-\end{itemize}
-
-Średnie obciążenie:
-
-\begin{itemize}
-  \item Zdarzenia GC są znacznie częstsze i bardziej cykliczne.
-  \item Taki wzorzec odzwierciedla wzmożone wykorzystanie pamięci — więcej obiektów jest tworzonych i usuwanych, co jest typowe przy zwiększonym ruchu w aplikacji.
-\end{itemize}
-
-\vspace{0.5cm}
-
-Wykorzystanie pamięci, dolny wykres – fioletowa linia
-
-Małe obciążenie:
-
-\begin{itemize}
-  \item Wzrost zużycia sterty jest powolny i przewidywalny, osiągając maksymalnie około 24~MiB.
-  \item Charakterystyczny jest łagodny wzrost z regularnymi, niewielkimi spadkami, które odpowiadają działaniu GC — co świadczy o stabilnym zarządzaniu pamięcią.
-\end{itemize}
-
-Średnie obciążenie:
-
-\begin{itemize}
-  \item Użycie sterty wzrasta dynamiczniej i osiąga wartości nawet do 64~MiB.
-  \item Fioletowa linia ukazuje klasyczny wzór zęba piły, który sugeruje intensywne cykle alokacji i czyszczenia pamięci.
-  \item System zarządzania pamięcią reaguje odpowiednio na zwiększone obciążenie, ale wymaga częstszych interwencji GC.
-\end{itemize}
-
-\newpage
-
-Raporty wygenerowane przez narzędzie Gatling:
-
-%sdk gatling description
-
-\begin{figure}
-    \includegraphics[width=\linewidth]{images/library-gatling-low-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z SDK pod wpłyłem małego obciażenia} \label{fig1}
+    \includegraphics[width=\linewidth]{images/sdk-memory-low-graph.jpg}
+    \caption{Wykres przedstawiający zużycie pamięci  RAM aplikacji wykorzystującej SDK wpłyłem małego obciażenia.} \label{fig1}
 \end{figure}
 
 Wyniki obserwacji:
 
-\begin{itemize} 
-    \item Czas odpowiedzi krótszy niż 800 ms: Zdecydowana większość żądań (około 580), oznaczona kolorem zielonym. 
-    \item Czas odpowiedzi od 800 ms do poniżej 1200 ms: Niewielka liczba żądań, przedstawiona kolorem żółtym. 
-    \item Czas odpowiedzi równy lub przekraczający 1200 ms: Również niewielka liczba żądań. 
-    \item Żądania nieudane: Brak nieudanych żądań. 
-\end{itemize}
-
-\begin{figure}
-    \includegraphics[width=\linewidth]{images/library-gatling-middle-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z SDK pod wpłyłem średnigo obciażenia} \label{fig1}
-\end{figure}
-
-\begin{itemize} 
-    \item Czas odpowiedzi krótszy niż 800 ms: Duża liczba żądań (ponad 2500), dominująca większość, oznaczona kolorem zielonym. 
-    \item Czas odpowiedzi od 800 ms do poniżej 1200 ms: Niewielki wzrost liczby żądań w porównaniu do niskiego obciążenia. 
-    \item Czas odpowiedzi równy lub przekraczający 1200 ms: Nieco większa liczba żądań w tej kategorii. 
-    \item Żądania nieudane: Brak nieudanych żądań. 
-\end{itemize}
-
-\begin{figure}
-    \includegraphics[width=\linewidth]{images/library-gatling-high-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z SDK pod wpłyłem średnigo obciażenia} \label{fig1}
-\end{figure}
-
-\begin{itemize} 
-    \item Czas odpowiedzi krótszy niż 800 ms: Bardzo mała liczba żądań, wyraźnie mniejsza niż w poprzednich przypadkach. 
-    \item Czas odpowiedzi od 800 ms do poniżej 1200 ms: Znaczący wzrost liczby żądań – żółty słupek jest bardzo wysoki. 
-    \item Czas odpowiedzi równy lub przekraczający 1200 ms: Dominująca liczba żądań, stanowiąca aż 39 procentów wszystkich – kolor czerwony. 
-    \item Żądania nieudane: Widoczna liczba nieudanych żądań, zaznaczona na wykresie. 
+\begin{itemize}
+    \item Przegląd: Ten wykres pokazuje stabilny i stosunkowo niski poziom zużycia pamięci.
+    \item Wykorzystanie pamięci: Wykorzystanie pamięci osiąga szczyt na poziomie około 200 MB, przy średnim wykorzystaniu około 150 MB. Wykorzystanie pozostaje stale poniżej 250 MB, z niewielkimi skokami dochodzącymi do 220 MB.
+    \item Garbage collection: Wykres wskazuje 2-3 zdarzenia zbierania śmieci w całym okresie monitorowania, oznaczone rzadkimi fioletowymi liniami. Sugeruje to wydajne zarządzanie zasobami, ponieważ aplikacja nie wykorzystuje ich intensywnie.
 \end{itemize}
 
 \newpage
-% descripion here
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/sdk-memory-middle-graph.jpg}
+    \caption{Wykres przedstawiający zużycie pamięci  RAM aplikacji wykorzystującej SDK wpłyłem średniego obciażenia.} \label{fig1}
+\end{figure}
+
+\begin{itemize}
+    \item Przegląd: Ten wykres przedstawia znaczny wzrost zużycia pamięci w miarę wzrostu obciążenia aplikacji.
+    \item Wykorzystanie pamięci: Wykorzystanie pamięci osiąga szczyt na poziomie około 600 MB, przy średnim wykorzystaniu około 450 MB. Wykorzystanie często przekracza 500 MB w godzinach szczytu, ilustrując reakcję aplikacji na większe zapotrzebowanie.
+    \item Garbage collection: Wykres pokazuje około 5-7 zdarzeń zbierania śmieci, oznaczonych bardziej wyraźnymi fioletowymi liniami, odzwierciedlającymi potrzebę aplikacji aktywnego zarządzania pamięcią przy zwiększonym obciążeniu.
+\end{itemize}
+
+W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
+%AI
+Wykres niskiego obciążenia sugeruje optymalną wydajność przy minimalnym obciążeniu zasobów, co jest idealne w scenariuszach, w których wydajność jest kluczowa. Wykres średniego obciążenia, pokazujący wyższe zużycie, wskazuje, że aplikacja skaluje się, aby sprostać zwiększonym wymaganiom, chociaż może to prowadzić do potencjalnych problemów z opóźnieniami, jeśli nie zostanie odpowiednio zarządzane.
+
+\newpage
+
+%sdk gatling description
+
+Raporty wygenerowane przez narzędzie Gatling:
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/sdk-gatling-low-graph.jpg}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście SDK, testowanej przy niskim obciążeniu.}
+    \label{fig:low}
+\end{figure}
+
+\begin{itemize}
+    \item Czas reakcji poniżej 800 ms: Około 600 żądań – bardzo dobra wydajność, większość operacji wykonywana szybko.
+    \item Czas reakcji od 800 ms do poniżej 1200 ms: Pojedyncze żądania – praktycznie brak wpływu na ogólną wydajność.
+    \item Czas reakcji 1200 ms i więcej: Kilka żądań – sporadyczne opóźnienia, nieistotne z punktu widzenia użytkownika.
+    \item Nieudane żądania: Brak – aplikacja działa niezawodnie.
+\end{itemize}
+
+\newpage
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/sdk-gatling-middle-graph.jpg}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście SDK, testowanej przy średnim obciążeniu.}
+    \label{fig:middle}
+\end{figure}
+
+\begin{itemize}
+    \item Czas reakcji poniżej 800 ms: Około 2800 żądań – wyraźna poprawa w porównaniu do testu średniego.
+    \item Czas reakcji od 800 ms do poniżej 1200 ms: Około 100 żądań – minimalna liczba, pozytywny sygnał stabilizacji.
+    \item Czas reakcji 1200 ms i więcej: Około 300 żądań – niewielkie opóźnienia nadal obecne, ale nie wpływają znacząco na ogólną ocenę.
+    \item Nieudane żądania: Brak – aplikacja odzyskała stabilność i działa niezawodnie.
+\end{itemize}
+
+\newpage
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/sdk-gatling-high-graph.jpg}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście SDK, testowanej przy wysokim obciążeniu.}
+    \label{fig:high}
+\end{figure}
+
+\begin{itemize}
+    \item Czas reakcji poniżej 800 ms: 0 żądań
+    \item Czas reakcji od 800 ms do poniżej 1200 ms:  0 żądań
+    \item Czas reakcji 1200 ms i więcej: Ponad 5000 żądań – dominująca część, silny wskaźnik przeciążenia systemu.
+    \item Nieudane żądania: Około 7000 – aplikacja nie radzi sobie z obsługą dużej liczby żądań, występują błędy.
+\end{itemize}
+
+Porównanie wydajności: 
+
+\begin{itemize}
+    \item Aplikacja działa optymalnie przy niskim obciążeniu — szybkie odpowiedzi, brak błędów i wysoka responsywność.
+    \item Przy średnim obciążeniu wydajność ulega znacznemu pogorszeniu — dominują opóźnienia powyżej 1200 ms oraz wysoka liczba błędów.
+    \item Wysokie obciążenie pokazuje dalsze pogorszenie — jeszcze więcej żądań ma bardzo długi czas odpowiedzi, a liczba nieudanych żądań sięga około 8000, co świadczy o przeciążeniu systemu.
+\end{itemize}
+
+\newpage
 
 %biblioteki
 
 Ocena współdzielenia kodu za pomocą bibliotek pod kątem skalowalności:
-
-SDK zazwyczaj zawierają wiele narzędzi lub komponentów, mają tendencję do wyższego zużycia zasobów pamięci i procesora w porównaniu z, na przykład, IDL. Różne raporty dotyczące skalowania aplikacji w chmurze podkreślają, że SDK mogą powodować dodatkowe obciążenie w środowiskach z dużym obciążeniem. ~\cite[para 3]{azure2020}
 
 Biblioteki są zazwyczaj zoptymalizowane pod kątem konkretnego zadania w jednym języku. Jednak jeśli biblioteka nie jest zaprojektowana do pracy w środowiskach o dużej współbieżności, może wymagać dodatkowych zasobów sprzętowych w miarę wzrostu obciążenia. Na przykład intensywne przetwarzanie danych w bibliotekach może powodować większe zużycie pamięci lub CPU podczas pracy z dużymi zbiorami danych. Wspierająca myśl: Badania nad wydajnością obliczeniową często zauważają, że nieoptymalizowane biblioteki mogą stać się wąskimi gardłami pod dużym obciążeniem, prowadząc do zwiększenia kosztów zasobów fizycznych. ~\cite[p. 192]{fowler2012patterns}
 
@@ -861,93 +923,137 @@ W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pami�
 
 Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby testowania: małe obciążenie, średnie oraz duże. Zostało to zrealizowane w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
 
-
+\newpage
 % biblioteki meemery description
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{images/sdk-memory-low-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z użyciem bibliotek pod wpłyłem małego obciażenia} \label{fig1}
+    \includegraphics[width=\linewidth]{images/library-memory-low-graph.jpg}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej biblioteki pod wpłyłem małego obciażenia.} \label{fig1}
 \end{figure}
 
 Wyniki obserwacji:
 
+Alokacja górny wykres — niebieskie słupki
+
 \begin{itemize}
-    \item Przegląd: Ten wykres pokazuje stabilny i stosunkowo niski poziom zużycia pamięci.
-    \item Wykorzystanie pamięci: Wykorzystanie pamięci osiąga szczyt na poziomie około 200 MB, przy średnim wykorzystaniu około 150 MB. Wykorzystanie pozostaje stale poniżej 250 MB, z niewielkimi skokami dochodzącymi do 220 MB.
-    \item Zbieranie śmieci: Wykres wskazuje 2-3 zdarzenia zbierania śmieci w całym okresie monitorowania, oznaczone rzadkimi fioletowymi liniami. Sugeruje to wydajne zarządzanie zasobami, ponieważ aplikacja nie wykorzystuje ich intensywnie.
+  \item Szczyty alokacji występują okresowo i zwykle nie przekraczają wartości 32~MiB.
+  \item Widoczne są dłuższe przerwy pomiędzy zdarzeniami alokacji, co sugeruje rzadsze tworzenie obiektów i mniejsze zapotrzebowanie na pamięć.
+  \item Po początkowej fazie obciążenia alokacja szybko stabilizuje się na niskim poziomie.
 \end{itemize}
-  
+
+Garbage Collection – pionowe pomarańczowe linie
+
+\begin{itemize}
+  \item Liczba zdarzeń GC (Garbage Collection) jest stosunkowo niewielka.
+  \item Mechanizm odśmiecania uruchamiany jest sporadycznie, co wynika z niskiego poziomu zużycia pamięci.
+\end{itemize}
+
+Wykorzystanie pamięci, dolny wykres – fioletowa linia
+
+\begin{itemize}
+  \item Wzrost zużycia sterty jest powolny i przewidywalny, osiągając maksymalnie około 24~MiB.
+  \item Charakterystyczny jest łagodny wzrost z regularnymi, niewielkimi spadkami, które odpowiadają działaniu GC — co świadczy o stabilnym zarządzaniu pamięcią.
+\end{itemize}
+
+\newpage
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{images/sdk-memory-middle-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z użyciem bibliotek pod wpłyłem średnigo obciażenia} \label{fig1}
+    \includegraphics[width=\linewidth]{images/library-memory-midle-graph.jpg}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej biblioteki pod wpłyłem średnigo obciażenia.} \label{fig1}
 \end{figure}
 
+W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
+
+1. Alokacja (górny wykres — niebieskie słupki)
+
+Alokacja górny wykres — niebieskie słupki
+
 \begin{itemize}
-    \item Przegląd: Ten wykres przedstawia znaczny wzrost zużycia pamięci w miarę wzrostu obciążenia aplikacji.
-    \item Wykorzystanie pamięci: Wykorzystanie pamięci osiąga szczyt na poziomie około 600 MB, przy średnim wykorzystaniu około 450 MB. Wykorzystanie często przekracza 500 MB w godzinach szczytu, ilustrując reakcję aplikacji na większe zapotrzebowanie.
-    \item Zbieranie śmieci: Wykres pokazuje około 5-7 zdarzeń zbierania śmieci, oznaczonych bardziej wyraźnymi fioletowymi liniami, odzwierciedlającymi potrzebę aplikacji aktywnego zarządzania pamięcią przy zwiększonym obciążeniu.
+  \item Alokacja jest wyraźnie intensywniejsza i bardziej regularna.
+  \item Maksymalne wartości alokacji dochodzą do 48~MiB, co wskazuje na wzmożone tworzenie obiektów w wyniku większej liczby żądań.
+  \item Alokacje są utrzymywane przez dłuższy czas, a okresy bezczynności między kolejnymi słupkami są znacznie krótsze.
 \end{itemize}
 
-W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
-%AI
-Wykres niskiego obciążenia sugeruje optymalną wydajność przy minimalnym obciążeniu zasobów, co jest idealne w scenariuszach, w których wydajność jest kluczowa. Wykres średniego obciążenia, pokazujący wyższe zużycie, wskazuje, że aplikacja skaluje się, aby sprostać zwiększonym wymaganiom, chociaż może to prowadzić do potencjalnych problemów z opóźnieniami, jeśli nie zostanie odpowiednio zarządzane.
+Garbage Collection – pionowe pomarańczowe linie
 
-% descripion here
+\begin{itemize}
+  \item Zdarzenia GC są znacznie częstsze i bardziej cykliczne.
+  \item Taki wzorzec odzwierciedla wzmożone wykorzystanie pamięci — więcej obiektów jest tworzonych i usuwanych, co jest typowe przy zwiększonym ruchu w aplikacji.
+\end{itemize}
+
+Wykorzystanie pamięci, dolny wykres – fioletowa linia
+
+\begin{itemize}
+  \item Użycie sterty wzrasta dynamiczniej i osiąga wartości nawet do 64~MiB.
+  \item Fioletowa linia ukazuje klasyczny wzór zęba piły, który sugeruje intensywne cykle alokacji i czyszczenia pamięci.
+  \item System zarządzania pamięcią reaguje odpowiednio na zwiększone obciążenie, ale wymaga częstszych interwencji GC.
+\end{itemize}
+
+Podsumowując, aplikacja wykazuje stabilne i efektywne zarządzanie pamięcią przy niskim i średnim obciążeniu, jednak załamuje się przy wysokim obciążeniu, co może oznaczać ograniczenia skalowalności.
+
+\newpage
 
 Raporty wygenerowane przez narzędzie Gatling:
 
 %biblioteki gatling description
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{images/sdk-gatling-low-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z użyciem bibliotek pod wpłyłem małego obciażenia} \label{fig1}
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/library-gatling-low-graph.jpg}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o biblioteki testowanej przy niskim obciążeniu.}
+    \label{fig:low}
 \end{figure}
 
-\begin{itemize} 
-    \item Czas reakcji mniejszy niż 800 ms: Duża liczba żądań (ponad 2500), przeważnie oznaczona na zielono. Pokazuje to, że aplikacja działa optymalnie w warunkach niskiego obciążenia.
-    \item Czas reakcji od 800 ms do 1200 ms: Nieznaczny wzrost liczby żądań w porównaniu do sytuacji niskiego obciążenia, ale nadal minimalny.
-    \item Czas reakcji większy 1200 ms: Niewielka liczba żądań mieści się w tej kategorii, co sugeruje sporadyczne opóźnienia, ale nie ma znaczącego wpływu na ogólną wydajność.
-    \item Nieudane żądania: Nie ma nieudanych żądań, co wskazuje na solidną wydajność i niezawodność.
-\end{itemize}
-
-\begin{figure}
-    \includegraphics[width=\linewidth]{images/sdk-gatling-middle-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z użyciem bibliotek pod wpłyłem średnigo obciażenia} \label{fig1}
-\end{figure}
-
-\begin{itemize} 
-    \item Czas reakcji < 800 ms: Bardzo niska liczba żądań, zauważalnie mniejsza niż na poprzednich wykresach, wskazująca na spadek wydajności przy zwiększonym obciążeniu.
-    \item Czas reakcji 800 ms do < 1200 ms: Znaczny wzrost liczby żądań w tym zakresie, przy czym żółty pasek osiąga wysoką pozycję. Wskazuje to na pogorszenie czasu reakcji w miarę wzrostu obciążenia.
-    \item Czas reakcji większy niż 1200 ms: Dominująca liczba żądań 39 procentów wszystkich żądań mieści się w tej kategorii, oznaczona na czerwono. Wskazuje to na znaczne opóźnienia i problemy z wydajnością przy średnim obciążeniu.
-    \item Nieudane żądania: Widoczna jest liczba nieudanych żądań, co wskazuje na niestabilność i wyzwania w obsłudze zwiększonego zapotrzebowania.
-\end{itemize}
-
-\begin{figure}
-    \includegraphics[width=\linewidth]{images/sdk-gatling-high-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z użyciem bibliotek pod wpłyłem średnigo obciażenia} \label{fig1}
-\end{figure}
-
-\begin{itemize} 
-    \item Czas reakcji < 800 ms: Liczba żądań wynosi około 3000, co stanowi poprawę w porównaniu z wykresem 2, ale nadal jest niższa niż w wykresie 1. Sugeruje to pewne przywrócenie wydajności przy średnim obciążeniu.
-    \item Czas reakcji 800 ms do < 1200 ms: Liczba żądań w tym zakresie jest minimalna, co wskazuje, że aplikacja lepiej radzi sobie z obciążeniem niż na wykresie 2.
-    \item Czas reakcji większy niż 1200 ms: W tej kategorii jest tylko kilka żądań, co sugeruje poprawę w obsłudze warunków dużego obciążenia, chociaż nadal występują pewne opóźnienia.
-    \item Nieudane żądania: Podobnie jak w przypadku wykresu 1, nie ma nieudanych żądań, co wskazuje na powrót do niezawodności po spadku wydajności.
-\end{itemize}
-
-Wyniki obserwacji:
-
-Porównanie wydajności: 
-
-\begin{itemize} 
-    \item Wykres 1 pokazuje optymalną wydajność przy wysokiej przepustowości i braku nieudanych żądań.
-    \item Wykres 2 wskazuje na znaczną degradację wydajności, przy czym wiele żądań zajmuje więcej niż 1200 ms i zauważalną liczbę awarii.
-    \item Wykres 3 pokazuje odzyskiwanie wydajności, z poprawionymi czasami reakcji i brakiem nieudanych żądań, co sugeruje, że system lepiej dostosował się do obciążenia.
+\begin{itemize}
+    \item Czas reakcji poniżej 800 ms: Około 570 żądań – dobra wydajność, większość operacji wykonywana szybko.
+    \item Czas reakcji od 800 ms do poniżej 1200 ms: Pojedyncze żądania – praktycznie brak wpływu na ogólną wydajność.
+    \item Czas reakcji 1200 ms i więcej: Kilka żądań – sporadyczne opóźnienia, nieistotne z punktu widzenia użytkownika.
+    \item Nieudane żądania: Brak – aplikacja działa niezawodnie.
 \end{itemize}
 
 \newpage
 
-% descripion here
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/library-gatling-middle-graph.jpg}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o biblioteki testowanej przy średnim obciążeniu.}
+    \label{fig:middle}
+\end{figure}
+
+\begin{itemize}
+    \item Czas reakcji poniżej 800 ms: Około 2700 żądań – wyraźna poprawa w porównaniu do testu średniego.
+    \item Czas reakcji od 800 ms do poniżej 1200 ms: Około 10 żądań – minimalna liczba, pozytywny sygnał stabilizacji.
+    \item Czas reakcji 1200 ms i więcej: Około 300 żądań – niewielkie opóźnienia nadal obecne, ale nie wpływają znacząco na ogólną ocenę.
+    \item Nieudane żądania: Brak – aplikacja odzyskała stabilność i działa niezawodnie.
+\end{itemize}
+
+\newpage
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.8\linewidth]{images/library-gatling-high-graph.jpg}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o biblioteki, testowanej przy wysokim obciążeniu.}
+    \label{fig:high}
+\end{figure}
+
+\begin{itemize}
+    \item Czas reakcji poniżej 800 ms: Około 0 żądań – spadek w porównaniu do testu przy niskim obciążeniu.
+    \item Czas reakcji od 800 ms do poniżej 1200 ms: Około 0 żądań – znaczny spadek, wskazujący na pogorszenie responsywności.
+    \item Czas reakcji 1200 ms i więcej: Ponad 5000 żądań – dominująca część, silny wskaźnik przeciążenia systemu.
+    \item Nieudane żądania: Około 7000 – aplikacja nie radzi sobie z obsługą dużej liczby żądań, występują błędy.
+\end{itemize}
+
+Wnioski dotyczące skalowalności: 
+\begin{itemize} 
+    \item Dobre zachowanie przy niskim i średnim obciążeniu 
+    \item Problemy ze skalowalnością przy wysokim obciążeniu 
+    \item Widoczna granica wydajności około 2500-3000 żądań 
+    \item Potrzeba optymalizacji zarządzania pamięcią przy dużym obciążeniu 
+\end{itemize}
+
+Podsumowanie: Aplikacja wykorzystująca biblioteki wykazuje wysoką efektywność przy niskim i średnim obciążeniu, jednak przy wysokim obciążeniu ujawnia problemy z zarządzaniem pamięcią.
+
+\newpage
 
 %rest
 
@@ -965,16 +1071,36 @@ W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pami�
 
 Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby testowania: małe obciążenie, średnie oraz duże. Zostało to zrealizowane w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
 
-%resst memory description
+\newpage
+
+%rest memory description
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-memory-low-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z REST pod wpłyłem małego obciażenia} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście REST pod wpłyłem małego obciażenia} \label{fig1}
 \end{figure}
+
+Wyniki obserwacji:
+
+Alokacja górny wykres — niebieskie słupki
+
+\begin{itemize}
+  \item Szczyty alokacji są okresowe i zazwyczaj utrzymują się poniżej 32~MiB, co wskazuje na rzadkie tworzenie obiektów.
+  \item Dłuższe okresy bezczynności pomiędzy zdarzeniami alokacji sugerują mniejszą liczbę żądań lub lżejsze przetwarzanie.
+\end{itemize}
+
+Garbage collection - pionowe pomarańczowe linie
+
+\begin{itemize}
+  \item Mniej zdarzeń GC, występujących sporadycznie z powodu niskiego obciążenia pamięci.
+  \item Cykl GC prawdopodobnie prewencyjny, utrzymujący stabilną kondycję pamięci.
+\end{itemize}
+
+\newpage
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-memory-middle-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z REST pod wpłyłem średnigo obciażenia} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście REST pod wpłyłem średnigo obciażenia} \label{fig1}
 \end{figure}
 
 W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
@@ -983,31 +1109,18 @@ Wyniki obserwacji:
 
 Alokacja górny wykres — niebieskie słupki
 
-Niskie obciążenie:
-
-\begin{itemize}
-  \item Szczyty alokacji są okresowe i zazwyczaj utrzymują się poniżej 32~MiB, co wskazuje na rzadkie tworzenie obiektów.
-  \item Dłuższe okresy bezczynności pomiędzy zdarzeniami alokacji sugerują mniejszą liczbę żądań lub lżejsze przetwarzanie.
-\end{itemize}
-
-Średnie obciążenie:
-
 \begin{itemize}
   \item Aktywność alokacji jest bardziej spójna, a szczyty sięgają 48~MiB.
   \item Krótsze przerwy między alokacjami wskazują na ciągłe tworzenie obiektów przy zwiększonej liczbie żądań.
   \item Brak najwyższego poziomu alokacji 64 MiB sugeruje umiarkowane, ale nie ekstremalne obciążenie.
 \end{itemize}
 
-Zbieranie śmieci pionowe pomarańczowe linie
-
-Niskie obciążenie:
-
 \begin{itemize}
-  \item Mniej zdarzeń GC, występujących sporadycznie z powodu niskiego obciążenia pamięci.
-  \item Cykl GC prawdopodobnie prewencyjny, utrzymujący stabilną kondycję pamięci.
+  \item Powolny, stabilny wzrost pamięci sterty do około 24~MiB, z niewielkimi spadkami po GC.
+  \item Odzwierciedla przewidywalne zapotrzebowanie na pamięć i efektywne zarządzanie obiektami.
 \end{itemize}
 
-Średnie obciążenie:
+Garbage collection - pionowe pomarańczowe linie
 
 \begin{itemize}
   \item Częstsze zdarzenia GC, skorelowane ze zwiększoną liczbą alokacji.
@@ -1016,19 +1129,12 @@ Niskie obciążenie:
 
 Wykorzystanie pamięci dolny wykres — fioletowa linia
 
-Niskie obciążenie:
-
-\begin{itemize}
-  \item Powolny, stabilny wzrost pamięci sterty do około 24~MiB, z niewielkimi spadkami po GC.
-  \item Odzwierciedla przewidywalne zapotrzebowanie na pamięć i efektywne zarządzanie obiektami.
-\end{itemize}
-
-Średnie obciążenie:
-
 \begin{itemize}
   \item Szybszy wzrost do około 48~MiB, z regularnymi spadkami wynikającymi z agresywniejszych cykli GC.
   \item Wzorzec „wspinaczka i zrzut” wskazuje na cykliczne, ale kontrolowane zużycie pamięci.
 \end{itemize}
+
+\newpage
 
 Raporty wygenerowane przez narzędzie Gatling:
 
@@ -1036,39 +1142,55 @@ Raporty wygenerowane przez narzędzie Gatling:
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-gatling-low-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z REST pod wpłyłem małego obciażenia} \label{fig1}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy niskim obciążeniu.} \label{fig1}
 \end{figure}
 
 \begin{itemize}
-    \item Czas reakcji poniżej 800 ms: Dominująca liczba żądań (~600), oznaczona na zielono. Wskazuje to na efektywne działanie przy minimalnym obciążeniu.
-    \item Czas reakcji od 800 ms do 1200 ms: Kilkaset żądań (~200), sugerujące drobne opóźnienia.
-    \item Czas reakcji powyżej 1200 ms: Znikoma liczba żądań, praktycznie zerowa.
-    \item Nieudane żądania: Brak (KO = 0), co potwierdza niezawodność systemu.
+  \item Analiza przy niskim obciążeniu:
+  \begin{itemize}
+    \item Dominujący czas odpowiedzi poniżej 800~ms (około 595 żądań)
+    \item 0 żądań w przedziale 800-1200~ms
+    \item Minimalna liczba żądań powyżej 1200~ms
+    \item Brak żądań nieudanych (KO = 0)
+  \end{itemize}
 \end{itemize}
+
+\newpage
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-gatling-moddle-rest.jpg}
-    \caption{Użycia pamiąci aplikacji z REST pod wpłyłem średnigo obciażenia} \label{fig1}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy średnim obciążeniu.} \label{fig2}
 \end{figure}
 
 \begin{itemize}
-    \item Czas reakcji poniżej 800 ms: Około 1500 żądań - spadek liczby szybkich odpowiedzi względem niskiego obciążenia.
-    \item Czas reakcji od 800 ms do 1200 ms: Około 1000 żądań, co wskazuje na rosnące opóźnienia.
-    \item Czas reakcji powyżej 1200 ms: Około 500 żądań (oznaczone na czerwono), co ujawnia pojawiające się opóźnienia.
-    \item Nieudane żądania: Minimalne - KO prawdopodobnie bliskie zeru, choć pojawiają się oznaki niestabilności.
+  \item Analiza przy średnim obciążeniu:
+  \begin{itemize}
+    \item Około 2400 żądań poniżej 800~ms - zauważalny spadek wydajności
+    \item Mała żądań w przedziale 800-1200~ms
+    \item Pojawienie się około 500 żądań powyżej 1200~ms
+    \item Minimalna liczba nieudanych żądań, system zachowuje stabilność
+  \end{itemize}
 \end{itemize}
+
+\newpage
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-gatling-high-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z REST pod wpłyłem średnigo obciażenia} \label{fig1}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy wysokim obciążeniu.} \label{fig3}
 \end{figure}
 
 \begin{itemize}
-    \item Czas reakcji poniżej 800 ms: Praktycznie brak - słupki są bliskie zeru.
-    \item Czas reakcji od 800 ms do 1200 ms: Około 2500 żądań.
-    \item Czas reakcji powyżej 1200 ms: Około 89 procent żądań od 7500 do 10000, oznaczonych na czerwono - wskazują na przeciążenie.
-    \item Nieudane żądania: Błędy są obecne - dokładna liczba nieznana, ale większa niż zero, co sygnalizuje przeciążenie systemu.
+  \item Analiza przy wysokim obciążeniu:
+  \begin{itemize}
+    \item Brak odpowiedzi poniżej 800~ms
+    \item 0 żądań w przedziale 800-1200~ms
+    \item Około 89 procentów żądań (7500-10000) powyżej 1200~ms
+    \item Znacząca liczba nieudanych żądań wskazująca na przeciążenie systemu
+  \end{itemize}
 \end{itemize}
+
+Podsumowując, podejście REST wykazuje dobrą wydajność przy niskim obciążeniu, ale znacząco traci na efektywności wraz ze wzrostem liczby żądań. Przy wysokim obciążeniu system ujawnia poważne problemy z wydajnością, co manifestuje się poprzez długie czasy odpowiedzi i występowanie błędów.
+
 \newpage
 
 % descripion here
@@ -1089,76 +1211,80 @@ W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pami�
 
 Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby testowania: małe obciążenie, średnie oraz duże. Zostało to zrealizowane w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
 
+\newpage
 %serverless memory description
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-memory-low-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem małego obciażenia} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci  RAM aplikacji wykorzystującej podejście Serwerless pod wpłyłem małego obciażenia} \label{fig1}
 \end{figure}
-
-\begin{figure}
-    \includegraphics[width=\linewidth]{images/serverless-memory-middle-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem średnigo obciażenia} \label{fig1}
-\end{figure}
-
-W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
 
 Wyniki obserwacji:
 
-Alokacja (niebieskie słupki)
-Niskie obciążenie (serverless-memory-low-graph.jpg):
+Alokacja pamięci (niebieskie słupki)
+
 \begin{itemize}
     \item Szczyty alokacji są bardzo niskie, utrzymujące się w okolicach 9~MB.
     \item Brak wyraźnych okresowych wzorców, co sugeruje sporadyczne i minimalne tworzenie obiektów.
     \item Wykres wskazuje na bardzo małe obciążenie systemu, z rzadkimi zdarzeniami alokacji.
 \end{itemize}
 
-Średnie obciążenie (serverless-memory-middle-graph.jpg):
+Zbieranie śmieci (pionowe pomarańczowe linie)
+
+\begin{itemize}
+    \item Bardzo rzadkie zdarzenia GC, co jest spodziewane przy minimalnym wykorzystaniu pamięci.
+    \item Brak wyraźnych sygnałów GC na wykresie, co potwierdza niską aktywność systemu.
+\end{itemize}
+
+Wykorzystanie pamięci (linie fioletowe)
+
+\begin{itemize}
+    \item Wykorzystanie pamięci jest stabilne i bardzo niskie, oscylujące wokół 9~MB.
+    \item Brak znaczących wahań, co wskazuje na brak presji na pamięć.
+\end{itemize}
+
+\newpage
+
+\begin{figure}
+    \includegraphics[width=\linewidth]{images/serverless-memory-middle-graph.jpg}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście Serverless pod wpłyłem średnigo obciażenia} \label{fig1}
+\end{figure}
+
+W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
+
+Wyniki obserwacji:
+
+Alokacja pamięci (niebieskie słupki)
+
 \begin{itemize}
     \item Aktywność alokacji jest znacznie wyższa, z wartościami sięgającymi 12~MB.
     \item Występuje bardziej regularny wzorzec alokacji, wskazujący na ciągłe przetwarzanie żądań.
     \item Zwiększona częstotliwość alokacji sugeruje większe obciążenie systemu w porównaniu do scenariusza niskiego obciążenia.
 \end{itemize}
 
-\vspace{0.5cm}
-
 Zbieranie śmieci (pionowe pomarańczowe linie)
-Niskie obciążenie:
-\begin{itemize}
-    \item Bardzo rzadkie zdarzenia GC, co jest spodziewane przy minimalnym wykorzystaniu pamięci.
-    \item Brak wyraźnych sygnałów GC na wykresie, co potwierdza niską aktywność systemu.
-\end{itemize}
 
-Średnie obciążenie:
 \begin{itemize}
     \item Częstsze zdarzenia GC, choć nie są one bardzo intensywne.
     \item Występowanie GC jest związane ze zwiększoną alokacją obiektów, ale nie osiąga poziomu agresywnego czyszczenia.
 \end{itemize}
 
-\vspace{0.5cm}
-
 Wykorzystanie pamięci (linie fioletowe)
-Niskie obciążenie:
-\begin{itemize}
-    \item Wykorzystanie pamięci jest stabilne i bardzo niskie, oscylujące wokół 9~MB.
-    \item Brak znaczących wahań, co wskazuje na brak presji na pamięć.
-\end{itemize}
 
-Średnie obciążenie:
 \begin{itemize}
     \item Wykorzystanie pamięci jest wyższe, osiągając wartości do 128~MB, ale z częstymi spadkami.
     \item Wykres pokazuje okresowe wzrosty i spadki, co sugeruje cykle alokacji i zwalniania pamięci.
     \item System radzi sobie z obciążeniem, ale wymaga częstszego odśmiecania.
 \end{itemize}
 
-\vspace{0.5cm}
+% Dodatkowe obserwacje:
+% \begin{itemize}
+%     \item Niskie obciążenie: System działa w stanie bliskim bezczynności, z minimalnym wykorzystaniem zasobów. Idealny dla prostych zadań o niskiej częstotliwości.
+%     \item Średnie obciążenie: System jest bardziej aktywny, ale wciąż efektywnie zarządza pamięcią. Wykresy wskazują na dobrą równowagę między alokacją a GC.
+%     \item W obu przypadkach brak oznak przecieku pamięci, ale średnie obciążenie wymaga bliższego monitorowania pod kątem wydajności.
+% \end{itemize}
 
-Dodatkowe obserwacje:
-\begin{itemize}
-    \item Niskie obciążenie: System działa w stanie bliskim bezczynności, z minimalnym wykorzystaniem zasobów. Idealny dla prostych zadań o niskiej częstotliwości.
-    \item Średnie obciążenie: System jest bardziej aktywny, ale wciąż efektywnie zarządza pamięcią. Wykresy wskazują na dobrą równowagę między alokacją a GC.
-    \item W obu przypadkach brak oznak przecieku pamięci, ale średnie obciążenie wymaga bliższego monitorowania pod kątem wydajności.
-\end{itemize}
+\newpage
 
 %serverless gatling description
 
@@ -1166,53 +1292,181 @@ Raporty wygenerowane przez narzędzie Gatling:
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-gatling-low-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem małego obciażenia} \label{fig1}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście Serverless, testowanej przy niskim obciążeniu.} \label{fig1}
 \end{figure}
 
 \begin{itemize}
-    \item Czas reakcji krótszy niż 800 ms: Duża liczba żądań – ponad 2500, przeważnie oznaczonych na zielono. Wskazuje to na optymalną wydajność aplikacji przy niskim obciążeniu.
-    \item Czas reakcji od 800 ms do poniżej 1200 ms: Niewielki wzrost liczby żądań w porównaniu do warunków niskiego obciążenia, ale nadal minimalny.
-    \item Czas reakcji większy lub równy 1200 ms: Niewielka liczba żądań w tej kategorii, co sugeruje sporadyczne opóźnienia bez istotnego wpływu na ogólną wydajność.
-    \item Nieudane żądania: Brak nieudanych żądań, co wskazuje na solidną wydajność i niezawodność.
+  \item Analiza przy niskim obciążeniu:
+  \begin{itemize}
+    \item Dominująca liczba żądań (580) z czasem odpowiedzi poniżej 800~ms
+    \item Minimalna liczba żądań w przedziale 800-1200~ms
+    \item Mała liczba żądań powyżej 1200~ms
+    \item Brak żądań nieudanych - pełna niezawodność
+  \end{itemize}
 \end{itemize}
+
+\newpage
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-gatling-middle-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem średnigo obciażenia} \label{fig1}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście Serverless, testowanej przy średnim obciążeniu.} \label{fig2}
 \end{figure}
 
 \begin{itemize}
-    \item Czas reakcji krótszy niż 800 ms: Około 3000 żądań – poprawa w porównaniu do wykresu drugiego, ale nadal mniej niż na pierwszym wykresie. Sugeruje to częściowe przywrócenie wydajności przy średnim obciążeniu.
-    \item Czas reakcji od 800 ms do poniżej 1200 ms: Minimalna liczba żądań w tym zakresie, co oznacza, że aplikacja lepiej radzi sobie z obciążeniem niż w przypadku wykresu drugiego.
-    \item Czas reakcji większy lub równy 1200 ms: Tylko kilka żądań w tej kategorii, co sugeruje lepszą obsługę warunków wysokiego obciążenia, mimo że pewne opóźnienia nadal występują.
-    \item Nieudane żądania: Brak nieudanych żądań, podobnie jak w pierwszym wykresie, co wskazuje na przywrócenie niezawodności po wcześniejszym spadku wydajności.
+  \item Analiza przy średnim obciążeniu:
+  \begin{itemize}
+    \item Około 1000 żądań poniżej 800~ms - poprawa względem poprzedniego testu
+    \item Minimalna liczba żądań w przedziale 800-1200~ms
+    \item 2000 ządań powyżej 1200~ms
+    \item Utrzymana pełna niezawodność - brak żądań nieudanych
+  \end{itemize}
 \end{itemize}
+
+\newpage
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-gatling-high-graph.jpg}
-    \caption{Użycia pamiąci aplikacji z Serverless pod wpłyłem średnigo obciażenia} \label{fig1}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście Serverless, testowanej przy wysokim obciążeniu.} \label{fig3}
 \end{figure}
 
 \begin{itemize}
-    \item Czas reakcji krótszy niż 800 ms: Bardzo niska liczba żądań – znacznie mniejsza niż na innych wykresach, co wskazuje na spadek wydajności przy zwiększonym obciążeniu.
-    \item Czas reakcji od 800 ms do poniżej 1200 ms: Zauważalny wzrost liczby żądań w tym zakresie – żółty pasek osiąga wysoką pozycję. Sugeruje to pogorszenie czasu reakcji wraz ze wzrostem obciążenia.
-    \item Czas reakcji większy lub równy 1200 ms: Dominująca liczba żądań – 39 procent wszystkich żądań, oznaczone na czerwono. Wskazuje to na znaczne opóźnienia i problemy z wydajnością przy średnim obciążeniu.
-    \item Nieudane żądania: Widoczne są żądania zakończone niepowodzeniem, co wskazuje na niestabilność i trudności w obsłudze zwiększonego zapotrzebowania.
+  \item Analiza przy wysokim obciążeniu:
+  \begin{itemize}
+    \item 0 żądań poniżej 800~ms
+    \item 0 żądań w przedziale 800-1200~ms
+    \item 39 procentów żądań powyżej 1200~ms
+    \item Bardzo duża ilość żądań nieudanych
+  \end{itemize}
 \end{itemize}
 
-Wyniki obserwacji:
-
 \begin{itemize}
-    \item \textbf{Niskie obciążenie (Wykres 3):} Doskonała wydajność przy szybkim czasie reakcji i braku błędów.
-    \item \textbf{Średnie obciążenie (Wykres 2):} Zrównoważona wydajność, niewielkie opóźnienia, brak błędów.
-    \item \textbf{Wysokie obciążenie (Wykres 1):} Znaczące opóźnienia i występowanie błędów, wskazujące na pogorszenie wydajności.
+  \item Podsumowanie wyników:
+  \begin{itemize}
+    \item Niskie obciążenie: Optymalna wydajność z szybkim czasem reakcji
+    \item Średnie obciążenie: Stabilna wydajność z niewielkimi opóźnieniami
+    \item Wysokie obciążenie: Znaczące pogorszenie wydajności i stabilności
+  \end{itemize}
 \end{itemize}
 
 Obserwowane pogorszenie wydajności, szczególnie przy większych obciążeniach, prawdopodobnie wynika z opóźnienia sieciowego wprowadzonego przez architekturę serverless. W porównaniu z innymi podejściami do współdzielenia kodu.
 
 \newpage
 
-% descripion here
+%wyniki analizy wydajnościowej
+
+Podsumowanie wyników testowania rozwiązań pod kątem wydajności i skalowalności.
+
+Ranking rozwiązań pod względem wydajności i skalowalności który stowżywem na podstawie przeprowadzonych testów i analiz:
+
+\begin{enumerate}
+    \item Serverless
+    \begin{itemize}
+        \item Wydajność:
+        \begin{itemize}
+            \item Bardzo wydajne wykorzystanie pamięci (9MB przy niskim obciążeniu)
+            \item Spójna wydajność z większością żądań poniżej 800ms
+        \end{itemize}
+        \item Skalowalność:
+        \begin{itemize}
+            \item Automatyczne skalowanie w zależności od obciążenia
+            \item Efektywne zarządzanie zasobami przy zmiennym obciążeniu
+            \item Najlepsza elastyczność przy nagłych skokach ruchu
+        \end{itemize}
+    \end{itemize}
+
+    \item IDL (Interface Definition Language)
+    \begin{itemize}
+        \item Wydajność:
+        \begin{itemize}
+            \item Najlepsza gospodarka pamięcią (szczyty około 32 MiB)
+            \item Najbardziej spójne czasy odpowiedzi poniżej 800ms
+            \item Doskonałe wzorce garbage collection
+        \end{itemize}
+        \item Skalowalność:
+        \begin{itemize}
+            \item Dobra skalowalność horyzontalna
+            \item Wymaga ręcznej konfiguracji skalowania
+            \item Stabilna wydajność przy zwiększającym się obciążeniu
+        \end{itemize}
+    \end{itemize}
+
+    \item Biblioteki
+    \begin{itemize}
+        \item Wydajność:
+        \begin{itemize}
+            \item Umiarkowane wykorzystanie pamięci (150-200MB)
+            \item Dobra wydajność przy niskim obciążeniu
+        \end{itemize}
+        \item Skalowalność:
+        \begin{itemize}
+            \item Ograniczona skalowalność automatyczna
+            \item Wymaga dodatkowej infrastruktury do skalowania
+            \item Stabilna przy przewidywalnym obciążeniu
+        \end{itemize}
+    \end{itemize}
+
+    \item SDK
+    \begin{itemize}
+        \item Wydajność:
+        \begin{itemize}
+            \item Wyższe zużycie pamięci
+            \item Częstsze zdarzenia garbage collection
+        \end{itemize}
+        \item Skalowalność:
+        \begin{itemize}
+            \item Trudniejsza w implementacji skalowalność
+            \item Wyższe koszty skalowania
+            \item Znacząca degradacja przy wysokim obciążeniu
+        \end{itemize}
+    \end{itemize}
+
+    \item REST
+    \begin{itemize}
+        \item Wydajność:
+        \begin{itemize}
+            \item Najwyższe zużycie pamięci
+            \item Najwyższy procent wolnych odpowiedzi (>1200ms)
+        \end{itemize}
+        \item Skalowalność:
+        \begin{itemize}
+            \item Najbardziej problematyczna skalowalność
+            \item Wysokie ryzyko błędów przy skalowaniu
+            \item Znaczące koszty infrastruktury przy skalowaniu
+        \end{itemize}
+    \end{itemize}
+\end{enumerate}
+
+Wnioski końcowe
+
+Na podstawie przeprowadzonej analizy można stwierdzić, że wybór optymalnego rozwiązania zależy od specyficznych wymagań projektu, jednak biorąc pod uwagę zarówno wydajność jak i skalowalność, architektura Serverless oraz IDL wykazują najlepsze właściwości.
+
+Serverless zajmuje pierwsze miejsce głównie ze względu na:
+\begin{itemize}
+    \item Automatyczną skalowalność bez potrzeby ręcznej konfiguracji
+    \item Najniższe zużycie zasobów przy zmiennym obciążeniu
+    \item Optymalne zarządzanie kosztami w zależności od rzeczywistego wykorzystania
+\end{itemize}
+
+IDL plasuje się na drugim miejscu, oferując:
+\begin{itemize}
+    \item Najlepszą wydajność przy stałym obciążeniu
+    \item Przewidywalną skalowalność
+    \item Niższe koszty operacyjne przy stałym, wysokim obciążeniu
+\end{itemize}
+
+Biblioteki stanowią rozsądny kompromis dla projektów o średniej skali, podczas gdy SDK i REST wykazują największe ograniczenia w kontekście skalowalności i wydajności przy większym obciążeniu.
+
+Rekomendacje
+
+\begin{itemize}
+    \item Dla projektów z dynamicznym obciążeniem: Serverless
+    \item Dla projektów ze stałym, wysokim obciążeniem: IDL
+    \item Dla projektów średniej wielkości z przewidywalnym obciążeniem: Biblioteki
+    \item Unikać REST i SDK w przypadku wymagań dotyczących wysokiej skalowalności
+\end{itemize}
+
+Należy jednak pamiętać, że błędy pamięci przy wysokim obciążeniu były obecne we wszystkich podejściach, co podkreśla znaczenie właściwego planowania pojemności i implementacji strategii skalowania, niezależnie od wybranego rozwiązania.
+%end wyniki analizy wydajności
 
 % scalability end
 
@@ -1277,7 +1531,7 @@ Ta aplikacja jest częścią aplikacji webowej, która odpowiada za następując
 
 \subsubsection{Opis aplikacji front-end}
 
-Aplikację front-endową przygotowałem za pomocą JavaScript, React i npm.  
+Aplikację front-endową przygotowałem za pomocą JavaScript, React i npm.
 React to biblioteka używana do tworzenia aplikacji frontendowych.  
 Npm służy do zarządzania zależnościami projektu.
 
@@ -1306,8 +1560,5 @@ Ta aplikacja jest częścią aplikacji webowej, część front-endowa jest odpow
 \bibliography{thesisbibliography}
 
 \section{Appendices}
-
-\subsection{Sample Code}
-\subsection{Sample Data}
 
 \end{document}

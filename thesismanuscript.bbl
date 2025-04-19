@@ -20,6 +20,11 @@ Martin Fowler.
 \newblock {\em Patterns of Enterprise Application Architecture}.
 \newblock Addison-Wesley Professional, 2012.
 
+\bibitem{EssentialIan}
+Ian Gorton.
+\newblock {\em Essential Software Architecture}.
+\newblock Springer, 2011.
+
 \bibitem{ibm_serverless}
 IBM.
 \newblock What is serverless computing?, 2023.
@@ -63,6 +68,16 @@ Michael~T. Nygard.
 Chris Richardson.
 \newblock {\em Microservices Patterns: With examples in Java}.
 \newblock Manning Publications, 2018.
+
+\bibitem{richardson2013rest}
+Leonard Richardson, Mike Amundsen, and Sam Ruby.
+\newblock {\em RESTful Web APIs}.
+\newblock O'Reilly Media, 2013.
+
+\bibitem{roberts2018cloud}
+John~Gilbert Roberts.
+\newblock {\em Cloud Native Development Patterns and Best Practices}.
+\newblock Packt Publishing, 2018.
 
 \bibitem{rubin2012essential}
 Kenneth~S. Rubin.

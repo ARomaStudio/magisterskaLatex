@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex thesismanuscript"] 1744841977.88633 "thesismanuscript.aux" "thesismanuscript.bbl" "thesismanuscript" 1744841980.49349 0
-  "./thesisbibliography.bib" 1741559313 3540 b729fdbb08e681f5bd3057995307bcab ""
+["bibtex thesismanuscript"] 1745090757.44219 "thesismanuscript.aux" "thesismanuscript.bbl" "thesismanuscript" 1745090759.93439 0
+  "./thesisbibliography.bib" 1745090675 4026 ae7e2a9eeafd0c8f50d98f3109222a8b ""
   "c:/tools/TinyTeX/texmf-dist/bibtex/bst/base/plain.bst" 1738379780 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "thesismanuscript.aux" 1744841979 13481 a68d204746016f62568c8e8309ecc288 "pdflatex"
+  "thesismanuscript.aux" 1745090759 15338 cb37bcba95e01fad1efe20d36641286d "pdflatex"
   (generated)
   "thesismanuscript.bbl"
   "thesismanuscript.blg"
   (rewritten before read)
-["pdflatex"] 1744841977.98942 "c:/Users/ArtemCodeMachine/Documents/magisterskaLatex/thesismanuscript.tex" "thesismanuscript.pdf" "thesismanuscript" 1744841980.49481 0
-  "c:/Users/ArtemCodeMachine/Documents/magisterskaLatex/thesismanuscript.tex" 1744841965 108567 90d807360c180ee6b4ccefe7dd20573a ""
+["pdflatex"] 1745090757.53889 "c:/Users/ArtemCodeMachine/Documents/magisterskaLatex/thesismanuscript.tex" "thesismanuscript.pdf" "thesismanuscript" 1745090759.93539 0
+  "c:/Users/ArtemCodeMachine/Documents/magisterskaLatex/thesismanuscript.tex" 1745090754 120991 e3e65acc17ca384a65e5bc7081c7f44b ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm" 1738379782 3584 1a7de6c99457381c64abc1a7c545505f ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1738379782 3584 402da0b29eafbad07963b1224b222f18 ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1738379782 3584 13049b61b922a28b158a38aeff75ee9b ""
@@ -32,6 +32,7 @@
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1738379745 1116 933a60c408fc0a863a92debe84b2d294 ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1738379745 1120 8b7d695260f3cff42e636090a8002094 ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1738379745 1116 25a7bf822c58caf309a702ef79f4afbb ""
+  "c:/tools/TinyTeX/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1738379778 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "c:/tools/TinyTeX/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1740085654 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "c:/tools/TinyTeX/texmf-dist/tex/generic/babel-english/english.ldf" 1740164066 7008 9ff5fdcc865b01beca2b0fe4a46231d4 ""
   "c:/tools/TinyTeX/texmf-dist/tex/generic/babel/babel.sty" 1740087609 143362 d06381cf9cf939b2303a52cbd2a34811 ""
@@ -180,12 +181,12 @@
   "images/serverless-memory-low-graph.jpg" 1744576544 60648 1d920fb63bf28d53e3e59de0dd9c4e16 ""
   "images/serverless-memory-middle-graph.jpg" 1744576567 66805 1aa90d3e084a035f879e8eb12b388760 ""
   "llncs.cls" 1740086610 43420 1a3c96fb05ee38b4e12e037a87c73a1c ""
-  "thesismanuscript.aux" 1744841979 13481 a68d204746016f62568c8e8309ecc288 "pdflatex"
-  "thesismanuscript.bbl" 1744841977 2889 78b304e0600edde87e824920e30305e5 "bibtex thesismanuscript"
-  "thesismanuscript.lof" 1744841979 3488 4925c2684e5fd5fb7461494558cfa147 "pdflatex"
-  "thesismanuscript.lot" 1744841979 530 5f92b337c195cffb6dcbc0ad5d04511c "pdflatex"
-  "thesismanuscript.tex" 1744841965 108567 90d807360c180ee6b4ccefe7dd20573a ""
-  "thesismanuscript.toc" 1744841979 3424 4ca669b6ec7b9a66efdc424273ddbbf1 "pdflatex"
+  "thesismanuscript.aux" 1745090759 15338 cb37bcba95e01fad1efe20d36641286d "pdflatex"
+  "thesismanuscript.bbl" 1745090757 3299 c16d974cd5cbc8ba1702898f0cefbc7e "bibtex thesismanuscript"
+  "thesismanuscript.lof" 1745090759 4850 cd325f02cb22a472799d7e68a880fa68 "pdflatex"
+  "thesismanuscript.lot" 1745090759 530 5f92b337c195cffb6dcbc0ad5d04511c "pdflatex"
+  "thesismanuscript.tex" 1745090754 120991 e3e65acc17ca384a65e5bc7081c7f44b ""
+  "thesismanuscript.toc" 1745090759 3296 3a0c54f020fec56d27a6233d09f35092 "pdflatex"
   (generated)
   "thesismanuscript.aux"
   "thesismanuscript.lof"
