@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex thesismanuscript"] 1745090757.44219 "thesismanuscript.aux" "thesismanuscript.bbl" "thesismanuscript" 1745090759.93439 0
+["bibtex thesismanuscript"] 1746899447.12966 "thesismanuscript.aux" "thesismanuscript.bbl" "thesismanuscript" 1746899595.93701 0
   "./thesisbibliography.bib" 1745090675 4026 ae7e2a9eeafd0c8f50d98f3109222a8b ""
   "c:/tools/TinyTeX/texmf-dist/bibtex/bst/base/plain.bst" 1738379780 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "thesismanuscript.aux" 1745090759 15338 cb37bcba95e01fad1efe20d36641286d "pdflatex"
+  "thesismanuscript.aux" 1746899594 15786 c452b5fa8483d59c40e7063f0d4e5571 "pdflatex"
   (generated)
   "thesismanuscript.bbl"
   "thesismanuscript.blg"
   (rewritten before read)
-["pdflatex"] 1745090757.53889 "c:/Users/ArtemCodeMachine/Documents/magisterskaLatex/thesismanuscript.tex" "thesismanuscript.pdf" "thesismanuscript" 1745090759.93539 0
-  "c:/Users/ArtemCodeMachine/Documents/magisterskaLatex/thesismanuscript.tex" 1745090754 120991 e3e65acc17ca384a65e5bc7081c7f44b ""
+["pdflatex"] 1746899591.05069 "c:/Users/ArtemCodeMachine/Documents/magisterskaLatex/thesismanuscript.tex" "thesismanuscript.pdf" "thesismanuscript" 1746899595.93793 0
+  "c:/Users/ArtemCodeMachine/Documents/magisterskaLatex/thesismanuscript.tex" 1746899590 131521 549d9b21cd4a920778d7817ffbd744c2 ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm" 1738379782 3584 1a7de6c99457381c64abc1a7c545505f ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1738379782 3584 402da0b29eafbad07963b1224b222f18 ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1738379782 3584 13049b61b922a28b158a38aeff75ee9b ""
@@ -19,6 +19,7 @@
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecrm1728.tfm" 1738379782 3584 3c76ccb63eda935a68ba65ba9da29f1a ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecsl1200.tfm" 1738379782 3584 36dd7d4b521e95b0a47034c0d524f2c5 ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecti0900.tfm" 1738379782 3072 a603fa6d934ebc72197ed1c389943d86 ""
+  "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm" 1738379782 1536 487c9b46984a816c7ed238d0674595c7 ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/tcrm1200.tfm" 1738379783 1536 74b7293ec3713bb7fdca8dd1bd1f469c ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1738379745 1524 4414a8315f39513458b80dfc63bff03a ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1738379745 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -107,6 +108,7 @@
   "c:/tools/TinyTeX/texmf-dist/tex/latex/base/size12.clo" 1738379790 8449 ffe4ba2166a344827c3a832d1d5e0a91 ""
   "c:/tools/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1738379783 13886 d1306dcf79a944f6988e688c1785f9ce ""
   "c:/tools/TinyTeX/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty" 1740087276 31715 19e60610b63819fe670dfa1cd84a4e94 ""
+  "c:/tools/TinyTeX/texmf-dist/tex/latex/float/float.sty" 1738379785 6749 16d2656a1984957e674b149555f1ea1d ""
   "c:/tools/TinyTeX/texmf-dist/tex/latex/graphics-cfg/color.cfg" 1738379786 1213 620bba36b25224fa9b7e1ccb4ecb76fd ""
   "c:/tools/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg" 1738379786 1224 978390e9c2234eab29404bc21b268d1e ""
   "c:/tools/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def" 1738379786 19440 9da9dcbb27470349a580fca7372d454b ""
@@ -152,6 +154,7 @@
   "c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk" 1740087424 21332 3db4b03ef8b0a8e0f7d8dc7f3c540a27 ""
   "c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk" 1740087426 28416 40f071ef7aea2631d52a030866653dad ""
   "c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk" 1740087422 28796 66ad5fcb68508a631f9be00b8d84037f ""
+  "c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk" 1746893236 24132 61bbd9ed698fd47e0bb6c37b9ce5a45e ""
   "c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk" 1740087331 14040 8f1f067bb29e28eb853fe57948aa6a65 ""
   "c:/tools/TinyTeX/texmf-var/web2c/pdftex/pdflatex.fmt" 1740164121 1979627 230eb9b4313c0409646ce675b5323c7c ""
   "c:/tools/TinyTeX/texmf.cnf" 1738379758 903 164c5b127cd0d6dc91abad2f62421ea2 ""
@@ -175,18 +178,19 @@
   "images/sdk-gatling-middle-graph.jpg" 1744570715 30110 3aadb8f819b86ed2c3782eb39f31505c ""
   "images/sdk-memory-low-graph.jpg" 1744570535 63332 82bdb6072ceb2bfa8ad671ba02921928 ""
   "images/sdk-memory-middle-graph.jpg" 1744570562 67213 3e7bf297cde7a5c17dc49ac030e1ed3b ""
+  "images/sequentinal-diagram.png" 1746875153 412625 d2b1355ca3bf2034210672921eb6b147 ""
   "images/serverless-gatling-high-graph.jpg" 1744576777 32254 9aae3fbe5bbf3fce95797cf928ecec3c ""
   "images/serverless-gatling-low-graph.jpg" 1744576597 29097 a4a5ffe189b9c6cb27e0802a424002e1 ""
   "images/serverless-gatling-middle-graph.jpg" 1744576646 33171 65d855c8f8d46b0f5d3bbbc5516963ff ""
   "images/serverless-memory-low-graph.jpg" 1744576544 60648 1d920fb63bf28d53e3e59de0dd9c4e16 ""
   "images/serverless-memory-middle-graph.jpg" 1744576567 66805 1aa90d3e084a035f879e8eb12b388760 ""
   "llncs.cls" 1740086610 43420 1a3c96fb05ee38b4e12e037a87c73a1c ""
-  "thesismanuscript.aux" 1745090759 15338 cb37bcba95e01fad1efe20d36641286d "pdflatex"
-  "thesismanuscript.bbl" 1745090757 3299 c16d974cd5cbc8ba1702898f0cefbc7e "bibtex thesismanuscript"
-  "thesismanuscript.lof" 1745090759 4850 cd325f02cb22a472799d7e68a880fa68 "pdflatex"
-  "thesismanuscript.lot" 1745090759 530 5f92b337c195cffb6dcbc0ad5d04511c "pdflatex"
-  "thesismanuscript.tex" 1745090754 120991 e3e65acc17ca384a65e5bc7081c7f44b ""
-  "thesismanuscript.toc" 1745090759 3296 3a0c54f020fec56d27a6233d09f35092 "pdflatex"
+  "thesismanuscript.aux" 1746899594 15786 c452b5fa8483d59c40e7063f0d4e5571 "pdflatex"
+  "thesismanuscript.bbl" 1746899447 3299 c16d974cd5cbc8ba1702898f0cefbc7e "bibtex thesismanuscript"
+  "thesismanuscript.lof" 1746899594 4955 eae2c73d1ef6f497721c617018e811ae "pdflatex"
+  "thesismanuscript.lot" 1746899594 530 6f06b204f79febd8d2c1fdc9a8ae6cb2 "pdflatex"
+  "thesismanuscript.tex" 1746899590 131521 549d9b21cd4a920778d7817ffbd744c2 ""
+  "thesismanuscript.toc" 1746899594 3475 b3408a5feb94361b1ef0b0c2846d6318 "pdflatex"
   (generated)
   "thesismanuscript.aux"
   "thesismanuscript.lof"

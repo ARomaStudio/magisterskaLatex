@@ -1,5 +1,6 @@
 \documentclass[runningheads,12pt]{llncs}
 \usepackage{graphicx}
+\usepackage{float}
 \usepackage{todonotes}
 \usepackage{fancyhdr}
 \usepackage{lipsum}
@@ -86,6 +87,22 @@ Praca jest ustrukturyzowana w kilka rozdziałów, przedstawiam krótki opis rozd
 \end{enumerate}
 
 \newpage
+
+\section{Ogólna definicja wspówdzielenia kodu}
+
+Współdzielenie kodu – to praktyka w programowaniu polegająca na udostępnianiu fragmentów kodu lub całych funkcji, metod albo modułów – w zależności od architektury i użytych technologii – między różnymi projektami, zespołami, a czasem również między firmami lub społecznościami open source.
+
+Celem współdzielenia kodu jest:
+
+\begin{enumerate}
+    \item Unikanie duplikacji – możliwość wielokrotnego użycia fragmentu kodu w różnych miejscach.
+    \item Zwiększenie produktywności – możliwość szybkiego korzystania z gotowych rozwiązań.
+    \item Utrzymanie spójności – pozwala na stosowanie jednolitych reguł wewnątrz aplikacji oraz między aplikacjami, takich jak na przykład reguły walidacji, formatowania danych czy też obsługi błędów.
+    \item Ułatwienie współpracy zespołowej – ułatwia korzystanie z wyników pracy jednego programisty przez zespół oraz między zespołami.
+    \item Lepsze testowanie i jakość – ze względu na utrzymanie spójnych reguł w aplikacji kod jest łatwiejszy do testowania, co zmniejsza ryzyko błędów i poprawia ogólną jakość kodu.
+\end{enumerate}
+    
+W przypadku architektury mikroserwisowej współdzielenie kodu to praktyka udostępniania fragmentów kodu – na przykład bibliotek, modułów, metod lub funkcji – pomiędzy mikroserwisami (elementami systemu mikroserwisowego), w celu osiągnięcia korzyści przedstawionych powyżej. W przypadku architektury monolitycznej współdzielenie kodu również odgrywa ważną rolę w utrzymaniu jakości kodu i aplikacji.
 
 \section{Architektura mikroserwisowa a monolitowa}
 
@@ -273,6 +290,10 @@ W przypadku izolacji na podstawie analzy żródeł literaturowych oraz własnego
 \begin{figure}
     \includegraphics[width=\linewidth]{images/image-security.png}
     \caption{Essential Network and Computer Security Requirements.} \label{fig1}
+    \vspace{0.5em}
+    \begin{center}
+        {\small Źródło: William Stallings, *Cryptography and Network Security*, 7. wydanie.}
+    \end{center}
 \end{figure}
 
 \subsubsection{Definicja kryterium oceny pod kątem skalowalności}
@@ -693,6 +714,8 @@ Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby test
 \begin{figure}
     \includegraphics[width=\linewidth]{images/idl-memory-low-graph.jpg}
     \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście IDL pod wpłyłem małego obciażenia.} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 % idl memory descriptiuon
@@ -724,6 +747,8 @@ Wykorzystanie pamięci (dolny wykres – fioletowa linia)
 \begin{figure}
     \includegraphics[width=\linewidth]{images/idl-memory-low-graph.jpg}
     \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście IDL pod wpłyłem średnigo obciażenia.} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 Wyniki obserwacji:
@@ -761,6 +786,8 @@ Raporty wygenerowane przez narzędzie Gatling:
 \begin{figure}
     \includegraphics[width=\linewidth]{images/idl-low-gatling-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Galing dla aplikacji działającej w oparciu o podejście IDL, testowanej przy niskim obciążeniu.} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 Na rysunku widać że:
@@ -777,6 +804,8 @@ Na rysunku widać że:
 \begin{figure}
     \includegraphics[width=\linewidth]{images/idl-midle-gatling-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Galing dla aplikacji działającej w oparciu o podejście IDL, testowanej przy średnim obciążeniu.} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 Na rysunku widać że:
@@ -816,6 +845,8 @@ Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby test
 \begin{figure}
     \includegraphics[width=\linewidth]{images/sdk-memory-low-graph.jpg}
     \caption{Wykres przedstawiający zużycie pamięci  RAM aplikacji wykorzystującej SDK wpłyłem małego obciażenia.} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 Wyniki obserwacji:
@@ -831,6 +862,8 @@ Wyniki obserwacji:
 \begin{figure}
     \includegraphics[width=\linewidth]{images/sdk-memory-middle-graph.jpg}
     \caption{Wykres przedstawiający zużycie pamięci  RAM aplikacji wykorzystującej SDK wpłyłem średniego obciażenia.} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 \begin{itemize}
@@ -854,6 +887,8 @@ Raporty wygenerowane przez narzędzie Gatling:
     \includegraphics[width=0.8\linewidth]{images/sdk-gatling-low-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście SDK, testowanej przy niskim obciążeniu.}
     \label{fig:low}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 \begin{itemize}
@@ -870,6 +905,8 @@ Raporty wygenerowane przez narzędzie Gatling:
     \includegraphics[width=0.8\linewidth]{images/sdk-gatling-middle-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście SDK, testowanej przy średnim obciążeniu.}
     \label{fig:middle}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 \begin{itemize}
@@ -886,6 +923,8 @@ Raporty wygenerowane przez narzędzie Gatling:
     \includegraphics[width=0.8\linewidth]{images/sdk-gatling-high-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście SDK, testowanej przy wysokim obciążeniu.}
     \label{fig:high}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 \begin{itemize}
@@ -929,6 +968,8 @@ Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby test
 \begin{figure}
     \includegraphics[width=\linewidth]{images/library-memory-low-graph.jpg}
     \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej biblioteki pod wpłyłem małego obciażenia.} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 Wyniki obserwacji:
@@ -960,6 +1001,8 @@ Wykorzystanie pamięci, dolny wykres – fioletowa linia
 \begin{figure}
     \includegraphics[width=\linewidth]{images/library-memory-midle-graph.jpg}
     \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej biblioteki pod wpłyłem średnigo obciażenia.} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
@@ -1001,6 +1044,8 @@ Raporty wygenerowane przez narzędzie Gatling:
     \centering
     \includegraphics[width=0.8\linewidth]{images/library-gatling-low-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o biblioteki testowanej przy niskim obciążeniu.}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
     \label{fig:low}
 \end{figure}
 
@@ -1017,6 +1062,8 @@ Raporty wygenerowane przez narzędzie Gatling:
     \centering
     \includegraphics[width=0.8\linewidth]{images/library-gatling-middle-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o biblioteki testowanej przy średnim obciążeniu.}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
     \label{fig:middle}
 \end{figure}
 
@@ -1033,6 +1080,8 @@ Raporty wygenerowane przez narzędzie Gatling:
     \centering
     \includegraphics[width=0.8\linewidth]{images/library-gatling-high-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o biblioteki, testowanej przy wysokim obciążeniu.}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
     \label{fig:high}
 \end{figure}
 
@@ -1078,6 +1127,8 @@ Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby test
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-memory-low-graph.jpg}
     \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście REST pod wpłyłem małego obciażenia} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 Wyniki obserwacji:
@@ -1101,6 +1152,8 @@ Garbage collection - pionowe pomarańczowe linie
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-memory-middle-graph.jpg}
     \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście REST pod wpłyłem średnigo obciażenia} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
@@ -1143,6 +1196,8 @@ Raporty wygenerowane przez narzędzie Gatling:
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-gatling-low-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy niskim obciążeniu.} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 \begin{itemize}
@@ -1160,6 +1215,8 @@ Raporty wygenerowane przez narzędzie Gatling:
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-gatling-moddle-rest.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy średnim obciążeniu.} \label{fig2}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 \begin{itemize}
@@ -1177,6 +1234,8 @@ Raporty wygenerowane przez narzędzie Gatling:
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-gatling-high-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy wysokim obciążeniu.} \label{fig3}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 \begin{itemize}
@@ -1217,6 +1276,8 @@ Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby test
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-memory-low-graph.jpg}
     \caption{Wykres przedstawiający zużycie pamięci  RAM aplikacji wykorzystującej podejście Serwerless pod wpłyłem małego obciażenia} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 Wyniki obserwacji:
@@ -1248,6 +1309,8 @@ Wykorzystanie pamięci (linie fioletowe)
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-memory-middle-graph.jpg}
     \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście Serverless pod wpłyłem średnigo obciażenia} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
@@ -1293,6 +1356,8 @@ Raporty wygenerowane przez narzędzie Gatling:
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-gatling-low-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście Serverless, testowanej przy niskim obciążeniu.} \label{fig1}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 \begin{itemize}
@@ -1310,6 +1375,8 @@ Raporty wygenerowane przez narzędzie Gatling:
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-gatling-middle-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście Serverless, testowanej przy średnim obciążeniu.} \label{fig2}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 \begin{itemize}
@@ -1327,6 +1394,8 @@ Raporty wygenerowane przez narzędzie Gatling:
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-gatling-high-graph.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście Serverless, testowanej przy wysokim obciążeniu.} \label{fig3}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
 \end{figure}
 
 \begin{itemize}
@@ -1547,6 +1616,189 @@ Ta aplikacja jest częścią aplikacji webowej, część front-endowa jest odpow
     \item Wsparcie wersjonowania kodu w celu śledzenia zmian lub przywracania poprzednich wersji.
     \item Udostępnianie plików .proto: aplikacja front-end udostępnia użytkownikom wygenerowane pliki .proto, których użytkownicy mogą użyć do generowania obiektów DTO dla komunikacji z wdrożoną funkcją Lambda.
 \end{enumerate}
+
+\newpage
+
+\begin{figure}[H] % [H] forces the figure to stay HERE using the float package
+    \centering
+    \includegraphics[width=\linewidth]{images/sequentinal-diagram.png}
+    \caption{Diagram sekwencyjny aplikacji praktycznej}
+    \label{fig2}
+    \vspace{0.5em}
+    {\small Źródło: opracowanie własne.}
+\end{figure}
+
+\newpage
+
+%srat or code report
+
+\subsection{Prezdsawienie ważnych fragmentów kodu}
+
+Chcę przedstawić kluczowe fragmenty kodu mojego projektu praktycznego wraz z krótkim opisem ich działania.
+
+Poniżej przedstawiono podstawową konfigurację usługi Lambda przy użyciu klienta AWS.
+
+Klasa inicjalizuje klienta usług AWS — w moim przypadku są to: S3Client, LambdaClient oraz IamClient, które służą odpowiednio do zarządzania funkcjami Lambda, przechowywaniem danych w S3 oraz rolami IAM.
+
+\begin{verbatim}
+@Service
+public class LambdaService {
+    private final String bucketName = "lambda-jars";
+    private final String roleName = "lambda-execution-role";
+    private final String jarFilePath = "path/to/jar";
+
+    private final S3Client s3Client;
+    private final LambdaClient lambdaClient;
+    private final IamClient iamClient;
+
+    public LambdaService(S3Client s3Client, LambdaClient lambdaClient, 
+                        IamClient iamClient) {
+        this.s3Client = s3Client;
+        this.lambdaClient = lambdaClient;
+        this.iamClient = iamClient;
+    }
+}
+\end{verbatim}
+
+Poniższy kod wykonuje budowanie pliku JAR za pomocą Mavena, a następnie przesyła go do S3 oraz tworzy nową funkcję Lambda z odpowiednią rolą IAM.
+
+\begin{verbatim}
+public void prepareJarForLambda(String id) {
+    System.setProperty("maven.multiModuleProjectDirectory", "path/to/project");
+    System.setProperty("maven.home", "path/to/maven");
+    System.setProperty("JAVA_HOME", "path/to/java");
+    
+    InvocationRequest request = new DefaultInvocationRequest();
+    request.setPomFile(new File("path/to/pom.xml"));
+    request.setGoals(Collections.singletonList("clean package"));
+
+    Invoker invoker = new DefaultInvoker();
+    try {
+        invoker.execute(request);
+    } catch (Exception e) {
+        throw new RuntimeException("Maven build failed", e);
+    }
+    uploadJarToS3(id);
+    createLambdaFunction(ensureIamRole(), id);
+}
+\end{verbatim}
+
+W poniższym fragmencie kodu przedstawiam, w jaki sposób tworzę funkcję Lambda w AWS za pomocą języka Java oraz SDK dostarczonego przez AWS, na podstawie wcześniej przygotowanego pliku JAR. Proces przygotowania tego pliku został pokazany w poprzednim fragmencie kodu.
+
+\begin{verbatim}
+private void createLambdaFunction(String roleArn, String id) {
+    FunctionCode functionCode = FunctionCode.builder()
+            .s3Bucket(bucketName)
+            .s3Key(id + ".jar")
+            .build();
+
+    CreateFunctionRequest functionRequest = CreateFunctionRequest.builder()
+            .functionName(id)
+            .runtime(Runtime.JAVA21)
+            .role(roleArn)
+            .handler("org.example.MyLambdaFunction::handleRequest")
+            .code(functionCode)
+            .build();
+
+    lambdaClient.createFunction(functionRequest);
+}
+\end{verbatim}
+
+W poniższym fragmencie kodu przedstawiam sposób, w jaki używam usługi AWS S3 — serwisu, który służy do przechowywania dołączonych plików. Robię to ze względu na fakt, że funkcje Lambda w sposób programistyczny możemy tworzyć wyłącznie na podstawie pliku JAR umieszczonego w S3. W przypadku konsoli webowej można to zrobić bezpośrednio, ale z ograniczeniem dotyczącym rozmiaru pliku JAR. W kodzie poniżej pokazuję, w jaki sposób aplikacja dodaje pliki do S3, pobiera je oraz usuwa.
+
+\begin{verbatim}
+public class S3Operations {
+    private final S3Client s3Client;
+    private final String bucketName;
+
+    public void uploadJarToS3(String id, Path jarPath) {
+        s3Client.putObject(PutObjectRequest.builder()
+                .bucket(bucketName)
+                .key(id + ".jar")
+                .build(),
+            RequestBody.fromFile(jarPath));
+    }
+
+    public void deleteJarFromS3(String id) {
+        s3Client.deleteObject(DeleteObjectRequest.builder()
+                .bucket(bucketName)
+                .key(id + ".jar")
+                .build());
+    }
+    
+    public byte[] downloadJar(String id) {
+        ResponseBytes<GetObjectResponse> objectBytes = s3Client.getObjectAsBytes(
+            GetObjectRequest.builder()
+                .bucket(bucketName)
+                .key(id + ".jar")
+                .build());
+        return objectBytes.asByteArray();
+    }
+}
+\end{verbatim}
+
+W następnym fragmencie kodu pokazuję, jak wygląda obsługa błędów w mojej aplikacji. Używam powszechnie stosowanego i popularnego we współczesnych aplikacjach podejścia @ControllerAdvice
+
+\begin{verbatim}
+@ControllerAdvice
+public class LambdaExceptionHandler {
+    @ExceptionHandler(LambdaException.class)
+    public ResponseEntity<ErrorResponse> handleLambdaException(
+            LambdaException ex) {
+        ErrorResponse error = new ErrorResponse(
+            HttpStatus.BAD_REQUEST.value(),
+            ex.getMessage(),
+            System.currentTimeMillis()
+        );
+        return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
+    }
+    
+    @ExceptionHandler(S3Exception.class)
+    public ResponseEntity<ErrorResponse> handleS3Exception(
+            S3Exception ex) {
+        ErrorResponse error = new ErrorResponse(
+            HttpStatus.INTERNAL_SERVER_ERROR.value(),
+            "S3 Operation failed: " + ex.getMessage(),
+            System.currentTimeMillis()
+        );
+        return new ResponseEntity<>(error, HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+}
+\end{verbatim}
+
+Poniżej pokazuję fragment kodu, który przedstawia kontroler REST aplikacji backendowej. Kontroler udostępnia aplikacji front-endowej podstawowe operacje dla funkcji Lambda, takie jak: tworzenie nowej funkcji, sprawdzanie statusu, modyfikacja oraz usunięcie.
+
+\begin{verbatim}
+@RestController
+@RequestMapping("/api/lambda")
+public class LambdaController {
+    private final LambdaService lambdaService;
+
+    @PostMapping("/deploy")
+    public ResponseEntity<DeploymentResponse> deployFunction(
+            @RequestBody DeploymentRequest request) {
+        String functionId = lambdaService.prepareJarForLambda(request.getCode());
+        return ResponseEntity.ok(new DeploymentResponse(functionId));
+    }
+
+    @DeleteMapping("/{functionId}")
+    public ResponseEntity<Void> deleteFunction(
+            @PathVariable String functionId) {
+        lambdaService.deleteLambdaFunction(functionId);
+        return ResponseEntity.noContent().build();
+    }
+    
+    @GetMapping("/{functionId}/status")
+    public ResponseEntity<FunctionStatus> getFunctionStatus(
+            @PathVariable String functionId) {
+        return ResponseEntity.ok(
+            lambdaService.getFunctionStatus(functionId));
+    }
+}
+\end{verbatim}
+
+%finisf code reprt
+
 
 \subsection{Podsumowanie}
 

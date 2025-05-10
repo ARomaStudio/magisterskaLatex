@@ -30,6 +30,8 @@ INPUT c:/tools/TinyTeX/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 INPUT c:/tools/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT c:/tools/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
 INPUT c:/tools/TinyTeX/texmf-dist/tex/latex/graphics-def/pdftex.def
+INPUT c:/tools/TinyTeX/texmf-dist/tex/latex/float/float.sty
+INPUT c:/tools/TinyTeX/texmf-dist/tex/latex/float/float.sty
 INPUT c:/tools/TinyTeX/texmf-dist/tex/latex/todonotes/todonotes.sty
 INPUT c:/tools/TinyTeX/texmf-dist/tex/latex/todonotes/todonotes.sty
 INPUT c:/tools/TinyTeX/texmf-dist/tex/latex/base/ifthen.sty
@@ -364,6 +366,12 @@ INPUT ./images/serverless-gatling-high-graph.jpg
 INPUT ./images/serverless-gatling-high-graph.jpg
 INPUT ./images/serverless-gatling-high-graph.jpg
 INPUT ./images/serverless-gatling-high-graph.jpg
+INPUT ./images/sequentinal-diagram.png
+INPUT ./images/sequentinal-diagram.png
+INPUT ./images/sequentinal-diagram.png
+INPUT ./images/sequentinal-diagram.png
+INPUT ./images/sequentinal-diagram.png
+INPUT c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ectt1200.tfm
 INPUT ./thesismanuscript.lot
 INPUT ./thesismanuscript.lot
 INPUT thesismanuscript.lot
@@ -378,6 +386,7 @@ INPUT thesismanuscript.bbl
 INPUT c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecti0900.tfm
 INPUT thesismanuscript.aux
 INPUT c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti0900.600pk
+INPUT c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk
 INPUT c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx0900.600pk
 INPUT c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1440.600pk
 INPUT c:/tools/TinyTeX/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk
