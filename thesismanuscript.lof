@@ -3,28 +3,28 @@
 \babel@toc {english}{}\relax 
 \babel@toc {polish}{}\relax 
 \contentsline {figure}{\numberline {1}{\ignorespaces Essential Network and Computer Security Requirements.}}{23}{}%
-\contentsline {figure}{\numberline {2}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście IDL pod wpłyłem małego obciażenia.}}{43}{}%
-\contentsline {figure}{\numberline {3}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście IDL pod wpłyłem średnigo obciażenia.}}{44}{}%
-\contentsline {figure}{\numberline {4}{\ignorespaces Raport wygenerowany w narzędziu Galing dla aplikacji działającej w oparciu o podejście IDL, testowanej przy niskim obciążeniu.}}{45}{}%
-\contentsline {figure}{\numberline {5}{\ignorespaces Raport wygenerowany w narzędziu Galing dla aplikacji działającej w oparciu o podejście IDL, testowanej przy średnim obciążeniu.}}{46}{}%
-\contentsline {figure}{\numberline {6}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej SDK wpłyłem małego obciażenia.}}{48}{}%
-\contentsline {figure}{\numberline {7}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej SDK wpłyłem średniego obciażenia.}}{49}{}%
-\contentsline {figure}{\numberline {8}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście SDK, testowanej przy niskim obciążeniu.}}{50}{}%
-\contentsline {figure}{\numberline {9}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście SDK, testowanej przy średnim obciążeniu.}}{51}{}%
-\contentsline {figure}{\numberline {10}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście SDK, testowanej przy wysokim obciążeniu.}}{52}{}%
-\contentsline {figure}{\numberline {11}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej biblioteki pod wpłyłem małego obciażenia.}}{54}{}%
-\contentsline {figure}{\numberline {12}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej biblioteki pod wpłyłem średnigo obciażenia.}}{55}{}%
-\contentsline {figure}{\numberline {13}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o biblioteki testowanej przy niskim obciążeniu.}}{56}{}%
-\contentsline {figure}{\numberline {14}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o biblioteki testowanej przy średnim obciążeniu.}}{57}{}%
-\contentsline {figure}{\numberline {15}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o biblioteki, testowanej przy wysokim obciążeniu.}}{58}{}%
-\contentsline {figure}{\numberline {16}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście REST pod wpłyłem małego obciażenia}}{60}{}%
-\contentsline {figure}{\numberline {17}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście REST pod wpłyłem średnigo obciażenia}}{61}{}%
-\contentsline {figure}{\numberline {18}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy niskim obciążeniu.}}{62}{}%
-\contentsline {figure}{\numberline {19}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy średnim obciążeniu.}}{63}{}%
-\contentsline {figure}{\numberline {20}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy wysokim obciążeniu.}}{64}{}%
-\contentsline {figure}{\numberline {21}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście Serwerless pod wpłyłem małego obciażenia}}{66}{}%
-\contentsline {figure}{\numberline {22}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście Serverless pod wpłyłem średnigo obciażenia}}{67}{}%
-\contentsline {figure}{\numberline {23}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście Serverless, testowanej przy niskim obciążeniu.}}{68}{}%
-\contentsline {figure}{\numberline {24}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście Serverless, testowanej przy średnim obciążeniu.}}{69}{}%
-\contentsline {figure}{\numberline {25}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście Serverless, testowanej przy wysokim obciążeniu.}}{70}{}%
-\contentsline {figure}{\numberline {26}{\ignorespaces Diagram sekwencyjny aplikacji praktycznej}}{76}{}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście IDL pod wpływem małego obciążenia.}}{42}{}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście IDL pod wpływem średniego obciążenia.}}{43}{}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście IDL, testowanej przy niskim obciążeniu.}}{44}{}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście IDL, testowanej przy średnim obciążeniu.}}{45}{}%
+\contentsline {figure}{\numberline {6}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej SDK pod wpływem małego obciążenia.}}{47}{}%
+\contentsline {figure}{\numberline {7}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej SDK pod wpływem średniego obciążenia.}}{48}{}%
+\contentsline {figure}{\numberline {8}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście SDK, testowanej przy niskim obciążeniu.}}{49}{}%
+\contentsline {figure}{\numberline {9}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście SDK, testowanej przy średnim obciążeniu.}}{50}{}%
+\contentsline {figure}{\numberline {10}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście SDK, testowanej przy wysokim obciążeniu.}}{51}{}%
+\contentsline {figure}{\numberline {11}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej biblioteki pod wpływem małego obciążenia.}}{53}{}%
+\contentsline {figure}{\numberline {12}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej biblioteki pod wpływem średniego obciążenia.}}{54}{}%
+\contentsline {figure}{\numberline {13}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o biblioteki testowanej przy niskim obciążeniu.}}{55}{}%
+\contentsline {figure}{\numberline {14}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o biblioteki testowanej przy średnim obciążeniu.}}{56}{}%
+\contentsline {figure}{\numberline {15}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o biblioteki, testowanej przy wysokim obciążeniu.}}{57}{}%
+\contentsline {figure}{\numberline {16}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście REST pod wpływem małego obciążenia.}}{59}{}%
+\contentsline {figure}{\numberline {17}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście REST pod wpływem średniego obciążenia.}}{60}{}%
+\contentsline {figure}{\numberline {18}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy niskim obciążeniu.}}{61}{}%
+\contentsline {figure}{\numberline {19}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy średnim obciążeniu.}}{62}{}%
+\contentsline {figure}{\numberline {20}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy wysokim obciążeniu.}}{63}{}%
+\contentsline {figure}{\numberline {21}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście Serverless pod wpływem małego obciążenia.}}{65}{}%
+\contentsline {figure}{\numberline {22}{\ignorespaces Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście Serverless pod wpływem średniego obciążenia.}}{66}{}%
+\contentsline {figure}{\numberline {23}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście Serverless, testowanej przy niskim obciążeniu.}}{67}{}%
+\contentsline {figure}{\numberline {24}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście Serverless, testowanej przy średnim obciążeniu.}}{68}{}%
+\contentsline {figure}{\numberline {25}{\ignorespaces Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście Serverless, testowanej przy wysokim obciążeniu.}}{69}{}%
+\contentsline {figure}{\numberline {26}{\ignorespaces Diagram sekwencyjny działania aplikacji praktycznej}}{75}{}%

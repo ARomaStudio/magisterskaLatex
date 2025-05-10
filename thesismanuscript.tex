@@ -47,7 +47,7 @@
 
 \selectlanguage{english}
 \begin{abstract}
-Rapid development and adoption of microservices architecture in last few years changed the world of Informatics. Microservices architecture has many advantages, such as flexibility, fast and comfortable deployment, and easy maintenance. However, this architecture also causes new challenges, such as code duplication and complicated code management. In my master's thesis, I've carried on deep and detailed analysis of all available approaches to manage shared code in system of microservices. In my work, I want to compare all available approaches of code share code in system of microservices using literature sources and prepared code laboratory, also to define cases in which it is better to choose one or another approach. In my practical part, I want to present my own approach to sharing code that will combine the advantages of all existing solutions and provide the best performance and code comfort for developer in code management. At the end of my work, I will place comparison of my solution with existing solutions using prepared performance tests.
+Rapid development and adoption of microservices architecture in the last few years has changed the world of Informatics. Microservices architecture has many advantages, such as flexibility, fast and comfortable deployment, and easy maintenance. However, this architecture also causes new challenges, such as code duplication and complicated code management. In my master's thesis, I've carried out a deep and detailed analysis of all available approaches to manage shared code in systems of microservices. In my work, I want to compare all available approaches for sharing code in systems of microservices using literature sources and prepared code laboratory, also to define cases in which it is better to choose one or another approach. The aim is to present an approach to sharing code, combining the advantages of all existing solutions and providing better performance and convenience for developers in managing code. At the end of my work, I will place a comparison of my solution with existing solutions using prepared performance tests.
 \keywords{Microservices Architecture \and Code Sharing \and Performance.}
 \end{abstract}
 
@@ -55,7 +55,7 @@ Rapid development and adoption of microservices architecture in last few years c
 
 \selectlanguage{polish}
 \begin{abstract}
-Bez wątpienia mogę powiedzieć, że szybki rozwój i przyjęcie architektury mikroserwisowej w ostatnich latach zmieniły świat informatyki. Uważam, że architektura mikroserwisowa ma wiele zalet, takich jak na przykład elastyczność, prostota wdrożenia i utrzymania. Natomiast powoduje nowe wyzwania dla programistów, takie jak do przykładu problem duplikacji kodu. W pracy magisterskiej przeprowadziłem dokładną analizę metod i podejść współdzielenia kodu w systemach mikroserwisów, porównanie za pomocą źródeł literaturowych oraz przeprowadzonych badań dostępne podejścia do współdzielenia kodu, zdefiniować przypadki, w których warto wybrać takie lub inne podejście. W części praktycznej zaprezentowałem własne nowoczesne rozwiązanie, które połączyło zalety istniejących rozwiązań, wydajność oraz komfort zarządzania kodem. Na końcu umieściłem porównanie mojego rozwiązania z istniejącymi za pomocą przygotowanych testów wydajnościowych.
+Z pewnością szybki rozwój i przyjęcie architektury mikroserwisowej w ostatnich latach zmieniły świat informatyki. Uważam, że architektura mikroserwisowa ma wiele zalet, takich jak na przykład elastyczność, prostota wdrożenia i utrzymania. Jednak powoduje nowe wyzwania dla programistów, takie jak na przykład problem duplikacji kodu. W pracy magisterskiej przeprowadziłem dokładną analizę metod i podejść współdzielenia kodu w systemach mikroserwisów, porównałem za pomocą źródeł literaturowych oraz przeprowadzonych badań dostępne podejścia do współdzielenia kodu, zdefiniowałem przypadki, w których należy wybrać określone podejście. W części praktycznej zaprezentowałem własne nowoczesne rozwiązanie, które łączy zalety istniejących rozwiązań, wydajność oraz komfort zarządzania kodem. Na końcu umieściłem porównanie mojego rozwiązania z istniejącymi za pomocą przygotowanych testów wydajnościowych.
 \keywords{Architektura mikrousług \and Współdzielenie kodu \and Wydajność.}
 \end{abstract}
 
@@ -77,18 +77,18 @@ W mojej pracy chcę przeanalizować, jakie metody współdzielenia kodu są dost
 \newpage
 
 \subsection{Zawartość pracy}
-Praca jest ustrukturyzowana w kilka rozdziałów, przedstawiam krótki opis rozdziałów parcy:
+Praca jest ustrukturyzowana w kilka rozdziałów, przedstawiam krótki opis rozdziałów pracy:
 \begin{enumerate}
-    \item Wstęp - W tym rozdziale analizuję wady i zalety architektury mikroserwisowej oraz monolitycznej, też analizuję, dlaczego z architektury monolitycznej powstała w ostatich latach architektura mikroserwisowa, robię analizę przypadków w których lepiej użyć architektury monolitycznej a w których architekturę mikroserwisową. Opisuję dlaczego powstało zapotrzebowanie na współdzielenie kodu. Uzasadniam informację przykładami z literatury.
-    \item Architektura mikroserwisowa a Monolitowa - W tym rozdziale paracy porównuję mikroserwisy z podejściem monolitycznym, przedstawiam różnice w utrzymaniu i skalowalności, za pomocą źródeł literaturowych.
+    \item Wstęp - W tym rozdziale analizuję wady i zalety architektury mikroserwisowej oraz monolitycznej, też analizuję, dlaczego z architektury monolitycznej powstała w ostatnich latach architektura mikroserwisowa, przeprowadzam analizę przypadków, w których lepiej użyć architektury monolitycznej a w których architekturę mikroserwisową. Opisuję, dlaczego powstało zapotrzebowanie na współdzielenie kodu. Uzasadniam informację przykładami z literatury.
+    \item Architektura mikroserwisowa a Monolityczna - W tym rozdziale pracy porównam mikroserwisy z podejściem monolitycznym, przedstawiam różnice w utrzymaniu i skalowalności, za pomocą źródeł literaturowych.
     \item Analiza dziedziny problemowej - W tym rozdziale przedstawiam kategoryzuję typy obiektów które mogą potrzebować współdzielenia kodu w systemie mikroserwisów, analizuję możliwe wyzwania związane z współdzieleniem poszczególnych typów obiektów, przedstawiam uzasadnienia z literatury.
-    \item Analiza metod współdzielenia kodu - W tym rozdziale kompleksowa analiza istniejących metod współdzielenia kodu w systemach mikroserwisów za pomocą źródeł literaturowych kryterium ocenia.
-    \item Opis części praktycznej - Zawiera opis przygotowanej w ramach pracy aplikacji która wspomaga nowoczesne rozwiązanie do współdzielenia kodu w systemach mikroserwisów - Server Less rozszerzając możliwości tego rozwiązania.
+    \item Analiza metod współdzielenia kodu - W tym rozdziale kompleksowa analiza istniejących metod współdzielenia kodu w systemach mikroserwisów za pomocą kryteriów oceny opartych na źródłach literaturowych.
+    \item Opis części praktycznej - Zawiera opis przygotowanej w ramach pracy aplikacji, która wspomaga nowoczesne rozwiązanie do współdzielenia kodu w systemach mikroserwisów - Serverless rozszerzając możliwości tego rozwiązania.
 \end{enumerate}
 
 \newpage
 
-\section{Ogólna definicja wspówdzielenia kodu}
+\section{Ogólna definicja współdzielenia kodu}
 
 Współdzielenie kodu – to praktyka w programowaniu polegająca na udostępnianiu fragmentów kodu lub całych funkcji, metod albo modułów – w zależności od architektury i użytych technologii – między różnymi projektami, zespołami, a czasem również między firmami lub społecznościami open source.
 
@@ -101,19 +101,16 @@ Celem współdzielenia kodu jest:
     \item Ułatwienie współpracy zespołowej – ułatwia korzystanie z wyników pracy jednego programisty przez zespół oraz między zespołami.
     \item Lepsze testowanie i jakość – ze względu na utrzymanie spójnych reguł w aplikacji kod jest łatwiejszy do testowania, co zmniejsza ryzyko błędów i poprawia ogólną jakość kodu.
 \end{enumerate}
-    
+
 W przypadku architektury mikroserwisowej współdzielenie kodu to praktyka udostępniania fragmentów kodu – na przykład bibliotek, modułów, metod lub funkcji – pomiędzy mikroserwisami (elementami systemu mikroserwisowego), w celu osiągnięcia korzyści przedstawionych powyżej. W przypadku architektury monolitycznej współdzielenie kodu również odgrywa ważną rolę w utrzymaniu jakości kodu i aplikacji.
 
-\section{Architektura mikroserwisowa a monolitowa}
+\section{Architektura mikroserwisowa a monolityczna}
 
 Mikroserwisowa infrastruktura, szybko rozwijająca się w ostatnich latach, przyniosła wiele korzyści w świat informatyki. Pozwoliła na tworzenie skalowalnych i elastycznych systemów, ułatwiła utrzymanie takich systemów. Natomiast musimy również uważać przy wyborze architektury na to, że w przypadku mikroserwisów musimy poradzić sobie z kwestią współdzielenia kodu w takim systemie mikroserwisów.
 
 \subsection{Architektura mikroserwisowa}
 
-Na podstawie mojego doświadczenia, podział aplikacji na mniejsze, niezależne usługi przynosi liczne korzyści. Każdy mikroserwis można skalować osobno, co pozwala na poprawę wydajności całego systemu. W sytuacji, gdy pojawia się problem, naprawa jest prostsza, ponieważ wystarczy skupić się na jednej części aplikacji, a nie na całym systemie. Mikrousługi wpływają również na organizację pracy zespołowej. Deweloperzy mogą skupić się na rozwoju pojedynczych mikroserwisów, co ułatwia zarządzanie projektem i zmniejsza ryzyko wystąpienia błędów w innych częściach aplikacji. Ponadto, gdy pojawia się problem, jest on łatwiejszy do zidentyfikowania, a proces naprawy staje się bardziej efektywny. Kolejną zaletą mikrousług, moim zdaniem, jest ich elastyczność pod względem doboru technologii. Dzięki temu, że każdą usługę można tworzyć i zarządzać nią z użyciem różnych narzędzi, istnieje większa swoboda w doborze najlepszych rozwiązań technologicznych do każdej części systemu. Mikrousługi wspierają również skuteczne zarządzanie projektem, ponieważ umożliwiają szybsze wdrażanie nowych funkcji i reagowanie na zmiany. Taki system jest bardziej odporny na awarie, a cały proces utrzymania aplikacji jest prostszy.
-\begin{quote}
-    "Microservices are small, autonomous services that work together. Let’s break that definition down a bit and consider the characteristics that make microservices different."~\cite[p. 2]{newman2015building}
-\end{quote}
+Na podstawie mojego doświadczenia, podział aplikacji na mniejsze, niezależne usługi przynosi liczne korzyści. Każdy mikroserwis można skalować osobno, co pozwala na poprawę wydajności całego systemu. W sytuacji, gdy pojawia się problem, naprawa jest prostsza, ponieważ wystarczy skupić się na jednej części aplikacji, a nie na całym systemie. Mikrousługi wpływają również na organizację pracy zespołowej. Deweloperzy mogą skupić się na rozwoju pojedynczych mikroserwisów, co ułatwia zarządzanie projektem i zmniejsza ryzyko wystąpienia błędów w innych częściach aplikacji. Ponadto, gdy pojawia się problem, jest on łatwiejszy do zidentyfikowania, a proces naprawy staje się bardziej efektywny. Kolejną zaletą mikrousług, moim zdaniem, jest ich elastyczność pod względem doboru technologii. Dzięki temu, że każdą usługę można tworzyć i zarządzać nią z użyciem różnych narzędzi, istnieje większa swoboda w doborze najlepszych rozwiązań technologicznych do każdej części systemu. Mikrousługi wspierają również skuteczne zarządzanie projektem, ponieważ umożliwiają szybsze wdrażanie nowych funkcji i reagowanie na zmiany. Taki system jest bardziej odporny na awarie, a cały proces utrzymania aplikacji jest prostszy. ~\cite[p. 2]{newman2015building}
 
 Architektura mikrousług przedstawia następujące cechy:
 
@@ -124,22 +121,18 @@ Architektura mikrousług przedstawia następujące cechy:
     \item Równoległy rozwój - Zespoły programistów mogą pracować nad osobnymi mikroserwisami równolegle, bez konfliktów zmian w kodzie.
 \end{enumerate}
 
-\subsection{Architektura monolitowa}
+\subsection{Architektura monolityczna}
 
 Charakterystyka architektury monolitycznej:
 
 \begin{enumerate}
-    \item Wdrożnie - Cała aplikacja jest wdrażana jako całość, niepodzielna jednostka. Wszustkie aktualizacje wymagają wdrożenia całej aplikacji.
+    \item Wdrożenie - Cała aplikacja jest wdrażana jako całość, niepodzielna jednostka. Wszystkie aktualizacje wymagają wdrożenia całej aplikacji.
     \item Kontrola przepływu kodu - Centralny moduł kontroli w aplikacji koordynuje sekwencyjne wykonywanie kodu.
-    \item Powiązanie - Poszczególne elementy aplikacji są ścisłe powiązane.
+    \item Powiązanie - Poszczególne elementy aplikacji są ściśle powiązane.
     \item Współdzielona pamięć - Wszystkie komponenty oprogramowania mają bezpośredni dostęp do zasobów, co sprzyja ich integracji, natomiast taka konfiguracja może powodować konflikty elementów kodu na poziomie sprzętowym i trudności ze skalowaniem. \cite{sharma2023monolithic}
 \end{enumerate}
 
 \subsection{Porównanie}
-
-\begin{quote}
-    "I should call out that microservices are no free lunch or silver bullet, and make for a bad choice as a golden hammer. They have all the associated complexities of distributed systems."~\cite[p. 11]{newman2015building}
-\end{quote}
 
 Zalety architektury monolitycznej:
 
@@ -160,7 +153,7 @@ Zalety architektury mikroserwisowej:
     \item Bezpieczeństwo - Mikroserwisy ułatwiają ochronę danych. Każda usługa ma swoją bazę danych, co utrudnia hakerom dostanie się do danych.~\cite{sharma2023monolithic}
 \end{enumerate}
 
-Wybór między architekturą monolityczną a mikroserwisową zależy od wielu faktorów, takich jak rozmiar projektu, zapotrzebowanie na ciągły rozwój, wymagania dotyczące skalowalności oraz kompetencje i doświadczenia zespołu. Architektura monolityczna lepiej pasuje dla małych i mniej skomplikowanych projektów natomiast mikroserwisowa oferuje benefity w przypadku wykorzystania w większych, bardziej skomplikowanych systemach.
+Wybór między architekturą monolityczną a mikroserwisową zależy od wielu faktorów, takich jak rozmiar projektu, zapotrzebowanie na ciągły rozwój, wymagania dotyczące skalowalności oraz kompetencje i doświadczenia zespołu. Architektura monolityczna lepiej pasuje dla małych i mniej skomplikowanych projektów natomiast mikroserwisowa oferuje benefity w przypadku wykorzystania w większych, bardziej skomplikowanych systemach. ~\cite[p. 11]{newman2015building}
 
 \newpage
 
@@ -170,14 +163,14 @@ Celem niniejszej pracy magisterskiej jest zgłębienie tematu współdzielenia o
 
 \subsection{Typy obiektów w aplikacjach mikroserwisowych}
 
-Postanowiłem rozpocząć analizę dziedziny problemowej od tego że za pomocą źródeł literaturowych zidentyfikuję typy obiektów oraz dokonać analizy tego, które z nich mogą wymagać współdzielenia w systemach mikroserwisów.
+Postanowiłem rozpocząć analizę dziedziny problemowej od tego, że za pomocą źródeł literaturowych zidentyfikuję typy obiektów oraz dokonam analizy tego, które z nich mogą wymagać współdzielenia w systemach mikroserwisów.
 
 \begin{enumerate}
-    \item DTO (Data Transfer Object) - Takie obiekty są specjalnie przeznaczone do obsługi przesyłania danych między elementami systemu mikroserwisów, są lekkie i nie zawierają logiki biznesowej, dlatego współdzielenie takich obiektów jest jak najbardziej zalecane ponieważ zapewniają spójność danych po obu stronach komunikacji oraz zmniejsza ilość błędów w przypadku rozwoju lub utrzymania aplikacji.
-    \item Model (lub Encja) - Najczęściej są logicznie powiązane z tabelami w bazie danych, ze względu na to że we współczesnych czasach za dobrą praktykę jest uważane podejście w którym jeden mikroserwis jest powiązany z maksymalnie jedną bazą danych, współdzielenie tego typu obiektów nie jest zalecane.
-    \item Wyjątek (Exception) - Zalecanym jest współdzielenie informacji o wyjątkach w systemie mikroserwisów tym samym tworząc jednolitą obsługę błędów w systemie. Logika związana z obsługą błędów, w przypadku podobności w kilku serwisach też jest dobrym kandydatem do współdzielenia. Taka standaryzacja w systemie mikroserwisów sprawia że łatwiej później znaleźć źródło błędu i naprawić go.
-    \item Walidatory - W przypadku współdzielenia walidatorów w systemie mikroserwisów można zapewnić integralność danych w całym systemie oraz zmniejszyć duplikację kodu, również standaryzacja walidacji obiektów w systemie zmniejsza ilość ewentualnych problemów w trakcie ewolucji i rozwoju mikroserwisów w przyszłości, współdzielenie takich obiektów jest dobrą praktyką i jest zalecane.
-    \item Serwisy - W przypadku logiki która powtarza się w dwóch i więcej serwisach zalecanym jest współdzielenie takiego serwisu za pomocą najlepiej w tym przypadku pasującej metody, zmniejsza to duplikację kodu natomiast zwiększa czytelność i spójność kodu w systemie mikroserwisów, zmniejsza ilość ewentualnych problemów w trakcie ewolucji i rozwoju kodu.
+    \item DTO (Data Transfer Object) - Takie obiekty są specjalnie przeznaczone do obsługi przesyłania danych między elementami systemu mikroserwisów, są lekkie i nie zawierają logiki biznesowej, dlatego współdzielenie takich obiektów jest jak najbardziej zalecane, ponieważ zapewniają spójność danych po obu stronach komunikacji oraz zmniejszają ilość błędów w przypadku rozwoju lub utrzymania aplikacji.
+    \item Model (lub Encja) - Najczęściej są logicznie powiązane z tabelami w bazie danych, ze względu na to, że we współczesnych czasach za dobrą praktykę jest uważane podejście, w którym jeden mikroserwis jest powiązany z maksymalnie jedną bazą danych, współdzielenie tego typu obiektów nie jest zalecane.
+    \item Wyjątek (Exception) - Zalecanym jest współdzielenie informacji o wyjątkach w systemie mikroserwisów, tym samym tworząc jednolitą obsługę błędów w systemie. Logika związana z obsługą błędów, w przypadku podobności w kilku serwisach też jest dobrym kandydatem do współdzielenia. Taka standaryzacja w systemie mikroserwisów sprawia, że łatwiej później znaleźć źródło błędu i naprawić go.
+    \item Walidatory - W przypadku współdzielenia walidatorów w systemie mikroserwisów można zapewnić integralność danych w całym systemie oraz zmniejszyć duplikację kodu, również standaryzacja walidacji obiektów w systemie zmniejsza ilość ewentualnych problemów w trakcie ewolucji i rozwoju mikroserwisów w przyszłości. Współdzielenie takich obiektów jest dobrą praktyką i jest zalecane.
+    \item Serwisy - W przypadku logiki, która powtarza się w dwóch i więcej serwisach, zalecanym jest współdzielenie takiego serwisu za pomocą najlepiej w tym przypadku pasującej metody. Zmniejsza to duplikację kodu, natomiast zwiększa czytelność i spójność kodu w systemie mikroserwisów, zmniejsza ilość ewentualnych problemów w trakcie ewolucji i rozwoju kodu.
 \end{enumerate}
 
 Musimy zdawać sobie sprawę, że mimo tego, iż współdzielenie kodu daje nam wiele korzyści, nadmiarowe współdzielenie kodu może spowodować problemy i pogorszyć jakość oraz zrozumiałość naszego kodu, utrudnić testowanie, spowodować powstanie błędów kaskadowych, czyli sytuacji, kiedy błąd w jednym źródle powoduje problemy od razu w wielu miejscach, oraz utrudnić utrzymanie systemu. Należy zawsze używać współdzielenia ostrożnie i podejmować decyzję w każdym konkretnym przypadku współdzielenia.
@@ -200,16 +193,16 @@ Po przeprowadzeniu dogłębnej analizy tematu i między innymi źródeł literat
 
 \section{Analiza metod współdzielenia kodu}
 
-We współczesnych czasach współdzielenie kodu jest niezbędne w skomplikowanych systemach mikroserwisów, w tym rozdziale pracy porównuję istniejące podejścia do współdzielenia kodu oraz porównam je za pomocą zdefiniowanych w poprzednim rozdziale kryteriów. Głównym celem jest zdefiniowanie najlepszych praktyk współdzielenia kodu, zdefiniować, które podejście najbardziej dopasowane do współdzielenia konkretnych typów obiektów, zdefiniowanych powyżej w tej pracy oraz porównanie wydajności i możliwości skalowania w przypadku każdego z podejść za pomocą przygotowanych programistycznych testów wydajnościowych.
+We współczesnych czasach współdzielenie kodu jest niezbędne w skomplikowanych systemach mikroserwisów, w tym rozdziale pracy porównuję istniejące podejścia do współdzielenia kodu oraz porównuję je za pomocą zdefiniowanych w poprzednim rozdziale kryteriów. Głównym celem jest zdefiniowanie najlepszych praktyk współdzielenia kodu, określenie, które podejście jest najbardziej dopasowane do współdzielenia konkretnych typów obiektów, zdefiniowanych powyżej w tej pracy oraz porównanie wydajności i możliwości skalowania w przypadku każdego z podejść za pomocą przygotowanych programistycznych testów wydajnościowych.
 
 \subsection{Metody współdzielenia kodu z opisem}
 
 Za pomocą źródeł literatury oraz własnego doświadczenia zdefiniowałem dostępne na dzień dzisiejszy podejścia:
 
 \begin{enumerate}
-    \item Interface definition languages - do IDL należą wiele popularnych technologii, Protocol buffers, Avro IDL, Open API. ~\cite{wiki:interface_description_language}
+    \item Interface definition languages - do IDL należy wiele popularnych technologii, Protocol buffers, Avro IDL, Open API. ~\cite{wiki:interface_description_language}
     \item Biblioteki kodu - najbardziej oczywiste podejście, które daje możliwość współdzielenia wszystkich rodzajów obiektów w aplikacji.
-    \item Biblioteki klienckie - podejście które polega na udostępnieniu za pomocą biblioteki kodu zestawu obiektów potrzybnych do kmonikacji z narzedziem zewnętrznym, takim jak, na przykład konsola AWS.
+    \item Biblioteki klienckie - podejście które polega na udostępnieniu za pomocą biblioteki kodu zestawu obiektów potrzebnych do komunikacji z narzędziem zewnętrznym, takim jak, na przykład konsola AWS.
     \item Wyniesienie kodu do osobnego REST serwisu - podejście polega na przechwytywaniu i udostępnieniu wspólnej logiki poprzez utworzenie osobnego mikroserwisu.
     \item Serverless - nowoczesne podejście do pisania kodu i przetwarzania informacji wykorzystywane w chmurach obliczeniowych. Pozwala na uruchamianie kawałków kodu, metod i funkcji niezależnie, bez warstwy zarządzania aplikacją, a także na uruchamianie kodu bez konieczności zarządzania podstawową infrastrukturą. ~\cite{ibm_serverless}
 \end{enumerate}
@@ -240,28 +233,28 @@ Serwisy, serwisami są głównym miejscem przechowywania, serwisy mogą być wsp
 
 \subsection{Definicja kryterium oceny i porównania metod współdzielenia kodu}
 
-Na podstawie źródeł literaturowych, własnego doświadczenia oraz przygotowanych tstów wydajnościowych dokonałem analizy przedstawionych powyżej podejść do wspówdzieleina kodu w systemach mikroserwisów.
+Na podstawie źródeł literaturowych, własnego doświadczenia oraz przygotowanych testów wydajnościowych dokonałem analizy przedstawionych powyżej podejść do współdzielenia kodu w systemach mikroserwisów.
 
 \subsubsection{Definicja kryterium oceny pod kątem izolacji w przypadku IDL}
 
-Przedstawiam kryteria które wybrałem w rezultacie analizy źródeł internetowych oraz książek takich jak ~\cite{kleppmann2017designing} w których w znalezłem opis tego jak musi wyglądać architektura mikro serwisowa, wady i zalety różnych rozwiązań.
+Przedstawiam kryteria, które wybrałem w rezultacie analizy źródeł internetowych oraz książek takich jak ~\cite{kleppmann2017designing}, w których znalazłem opis tego, jak musi wyglądać architektura mikroserwisowa, wady i zalety różnych rozwiązań.
 
 \begin{enumerate}
-    \item Conflict Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują merge konflikty. Wyzwania dotyczące pracy z IDL i podejścia do ich pokonania są dobrze opisane w książce ~\cite{kleppmann2017designing}. W szczegółach są opisane metody pracy z schematami IDL, między innymi narzędziem Protocol Buffer dostrzeganego przez Alphabet oraz Avro. To oznacza, że stare i nowe wersje kodu oraz stare i nowe formaty danych mogą potencjalnie współistnieć w systemie w tym samym czasie. Aby system działał płynnie, musimy zachować kompatybilność w obu kierunkach: Kompatybilność wsteczna i kompatybilność w przód. 
-    Musimy uważać na to, jaką ilość konfliktów generuje stosowanie wybranego podejścia. Podobne konflikty często są czasochłonne i nawet w przypadku nietrudnych przypadków potrafią spowolnić zespół deweloperski oraz spowodować inne, bardziej skomplikowane błędy. ~\cite[p. 112]{kleppmann2017designing}
-    \item Version Drift Occurrence - wskaźnik tego, jak często rozwiązanie powoduje użycie niezgodnych wersji IDL w różnych zespołach. Kiedy zespoły programistów pracujące nad jednym systemem zaczynają używać niezgodną wersję plików IDL, mikroserwisy w systemie mikroserwisów przestają komunikować się poprawnie, co powoduje błędy w runtime, które są bardzo trudne do wyłapania i naprawy, nieoczekiwane zachowanie systemu oraz uszkodzenie danych. W przypadku wykorzystania podejścia, które nie może zapewnić odpowiedniego poziomu kontroli nad wersjami i izolacji, rozwój i wdrażanie zmian w systemie mogą być problematyczne. 
+    \item Conflict Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują konflikty scalania (merge conflicts). Wyzwania dotyczące pracy z IDL i podejścia do ich pokonania są dobrze opisane w książce ~\cite{kleppmann2017designing}. Szczegółowo opisane są metody pracy ze schematami IDL, między innymi narzędziem Protocol Buffer rozwijanym przez Alphabet oraz Avro. To oznacza, że stare i nowe wersje kodu oraz stare i nowe formaty danych mogą potencjalnie współistnieć w systemie w tym samym czasie. Aby system działał płynnie, musimy zachować kompatybilność w obu kierunkach: kompatybilność wsteczną i kompatybilność w przód. 
+    Musimy uważać na to, jaką liczbę konfliktów generuje stosowanie wybranego podejścia. Takie konflikty często są czasochłonne i nawet w przypadku prostych sytuacji potrafią spowolnić zespół deweloperski oraz spowodować inne, bardziej skomplikowane błędy. ~\cite[p. 112]{kleppmann2017designing}
+    \item Version Drift Occurrence - wskaźnik tego, jak często rozwiązanie powoduje użycie niezgodnych wersji IDL w różnych zespołach. Kiedy zespoły programistów pracujące nad jednym systemem zaczynają używać niezgodnych wersji plików IDL, mikroserwisy w systemie mikroserwisów przestają komunikować się poprawnie, co powoduje błędy w runtime, które są bardzo trudne do wyłapania i naprawy, nieoczekiwane zachowanie systemu oraz uszkodzenie danych. W przypadku wykorzystania podejścia, które nie może zapewnić odpowiedniego poziomu kontroli nad wersjami i izolacji, rozwój i wdrażanie zmian w systemie mogą być problematyczne. 
     W przypadku braku kompatybilności nie jest możliwe poprawne działanie systemu. ~\cite[p. 123]{kleppmann2017designing}
     \item Build Failure Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują problemy w trakcie budowania aplikacji.  
-    Dlatego w przypadku problemów z schematem wynikającym często z nieprawidłowo wybranego podejścia do zarządzania plikami IDL. ~\cite[p. 123]{kleppmann2017designing}
+    Problemy te często wynikają z nieprawidłowo wybranego podejścia do zarządzania plikami IDL. ~\cite[p. 123]{kleppmann2017designing}
     \item Deployment Rollback Frequency - wskaźnik tego, jak często zmiany w plikach IDL powodują problemy w trakcie wdrożenia aplikacji na środowiska w systemie mikroserwisów. 
-    Częste rollbacki usług w trakcie wdrożeń mogą spowodować spowolnienie wdrożenia nowych zmian i opóźnienie projektu, dlatego w trakcie wyboru podejścia do zarządzania plikami IDL musimy brać to pod uwagę. Musimy w trakcie analizy i planowania projektu wybrać podejście, które zapewni najmniejsze ryzyko błędów w trakcie próbnego wdrożenia i wycofania zmian. ~\cite[p. 92]{kleppmann2017designing}
+    Częste wycofywania zmian (rollbacki) usług w trakcie wdrożeń mogą spowodować spowolnienie wdrożenia nowych funkcjonalności i opóźnienie projektu, dlatego w trakcie wyboru podejścia do zarządzania plikami IDL musimy brać to pod uwagę. Musimy w trakcie analizy i planowania projektu wybrać podejście, które zapewni najmniejsze ryzyko błędów w trakcie próbnego wdrożenia i wycofania zmian. ~\cite[p. 92]{kleppmann2017designing}
 \end{enumerate}
-    
+
 \subsubsection{Definicja kryterium oceny pod kątem izolacji w przypadku bibliotek, SDK, REST, serverless}
 
 W kontekście bibliotek, SDK, REST i serverless znaczenie pojęcia izolacji różni się od izolacji w kontekście IDL. W tym przypadku izolacja to zdolność systemu do odseparowania komponentów systemu i zminimalizowania wpływu zmian w jednym serwisie na pozostałe, co daje podejściu mikroserwisowemu jego wygodność i elastyczność.
 
-W przypadku izolacji na podstawie analzy żródeł literaturowych oraz własnego doświadcznia zdefiniowałem kryteria porównania jako następujące:
+W przypadku izolacji na podstawie analizy źródeł literaturowych oraz własnego doświadczenia zdefiniowałem kryteria porównania jako następujące:
 
 % AI
 \begin{enumerate}
@@ -300,11 +293,7 @@ W przypadku izolacji na podstawie analzy żródeł literaturowych oraz własnego
 
 Czym jest skalowalność 
 
-\begin{quote}
-    "Scalability – the ability to work well when the load or the number of users increases – failure handling, concurrency of components, transparency and providing quality of service." ~\cite[p. 21]{coulouris2011distributed}
-\end{quote}
-
-W rozdziale 1 autorzy definiują pojęcie skalowalności jako 4 główne aspekty systemu: Controlling the cost of physical resources, Controlling the performance loss, Preventing software resources running out, Avoiding performance bottlenecks, strony 20-21, czyli Kontrola kosztów zasobów fizycznych, Kontrola utraty wydajności, Zapobieganie wyczerpywaniu się zasobów oprogramowania, Unikanie wąskich gardeł wydajności, dlatego mogę zdefiniować kryterium oceny pod kątem skalowalności jako:
+W rozdziale 1 autorzy definiują pojęcie skalowalności jako 4 główne aspekty systemu: Controlling the cost of physical resources, Controlling the performance loss, Preventing software resources running out, Avoiding performance bottlenecks, strony 20-21, czyli Kontrola kosztów zasobów fizycznych, Kontrola utraty wydajności, Zapobieganie wyczerpywaniu się zasobów oprogramowania, Unikanie wąskich gardeł wydajności, dlatego mogę zdefiniować kryterium oceny pod kątem skalowalności jako: ~\cite[p. 21]{coulouris2011distributed}
 
 \begin{enumerate}
     \item Wpływ na koszty zasobów fizycznych - to jak wzrostu obciążenia wpływa na koszty utrzymania sprzętu.
@@ -327,7 +316,7 @@ Za pomocą źródeł literaturowych oraz własnego doświadczenia zdefiniowałem
 
 \subsection{Ocena i porównanie metod współdzielenia kodu}
 
-\subsubsection{Ocena wspówdzieleina kodu za pomocą Interface definition languages}
+\subsubsection{Ocena współdzielenia kodu za pomocą Interface definition languages}
 
 Ocena pod kątem komunikacji – zapewnia potrzebny poziom komunikacji, obiekty są generowane na podstawie języka definicji interfejsu (IDL) na etapie uruchamiania aplikacji. Dalej, w trakcie wykonywania logiki programu, takie obiekty mogą być używane przez program bez obciążenia wydajnościowego. Obiekty wygenerowane na podstawie plików IDL mogą być wykorzystane do komunikacji asynchronicznej, takich jak brokery wiadomości, jak również do wysyłania bezpośrednich zapytań między serwisami.
 
@@ -452,15 +441,15 @@ Na podstawie analizy źródeł literaturowych oraz własnych doświadczeń dokon
     \end{itemize} \\ \hline
     Rozgałęzianie i tagowanie &
     \begin{itemize}
-      \item Rozgałęzienie pozwala zespołom na przygowtoanie nowych wersji oprogramowania w izolacji, nie prxerywając pracy innych zespołów.
+      \item Rozgałęzienie pozwala zespołom na przygotowanie nowych wersji oprogramowania w izolacji, nie przerywając pracy innych zespołów.
       \item Tagi dają możliwości oznaczania stabilnych wersji, zapewniając łatwą identyfikację wersji gotowych do użytku.
     \end{itemize} \\ \hline
     Audytowalność &
     \begin{itemize}
       \item Pełna historia commitów jest zawsze przechowywana, co umożliwia audyty kodu.
-      \item Zapewnia odpowiedzialnosc za wprowadzone zmniany i usprawnia współpracę w zespołów.
+      \item Zapewnia odpowiedzialność za wprowadzone zmiany i usprawnia współpracę zespołów.
     \end{itemize} \\ \hline
-    
+
     \multicolumn{2}{|c|}{\textbf{2. Biblioteki}} \\ \hline
     Wersjonowanie semantyczne &
     \begin{itemize}
@@ -471,7 +460,7 @@ Na podstawie analizy źródeł literaturowych oraz własnych doświadczeń dokon
     Dzienniki zmian &
     \begin{itemize}
       \item Do każdego wydania dołączona szczegółowa dokumentacja.
-      \item Takie changelogi zmian zapewniają uporządkowaną historię modyfikacji,.
+      \item Takie dzienniki zmian zapewniają uporządkowaną historię modyfikacji.
       \item Takie podejście zapewnia to przejrzystość śledzenia zmian.
     \end{itemize} \\ \hline
     Centralne repozytorium artefaktów &
@@ -483,7 +472,7 @@ Na podstawie analizy źródeł literaturowych oraz własnych doświadczeń dokon
     \multicolumn{2}{|c|}{\textbf{3. Podejście Monorepo}} \\ \hline
     Zunifikowany dziennik zmian &
     \begin{itemize}
-      \item Wszystkie mikrserwisy w systemie i powiązane z nimi pliki IDL znajdują się w jednym repozytorium.
+      \item Wszystkie mikroserwisy w systemie i powiązane z nimi pliki IDL znajdują się w jednym repozytorium.
       \item Historia commitów zapewnia całościowy widok zmian.
     \end{itemize} \\ \hline
     Spójność &
@@ -495,24 +484,24 @@ Na podstawie analizy źródeł literaturowych oraz własnych doświadczeń dokon
     Łatwość cofanięcia &
     \begin{itemize}
       \item Scentralizowana historia ułatwia powrót do poprzedniego stabilnego stanu.
-      \item Takie podejście ułatwia debugowanie i zwieększa stabilność systemu.
+      \item Takie podejście ułatwia debugowanie i zwiększa stabilność systemu.
     \end{itemize} \\ \hline
 
     \multicolumn{2}{|c|}{\textbf{4. IDL as a Service (IDLaS)}} \\ \hline
     Zintegrowana kontrola wersji &
     \begin{itemize}
       \item Dostarczana usługa obejmuje wbudowaną kontrolę wersji.
-      \item Dostarczana usługa daję dostęp do histoii wersji za pomocą API.
+      \item Dostarczana usługa daje dostęp do historii wersji za pomocą API.
     \end{itemize} \\ \hline
     Automatyczna dokumentacja &
     \begin{itemize}
       \item IDLaS często udostępniają interfejsy webowe.
-      \item Ze względu na to, że IDL jest udostępniane jako usługa, każdy użytkownik może uzyskać dostęp do historii wersji za pomocą API
+      \item Ze względu na to, że IDL jest udostępniane jako usługa, każdy użytkownik może uzyskać dostęp do historii wersji za pomocą API.
     \end{itemize} \\ \hline
 
 \end{longtable}
 
-\subsubsection{Ocena wspówdzieleina kodu za pomocą bibliotek}
+\subsubsection{Ocena współdzielenia kodu za pomocą bibliotek}
 
 Ocena pod kątem komunikacji:
 
@@ -532,7 +521,7 @@ Ocena pod kątem bezpieczeństwa:
 
 Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa bibliotek kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność.
 
-Poufność: Biblioteki, które są wykorzystywane do przetważania poufnych danych muszą pochodzić z sprawdzonych źródeł i ciągle aktualizowane, aby zapobiec utracie danych. ~\cite[p. 82]{Essential}
+Poufność: Biblioteki, które są wykorzystywane do przetwarzania poufnych danych muszą pochodzić z sprawdzonych źródeł i ciągle aktualizowane, aby zapobiec utracie danych. ~\cite[p. 82]{Essential}
 
 Integralność danych: Biblioteki często korzystają z sum kontrolnych, certyfikatów, podpisów cyfrowych aby mieć pewność, że przetwarzane dane pozostają bezpieczne. ~\cite[p. 84]{Essential}
 
@@ -542,13 +531,7 @@ Autentyczność: W przypadku bibliotek jest zapewniana za pomocą sprawdzenia je
 
 Odpowiedzialność: W przypadku bibliotek przejrzysta historia może zostać zapewniona za pomocą menedżerów pakietów, które umożliwiają śledzenie pochodzenia zmian. Wspomaga to w zapewnieniu odpowiedzialności w przypadku problemów.  ~\cite[p. 88]{Essential}
 
-Ocena pod kątem wersjonowania:
-
-\begin{quote}
-    "When a data format or schema changes, … careful management of schema evolution is required to ensure that old and new versions can coexist. This is best achieved by maintaining a structured version history that records every change in the schema in a clear, traceable manner." ~\cite[p. 111]{kleppmann2017designing}
-\end{quote}
-
-\subsubsection{Ocena wspówdzieleina kodu za pomocą SDK}
+\subsubsection{Ocena współdzielenia kodu za pomocą SDK}
 
 Ocena pod kątem komunikacji: zapewnia potrzebny poziom komunikacji, mechanizm współdzielenia jest podobny do biblioteki, tak samo jak w przypadku biblioteki obiekty są dodawane do projektu przez narzędzie do budowania projektów na etapie uruchamiania aplikacji, dalej w trakcie wykonania logiki programu takie obiekty mogą być użyte przez program bez żadnych obciążeń wydajnościowych. Obiekty wciągnięte z biblioteki mogą być użyte dla komunikacji asynchronicznej takich jak brokery wiadomości jak również dla wysłania bezpośrednich zapytań między serwisami.
 
@@ -563,11 +546,11 @@ Izolacja zależności: SDK często zawierają wiele bibliotek w sposób, co ozna
 % AI
 Ocena pod kątem bezpieczeństwa: 
 
-Zgodnie z wcieśniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa bibliotek kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność
+Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa bibliotek kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność
 
-Poufność: SDK muszą zapewnić, że wszystkie zawarte komponenty przestrzegają ścisłych zasad kontroli dostępu zmniejąc to ryzyko nieautoryzowanego dostępu do danych.  ~\cite[para 4]{azure2020}
+Poufność: SDK muszą zapewnić, że wszystkie zawarte komponenty przestrzegają ścisłych zasad kontroli dostępu zmniejszając to ryzyko nieautoryzowanego dostępu do danych.  ~\cite[para 4]{azure2020}
 
-Integralność danych: SDK wymaga, aby były one kompleksowo testowane, aby zapewnić, że zmiany nie naruszą integralności danych. Różne frameworki do testowania bezpieczeńswa SDK pomagają w wykrywaniu wszelkich podatności po modyfikacji.  ~\cite[para 5]{azure2020}
+Integralność danych: SDK wymaga, aby były one kompleksowo testowane, aby zapewnić, że zmiany nie naruszą integralności danych. Różne frameworki do testowania bezpieczeństwa SDK pomagają w wykrywaniu wszelkich podatności po modyfikacji.  ~\cite[para 5]{azure2020}
 
 Dostępność: SDK muszą być zaprojektowane tak, aby działały zawsze, nawet przy dużym obciążeniu. ~\cite[para 6]{azure2020}
 
@@ -583,7 +566,7 @@ Przywracanie kodu do stabilnej wersji: Wycofywanie zmian w przypadku SDK może b
 
 Utrata danych i niespójność: SDK są narażone na większe ryzyko wewnętrznych niespójności i problemów w przypadku, gdy moduły są aktualizowane asynchronicznie. Może to doprowadzić do błędów, które mogą spowodować utratę danych lub uszkodzenie danych, jeśli nie są w odpowiedni sposób zarządzane. ~\cite[para. 3]{azure2020}
 %Ai
-\subsubsection{Ocena wspówdzieleina kodu za pomocą API}
+\subsubsection{Ocena współdzielenia kodu za pomocą API}
 
 Ocena pod kątem komunikacji: 
 
@@ -631,7 +614,7 @@ Ocena pod kątem wersjonowania:
 
 REST API wymaga precyzyjnego zarządzania wersjami interfejsów. Konieczność utrzymywania kompatybilności wstecznej. Możliwość równoległego działania wielu wersji API. Wymagane jasne zasady deprecjacji starych wersji. Dokumentacja zmian między wersjami musi być dokładna i aktualna. ~\cite[p. 134]{richardson2013rest}
 %AI
-\subsubsection{Ocena wspówdzieleina kodu za pomocą ServerLess}
+\subsubsection{Ocena współdzielenia kodu za pomocą ServerLess}
 
 Ocena pod kątem komunikacji: 
 
@@ -690,7 +673,7 @@ Ryzyko utraty danych jest minimalizowane przez wykorzystanie managed services do
 
 \newpage
 % new 
-\subsubsection{Ocena wspówdzieleina pod kątem skalowalności}
+\subsubsection{Ocena współdzielenia pod kątem skalowalności}
 
 Ocena podejścia IDL pod kątem skalowalności:
 
@@ -705,7 +688,7 @@ Testowany system mikroserwisów składa się z dwóch mikroserwisów napisanych 
 
 Po uruchomieniu aplikacji w Dockerze, automatycznie uruchamiane są testy wydajnościowe przygotowane za pomocą narzędzia Gatling. Projekt został stworzony przy użyciu Javy, Springa oraz Gatlinga i znajduje się w materiałach dołączonych do pracy.
 
-W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pamięci, liczby wątków, zużycia CPU, garbage collection i inne. Dane te są zapisywane do pliku za pomocą narzędzia Java Flight Recorder. Uruchomienie JFR odbywa się również automatycznie w momencie startu aplikacji ca poomocą skrypu, kod skryptu również znajdije sie w materiałach dołączonych do pracy. 
+W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pamięci, liczby wątków, zużycia CPU, garbage collection i inne. Dane te są zapisywane do pliku za pomocą narzędzia Java Flight Recorder. Uruchomienie JFR odbywa się również automatycznie w momencie startu aplikacji za pomocą skryptu, kod skryptu również znajduje się w materiałach dołączonych do pracy.
 
 Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby testowania: małe obciążenie, średnie oraz duże. Zostało to zrealizowane w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
 
@@ -713,7 +696,7 @@ Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby test
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/idl-memory-low-graph.jpg}
-    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście IDL pod wpłyłem małego obciażenia.} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście IDL pod wpływem małego obciążenia.} \label{fig1}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
 \end{figure}
@@ -746,7 +729,7 @@ Wykorzystanie pamięci (dolny wykres – fioletowa linia)
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/idl-memory-low-graph.jpg}
-    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście IDL pod wpłyłem średnigo obciażenia.} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście IDL pod wpływem średniego obciążenia.} \label{fig1}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
 \end{figure}
@@ -775,7 +758,7 @@ Wykorzystanie pamięci (dolny wykres – fioletowa linia)
   \item Wzór pokazuje częste cykle alokacji i GC, sugerując agresywne wykorzystanie pamięci i czyszczenie.
 \end{itemize}
 
-W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
+W przypadku dużego obciążenia nie było możliwe wygenerowanie raportu ze względu na Memory Error.
 
 \newpage
 
@@ -785,12 +768,12 @@ Raporty wygenerowane przez narzędzie Gatling:
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/idl-low-gatling-graph.jpg}
-    \caption{Raport wygenerowany w narzędziu Galing dla aplikacji działającej w oparciu o podejście IDL, testowanej przy niskim obciążeniu.} \label{fig1}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście IDL, testowanej przy niskim obciążeniu.} \label{fig1}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
 \end{figure}
 
-Na rysunku widać że:
+Na rysunku widać, że:
 
 \begin{itemize}
     \item Czas odpowiedzi krótszy niż 800 ms: Zdecydowana większość żądań (około 580), oznaczona kolorem zielonym.
@@ -803,12 +786,12 @@ Na rysunku widać że:
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/idl-midle-gatling-graph.jpg}
-    \caption{Raport wygenerowany w narzędziu Galing dla aplikacji działającej w oparciu o podejście IDL, testowanej przy średnim obciążeniu.} \label{fig1}
+    \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście IDL, testowanej przy średnim obciążeniu.} \label{fig1}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
 \end{figure}
 
-Na rysunku widać że:
+Na rysunku widać, że:
 
 \begin{itemize}
     \item Czas odpowiedzi krótszy niż 800 ms: Duża liczba żądań (około 2300), jednak proporcjonalnie mniej niż w przypadku niskiego obciążenia.
@@ -844,7 +827,7 @@ Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby test
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/sdk-memory-low-graph.jpg}
-    \caption{Wykres przedstawiający zużycie pamięci  RAM aplikacji wykorzystującej SDK wpłyłem małego obciażenia.} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci  RAM aplikacji wykorzystującej SDK pod wpływem małego obciążenia.} \label{fig1}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
 \end{figure}
@@ -861,7 +844,7 @@ Wyniki obserwacji:
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/sdk-memory-middle-graph.jpg}
-    \caption{Wykres przedstawiający zużycie pamięci  RAM aplikacji wykorzystującej SDK wpłyłem średniego obciażenia.} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci  RAM aplikacji wykorzystującej SDK pod wpływem średniego obciążenia.} \label{fig1}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
 \end{figure}
@@ -872,7 +855,7 @@ Wyniki obserwacji:
     \item Garbage collection: Wykres pokazuje około 5-7 zdarzeń zbierania śmieci, oznaczonych bardziej wyraźnymi fioletowymi liniami, odzwierciedlającymi potrzebę aplikacji aktywnego zarządzania pamięcią przy zwiększonym obciążeniu.
 \end{itemize}
 
-W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
+W przypadku dużego obciążenia nie było możliwe wygenerowanie raportu ze względu na Memory Error.
 %AI
 Wykres niskiego obciążenia sugeruje optymalną wydajność przy minimalnym obciążeniu zasobów, co jest idealne w scenariuszach, w których wydajność jest kluczowa. Wykres średniego obciążenia, pokazujący wyższe zużycie, wskazuje, że aplikacja skaluje się, aby sprostać zwiększonym wymaganiom, chociaż może to prowadzić do potencjalnych problemów z opóźnieniami, jeśli nie zostanie odpowiednio zarządzane.
 
@@ -950,7 +933,7 @@ Ocena współdzielenia kodu za pomocą bibliotek pod kątem skalowalności:
 
 Biblioteki są zazwyczaj zoptymalizowane pod kątem konkretnego zadania w jednym języku. Jednak jeśli biblioteka nie jest zaprojektowana do pracy w środowiskach o dużej współbieżności, może wymagać dodatkowych zasobów sprzętowych w miarę wzrostu obciążenia. Na przykład intensywne przetwarzanie danych w bibliotekach może powodować większe zużycie pamięci lub CPU podczas pracy z dużymi zbiorami danych. Wspierająca myśl: Badania nad wydajnością obliczeniową często zauważają, że nieoptymalizowane biblioteki mogą stać się wąskimi gardłami pod dużym obciążeniem, prowadząc do zwiększenia kosztów zasobów fizycznych. ~\cite[p. 192]{fowler2012patterns}
 
-W celu przygotowania analizy pod kątem skalowalności, tak samo0 jak w przypadku opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej biblioteki do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
+W celu przygotowania analizy pod kątem skalowalności, tak samo jak w poprzednim przypadku opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej biblioteki do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
 
 Przygotowane aplikacje przykładowe oraz kod systemu, który powstał w celu sprawdzenia i porównania wydajności, zostały dołączone do materiałów pracy.
 
@@ -967,7 +950,7 @@ Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby test
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/library-memory-low-graph.jpg}
-    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej biblioteki pod wpłyłem małego obciażenia.} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej biblioteki pod wpływem małego obciążenia.} \label{fig1}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
 \end{figure}
@@ -1000,14 +983,12 @@ Wykorzystanie pamięci, dolny wykres – fioletowa linia
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/library-memory-midle-graph.jpg}
-    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej biblioteki pod wpłyłem średnigo obciażenia.} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej biblioteki pod wpływem średniego obciążenia.} \label{fig1}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
 \end{figure}
 
-W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
-
-1. Alokacja (górny wykres — niebieskie słupki)
+W przypadku dużego obciążenia nie było możliwe wygenerowanie raportu ze względu na Memory Error.
 
 Alokacja górny wykres — niebieskie słupki
 
@@ -1108,7 +1089,7 @@ Podsumowanie: Aplikacja wykorzystująca biblioteki wykazuje wysoką efektywnoś�
 
 Ocena współdzielenia kodu za pomocą REST pod kątem skalowalności:
 
-W celu przygotowania analizy pod kątem skalowalności, tak samo jak w poprzednim przypadku opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej biblioteki do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
+W celu przygotowania analizy pod kątem skalowalności, tak samo jak w poprzednim przypadku opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej REST do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
 
 Przygotowane aplikacje przykładowe oraz kod systemu, który powstał w celu sprawdzenia i porównania wydajności, zostały dołączone do materiałów pracy.
 
@@ -1126,7 +1107,7 @@ Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby test
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-memory-low-graph.jpg}
-    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście REST pod wpłyłem małego obciażenia} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście REST pod wpływem małego obciążenia.} \label{fig1}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
 \end{figure}
@@ -1151,12 +1132,12 @@ Garbage collection - pionowe pomarańczowe linie
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/rest-memory-middle-graph.jpg}
-    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście REST pod wpłyłem średnigo obciażenia} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście REST pod wpływem średniego obciążenia.} \label{fig1}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
 \end{figure}
 
-W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
+W przypadku dużego obciążenia nie było możliwe wygenerowanie raportu ze względu na Memory Error.
 
 Wyniki obserwacji:
 
@@ -1213,7 +1194,7 @@ Raporty wygenerowane przez narzędzie Gatling:
 \newpage
 
 \begin{figure}
-    \includegraphics[width=\linewidth]{images/rest-gatling-moddle-rest.jpg}
+    \includegraphics[width=\linewidth]{images/rest-gatling-middle-rest.jpg}
     \caption{Raport wygenerowany w narzędziu Gatling dla aplikacji działającej w oparciu o podejście REST, testowanej przy średnim obciążeniu.} \label{fig2}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
@@ -1223,7 +1204,7 @@ Raporty wygenerowane przez narzędzie Gatling:
   \item Analiza przy średnim obciążeniu:
   \begin{itemize}
     \item Około 2400 żądań poniżej 800~ms - zauważalny spadek wydajności
-    \item Mała żądań w przedziale 800-1200~ms
+    \item Mała liczba żądań w przedziale 800-1200~ms
     \item Pojawienie się około 500 żądań powyżej 1200~ms
     \item Minimalna liczba nieudanych żądań, system zachowuje stabilność
   \end{itemize}
@@ -1256,9 +1237,9 @@ Podsumowując, podejście REST wykazuje dobrą wydajność przy niskim obciąże
 
 %severless
 
-Ocena współdzielenia kodu za pomocą Serverles pod kątem skalowalności:
+Ocena współdzielenia kodu za pomocą Serverless pod kątem skalowalności:
 
-W celu przygotowania analizy pod kątem skalowalności, tak samo jak w poprzednim przypadku opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej biblioteki do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
+W celu przygotowania analizy pod kątem skalowalności, tak samo jak w poprzednim przypadku opracowałem system, którego celem jest testowanie wydajności przykładowej aplikacji wykorzystującej Serverless do współdzielenia kodu oraz obserwacja, w jaki sposób to podejście wpływa na wydajność i skalowalność systemu.
 
 Przygotowane aplikacje przykładowe oraz kod systemu, który powstał w celu sprawdzenia i porównania wydajności, zostały dołączone do materiałów pracy.
 
@@ -1275,7 +1256,7 @@ Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby test
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-memory-low-graph.jpg}
-    \caption{Wykres przedstawiający zużycie pamięci  RAM aplikacji wykorzystującej podejście Serwerless pod wpłyłem małego obciażenia} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście Serverless pod wpływem małego obciążenia.} \label{fig1}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
 \end{figure}
@@ -1308,12 +1289,12 @@ Wykorzystanie pamięci (linie fioletowe)
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/serverless-memory-middle-graph.jpg}
-    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście Serverless pod wpłyłem średnigo obciażenia} \label{fig1}
+    \caption{Wykres przedstawiający zużycie pamięci RAM aplikacji wykorzystującej podejście Serverless pod wpływem średniego obciążenia.} \label{fig1}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
 \end{figure}
 
-W przypadku duzego obciążenia nie było mozliwe wygenerowanie raportu ze wzgledu na Memory Error.
+W przypadku dużego obciążenia nie było możliwe wygenerowanie raportu ze względu na Memory Error.
 
 Wyniki obserwacji:
 
@@ -1384,7 +1365,7 @@ Raporty wygenerowane przez narzędzie Gatling:
   \begin{itemize}
     \item Około 1000 żądań poniżej 800~ms - poprawa względem poprzedniego testu
     \item Minimalna liczba żądań w przedziale 800-1200~ms
-    \item 2000 ządań powyżej 1200~ms
+    \item 2000 żądań powyżej 1200~ms
     \item Utrzymana pełna niezawodność - brak żądań nieudanych
   \end{itemize}
 \end{itemize}
@@ -1404,7 +1385,7 @@ Raporty wygenerowane przez narzędzie Gatling:
     \item 0 żądań poniżej 800~ms
     \item 0 żądań w przedziale 800-1200~ms
     \item 39 procentów żądań powyżej 1200~ms
-    \item Bardzo duża ilość żądań nieudanych
+    \item Bardzo duża liczba żądań nieudanych
   \end{itemize}
 \end{itemize}
 
@@ -1417,7 +1398,7 @@ Raporty wygenerowane przez narzędzie Gatling:
   \end{itemize}
 \end{itemize}
 
-Obserwowane pogorszenie wydajności, szczególnie przy większych obciążeniach, prawdopodobnie wynika z opóźnienia sieciowego wprowadzonego przez architekturę serverless. W porównaniu z innymi podejściami do współdzielenia kodu.
+Obserwowane pogorszenie wydajności, szczególnie przy większych obciążeniach, prawdopodobnie wynika z opóźnienia sieciowego wprowadzonego przez architekturę serverless w porównaniu z innymi podejściami do współdzielenia kodu.
 
 \newpage
 
@@ -1425,7 +1406,7 @@ Obserwowane pogorszenie wydajności, szczególnie przy większych obciążeniach
 
 Podsumowanie wyników testowania rozwiązań pod kątem wydajności i skalowalności.
 
-Ranking rozwiązań pod względem wydajności i skalowalności który stowżywem na podstawie przeprowadzonych testów i analiz:
+Ranking rozwiązań pod względem wydajności i skalowalności, który stworzyłem na podstawie przeprowadzonych testów i analiz:
 
 \begin{enumerate}
     \item Serverless
@@ -1494,7 +1475,7 @@ Ranking rozwiązań pod względem wydajności i skalowalności który stowżywem
         \item Wydajność:
         \begin{itemize}
             \item Najwyższe zużycie pamięci
-            \item Najwyższy procent wolnych odpowiedzi (>1200ms)
+            \item Najwyższy procent powolnych odpowiedzi (>1200ms)
         \end{itemize}
         \item Skalowalność:
         \begin{itemize}
@@ -1507,7 +1488,7 @@ Ranking rozwiązań pod względem wydajności i skalowalności który stowżywem
 
 Wnioski końcowe
 
-Na podstawie przeprowadzonej analizy można stwierdzić, że wybór optymalnego rozwiązania zależy od specyficznych wymagań projektu, jednak biorąc pod uwagę zarówno wydajność jak i skalowalność, architektura Serverless oraz IDL wykazują najlepsze właściwości.
+Na podstawie przeprowadzonej analizy można stwierdzić, że wybór optymalnego rozwiązania zależy od specyficznych wymagań projektu, jednak biorąc pod uwagę zarówno wydajność, jak i skalowalność, architektura Serverless oraz IDL wykazują najlepsze właściwości.
 
 Serverless zajmuje pierwsze miejsce głównie ze względu na:
 \begin{itemize}
@@ -1539,17 +1520,16 @@ Należy jednak pamiętać, że błędy pamięci przy wysokim obciążeniu były 
 
 % scalability end
 
-\subsection{Opis części praktycznej}
+\section{Opis części praktycznej}
 
-Jaką część praktyczną mojej pracy magisterskiej przygotowałem aplikację webową, która:
-Składa się z dwóch części, backendowej i frontendowej.
-Głównym celem napisania aplikacji jest wprowadzenie nowego podejścia do współdzielenie kodu – współdzielenie za pomocą technologii serverless. Aplikacja wspiera deweloperów korzystających z technologii serverless, zmniejsza wady tego rozwiązania, jednocześnie dając możliwość skorzystania z mocnych stron tej technologii.
+Jako część praktyczną mojej pracy magisterskiej przygotowałem aplikację webową, która składa się z dwóch części, backendowej i frontendowej.
+Głównym celem napisania aplikacji jest wprowadzenie nowego podejścia do współdzielenia kodu – współdzielenie za pomocą technologii serverless. Aplikacja wspiera deweloperów korzystających z technologii serverless, zmniejsza wady tego rozwiązania, jednocześnie dając możliwość skorzystania z mocnych stron tej technologii.
 
 Czym jest technologia Serverless?
 
 Serverless to nowoczesny model wykonywania obliczeń w chmurze, w którym dostawcy chmury automatycznie obsługują aspekty infrastruktury, takie jak zarządzanie serwerem oraz skalowanie zasobów. Zamiast zarządzać serwerami fizycznymi lub wirtualnymi, programiści mogą skupić się wyłącznie na pisaniu kodu. Termin „serverless” nie oznacza, że nie ma fizycznych serwerów, ale że zarządzanie serwerem jest oderwane od użytkowników. W architekturach serverless wdrażamy do chmury funkcje zamiast całych aplikacji, a dostawca chmury jest odpowiedzialny za zarządzanie kodem, skalowanie i utrzymywanie tych funkcji. Są one też często nazywane Function-as-a-Service (FaaS).
 
-Przykłady platform server less dostępnych w 2025 roku:
+Przykłady platform Serverless dostępnych w 2025 roku:
 
 \begin{enumerate}
     \item AWS Lambda 
@@ -1558,20 +1538,20 @@ Przykłady platform server less dostępnych w 2025 roku:
     \item IBM Cloud Functions 
 \end{enumerate}
 
-\subsubsection{Ogulny opis aplikacji}
+\subsubsection{Ogólny opis aplikacji}
 
-Za pomocą przygotowanej przeze mnie aplikacji webowej wykonuję następujące czynności:
+Przygotowana aplikacja webowa realizuje następujące funkcje:
 
 \begin{enumerate}
-    \item Akceptuję i sprawdzam kod, który chcesz podzielić za pomocą technologii serverless. Jeśli coś nie gra w czasie sprawdzania, powiem ci, co masz zrobić, żeby skończyć to sukcesem.
-    \item Automatycznie przygotowuję kod do wrzucenia na Amazon Lambda (w przyszłości może dać ci opcję wyboru innej platformy, np. Azure Functions).
-    \item Automatycznie wrzucam kod na platformę Serverless, po chwili będzie od razu dostępny.
-    \item Zapisuję kod w bazie danych, żebyś mógł go użyć później; będziesz miał widok na listę wszystkich wrzutek kodu.
-    \item Możesz edytować i ponownie wrzucić kod z tej listy.
-    \item Możesz wyszukiwać kod po opisie.
-    \item Dodaję wersjonowanie kodu.
-    \item Automatycznie przygotowuję pliki IDL, które są przydatne do wykorzystania, gdy kod jest wywoływany na IDL.
-    \item Przechowuję te pliki IDL i możesz je udostępnić, żeby inni członkowie zespołu mogli współdzielić ten kod.
+    \item Akceptacja i sprawdzanie kodu, który użytkownik chce podzielić za pomocą technologii serverless. W przypadku problemów podczas sprawdzania, aplikacja informuje użytkownika, co należy zrobić, aby zakończyć proces pomyślnie.
+    \item Automatyczne przygotowanie kodu do wdrożenia na Amazon Lambda (w przyszłości możliwe będzie dodanie opcji wyboru innej platformy, np. Azure Functions).
+    \item Automatyczne wdrażanie kodu na platformę Serverless, który po chwili staje się dostępny.
+    \item Zapisywanie kodu w bazie danych, umożliwiając jego późniejsze wykorzystanie; użytkownik ma dostęp do listy wszystkich wdrożonych fragmentów kodu.
+    \item Możliwość edytowania i ponownego wdrażania kodu z listy.
+    \item Możliwość wyszukiwania kodu po opisie.
+    \item Obsługa wersjonowania kodu.
+    \item Automatyczne przygotowywanie plików IDL, które są przydatne do wykorzystania, gdy kod jest wywoływany przez IDL.
+    \item Przechowywanie plików IDL, które użytkownik może udostępnić innym członkom zespołu w celu współdzielenia kodu.
 \end{enumerate}
 
 \subsubsection{Opis aplikacji back-end}
@@ -1579,12 +1559,12 @@ Za pomocą przygotowanej przeze mnie aplikacji webowej wykonuję następujące c
 Używane technologie
 
 \begin{enumerate}
-    \item Java - Język do napisania backendu.
-    \item Spring Boot - Narzędzie, które ułatwia tworzenie aplikacji w Javie.
-    \item Maven - Automation template, które automatyzuje tworzenie procedur śledzenia zależności projektu, kompilacji projektów w inteligentny sposób.
-    \item AWS Lambda - To jest usługa obliczeniowa, która nie wymaga używania serwerów, ale jednocześnie dostawcy mogą tu pokazywać i uruchomić kod bez konieczności wdrażania lub zarządzania serwerami.
-    \item Protobuf - Jest to język IDL do szybkiego kodowania i dekodowania obiektów DTO.
-    \item Jackson - Jeden z najsłynniejszych narzędzi do parsowania JSON-ów, jak również konwertowania wejść/wyjść na obiekty DTO itp. w drugą stronę.
+    \item Java - Język programowania wykorzystany do implementacji części serwerowej aplikacji.
+    \item Spring Boot - Framework ułatwiający tworzenie aplikacji w języku Java, oferujący gotowe rozwiązania dla typowych problemów programistycznych.
+    \item Maven - Narzędzie automatyzujące proces budowania aplikacji, zarządzania zależnościami oraz kompilacji projektów.
+    \item AWS Lambda - Usługa obliczeniowa typu serverless, która umożliwia uruchamianie kodu bez konieczności zarządzania serwerami, gdzie dostawca chmury odpowiada za infrastrukturę.
+    \item Protobuf - Język IDL służący do szybkiego kodowania i dekodowania obiektów DTO.
+    \item Jackson - Biblioteka do parsowania danych w formacie JSON oraz konwertowania ich na obiekty DTO i odwrotnie.
 \end{enumerate}
 
 Ogólny opis
@@ -1601,12 +1581,11 @@ Ta aplikacja jest częścią aplikacji webowej, która odpowiada za następując
 \subsubsection{Opis aplikacji front-end}
 
 Aplikację front-endową przygotowałem za pomocą JavaScript, React i npm.
-React to biblioteka używana do tworzenia aplikacji frontendowych.  
-Npm służy do zarządzania zależnościami projektu.
+React to biblioteka używana do tworzenia aplikacji frontendowych, a npm służy do zarządzania zależnościami projektu.
 
 Ogólny opis:
 
-Ta aplikacja jest częścią aplikacji webowej, część front-endowa jest odpowiedzialna za następujące działania:
+Ta aplikacja jest częścią aplikacji webowej. Część front-endowa jest odpowiedzialna za następujące działania:
 \begin{enumerate}
     \item Przyjmowanie kodu, który użytkownik chce współdzielić, a następnie wysyłanie go do serwera back-endowego.
     \item Weryfikacja tego, czy kod spełnia wymagane standardy i formatowanie.
@@ -1622,7 +1601,7 @@ Ta aplikacja jest częścią aplikacji webowej, część front-endowa jest odpow
 \begin{figure}[H] % [H] forces the figure to stay HERE using the float package
     \centering
     \includegraphics[width=\linewidth]{images/sequentinal-diagram.png}
-    \caption{Diagram sekwencyjny aplikacji praktycznej}
+    \caption{Diagram sekwencyjny działania aplikacji praktycznej}
     \label{fig2}
     \vspace{0.5em}
     {\small Źródło: opracowanie własne.}
@@ -1630,15 +1609,15 @@ Ta aplikacja jest częścią aplikacji webowej, część front-endowa jest odpow
 
 \newpage
 
-%srat or code report
+%start of code report
 
-\subsection{Prezdsawienie ważnych fragmentów kodu}
+\subsection{Przedstawienie ważnych fragmentów kodu}
 
 Chcę przedstawić kluczowe fragmenty kodu mojego projektu praktycznego wraz z krótkim opisem ich działania.
 
 Poniżej przedstawiono podstawową konfigurację usługi Lambda przy użyciu klienta AWS.
 
-Klasa inicjalizuje klienta usług AWS — w moim przypadku są to: S3Client, LambdaClient oraz IamClient, które służą odpowiednio do zarządzania funkcjami Lambda, przechowywaniem danych w S3 oraz rolami IAM.
+Klasa inicjalizuje klientów usług AWS. W moim przypadku są to: S3Client, LambdaClient oraz IamClient, które służą odpowiednio do zarządzania funkcjami Lambda, przechowywania danych w S3 oraz zarządzania rolami IAM.
 
 \begin{verbatim}
 @Service
@@ -1667,7 +1646,7 @@ public void prepareJarForLambda(String id) {
     System.setProperty("maven.multiModuleProjectDirectory", "path/to/project");
     System.setProperty("maven.home", "path/to/maven");
     System.setProperty("JAVA_HOME", "path/to/java");
-    
+
     InvocationRequest request = new DefaultInvocationRequest();
     request.setPomFile(new File("path/to/pom.xml"));
     request.setGoals(Collections.singletonList("clean package"));
@@ -1683,7 +1662,7 @@ public void prepareJarForLambda(String id) {
 }
 \end{verbatim}
 
-W poniższym fragmencie kodu przedstawiam, w jaki sposób tworzę funkcję Lambda w AWS za pomocą języka Java oraz SDK dostarczonego przez AWS, na podstawie wcześniej przygotowanego pliku JAR. Proces przygotowania tego pliku został pokazany w poprzednim fragmencie kodu.
+W poniższym fragmencie kodu przedstawiam, w jaki sposób tworzę funkcję Lambda w AWS za pomocą języka Java oraz SDK dostarczonego przez AWS. Funkcja tworzona jest na podstawie wcześniej przygotowanego pliku JAR. Proces przygotowania tego pliku został pokazany w poprzednim fragmencie kodu.
 
 \begin{verbatim}
 private void createLambdaFunction(String roleArn, String id) {
@@ -1704,7 +1683,7 @@ private void createLambdaFunction(String roleArn, String id) {
 }
 \end{verbatim}
 
-W poniższym fragmencie kodu przedstawiam sposób, w jaki używam usługi AWS S3 — serwisu, który służy do przechowywania dołączonych plików. Robię to ze względu na fakt, że funkcje Lambda w sposób programistyczny możemy tworzyć wyłącznie na podstawie pliku JAR umieszczonego w S3. W przypadku konsoli webowej można to zrobić bezpośrednio, ale z ograniczeniem dotyczącym rozmiaru pliku JAR. W kodzie poniżej pokazuję, w jaki sposób aplikacja dodaje pliki do S3, pobiera je oraz usuwa.
+W poniższym fragmencie kodu przedstawiam sposób, w jaki używam usługi AWS S3 — serwisu, który służy do przechowywania dołączonych plików. Korzystam z S3, ponieważ funkcje Lambda w sposób programistyczny możemy tworzyć wyłącznie na podstawie pliku JAR umieszczonego w tym serwisie. W przypadku konsoli webowej można to zrobić bezpośrednio, ale z ograniczeniem dotyczącym rozmiaru pliku JAR. W kodzie poniżej pokazuję, w jaki sposób aplikacja dodaje pliki do S3, pobiera je oraz usuwa.
 
 \begin{verbatim}
 public class S3Operations {
@@ -1725,7 +1704,7 @@ public class S3Operations {
                 .key(id + ".jar")
                 .build());
     }
-    
+
     public byte[] downloadJar(String id) {
         ResponseBytes<GetObjectResponse> objectBytes = s3Client.getObjectAsBytes(
             GetObjectRequest.builder()
@@ -1737,7 +1716,7 @@ public class S3Operations {
 }
 \end{verbatim}
 
-W następnym fragmencie kodu pokazuję, jak wygląda obsługa błędów w mojej aplikacji. Używam powszechnie stosowanego i popularnego we współczesnych aplikacjach podejścia @ControllerAdvice
+W następnym fragmencie kodu pokazuję, jak wygląda obsługa błędów w mojej aplikacji. Używam powszechnie stosowanego i popularnego we współczesnych aplikacjach podejścia @ControllerAdvice.
 
 \begin{verbatim}
 @ControllerAdvice
@@ -1752,7 +1731,7 @@ public class LambdaExceptionHandler {
         );
         return new ResponseEntity<>(error, HttpStatus.BAD_REQUEST);
     }
-    
+
     @ExceptionHandler(S3Exception.class)
     public ResponseEntity<ErrorResponse> handleS3Exception(
             S3Exception ex) {
@@ -1766,7 +1745,7 @@ public class LambdaExceptionHandler {
 }
 \end{verbatim}
 
-Poniżej pokazuję fragment kodu, który przedstawia kontroler REST aplikacji backendowej. Kontroler udostępnia aplikacji front-endowej podstawowe operacje dla funkcji Lambda, takie jak: tworzenie nowej funkcji, sprawdzanie statusu, modyfikacja oraz usunięcie.
+Poniżej pokazuję fragment kodu, który przedstawia kontroler REST aplikacji serwerowej. Kontroler udostępnia aplikacji front-endowej podstawowe operacje dla funkcji Lambda, takie jak: tworzenie nowej funkcji, sprawdzanie statusu, modyfikacja oraz usunięcie.
 
 \begin{verbatim}
 @RestController
@@ -1787,7 +1766,7 @@ public class LambdaController {
         lambdaService.deleteLambdaFunction(functionId);
         return ResponseEntity.noContent().build();
     }
-    
+
     @GetMapping("/{functionId}/status")
     public ResponseEntity<FunctionStatus> getFunctionStatus(
             @PathVariable String functionId) {
@@ -1797,10 +1776,15 @@ public class LambdaController {
 }
 \end{verbatim}
 
-%finisf code reprt
+%finish code report
 
+\section{Podsumowanie}
 
-\subsection{Podsumowanie}
+W niniejszej pracy magisterskiej przeprowadzono kompleksową analizę metod współdzielenia kodu w systemach mikroserwisowych, uwzględniając zarówno podejścia tradycyjne, jak i nowatorskie. Omówiono kluczowe różnice między architekturą monolityczną a mikroserwisową, wskazując na zalety i wyzwania związane z każdą z nich. Praca podkreśliła szczególne znaczenie efektywnego współdzielenia kodu w systemach mikroserwisowych, które pozwala na uniknięcie duplikacji kodu, zwiększenie produktywności zespołów oraz poprawę jakości i spójności aplikacji.
+
+W części praktycznej pracy zaprezentowano rozwiązanie, które łączy zalety istniejących metod współdzielenia kodu (takich jak IDL, SDK oraz biblioteki) z nowoczesnym podejściem Serverless. Stworzona aplikacja nie tylko wspiera zarządzanie kodem, ale również zapewnia lepszą wydajność i komfort użytkowania dla deweloperów.
+
+Podsumowując, zaprezentowane w pracy rozwiązanie stanowi wkład w rozwój narzędzi wspierających współdzielenie kodu w architekturze mikroserwisowej. Poprzez przeprowadzone testy i porównania wykazano, że przedstawione podejście może znacząco ułatwić rozwój, wdrażanie i utrzymanie aplikacji opartych na mikroserwisach, co jest niezwykle istotne w dzisiejszym dynamicznym świecie technologii. Ostateczne wyniki mogą posłużyć jako podstawa dla przyszłych badań i rozwoju kolejnych innowacyjnych rozwiązań w zakresie zarządzania i współdzielenia kodu.
 
 \nocite{*}
 
@@ -1810,7 +1794,5 @@ public class LambdaController {
 
 \bibliographystyle{plain}
 \bibliography{thesisbibliography}
-
-\section{Appendices}
 
 \end{document}

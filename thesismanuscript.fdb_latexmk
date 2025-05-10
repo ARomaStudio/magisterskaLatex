@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex thesismanuscript"] 1746899447.12966 "thesismanuscript.aux" "thesismanuscript.bbl" "thesismanuscript" 1746899595.93701 0
+["bibtex thesismanuscript"] 1746910588.53994 "thesismanuscript.aux" "thesismanuscript.bbl" "thesismanuscript" 1746910592.57887 0
   "./thesisbibliography.bib" 1745090675 4026 ae7e2a9eeafd0c8f50d98f3109222a8b ""
   "c:/tools/TinyTeX/texmf-dist/bibtex/bst/base/plain.bst" 1738379780 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "thesismanuscript.aux" 1746899594 15786 c452b5fa8483d59c40e7063f0d4e5571 "pdflatex"
+  "thesismanuscript.aux" 1746910591 15684 3c45a0f0ed6055aec27a3a1bea0e9de7 "pdflatex"
   (generated)
   "thesismanuscript.bbl"
   "thesismanuscript.blg"
   (rewritten before read)
-["pdflatex"] 1746899591.05069 "c:/Users/ArtemCodeMachine/Documents/magisterskaLatex/thesismanuscript.tex" "thesismanuscript.pdf" "thesismanuscript" 1746899595.93793 0
-  "c:/Users/ArtemCodeMachine/Documents/magisterskaLatex/thesismanuscript.tex" 1746899590 131521 549d9b21cd4a920778d7817ffbd744c2 ""
+["pdflatex"] 1746910588.72848 "c:/Users/ArtemCodeMachine/Documents/magisterskaLatex/thesismanuscript.tex" "thesismanuscript.pdf" "thesismanuscript" 1746910592.57975 0
+  "c:/Users/ArtemCodeMachine/Documents/magisterskaLatex/thesismanuscript.tex" 1746910579 132116 955518e4907b43f074fa323b0fddbf6e ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecbx0900.tfm" 1738379782 3584 1a7de6c99457381c64abc1a7c545505f ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1738379782 3584 402da0b29eafbad07963b1224b222f18 ""
   "c:/tools/TinyTeX/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm" 1738379782 3584 13049b61b922a28b158a38aeff75ee9b ""
@@ -170,7 +170,7 @@
   "images/library-memory-midle-graph.jpg" 1744567769 64386 219548d38f2672ff9abc810c33fcd585 ""
   "images/rest-gatling-high-graph.jpg" 1744841276 47624 23e295fabbef6d5748bf577c34ac16d3 ""
   "images/rest-gatling-low-graph.jpg" 1744571732 30404 a50386fe3435a7ebe09b0d0f0c5c251b ""
-  "images/rest-gatling-moddle-rest.jpg" 1744571754 30611 139fb44837e859ed45d52f3f09e8e0e7 ""
+  "images/rest-gatling-middle-rest.jpg" 1744571754 30611 139fb44837e859ed45d52f3f09e8e0e7 ""
   "images/rest-memory-low-graph.jpg" 1744571156 59771 fef6dfe979ce2f563f5151f340a01de9 ""
   "images/rest-memory-middle-graph.jpg" 1744571175 69885 8e8030ecc6d828e15f46270f56f00106 ""
   "images/sdk-gatling-high-graph.jpg" 1744570743 33258 c8d0d537c654a1517c0a65620f24f0be ""
@@ -185,12 +185,12 @@
   "images/serverless-memory-low-graph.jpg" 1744576544 60648 1d920fb63bf28d53e3e59de0dd9c4e16 ""
   "images/serverless-memory-middle-graph.jpg" 1744576567 66805 1aa90d3e084a035f879e8eb12b388760 ""
   "llncs.cls" 1740086610 43420 1a3c96fb05ee38b4e12e037a87c73a1c ""
-  "thesismanuscript.aux" 1746899594 15786 c452b5fa8483d59c40e7063f0d4e5571 "pdflatex"
-  "thesismanuscript.bbl" 1746899447 3299 c16d974cd5cbc8ba1702898f0cefbc7e "bibtex thesismanuscript"
-  "thesismanuscript.lof" 1746899594 4955 eae2c73d1ef6f497721c617018e811ae "pdflatex"
-  "thesismanuscript.lot" 1746899594 530 6f06b204f79febd8d2c1fdc9a8ae6cb2 "pdflatex"
-  "thesismanuscript.tex" 1746899590 131521 549d9b21cd4a920778d7817ffbd744c2 ""
-  "thesismanuscript.toc" 1746899594 3475 b3408a5feb94361b1ef0b0c2846d6318 "pdflatex"
+  "thesismanuscript.aux" 1746910591 15684 3c45a0f0ed6055aec27a3a1bea0e9de7 "pdflatex"
+  "thesismanuscript.bbl" 1746910588 3299 c16d974cd5cbc8ba1702898f0cefbc7e "bibtex thesismanuscript"
+  "thesismanuscript.lof" 1746910591 4984 ba1db039c60583118560d4fe967ce756 "pdflatex"
+  "thesismanuscript.lot" 1746910591 530 6f06b204f79febd8d2c1fdc9a8ae6cb2 "pdflatex"
+  "thesismanuscript.tex" 1746910579 132116 955518e4907b43f074fa323b0fddbf6e ""
+  "thesismanuscript.toc" 1746910591 3419 ceba525cdfa38c00f986631c8bbae4ff "pdflatex"
   (generated)
   "thesismanuscript.aux"
   "thesismanuscript.lof"
