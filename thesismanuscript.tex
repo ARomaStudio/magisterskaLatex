@@ -570,7 +570,7 @@ Utrata danych i niespójność: SDK są narażone na większe ryzyko wewnętrzny
 
 Ocena pod kątem komunikacji: 
 
-zapewnia podstawowy poziom komunikacji poprzez standardowy protokół HTTP/HTTPS, mechanizm współdzielenia opiera się na wywoływaniu endpointów API poprzez żądania HTTP. Komunikacja odbywa się poprzez wymianę dokumentów JSON/XML między serwisami, możliwe są zarówno wywołania synchroniczne (bezpośrednie żądania) jak i asynchroniczne (poprzez kolejki i brokery wiadomości). Wymaga dodatkowej konfiguracji i obsługi serializacji/deserializacji danych.
+Too podejście zapewnia podstawowy poziom komunikacji poprzez standardowy protokół HTTP/HTTPS.Opiera się na wywoływaniu endpointów API poprzez żądania HTTP. Komunikacja odbywa się poprzez wymianę dokumentów JSON/XML między serwisami, możliwe są zarówno wywołania synchroniczne (bezpośrednie żądania) jak i asynchroniczne. Wymaga dodatkowej konfiguracji i obsługi serializacji/deserializacji danych.
 
 Ocena pod kątem izolacji:
 
@@ -758,7 +758,7 @@ Wykorzystanie pamięci (dolny wykres – fioletowa linia)
   \item Wzór pokazuje częste cykle alokacji i GC, sugerując agresywne wykorzystanie pamięci i czyszczenie.
 \end{itemize}
 
-W przypadku dużego obciążenia nie było możliwe wygenerowanie raportu ze względu na Memory Error.
+W przypadku dużego obciążenia nie miałem możliwości wygenerowania raportu ze względu na błąd pamięci (Memory Error).
 
 \newpage
 
@@ -791,7 +791,7 @@ Na rysunku widać, że:
     {\small Źródło: opracowanie własne.}
 \end{figure}
 
-Na rysunku widać, że:
+Na rysunku zaobserwowałem:
 
 \begin{itemize}
     \item Czas odpowiedzi krótszy niż 800 ms: Duża liczba żądań (około 2300), jednak proporcjonalnie mniej niż w przypadku niskiego obciążenia.
@@ -800,11 +800,11 @@ Na rysunku widać, że:
     \item Żądania nieudane: Nadal brak nieudanych żądań.
 \end{itemize}
 
-Na przedstawionych wykresach widać, że zarówno w przypadku małego, jak i średniego obciążenia aplikacja zachowuje się stabilnie. Przy średnim obciążeniu zauważalne jest jednak nieznaczne wydłużenie czasu oczekiwania na odpowiedź.
+Na wykresach przedstawionych na podstawie przeprowadzonych testów widać, że zarówno w przypadku małego, jak i średniego obciążenia aplikacja zachowuje się stabilnie. Jednak przy średnim obciążeniu zauważyłem nieznaczne wydłużenie czasu oczekiwania na odpowiedź.
 
 \newpage
 
-Wraz ze zwiększaniem obciążenia wzrasta czas oczekiwania na odpowiedź. Porównując czas oczekiwania w przypadku różnych podejść do współdzielenia kodu, możemy ocenić efektywność poszczególnych narzędzi.
+Przeprowadzone przeze mnie testy pokazują, że wraz ze zwiększaniem obciążenia wzrasta czas oczekiwania na odpowiedź. Porównując czas oczekiwania w przypadku różnych podejść do współdzielenia kodu, możemy ocenić ich efektywność.
 
 %sdk
 Ocena współdzielenia kodu za pomocą SDK pod kątem skalowalności:
@@ -857,8 +857,7 @@ Wyniki obserwacji:
 
 W przypadku dużego obciążenia nie było możliwe wygenerowanie raportu ze względu na Memory Error.
 %AI
-Wykres niskiego obciążenia sugeruje optymalną wydajność przy minimalnym obciążeniu zasobów, co jest idealne w scenariuszach, w których wydajność jest kluczowa. Wykres średniego obciążenia, pokazujący wyższe zużycie, wskazuje, że aplikacja skaluje się, aby sprostać zwiększonym wymaganiom, chociaż może to prowadzić do potencjalnych problemów z opóźnieniami, jeśli nie zostanie odpowiednio zarządzane.
-
+Wykres, który przygotowałem pod wpływem niskiego obciążenia, sugeruje optymalną wydajność przy minimalnym zużyciu zasobów. Wykres dla średniego obciążenia, pokazujący wyższe zużycie pamięci, wskazuje, że aplikacja skaluje się, aby przetwarzać większą liczbę żądań.
 \newpage
 
 %sdk gatling description
@@ -1013,7 +1012,7 @@ Wykorzystanie pamięci, dolny wykres – fioletowa linia
   \item System zarządzania pamięcią reaguje odpowiednio na zwiększone obciążenie, ale wymaga częstszych interwencji GC.
 \end{itemize}
 
-Podsumowując, aplikacja wykazuje stabilne i efektywne zarządzanie pamięcią przy niskim i średnim obciążeniu, jednak załamuje się przy wysokim obciążeniu, co może oznaczać ograniczenia skalowalności.
+Podsumowując, aplikacja w trakcie przeprowadzonych przeze mnie testów wykazała stabilne i efektywne zarządzanie pamięcią przy niskim i średnim obciążeniu. Jednak przy wysokim obciążeniu załamuje się, co może oznaczać ograniczenia w skalowalności.
 
 \newpage
 
@@ -1081,7 +1080,7 @@ Wnioski dotyczące skalowalności:
     \item Potrzeba optymalizacji zarządzania pamięcią przy dużym obciążeniu 
 \end{itemize}
 
-Podsumowanie: Aplikacja wykorzystująca biblioteki wykazuje wysoką efektywność przy niskim i średnim obciążeniu, jednak przy wysokim obciążeniu ujawnia problemy z zarządzaniem pamięcią.
+Podsumowanie: Aplikacja wykorzystująca biblioteki wykazała w trakcie moich testów wysoką efektywność przy niskim i średnim obciążeniu. Jednak przy wysokim obciążeniu ujawnia problemy z zarządzaniem pamięcią.
 
 \newpage
 
@@ -1137,7 +1136,7 @@ Garbage collection - pionowe pomarańczowe linie
     {\small Źródło: opracowanie własne.}
 \end{figure}
 
-W przypadku dużego obciążenia nie było możliwe wygenerowanie raportu ze względu na Memory Error.
+W przypadku dużego obciążenia wygenerowanie raportu nie było możliwe ze względu na błąd pamięci (Memory Error).
 
 Wyniki obserwacji:
 
@@ -1229,7 +1228,7 @@ Raporty wygenerowane przez narzędzie Gatling:
   \end{itemize}
 \end{itemize}
 
-Podsumowując, podejście REST wykazuje dobrą wydajność przy niskim obciążeniu, ale znacząco traci na efektywności wraz ze wzrostem liczby żądań. Przy wysokim obciążeniu system ujawnia poważne problemy z wydajnością, co manifestuje się poprzez długie czasy odpowiedzi i występowanie błędów.
+Podsumowując, podejście REST w trakcie moich testów wykazało dobrą wydajność przy niskim obciążeniu, ale znacząco traci na efektywności wraz ze wzrostem liczby żądań. Przy wysokim obciążeniu system ujawnia poważne problemy z wydajnością — obserwuję długie czasy odpowiedzi oraz występowanie błędów.
 
 \newpage
 
@@ -1249,7 +1248,7 @@ Po uruchomieniu aplikacji w Dockerze, automatycznie uruchamiane są testy wydajn
 
 W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pamięci, liczby wątków, zużycia CPU, garbage collection i inne. Dane te są zapisywane do pliku za pomocą narzędzia Java Flight Recorder. Uruchomienie JFR odbywa się również automatycznie w momencie startu aplikacji.
 
-Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby testowania: małe obciążenie, średnie oraz duże. Zostało to zrealizowane w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
+Aplikacja testująca wydajność aplikacji przykładowej oferuje trzy tryby testowania: małe, średnie oraz duże obciążenie. Zostało to wdrożone w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
 
 \newpage
 %serverless memory description
@@ -1296,7 +1295,7 @@ Wykorzystanie pamięci (linie fioletowe)
 
 W przypadku dużego obciążenia nie było możliwe wygenerowanie raportu ze względu na Memory Error.
 
-Wyniki obserwacji:
+Wyniki mojej obserwacji
 
 Alokacja pamięci (niebieskie słupki)
 
@@ -1398,7 +1397,7 @@ Raporty wygenerowane przez narzędzie Gatling:
   \end{itemize}
 \end{itemize}
 
-Obserwowane pogorszenie wydajności, szczególnie przy większych obciążeniach, prawdopodobnie wynika z opóźnienia sieciowego wprowadzonego przez architekturę serverless w porównaniu z innymi podejściami do współdzielenia kodu.
+Możemy zaobserwować pogorszenie wydajności, szczególnie przy większych obciążeniach. Prawdopodobnie wynika to z opóźnień sieciowych spowodowanych przez architekturę serverless.
 
 \newpage
 
@@ -1406,7 +1405,7 @@ Obserwowane pogorszenie wydajności, szczególnie przy większych obciążeniach
 
 Podsumowanie wyników testowania rozwiązań pod kątem wydajności i skalowalności.
 
-Ranking rozwiązań pod względem wydajności i skalowalności, który stworzyłem na podstawie przeprowadzonych testów i analiz:
+Przygotowałem ranking rozwiązań pod względem wydajności i skalowalności, oparty na przeprowadzonych testach i analizach:
 
 \begin{enumerate}
     \item Serverless
@@ -1488,7 +1487,7 @@ Ranking rozwiązań pod względem wydajności i skalowalności, który stworzył
 
 Wnioski końcowe
 
-Na podstawie przeprowadzonej analizy można stwierdzić, że wybór optymalnego rozwiązania zależy od specyficznych wymagań projektu, jednak biorąc pod uwagę zarówno wydajność, jak i skalowalność, architektura Serverless oraz IDL wykazują najlepsze właściwości.
+Na podstawie przeprowadzonej analizy mogę stwierdzić, że wybór optymalnego rozwiązania zależy od specyficznych wymagań projektu. Jednak, biorąc pod uwagę zarówno wydajność, jak i skalowalność, architektura Serverless oraz IDL wykazują najlepsze właściwości.
 
 Serverless zajmuje pierwsze miejsce głównie ze względu na:
 \begin{itemize}
@@ -1504,9 +1503,9 @@ IDL plasuje się na drugim miejscu, oferując:
     \item Niższe koszty operacyjne przy stałym, wysokim obciążeniu
 \end{itemize}
 
-Biblioteki stanowią rozsądny kompromis dla projektów o średniej skali, podczas gdy SDK i REST wykazują największe ograniczenia w kontekście skalowalności i wydajności przy większym obciążeniu.
+Uważam, że biblioteki stanowią rozsądny kompromis dla projektów o średnich rozmiarach, podczas gdy SDK i REST wykazują największe trudności w kontekście skalowalności i wydajności przy większym obciążeniu.
 
-Rekomendacje
+Moje rekomendacje, przygotowane na podstawie przeprowadzonego badania:
 
 \begin{itemize}
     \item Dla projektów z dynamicznym obciążeniem: Serverless
@@ -1515,7 +1514,7 @@ Rekomendacje
     \item Unikać REST i SDK w przypadku wymagań dotyczących wysokiej skalowalności
 \end{itemize}
 
-Należy jednak pamiętać, że błędy pamięci przy wysokim obciążeniu były obecne we wszystkich podejściach, co podkreśla znaczenie właściwego planowania pojemności i implementacji strategii skalowania, niezależnie od wybranego rozwiązania.
+Uważam, że musimy wziąć pod uwagę fakt, że w każdym z przeprowadzonych przeze mnie testów z wysokim obciążeniem występowały błędy związane z pamięcią RAM, z czego mogę wyciągnąć wniosek, że niezbędne jest planowanie pojemności oraz implementacja strategii skalowania, niezależnie od wybranego rozwiązania lub podejścia do współdzielenia kodu.
 %end wyniki analizy wydajności
 
 % scalability end
@@ -1527,7 +1526,7 @@ Głównym celem napisania aplikacji jest wprowadzenie nowego podejścia do wspó
 
 Czym jest technologia Serverless?
 
-Serverless to nowoczesny model wykonywania obliczeń w chmurze, w którym dostawcy chmury automatycznie obsługują aspekty infrastruktury, takie jak zarządzanie serwerem oraz skalowanie zasobów. Zamiast zarządzać serwerami fizycznymi lub wirtualnymi, programiści mogą skupić się wyłącznie na pisaniu kodu. Termin „serverless” nie oznacza, że nie ma fizycznych serwerów, ale że zarządzanie serwerem jest oderwane od użytkowników. W architekturach serverless wdrażamy do chmury funkcje zamiast całych aplikacji, a dostawca chmury jest odpowiedzialny za zarządzanie kodem, skalowanie i utrzymywanie tych funkcji. Są one też często nazywane Function-as-a-Service (FaaS).
+Serverless to nowoczesny model wykonywania obliczeń, w którym dostawcy chmury automatycznie obsługują aspekty infrastruktury, takie jak zarządzanie fizycznymi serwerami oraz skalowanie zasobów przydzielonych każdemu klientowi. Zamiast zarządzać serwerami fizycznymi lub wirtualnymi, programiści mogą skupić się wyłącznie na pisaniu kodu. Termin „serverless” nie oznacza braku fizycznych serwerów, lecz to, że zarządzaniem nimi zajmuje się dostawca usług chmurowych. W architekturze serverless do chmury przesyła się pojedyncze funkcje zamiast całych aplikacji, a dostawca chmury odpowiada za zarządzanie kodem, skalowanie i utrzymanie tych funkcji. Są one często nazywane Function-as-a-Service (FaaS).
 
 Przykłady platform Serverless dostępnych w 2025 roku:
 
@@ -1780,11 +1779,11 @@ public class LambdaController {
 
 \section{Podsumowanie}
 
-W niniejszej pracy magisterskiej przeprowadzono kompleksową analizę metod współdzielenia kodu w systemach mikroserwisowych, uwzględniając zarówno podejścia tradycyjne, jak i nowatorskie. Omówiono kluczowe różnice między architekturą monolityczną a mikroserwisową, wskazując na zalety i wyzwania związane z każdą z nich. Praca podkreśliła szczególne znaczenie efektywnego współdzielenia kodu w systemach mikroserwisowych, które pozwala na uniknięcie duplikacji kodu, zwiększenie produktywności zespołów oraz poprawę jakości i spójności aplikacji.
+W mojej pracy magisterskiej przeprowadziłem kompleksową analizę istniejących metod współdzielenia kodu w systemach mikroserwisowych, biorąc pod uwagę zarówno tradycyjne, jak i nowoczesne podejścia. Omówiłem kluczowe różnice między architekturą monolityczną a mikroserwisową, przedstawiłem mocne i słabe strony każdego z nich oraz znaczenie efektywnego współdzielenia kodu. Dodatkowo omówiłem zalety współdzielenia kodu, takie jak zmniejszenie poziomu duplikacji, zwiększenie produktywności programistów oraz poprawę jakości kodu.
 
-W części praktycznej pracy zaprezentowano rozwiązanie, które łączy zalety istniejących metod współdzielenia kodu (takich jak IDL, SDK oraz biblioteki) z nowoczesnym podejściem Serverless. Stworzona aplikacja nie tylko wspiera zarządzanie kodem, ale również zapewnia lepszą wydajność i komfort użytkowania dla deweloperów.
+W części praktycznej mojej pracy przygotowałem własne rozwiązanie, które łączy zalety tradycyjnych podejść do współdzielenia kodu (takich jak IDL, SDK oraz biblioteki) z nowoczesnymi metodami, takimi jak Serverless. Aplikacja wspiera zarządzanie współdzieleniem kodu i zapewnia wygodę developerom.
 
-Podsumowując, zaprezentowane w pracy rozwiązanie stanowi wkład w rozwój narzędzi wspierających współdzielenie kodu w architekturze mikroserwisowej. Poprzez przeprowadzone testy i porównania wykazano, że przedstawione podejście może znacząco ułatwić rozwój, wdrażanie i utrzymanie aplikacji opartych na mikroserwisach, co jest niezwykle istotne w dzisiejszym dynamicznym świecie technologii. Ostateczne wyniki mogą posłużyć jako podstawa dla przyszłych badań i rozwoju kolejnych innowacyjnych rozwiązań w zakresie zarządzania i współdzielenia kodu.
+Podsumowując, zaprezentowane w części praktycznej rozwiązanie stanowi wkład w rozwój narzędzi wspomagających developerów w zarządzaniu współdzieleniem kodu oraz architekturą mikroserwisową. Biorąc pod uwagę przeprowadzone przeze mnie testy i porównania, przedstawiłem, dlaczego zaproponowane podejście może ułatwić rozwój, wdrożenia oraz ogólnie proces tworzenia aplikacji opartych na architekturze mikroserwisowej. Wyniki przeprowadzonych badań mogą zostać wykorzystane w przyszłych badaniach oraz przy rozwoju kolejnych innowacyjnych rozwiązań w zakresie zarządzania i współdzielenia kodu.
 
 \nocite{*}
 
