@@ -240,13 +240,13 @@ Na podstawie źródeł literaturowych, własnego doświadczenia oraz przygotowan
 Przedstawiam kryteria, które wybrałem w rezultacie analizy źródeł internetowych oraz książek takich jak ~\cite{kleppmann2017designing}, w których znalazłem opis tego, jak musi wyglądać architektura mikroserwisowa, wady i zalety różnych rozwiązań.
 
 \begin{enumerate}
-    \item Conflict Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują konflikty scalania (merge conflicts). Wyzwania dotyczące pracy z IDL i podejścia do ich pokonania są dobrze opisane w książce ~\cite{kleppmann2017designing}. Szczegółowo opisane są metody pracy ze schematami IDL, między innymi narzędziem Protocol Buffer rozwijanym przez Alphabet oraz Avro. To oznacza, że stare i nowe wersje kodu oraz stare i nowe formaty danych mogą potencjalnie współistnieć w systemie w tym samym czasie. Aby system działał płynnie, musimy zachować kompatybilność w obu kierunkach: kompatybilność wsteczną i kompatybilność w przód. 
+    \item Conflict Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują konflikty scalania (merge conflicts). Wyzwania dotyczące pracy z IDL i podejścia do ich pokonania są dobrze opisane w książce ~\cite{kleppmann2017designing}. Szczegółowo opisane są metody pracy ze schematami IDL, między innymi narzędziem Protocol Buffer rozwijanym przez Alphabet oraz Avro. To oznacza, że stare i nowe wersje kodu oraz stare i nowe formaty danych mogą potencjalnie współistnieć w systemie w tym samym czasie. Aby system działał płynnie, musimy zachować kompatybilność w obu kierunkach: kompatybilność wsteczną i kompatybilność w przód.
     Musimy uważać na to, jaką liczbę konfliktów generuje stosowanie wybranego podejścia. Takie konflikty często są czasochłonne i nawet w przypadku prostych sytuacji potrafią spowolnić zespół deweloperski oraz spowodować inne, bardziej skomplikowane błędy. ~\cite[p. 112]{kleppmann2017designing}
-    \item Version Drift Occurrence - wskaźnik tego, jak często rozwiązanie powoduje użycie niezgodnych wersji IDL w różnych zespołach. Kiedy zespoły programistów pracujące nad jednym systemem zaczynają używać niezgodnych wersji plików IDL, mikroserwisy w systemie mikroserwisów przestają komunikować się poprawnie, co powoduje błędy w runtime, które są bardzo trudne do wyłapania i naprawy, nieoczekiwane zachowanie systemu oraz uszkodzenie danych. W przypadku wykorzystania podejścia, które nie może zapewnić odpowiedniego poziomu kontroli nad wersjami i izolacji, rozwój i wdrażanie zmian w systemie mogą być problematyczne. 
+    \item Version Drift Occurrence - wskaźnik tego, jak często rozwiązanie powoduje użycie niezgodnych wersji IDL w różnych zespołach. Kiedy zespoły programistów pracujące nad jednym systemem zaczynają używać niezgodnych wersji plików IDL, mikroserwisy w systemie mikroserwisów przestają komunikować się poprawnie, co powoduje błędy w runtime, które są bardzo trudne do wyłapania i naprawy, nieoczekiwane zachowanie systemu oraz uszkodzenie danych. W przypadku wykorzystania podejścia, które nie może zapewnić odpowiedniego poziomu kontroli nad wersjami i izolacji, rozwój i wdrażanie zmian w systemie mogą być problematyczne.
     W przypadku braku kompatybilności nie jest możliwe poprawne działanie systemu. ~\cite[p. 123]{kleppmann2017designing}
-    \item Build Failure Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują problemy w trakcie budowania aplikacji.  
+    \item Build Failure Rate - wskaźnik tego, jak często zmiany w plikach IDL powodują problemy w trakcie budowania aplikacji.
     Problemy te często wynikają z nieprawidłowo wybranego podejścia do zarządzania plikami IDL. ~\cite[p. 123]{kleppmann2017designing}
-    \item Deployment Rollback Frequency - wskaźnik tego, jak często zmiany w plikach IDL powodują problemy w trakcie wdrożenia aplikacji na środowiska w systemie mikroserwisów. 
+    \item Deployment Rollback Frequency - wskaźnik tego, jak często zmiany w plikach IDL powodują problemy w trakcie wdrożenia aplikacji na środowiska w systemie mikroserwisów.
     Częste wycofywania zmian (rollbacki) usług w trakcie wdrożeń mogą spowodować spowolnienie wdrożenia nowych funkcjonalności i opóźnienie projektu, dlatego w trakcie wyboru podejścia do zarządzania plikami IDL musimy brać to pod uwagę. Musimy w trakcie analizy i planowania projektu wybrać podejście, które zapewni najmniejsze ryzyko błędów w trakcie próbnego wdrożenia i wycofania zmian. ~\cite[p. 92]{kleppmann2017designing}
 \end{enumerate}
 
@@ -291,7 +291,7 @@ W przypadku izolacji na podstawie analizy źródeł literaturowych oraz własneg
 
 \subsubsection{Definicja kryterium oceny pod kątem skalowalności}
 
-Czym jest skalowalność 
+Czym jest skalowalność
 
 W rozdziale 1 autorzy definiują pojęcie skalowalności jako 4 główne aspekty systemu: Controlling the cost of physical resources, Controlling the performance loss, Preventing software resources running out, Avoiding performance bottlenecks, strony 20-21, czyli Kontrola kosztów zasobów fizycznych, Kontrola utraty wydajności, Zapobieganie wyczerpywaniu się zasobów oprogramowania, Unikanie wąskich gardeł wydajności, dlatego mogę zdefiniować kryterium oceny pod kątem skalowalności jako: ~\cite[p. 21]{coulouris2011distributed}
 
@@ -320,7 +320,7 @@ Za pomocą źródeł literaturowych oraz własnego doświadczenia zdefiniowałem
 
 Ocena pod kątem komunikacji – zapewnia potrzebny poziom komunikacji, obiekty są generowane na podstawie języka definicji interfejsu (IDL) na etapie uruchamiania aplikacji. Dalej, w trakcie wykonywania logiki programu, takie obiekty mogą być używane przez program bez obciążenia wydajnościowego. Obiekty wygenerowane na podstawie plików IDL mogą być wykorzystane do komunikacji asynchronicznej, takich jak brokery wiadomości, jak również do wysyłania bezpośrednich zapytań między serwisami.
 
-Metody zarządzania plikami idl w systemach : 
+Metody zarządzania plikami idl w systemach :
 
 % AI
 \begin{enumerate}
@@ -381,7 +381,7 @@ Dane do porównania zostały zebrane z źródeł literaturowych. ~\cite{newman20
 Ocena pod kątem bezpieczeństwa:
 % AI 15%
 \begin{longtable}{|p{4cm}|p{4cm}|p{4cm}|}
-    \caption{Porównanie SVN, bibliotek, Monorepo i IDLaS pod kątem bezpieczeństwa.} \\ 
+    \caption{Porównanie SVN, bibliotek, Monorepo i IDLaS pod kątem bezpieczeństwa.} \\
     \hline
     \textbf{Kryteria} & \textbf{Zalety} & \textbf{Wyzwania} \\ \hline
     \multicolumn{3}{|c|}{\textbf{SVN }} \\ \hline
@@ -535,7 +535,7 @@ Odpowiedzialność: W przypadku bibliotek przejrzysta historia może zostać zap
 
 Ocena pod kątem komunikacji: zapewnia potrzebny poziom komunikacji, mechanizm współdzielenia jest podobny do biblioteki, tak samo jak w przypadku biblioteki obiekty są dodawane do projektu przez narzędzie do budowania projektów na etapie uruchamiania aplikacji, dalej w trakcie wykonania logiki programu takie obiekty mogą być użyte przez program bez żadnych obciążeń wydajnościowych. Obiekty wciągnięte z biblioteki mogą być użyte dla komunikacji asynchronicznej takich jak brokery wiadomości jak również dla wysłania bezpośrednich zapytań między serwisami.
 
-Ocena pod kątem izolacji: 
+Ocena pod kątem izolacji:
 
 Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji SDK kryteria oceny są następujące: ocena pod kątem izolacji interfejsów, izolacja wersji, izolacja zależności. Jednak są one trudniejsze w projektowaniu i wymagają ostrożności w trakcie zarządzania. ~\cite[p. 75]{EssentialIan}
 
@@ -544,7 +544,7 @@ Izolacja wersji: W przypadku SDK, które agregują kilka bibliotek i narzędzi, 
 Izolacja zależności: SDK często zawierają wiele bibliotek w sposób, co oznacza, że często zarządzają dużą ilością zależności. Izolowanie tych zależności jest krytyczne, aby uniknąć konfliktów. ~\cite[p. 218]{martin2008clean}
 
 % AI
-Ocena pod kątem bezpieczeństwa: 
+Ocena pod kątem bezpieczeństwa:
 
 Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa bibliotek kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność
 
@@ -568,7 +568,7 @@ Utrata danych i niespójność: SDK są narażone na większe ryzyko wewnętrzny
 %Ai
 \subsubsection{Ocena współdzielenia kodu za pomocą API}
 
-Ocena pod kątem komunikacji: 
+Ocena pod kątem komunikacji:
 
 Too podejście zapewnia podstawowy poziom komunikacji poprzez standardowy protokół HTTP/HTTPS.Opiera się na wywoływaniu endpointów API poprzez żądania HTTP. Komunikacja odbywa się poprzez wymianę dokumentów JSON/XML między serwisami, możliwe są zarówno wywołania synchroniczne (bezpośrednie żądania) jak i asynchroniczne. Wymaga dodatkowej konfiguracji i obsługi serializacji/deserializacji danych.
 
@@ -578,11 +578,11 @@ Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolac
 
 Izolacja interfejsów: REST API zapewnia jasno zdefiniowane punkty końcowe i kontrakty. Interfejsy są wersjonowane poprzez URL lub nagłówki HTTP, zmiana implementacji wewnętrznej nie wpływa na kontrakt API. Wymagane jest dokładne dokumentowanie API (np. poprzez Swagger/OpenAPI). ~\cite[p. 124]{richardson2013rest}
 
-Izolacja wersji: 
+Izolacja wersji:
 
 Możliwość utrzymywania wielu wersji API równolegle. Wersjonowanie może być realizowane poprzez URL (np. /api/v1/, /api/v2/). Konieczność obsługi kompatybilności wstecznej między wersjami. Złożoność zarządzania rośnie z każdą nową wersją API. ~\cite[p. 89]{richardson2013rest}\
 
-Izolacja zależności: 
+Izolacja zależności:
 
 Serwisy są luźno powiązane, komunikują się tylko poprzez zdefiniowane interfejsy REST. Każdy serwis może być rozwijany i wdrażany niezależnie. Wymagane jest zarządzanie dostępnością i odpornością na błędy. ~\cite[p. 156]{newman2015building}
 
@@ -590,23 +590,23 @@ Ocena pod kątem bezpieczeństwa:
 
 Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa REST API kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność.
 
-Poufność: 
+Poufność:
 
 Konieczność implementacji mechanizmów autentykacji (np. JWT, OAuth). Wymagane szyfrowanie komunikacji poprzez HTTPS. Możliwość definiowania różnych poziomów dostępu do zasobów. ~\cite[p. 245]{newman2015building}
 
-Integralność danych: 
+Integralność danych:
 
 Walidacja danych wejściowych na poziomie API. Konieczność weryfikacji poprawności przesyłanych danych. Możliwość zastosowania podpisów cyfrowych dla krytycznych operacji. ~\cite[p. 267]{newman2015building}
 
-Dostępność: 
+Dostępność:
 
 Konieczność implementacji mechanizmów retry i circuit breaker. Wymagane monitorowanie dostępności usług. Możliwość skalowania poziomego dla zwiększenia dostępności. ~\cite[p. 178]{richardson2013rest}
 
-Autentyczność: 
+Autentyczność:
 
 Implementacja mechanizmów uwierzytelniania i autoryzacji. Możliwość wykorzystania certyfikatów SSL/TLS. Konieczność weryfikacji źródła żądań. ~\cite[p. 289]{newman2015building}
 
-Odpowiedzialność: 
+Odpowiedzialność:
 
 Możliwość śledzenia wszystkich operacji poprzez logi. Konieczność implementacji mechanizmów audytu. Identyfikacja źródła każdego żądania. ~\cite[p. 312]{newman2015building}
 
@@ -616,7 +616,7 @@ REST API wymaga precyzyjnego zarządzania wersjami interfejsów. Konieczność u
 %AI
 \subsubsection{Ocena współdzielenia kodu za pomocą ServerLess}
 
-Ocena pod kątem komunikacji: 
+Ocena pod kątem komunikacji:
 
 Zapewnia wysoki poziom komunikacji poprzez zdarzenia (events) i wywołania funkcji. Mechanizm współdzielenia opiera się na wywoływaniu funkcji bezserwerowych poprzez różne wyzwalacze (triggers), takie jak żądania HTTP, kolejki wiadomości, czy harmonogramy czasowe. Komunikacja odbywa się poprzez przekazywanie zdarzeń i danych między funkcjami, które są automatycznie skalowane w zależności od obciążenia. ~\cite[p. 45]{roberts2018cloud}
 
@@ -624,14 +624,14 @@ Ocena pod kątem izolacji:
 
 Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny izolacji architektury serverless kryteria oceny są następujące: ocena pod kątem izolacji interfejsów, izolacja wersji, izolacja zależności.
 
-Izolacja interfejsów: 
+Izolacja interfejsów:
 
 Funkcje serverless są naturalnie izolowane, każda funkcja posiada własny, jasno zdefiniowany interfejs wejścia/wyjścia. Interfejsy są definiowane poprzez konfigurację zdarzeń i wyzwalaczy. Zmiana implementacji jednej funkcji nie wpływa na inne, o ile zachowany jest kontrakt interfejsu. ~\cite[p. 78]{roberts2018cloud}
 
-Izolacja wersji: 
+Izolacja wersji:
 Platformy serverless oferują wbudowane mechanizmy wersjonowania funkcji. Możliwe jest równoległe uruchamianie różnych wersji tej samej funkcji, co ułatwia wdrażanie zmian i testowanie. System aliasów i etapów (stages) pozwala na kontrolowane przełączanie między wersjami. ~\cite[p. 112]{roberts2018cloud}
 
-Izolacja zależności: 
+Izolacja zależności:
 
 Każda funkcja serverless jest całkowicie niezależna i może mieć własne zależności. Pakiety i biblioteki są izolowane na poziomie funkcji, co eliminuje konflikty zależności. Wymaga to jednak zarządzania duplikacją kodu i zależności między funkcjami. ~\cite[p. 156]{roberts2018cloud}
 
@@ -639,23 +639,23 @@ Ocena pod kątem bezpieczeństwa:
 
 Zgodnie z wcześniej zaprezentowanymi kryteriami oceny, w przypadku oceny bezpieczeństwa architektury serverless kryteria oceny są następujące: Poufność, Integralność danych, Dostępność, Autentyczność, Odpowiedzialność.
 
-Poufność: 
+Poufność:
 
 Platformy serverless zapewniają wbudowane mechanizmy bezpieczeństwa i izolacji. Każda funkcja działa w izolowanym środowisku (sandbox). Dostęp do zasobów jest kontrolowany przez system uprawnień i ról. ~\cite[p. 167]{roberts2018cloud}
 
-Integralność danych: 
+Integralność danych:
 
 Funkcje serverless mogą wykorzystywać wbudowane mechanizmy walidacji i transformacji danych. Platformy oferują narzędzia do monitorowania i logowania wszystkich operacji. Możliwe jest wykorzystanie managed services do przechowywania i przetwarzania danych. ~\cite[p. 189]{roberts2018cloud}
 
-Dostępność: 
+Dostępność:
 
 Architektura serverless zapewnia automatyczne skalowanie i wysoką dostępność. Platformy zarządzają infrastrukturą i gwarantują określony poziom SLA. Funkcje są automatycznie replikowane w różnych strefach dostępności. ~\cite[p. 198]{roberts2018cloud}
 
-Autentyczność: 
+Autentyczność:
 
 Platformy serverless oferują wbudowane mechanizmy uwierzytelniania i autoryzacji. Możliwa jest integracja z różnymi dostawcami tożsamości. Każde wywołanie funkcji może być weryfikowane pod kątem uprawnień. ~\cite[p. 223]{roberts2018cloud}
 
-Odpowiedzialność: 
+Odpowiedzialność:
 
 Platformy zapewniają szczegółowe logowanie i monitorowanie wszystkich wywołań funkcji. Dostępne są narzędzia do analizy wydajności i kosztów. Możliwe jest śledzenie całego łańcucha wywołań między funkcjami. ~\cite[p. 245]{roberts2018cloud}
 
@@ -663,16 +663,16 @@ Ocena pod kątem wersjonowania:
 
 Wersjonowanie w architekturze serverless jest wspierane przez wbudowane mechanizmy platform. Każda funkcja może mieć wiele wersji, które są zarządzane niezależnie. System aliasów pozwala na kierowanie ruchu do określonych wersji funkcji. Możliwe jest stopniowe wdrażanie zmian poprzez techniki takie jak canary deployments. ~\cite[p. 267]{roberts2018cloud}
 
-Przywracanie kodu do stabilnej wersji: 
+Przywracanie kodu do stabilnej wersji:
 
 W przypadku problemów możliwe jest szybkie przełączenie na poprzednią stabilną wersję funkcji. Platformy serverless przechowują historię wersji i umożliwiają łatwe przełączanie między nimi. ~\cite[p. 289]{roberts2018cloud}
 
-Utrata danych i niespójność: 
+Utrata danych i niespójność:
 
 Ryzyko utraty danych jest minimalizowane przez wykorzystanie managed services do przechowywania stanu. Transakcyjność może być zapewniona przez odpowiednie projektowanie przepływu danych między funkcjami. ~\cite[p. 312]{roberts2018cloud}
 
 \newpage
-% new 
+% new
 \subsubsection{Ocena współdzielenia pod kątem skalowalności}
 
 Ocena podejścia IDL pod kątem skalowalności:
@@ -758,13 +758,17 @@ Wykorzystanie pamięci (dolny wykres – fioletowa linia)
   \item Wzór pokazuje częste cykle alokacji i GC, sugerując agresywne wykorzystanie pamięci i czyszczenie.
 \end{itemize}
 
+<<<<<<< HEAD
 W przypadku dużego obciążenia nie miałem możliwości wygenerowania raportu ze względu na błąd pamięci (Memory Error).
+=======
+W przypadku dużego obciążenia nie miałem możliwości wygenerować raport ze względu na Memory Error.
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 \newpage
 
 % idl gatling descrition
 
-Raporty wygenerowane przez narzędzie Gatling: 
+Raporty wygenerowane przez narzędzie Gatling:
 
 \begin{figure}
     \includegraphics[width=\linewidth]{images/idl-low-gatling-graph.jpg}
@@ -791,7 +795,11 @@ Na rysunku widać, że:
     {\small Źródło: opracowanie własne.}
 \end{figure}
 
+<<<<<<< HEAD
 Na rysunku zaobserwowałem:
+=======
+Na rysunku zaobsewowałem:
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 \begin{itemize}
     \item Czas odpowiedzi krótszy niż 800 ms: Duża liczba żądań (około 2300), jednak proporcjonalnie mniej niż w przypadku niskiego obciążenia.
@@ -800,11 +808,19 @@ Na rysunku zaobserwowałem:
     \item Żądania nieudane: Nadal brak nieudanych żądań.
 \end{itemize}
 
+<<<<<<< HEAD
 Na wykresach przedstawionych na podstawie przeprowadzonych testów widać, że zarówno w przypadku małego, jak i średniego obciążenia aplikacja zachowuje się stabilnie. Jednak przy średnim obciążeniu zauważyłem nieznaczne wydłużenie czasu oczekiwania na odpowiedź.
 
 \newpage
 
 Przeprowadzone przeze mnie testy pokazują, że wraz ze zwiększaniem obciążenia wzrasta czas oczekiwania na odpowiedź. Porównując czas oczekiwania w przypadku różnych podejść do współdzielenia kodu, możemy ocenić ich efektywność.
+=======
+Na przedstawionych na podstawie przeprowadzonych testów wykresach widać, że zarówno w przypadku małego, jak i średniego obciążenia aplikacja zachowuje się stabilnie. Jednak przy średnim zauważyłem nieznaczne wydłużenie czasu oczekiwania na odpowiedź.
+
+\newpage
+
+Przeprowadzone przeze mnie testy pokazują, że zwiększaniem obciążenia wzrasta czas oczekiwania na odpowiedź. Porównując czas oczekiwania w przypadku różnych podejść do współdzielenia kodu, możemy ocenić ich efektywność.
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 %sdk
 Ocena współdzielenia kodu za pomocą SDK pod kątem skalowalności:
@@ -857,7 +873,12 @@ Wyniki obserwacji:
 
 W przypadku dużego obciążenia nie było możliwe wygenerowanie raportu ze względu na Memory Error.
 %AI
+<<<<<<< HEAD
 Wykres, który przygotowałem pod wpływem niskiego obciążenia, sugeruje optymalną wydajność przy minimalnym zużyciu zasobów. Wykres dla średniego obciążenia, pokazujący wyższe zużycie pamięci, wskazuje, że aplikacja skaluje się, aby przetwarzać większą liczbę żądań.
+=======
+Wykres który przygotowałem pod wpłułem niskeigo obciążenia sugeruje optymalną wydajność przy minimalnym obciążeniu zasobów. Wykres średniego obciążenia, pokazujący wyższe zużycie pamięci, wskazuje, że aplikacja skaluje się, aby przeprocesować większą ilość rządań.
+
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 \newpage
 
 %sdk gatling description
@@ -916,7 +937,7 @@ Raporty wygenerowane przez narzędzie Gatling:
     \item Nieudane żądania: Około 7000 – aplikacja nie radzi sobie z obsługą dużej liczby żądań, występują błędy.
 \end{itemize}
 
-Porównanie wydajności: 
+Porównanie wydajności:
 
 \begin{itemize}
     \item Aplikacja działa optymalnie przy niskim obciążeniu — szybkie odpowiedzi, brak błędów i wysoka responsywność.
@@ -1012,7 +1033,11 @@ Wykorzystanie pamięci, dolny wykres – fioletowa linia
   \item System zarządzania pamięcią reaguje odpowiednio na zwiększone obciążenie, ale wymaga częstszych interwencji GC.
 \end{itemize}
 
+<<<<<<< HEAD
 Podsumowując, aplikacja w trakcie przeprowadzonych przeze mnie testów wykazała stabilne i efektywne zarządzanie pamięcią przy niskim i średnim obciążeniu. Jednak przy wysokim obciążeniu załamuje się, co może oznaczać ograniczenia w skalowalności.
+=======
+Podsumowując, aplikacja w rakcie przeprowadzonych trzeze mnie testów wykazała stabilne i efektywne zarządzanie pamięcią przy niskim i średnim obciążeniu, jednak załamuje się przy wysokim obciążeniu, co może oznaczać ograniczenia skalowalności.
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 \newpage
 
@@ -1072,15 +1097,19 @@ Raporty wygenerowane przez narzędzie Gatling:
     \item Nieudane żądania: Około 7000 – aplikacja nie radzi sobie z obsługą dużej liczby żądań, występują błędy.
 \end{itemize}
 
-Wnioski dotyczące skalowalności: 
-\begin{itemize} 
-    \item Dobre zachowanie przy niskim i średnim obciążeniu 
-    \item Problemy ze skalowalnością przy wysokim obciążeniu 
-    \item Widoczna granica wydajności około 2500-3000 żądań 
-    \item Potrzeba optymalizacji zarządzania pamięcią przy dużym obciążeniu 
+Wnioski dotyczące skalowalności:
+\begin{itemize}
+    \item Dobre zachowanie przy niskim i średnim obciążeniu
+    \item Problemy ze skalowalnością przy wysokim obciążeniu
+    \item Widoczna granica wydajności około 2500-3000 żądań
+    \item Potrzeba optymalizacji zarządzania pamięcią przy dużym obciążeniu
 \end{itemize}
 
+<<<<<<< HEAD
 Podsumowanie: Aplikacja wykorzystująca biblioteki wykazała w trakcie moich testów wysoką efektywność przy niskim i średnim obciążeniu. Jednak przy wysokim obciążeniu ujawnia problemy z zarządzaniem pamięcią.
+=======
+Podsumowanie: Aplikacja wykorzystująca biblioteki wykazła w trakcie mich testów wysoką efektywność przy niskim i średnim obciążeniu, jednak przy wysokim obciążeniu ujawnia problemy z zarządzaniem pamięcią.
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 \newpage
 
@@ -1136,7 +1165,11 @@ Garbage collection - pionowe pomarańczowe linie
     {\small Źródło: opracowanie własne.}
 \end{figure}
 
+<<<<<<< HEAD
 W przypadku dużego obciążenia wygenerowanie raportu nie było możliwe ze względu na błąd pamięci (Memory Error).
+=======
+W przypadku dużego obciążenia nie było możliwym wygenerowanie raportu ze względu na Memory Error.
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 Wyniki obserwacji:
 
@@ -1228,7 +1261,11 @@ Raporty wygenerowane przez narzędzie Gatling:
   \end{itemize}
 \end{itemize}
 
+<<<<<<< HEAD
 Podsumowując, podejście REST w trakcie moich testów wykazało dobrą wydajność przy niskim obciążeniu, ale znacząco traci na efektywności wraz ze wzrostem liczby żądań. Przy wysokim obciążeniu system ujawnia poważne problemy z wydajnością — obserwuję długie czasy odpowiedzi oraz występowanie błędów.
+=======
+Podsumowując, podejście REST, w trakcie moich testów wykazało dobrą wydajność przy niskim obciążeniu, ale znacząco traci na efektywności wraz ze wzrostem liczby żądań. Przy wysokim obciążeniu system ujawnia poważne problemy z wydajnością, obserwuję długie czasy odpowiedzi i występowanie błędów.
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 \newpage
 
@@ -1248,7 +1285,11 @@ Po uruchomieniu aplikacji w Dockerze, automatycznie uruchamiane są testy wydajn
 
 W trakcie testów wydajnościowych zbierane są metryki dotyczące użycia pamięci, liczby wątków, zużycia CPU, garbage collection i inne. Dane te są zapisywane do pliku za pomocą narzędzia Java Flight Recorder. Uruchomienie JFR odbywa się również automatycznie w momencie startu aplikacji.
 
+<<<<<<< HEAD
 Aplikacja testująca wydajność aplikacji przykładowej oferuje trzy tryby testowania: małe, średnie oraz duże obciążenie. Zostało to wdrożone w celu obserwacji działania aplikacji przy różnych poziomach obciążenia.
+=======
+Aplikacja testująca wydajność aplikacji przykładowej posiada trzy tryby testowania: małe obciążenie, średnie oraz duże. Zostało to zrealizowane w celu obserwacji działania aplikacji pod wpływem różnych poziomów obciążenia.
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 \newpage
 %serverless memory description
@@ -1295,7 +1336,11 @@ Wykorzystanie pamięci (linie fioletowe)
 
 W przypadku dużego obciążenia nie było możliwe wygenerowanie raportu ze względu na Memory Error.
 
+<<<<<<< HEAD
 Wyniki mojej obserwacji
+=======
+Wyniki mojej obserwacji:
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 Alokacja pamięci (niebieskie słupki)
 
@@ -1397,15 +1442,24 @@ Raporty wygenerowane przez narzędzie Gatling:
   \end{itemize}
 \end{itemize}
 
+<<<<<<< HEAD
 Możemy zaobserwować pogorszenie wydajności, szczególnie przy większych obciążeniach. Prawdopodobnie wynika to z opóźnień sieciowych spowodowanych przez architekturę serverless.
+=======
+Możeny zaobserwować pogorszenie wydajności, szczególnie przy większych obciążeniach, prawdopodobnie wynika to z opóźnienia sieciowego spowodowanego przez architekturę serverless.
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 \newpage
 
 %wyniki analizy wydajnościowej
 
+%AI
 Podsumowanie wyników testowania rozwiązań pod kątem wydajności i skalowalności.
 
+<<<<<<< HEAD
 Przygotowałem ranking rozwiązań pod względem wydajności i skalowalności, oparty na przeprowadzonych testach i analizach:
+=======
+Przygotowałem ranking rozwiązań pod względem wydajności i skalowalności, który stworzyłem na podstawie przeprowadzonych testów i analiz:
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 \begin{enumerate}
     \item Serverless
@@ -1487,7 +1541,11 @@ Przygotowałem ranking rozwiązań pod względem wydajności i skalowalności, o
 
 Wnioski końcowe
 
+<<<<<<< HEAD
 Na podstawie przeprowadzonej analizy mogę stwierdzić, że wybór optymalnego rozwiązania zależy od specyficznych wymagań projektu. Jednak, biorąc pod uwagę zarówno wydajność, jak i skalowalność, architektura Serverless oraz IDL wykazują najlepsze właściwości.
+=======
+Na podstawie przeprowadzonej analizy mogę stwierdzić, że wybór optymalnego rozwiązania zależy od specyficznych wymagań projektu, jednak biorąc pod uwagę zarówno wydajność, jak i skalowalność, architektura Serverless oraz IDL wykazują najlepsze właściwości.
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 Serverless zajmuje pierwsze miejsce głównie ze względu na:
 \begin{itemize}
@@ -1503,9 +1561,15 @@ IDL plasuje się na drugim miejscu, oferując:
     \item Niższe koszty operacyjne przy stałym, wysokim obciążeniu
 \end{itemize}
 
+<<<<<<< HEAD
 Uważam, że biblioteki stanowią rozsądny kompromis dla projektów o średnich rozmiarach, podczas gdy SDK i REST wykazują największe trudności w kontekście skalowalności i wydajności przy większym obciążeniu.
 
 Moje rekomendacje, przygotowane na podstawie przeprowadzonego badania:
+=======
+Uważam że biblioteki stanowią rozsądny kompromis dla projektów o średnich rozmiarach, podczas gdy SDK i REST wykazują największe trudności w kontekście skalowalności i wydajności przy większym obciążeniu.
+
+Moje rekomendacje przygotowane na podstawie przeprowadzonego badania:
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 \begin{itemize}
     \item Dla projektów z dynamicznym obciążeniem: Serverless
@@ -1514,27 +1578,41 @@ Moje rekomendacje, przygotowane na podstawie przeprowadzonego badania:
     \item Unikać REST i SDK w przypadku wymagań dotyczących wysokiej skalowalności
 \end{itemize}
 
+<<<<<<< HEAD
 Uważam, że musimy wziąć pod uwagę fakt, że w każdym z przeprowadzonych przeze mnie testów z wysokim obciążeniem występowały błędy związane z pamięcią RAM, z czego mogę wyciągnąć wniosek, że niezbędne jest planowanie pojemności oraz implementacja strategii skalowania, niezależnie od wybranego rozwiązania lub podejścia do współdzielenia kodu.
+=======
+%100AI
+Uwarzam że musimy wiciąć pod uwagę to, że w każdym z przeprowadzonych przeze mnie testów z wysokim ociążeniem występowały błędy związanie z pamięcią RAM, z czego mogę wyciągnąć wniosek, że niezbędnym jest  planowania pojemności i implementacji strategii skalowania, niezależnie od wybranego rozwiązania lub podejścia do współdzielenia kodu.
+%Należy jednak pamiętać, że błędy pamięci przy wysokim obciążeniu były obecne we wszystkich podejściach, co podkreśla znaczenie właściwego planowania pojemności i implementacji strategii skalowania, niezależnie od wybranego rozwiązania.
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 %end wyniki analizy wydajności
 
 % scalability end
 
 \section{Opis części praktycznej}
 
+%100AI
+
 Jako część praktyczną mojej pracy magisterskiej przygotowałem aplikację webową, która składa się z dwóch części, backendowej i frontendowej.
 Głównym celem napisania aplikacji jest wprowadzenie nowego podejścia do współdzielenia kodu – współdzielenie za pomocą technologii serverless. Aplikacja wspiera deweloperów korzystających z technologii serverless, zmniejsza wady tego rozwiązania, jednocześnie dając możliwość skorzystania z mocnych stron tej technologii.
 
 Czym jest technologia Serverless?
 
+<<<<<<< HEAD
 Serverless to nowoczesny model wykonywania obliczeń, w którym dostawcy chmury automatycznie obsługują aspekty infrastruktury, takie jak zarządzanie fizycznymi serwerami oraz skalowanie zasobów przydzielonych każdemu klientowi. Zamiast zarządzać serwerami fizycznymi lub wirtualnymi, programiści mogą skupić się wyłącznie na pisaniu kodu. Termin „serverless” nie oznacza braku fizycznych serwerów, lecz to, że zarządzaniem nimi zajmuje się dostawca usług chmurowych. W architekturze serverless do chmury przesyła się pojedyncze funkcje zamiast całych aplikacji, a dostawca chmury odpowiada za zarządzanie kodem, skalowanie i utrzymanie tych funkcji. Są one często nazywane Function-as-a-Service (FaaS).
+=======
+%100AI
+
+Serverless to nowoczesny model wykonywania obliczeń, w którym dostawcy chmury automatycznie obsługują aspekty infrastruktury, takie jak zarządzanie fizycznym serwerem, skalowanie zasobów przydzielonych każdemu klientowi. Zamiast zarządzania serwerami fizycznymi lub wirtualnymi, programiści mogą skupić się wyłącznie na pisaniu kodu. Termin „serverless” nie oznacza, że nie ma fizycznych serwerów, ale że zarządzaniem serwerem zajmuje się dostawca usług chmurowych. W architekturze serverless możemy do chmury pojedyncze funkcje zamiast całych aplikacji, a dostawca chmury jest odpowiedzialny za zarządzanie kodem, skalowanie i utrzymywanie tych funkcji. Są one też często nazywane Function-as-a-Service (FaaS).
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 Przykłady platform Serverless dostępnych w 2025 roku:
 
 \begin{enumerate}
-    \item AWS Lambda 
-    \item Azure Functions 
-    \item Google Cloud Functions 
-    \item IBM Cloud Functions 
+    \item AWS Lambda
+    \item Azure Functions
+    \item Google Cloud Functions
+    \item IBM Cloud Functions
 \end{enumerate}
 
 \subsubsection{Ogólny opis aplikacji}
@@ -1629,7 +1707,7 @@ public class LambdaService {
     private final LambdaClient lambdaClient;
     private final IamClient iamClient;
 
-    public LambdaService(S3Client s3Client, LambdaClient lambdaClient, 
+    public LambdaService(S3Client s3Client, LambdaClient lambdaClient,
                         IamClient iamClient) {
         this.s3Client = s3Client;
         this.lambdaClient = lambdaClient;
@@ -1779,11 +1857,19 @@ public class LambdaController {
 
 \section{Podsumowanie}
 
+<<<<<<< HEAD
 W mojej pracy magisterskiej przeprowadziłem kompleksową analizę istniejących metod współdzielenia kodu w systemach mikroserwisowych, biorąc pod uwagę zarówno tradycyjne, jak i nowoczesne podejścia. Omówiłem kluczowe różnice między architekturą monolityczną a mikroserwisową, przedstawiłem mocne i słabe strony każdego z nich oraz znaczenie efektywnego współdzielenia kodu. Dodatkowo omówiłem zalety współdzielenia kodu, takie jak zmniejszenie poziomu duplikacji, zwiększenie produktywności programistów oraz poprawę jakości kodu.
 
 W części praktycznej mojej pracy przygotowałem własne rozwiązanie, które łączy zalety tradycyjnych podejść do współdzielenia kodu (takich jak IDL, SDK oraz biblioteki) z nowoczesnymi metodami, takimi jak Serverless. Aplikacja wspiera zarządzanie współdzieleniem kodu i zapewnia wygodę developerom.
 
 Podsumowując, zaprezentowane w części praktycznej rozwiązanie stanowi wkład w rozwój narzędzi wspomagających developerów w zarządzaniu współdzieleniem kodu oraz architekturą mikroserwisową. Biorąc pod uwagę przeprowadzone przeze mnie testy i porównania, przedstawiłem, dlaczego zaproponowane podejście może ułatwić rozwój, wdrożenia oraz ogólnie proces tworzenia aplikacji opartych na architekturze mikroserwisowej. Wyniki przeprowadzonych badań mogą zostać wykorzystane w przyszłych badaniach oraz przy rozwoju kolejnych innowacyjnych rozwiązań w zakresie zarządzania i współdzielenia kodu.
+=======
+%100Ai - rewritten
+
+W mojej pracy magisterskiej zrobiłem kompleksową analizę istniejących metod współdzielenia kodu w systemach mikroserwisowych, brałem pod uwagę tradycyjne podejścia, jak również bardziej nowoczesne. Omówiłem kluczowe różnice między architekturą monolityczną a mikroserwisową, przedstawiłem mocne i słabe strony każdego podejścia oraz znaczenie efektywnego współdzielenia kodu, omówiłem zalety, które daje współdzielenie kodu, takie jak zmniejszenie poziomu duplikacji kodu, zwiększenie produktywności pracy programistów oraz poprawę jakości kodu.
+W części praktycznej mojej pracy przygotowałem własne rozwiązanie, które połączyło zalety tradycyjnych podejść do współdzielenia kodu (takich jak IDL, SDK oraz biblioteki) z nowoczesnymi podejściami jak Serverless. Aplikacja wspiera zarządzanie współdzieleniem kodu i zapewnia komfort dla developerów.
+Podsumowując, zaprezentowane w części praktycznej rozwiązanie stanowi wkład w rozwój narzędzi wspomagających developerów w zarządzaniu współdzieleniem kodu i architekturą mikroserwisową. Biorąc pod uwagę przeprowadzone przeze mnie testy i porównania, przedstawiłem dlaczego zaproponowane podejście może ułatwić rozwój, wdrożenia i ogólnie proces rozwoju aplikacji opartych na architekturę mikroserwisową. Wyniki przeprowadzonych badań mogą być wykorzystane dla kolejnych badań w przyszłości oraz mogą się przydać w trakcie rozwoju kolejnych innowacyjnych rozwiązań w zakresie zarządzania kodem i współdzielenia kodu.
+>>>>>>> 64966de36be71826c93c5c7934c9ca0fa456c72c
 
 \nocite{*}
 
